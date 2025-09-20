@@ -1,4 +1,4 @@
-# RISC-V Reference SoC Tapeout Pragram
+# RISC-V Reference SoC Tapeout Pragram(Week-0)
 
 ## Task-1 : Create GitHub repo. Document summary of previous video(Getting Started with Digital VLSI SOC Design and planning) in the GitHub repo.
 
