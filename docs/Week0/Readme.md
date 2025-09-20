@@ -31,5 +31,42 @@ Then O0 = O1 = O2 = O3 = O4.
 ***Task-2 : Install tools listed in the document using the machine configuration mentioned. Update
 your GitHub repo with Tool snapshot.***
 
+**System Check**
+
+6GB RAM, 50 GB HDD
+
+Ubuntu 20.04+
+
+4vCPU
+
+**Tool check**
+
+**YOSYS**
+
+# Update package list
+sudo apt-get update
+
+# Clone Yosys source code from GitHub
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys
+
+# Install 'make' (only if it's not already installed)
+sudo apt install make -y
+
+# Install required dependencies
+sudo apt-get install build-essential clang bison flex \
+libreadline-dev gawk tcl-dev libffi-dev git \
+graphviz xdot pkg-config python3 libboost-system-dev \
+libboost-python-dev libboost-filesystem-dev zlib1g-dev -y
+
+# Configure build for GCC
+make config-gcc
+
+# Compile Yosys
+make
+
+# Install Yosys system-wide
+sudo make install
+
 
 
