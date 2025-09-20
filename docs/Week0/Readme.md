@@ -23,5 +23,5 @@ Then comes Floorplanning, Placement, Routing, Physical design.
 This combinely completes RTL to GDSII flow.
 The GDSII is sent to factory(Tape out) after DRC/LVS checks.
 
-5)After integration of physical chip with pheripherals, run the application --> output is O4. 
+5) After integration of physical chip with pheripherals, run the application --> output is O4. 
 Then O0 = O1 = O2 = O3 = O4.
