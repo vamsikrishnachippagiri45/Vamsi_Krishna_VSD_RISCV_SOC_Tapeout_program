@@ -44,8 +44,4 @@ Ubuntu 20.04+
 **YOSYS**
 
 
-# Install Yosys system-wide
-sudo make install
-
-
 
