@@ -25,3 +25,11 @@ The GDSII is sent to factory(Tape out) after DRC/LVS checks.
 
 5) After integration of physical chip with pheripherals, run the application --> output is O4. 
 Then O0 = O1 = O2 = O3 = O4.
+
+
+
+Task-2 : Install tools listed in the document using the machine configuration mentioned. Update
+your GitHub repo with Tool snapshot.
+
+
+
