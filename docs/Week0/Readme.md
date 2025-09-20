@@ -53,10 +53,13 @@ $ sudo apt-get install build-essential clang bison flex \
 libreadline-dev gawk tcl-dev libffi-dev git \
 graphviz xdot pkg-config python3 libboost-system-dev \
 libboost-python-dev libboost-filesystem-dev zlib1g-dev
+#Yosys depends on a GitHub submodule called **abc**, which must be initialized before building. If not, you may see errors during compilation. 
+$ git submodule update --init --recursive
 $ make config-gcc
 $ make
 $ sudo make install
 ```
+<img width="1436" height="827" alt="Screenshot from 2025-09-19 10-21-19" src="https://github.com/user-attachments/assets/21ad404c-2b18-4063-a461-7c6235a83b24" />
 
 
 
