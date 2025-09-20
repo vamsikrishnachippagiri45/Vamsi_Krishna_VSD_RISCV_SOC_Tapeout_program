@@ -42,7 +42,7 @@ Ubuntu 20.04+
 **Tool check**
 
 **YOSYS**
-
+'''
 $sudo apt-get update
 $git clone https://github.com/YosysHQ/yosys.git
 $cd yosys
