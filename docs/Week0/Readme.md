@@ -13,9 +13,9 @@ If O0 = O1, Then our specifications are fixed.
 3) Write softcopy of Hardware using RTL(Verilog) and Test with the application --> output is O2
 If O1 = O2, Then our hardware softcopy is also fine.
 
-Then, Design SoC
-(i) Processor -> Gate level Netlist (synth)
-(ii) Peripherals/IPs -> Macros(synth RTL)   and   -> Analog IPs (func RTL)
+  Then, Design SoC
+  (i) Processor -> Gate level Netlist (synth)
+  (ii) Peripherals/IPs -> Macros(synth RTL)   and   -> Analog IPs (func RTL)
 
 4) Test the application with the SoC Integration --> output is O3. 
 Then O2 = O3.
