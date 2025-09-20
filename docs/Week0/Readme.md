@@ -43,7 +43,7 @@ Ubuntu 20.04+
 
 **YOSYS**
 
-'''
+'''bash
 $sudo apt-get update
 $git clone https://github.com/YosysHQ/yosys.git
 $cd yosys
@@ -55,6 +55,6 @@ $libboost-python-dev libboost-filesystem-dev zlib1g-dev -y
 $make config-gcc
 $make
 $sudo make install
-'''
+
 
 
