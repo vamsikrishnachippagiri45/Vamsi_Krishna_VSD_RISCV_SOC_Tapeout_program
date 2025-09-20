@@ -61,6 +61,91 @@ $ sudo make install
 ```
 <img width="1436" height="827" alt="Screenshot from 2025-09-19 10-21-19" src="https://github.com/user-attachments/assets/21ad404c-2b18-4063-a461-7c6235a83b24" />
 
+**IVerilog**
 
 
+```bash
+$ sudo apt-get update
+$ sudo apt-get install iverilog
+```
+<img width="1093" height="751" alt="Screenshot from 2025-09-20 12-19-45" src="https://github.com/user-attachments/assets/fe17d327-89bf-4163-a4a6-2262eeba98b4" />
+
+**gtkwave**
+
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install gtkwave
+```
+<img width="818" height="152" alt="Screenshot from 2025-09-20 12-23-22" src="https://github.com/user-attachments/assets/fed61913-2ff9-4526-935e-bf2ed93ca89a" />
+
+**NGSpice** 
+
+After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:
+
+```bash
+$ tar -zxvf ngspice-45.2.tar.gz
+$ cd ngspice-45.2
+$ mkdir release
+$ cd release
+$ ../configure --with-x --with-readline=yes --disable-debug
+$ make
+$ sudo make install
+```
+<img width="990" height="664" alt="Screenshot from 2025-09-20 12-41-23" src="https://github.com/user-attachments/assets/ffc9e005-dd1f-4db8-88bf-3428c48966da" />
+
+
+**magic** 
+```bash
+$ sudo apt-get install m4
+$ sudo apt-get install tcsh
+$ sudo apt-get install csh
+$ sudo apt-get install libx11-dev
+$ sudo apt-get install tcl-dev tk-dev
+$ sudo apt-get install libcairo2-dev
+$ sudo apt-get install mesa-common-dev libglu1-mesa-dev
+$ sudo apt-get install libncurses-dev
+$ git clone https://github.com/RTimothyEdwards/magic
+$ cd magic
+$ ./configure
+$ make
+$ make install
+```
+<img width="1506" height="830" alt="Screenshot from 2025-09-20 12-48-57" src="https://github.com/user-attachments/assets/ad34b6c2-a82f-448e-ba45-a50d956d739d" />
+
+
+**Openlane**
+```bash
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt install -y build-essential python3 python3-venv python3-pip make git
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+$ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https: download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt sources.list.d/docker.list > /dev/null
+$ sudo apt update
+$ sudo apt install docker-ce docker-ce-cli containerd.io
+$ sudo docker run hello-world
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+$ sudo reboot
+# After reboot
+$ docker run hello-world
+```
+**check dependencies**
+
+<img width="867" height="384" alt="Screenshot from 2025-09-20 13-06-58" src="https://github.com/user-attachments/assets/2e3f8827-06ce-46cc-8e83-4cff0dc94efa" />
+
+<img width="1000" height="785" alt="Screenshot from 2025-09-20 13-07-41" src="https://github.com/user-attachments/assets/7691bed2-5511-482c-91b7-0d154dab3e1b" />
+
+**Below steps installs PDKs and Tools**
+```bash
+$ cd $HOME
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane
+$ cd OpenLane
+$ make
+$ make test
+```
+<img width="1854" height="890" alt="Screenshot from 2025-09-20 13-12-15" src="https://github.com/user-attachments/assets/23f430b9-5557-4559-8cdd-baf37d16d108" />
+
+<img width="1854" height="890" alt="Screenshot from 2025-09-20 13-12-23" src="https://github.com/user-attachments/assets/5198c264-ad70-43c9-ab67-eb7934466f63" />
 
