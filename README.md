@@ -15,3 +15,7 @@ It is part of India’s **largest collaborative RISC-V tapeout initiative**, bri
 
 ## 🚀 Design Flow
 📝 RTL Design → 🔄 Logic Synthesis → 🏗️ Physical Design → 🎯 Tapeout Ready 
+
+## 🙏 Acknowledgment
+Special thanks to **Kunal Ghosh** and the **VSD Team** for driving this initiative.  
+Also grateful to **RISC-V International, India Semiconductor Mission (ISM), VLSI Society of India (VSI), and Efabless** for enabling this collaborative journey.  
