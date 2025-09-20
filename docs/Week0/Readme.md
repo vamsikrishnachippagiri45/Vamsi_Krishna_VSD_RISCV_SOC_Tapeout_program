@@ -1,4 +1,6 @@
-# Task-1 : Create GitHub repo. Document summary of previous video(Getting Started with Digital VLSI SOC Design and planning) in the GitHub repo.
+# RISC-V Reference SoC Tapeout Pragram
+
+## Task-1 : Create GitHub repo. Document summary of previous video(Getting Started with Digital VLSI SOC Design and planning) in the GitHub repo.
 
 Summary of week0:
 
@@ -28,8 +30,7 @@ Then O0 = O1 = O2 = O3 = O4.
 
 
 
-#***Task-2 : Install tools listed in the document using the machine configuration mentioned. Update
-your GitHub repo with Tool snapshot.***
+## Task-2 : Install tools listed in the document using the machine configuration mentioned. Update your GitHub repo with Tool snapshot.
 
 **System Check**
 
