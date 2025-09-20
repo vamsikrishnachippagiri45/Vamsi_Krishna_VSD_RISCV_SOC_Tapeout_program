@@ -40,9 +40,9 @@ Ubuntu 20.04+
 
 4vCPU
 
-**Tool check**
+### **Tool check**
 
-**YOSYS**
+#### **YOSYS**
 
 
 ```bash
@@ -62,7 +62,7 @@ $ sudo make install
 ```
 <img width="1436" height="827" alt="Screenshot from 2025-09-19 10-21-19" src="https://github.com/user-attachments/assets/21ad404c-2b18-4063-a461-7c6235a83b24" />
 
-**IVerilog**
+#### **IVerilog**
 
 
 ```bash
@@ -71,7 +71,7 @@ $ sudo apt-get install iverilog
 ```
 <img width="1093" height="751" alt="Screenshot from 2025-09-20 12-19-45" src="https://github.com/user-attachments/assets/fe17d327-89bf-4163-a4a6-2262eeba98b4" />
 
-**gtkwave**
+#### **gtkwave**
 
 
 ```bash
@@ -80,7 +80,7 @@ $ sudo apt-get install gtkwave
 ```
 <img width="818" height="152" alt="Screenshot from 2025-09-20 12-23-22" src="https://github.com/user-attachments/assets/fed61913-2ff9-4526-935e-bf2ed93ca89a" />
 
-**NGSpice** 
+#### **NGSpice** 
 
 After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:
 
@@ -96,7 +96,7 @@ $ sudo make install
 <img width="990" height="664" alt="Screenshot from 2025-09-20 12-41-23" src="https://github.com/user-attachments/assets/ffc9e005-dd1f-4db8-88bf-3428c48966da" />
 
 
-**magic** 
+#### **magic** 
 ```bash
 $ sudo apt-get install m4
 $ sudo apt-get install tcsh
@@ -115,7 +115,7 @@ $ make install
 <img width="1506" height="830" alt="Screenshot from 2025-09-20 12-48-57" src="https://github.com/user-attachments/assets/ad34b6c2-a82f-448e-ba45-a50d956d739d" />
 
 
-**Openlane**
+#### **Openlane**
 ```bash
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -132,13 +132,13 @@ $ sudo reboot
 # After reboot
 $ docker run hello-world
 ```
-**check dependencies**
+##### **check dependencies**
 
 <img width="867" height="384" alt="Screenshot from 2025-09-20 13-06-58" src="https://github.com/user-attachments/assets/2e3f8827-06ce-46cc-8e83-4cff0dc94efa" />
 
 <img width="1000" height="785" alt="Screenshot from 2025-09-20 13-07-41" src="https://github.com/user-attachments/assets/7691bed2-5511-482c-91b7-0d154dab3e1b" />
 
-**Below steps installs PDKs and Tools**
+##### **Below steps installs PDKs and Tools**
 ```bash
 $ cd $HOME
 $ git clone https://github.com/The-OpenROAD-Project/OpenLane
