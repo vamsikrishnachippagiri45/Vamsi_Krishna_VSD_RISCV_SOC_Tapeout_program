@@ -61,7 +61,7 @@ gtkwave tb_good_mux.vcd
 <img width="1836" height="871" alt="image" src="https://github.com/user-attachments/assets/25ff4f1d-9b67-4e08-9546-1b3fdeb7312c" />
 <img width="1843" height="462" alt="image" src="https://github.com/user-attachments/assets/c3e1e68f-7475-4879-9a0a-63009bc58bb1" />
 
-## 2) Analyse the verilog code 
+### (iii) Analyse the verilog code 
 To open both the design file and the testbench file side by side using gvim, use:
 ```
 gvim tb_good_mux.v -o good_mux.v 
@@ -75,4 +75,8 @@ sudo apt install vim-gtk3 -y
 This will install GVim (graphical Vim editor), which provides a more user-friendly interface for editing Verilog files compared to the terminal-only vim.
 
 <img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/1061f4d3-10f4-4cb9-aa8b-d51471c7609d" />
+
+## Introduction to Yosys 
+
+<img width="1114" height="602" alt="Screenshot from 2025-09-23 13-26-32" src="https://github.com/user-attachments/assets/073fda49-5df8-43e7-8ebe-6fd71c605ddf" />
 
