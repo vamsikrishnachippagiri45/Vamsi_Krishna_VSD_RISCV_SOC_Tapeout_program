@@ -1,6 +1,6 @@
 # Day1 : Introduction to Verilog RTL Design and synthesis
 
-## Simulator, Design and Testbench 
+## 1) Simulator, Design and Testbench 
 RTL (Register Transfer Level) design is checked for adherence to the specification by simulating the design.
 A simulator tool is used to execute and verify the behavior of Verilog code before moving to synthesis.
 
@@ -32,5 +32,16 @@ we use gtkwave for viewing output waveforms.
 
 <img width="1536" height="693" alt="Screenshot from 2025-09-23 10-20-46" src="https://github.com/user-attachments/assets/b388fa91-9c12-422d-bd93-4fc1467ee494" />
 
+## 2) Lab using Iverilog and gtkwave (simulation of 2x1 mux)
+
+#### step1 : clone the repository into a folder.
+''' 
+sudo -i
+
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+'''
+This git contains all the verilog files and libraries. 
+The DC_WORKSHOP contain the lib folder which contain library and verilog files folder which contains verilog files and testbenches.
+<img width="1796" height="893" alt="image" src="https://github.com/user-attachments/assets/7c8dc666-c735-4512-a619-5eb6989656a8" />
 
 
