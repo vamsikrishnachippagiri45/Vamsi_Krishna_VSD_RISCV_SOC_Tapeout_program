@@ -218,7 +218,7 @@ Based on these constraints, the tool automatically selects the optimum combinati
 ## 4) Lan using Yosys and Sky130 PDK 
 Invoke yosys 
 
-````
+```
 yosys
 ```
 
