@@ -77,6 +77,34 @@ This will install GVim (graphical Vim editor), which provides a more user-friend
 <img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/1061f4d3-10f4-4cb9-aa8b-d51471c7609d" />
 
 ## Introduction to Yosys 
+Yosys is an open-source RTL synthesis tool.
+It takes a Verilog RTL design and a standard cell library (.lib), then produces a gate-level netlist.
 
+Inputs to Yosys: 
+
+Design (RTL in Verilog):
+The user-written code describing the circuit functionality.
+
+command : read_verilog (Loads the RTL design files into Yosys.)
+
+Technology Library (.lib file):
+A file containing timing, area, and power information of standard cells (like NAND, NOR, DFF, etc.).
+
+command : read_liberty
+(Loads the standard cell library (.lib).)
+
+Output from Yosys:
+
+A gate-level netlist (e.g., good_mux_netlist.v).
+Netlist only contains standard cells (from .lib).
+
+command : write_verilog
+(Writes out the synthesized netlist in Verilog format.)
+
+synthesis:
+
+Performs generic synthesis of the design (logic optimizations, conversions).
+
+command : synth -top 
 <img width="1114" height="602" alt="Screenshot from 2025-09-23 13-26-32" src="https://github.com/user-attachments/assets/073fda49-5df8-43e7-8ebe-6fd71c605ddf" />
 
