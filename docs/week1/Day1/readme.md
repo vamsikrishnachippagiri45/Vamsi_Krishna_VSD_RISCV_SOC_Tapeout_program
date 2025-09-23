@@ -217,34 +217,47 @@ Based on these constraints, the tool automatically selects the optimum combinati
 
 ## 4) Lan using Yosys and Sky130 PDK 
 Invoke yosys 
+
 ````
 yosys
 ```
+
 Read the library by using
+
 ```
 read_liberty -lib /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+
 Read the Verilog file by using
+
 ```
 read_verilog good_mux.v
 ```
+
 synthesis the design by using top module
+
 ```
 synth -top good_mux.v
 ```
-After synthesis, we have to generate the netlist (we already read verilog file(design), liberty files(library) ) 
+
+After synthesis, we have to generate the netlist (we already read verilog file(design), liberty files(library) )
+
 ```
 abc -liberty -lib /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+
 <img width="1854" height="891" alt="image" src="https://github.com/user-attachments/assets/e876b8fe-48ab-4ef3-97e9-b92487fa0c7f" />
 
 Then to view how the Netlist is implemented using the given library
+
 ```
 show
 ```
+
 <img width="659" height="676" alt="image" src="https://github.com/user-attachments/assets/e67c56b6-9c09-4e5a-8dc4-cdcbfa4f3625" />
 
 To write the netlist use
+
 ```
 write_verilog good_mux_netlist.v    or   write_verilog -noattr good_mux_netlist.v
 !gvim good_mux_netlist.v
