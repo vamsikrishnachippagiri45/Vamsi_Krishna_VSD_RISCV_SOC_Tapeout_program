@@ -12,7 +12,6 @@ It describes the digital circuit behavior at register-transfer level.
 
 Example: A multiplexer, adder, counter, etc.
 
-
 ### Testbench 
 A Testbench is a separate Verilog code used to verify the design.
 It does not represent actual hardware; instead, it: 1) Provides stimulus (inputs) to the design. 2) Monitors and checks the outputs of the design.
@@ -104,7 +103,7 @@ Performs generic synthesis of the design (logic optimizations, conversions).
 command : synth -top 
 <img width="1114" height="602" alt="Screenshot from 2025-09-23 13-26-32" src="https://github.com/user-attachments/assets/073fda49-5df8-43e7-8ebe-6fd71c605ddf" />
 
-#### Verifying the design 
+### Verifying the design 
 
 Once synthesis is completed in Yosys, we obtain a gate-level netlist. But synthesis is only useful if we can confirm that the netlist behaves the same as the original RTL design. This is done using simulation after synthesis.
 
@@ -136,4 +135,54 @@ GTKWave is used to view the VCD file in graphical form.
 Designers can visually check whether the output waveforms match the expected behavior.
 If RTL simulation and gate-level simulation produce the same waveforms, synthesis is considered successful.
 <img width="1074" height="490" alt="image" src="https://github.com/user-attachments/assets/92b0c140-893e-47f7-a865-d5ed01acdb63" />
+
+### About .lib 
+
+.lib is a Library File that contains information about standard cells in a technology.
+It is a collection of logical modules (cells) like AND, OR, NOT, NAND, NOR, DFF, etc.
+
+For each cell, the .lib file specifies:
+Functionality (truth table or logic equation).
+Timing information (propagation delay, setup time, hold time).
+Power consumption.
+Area of the cell.
+
+🔹 Different Flavours of Same Gate
+
+A gate (e.g., 2-input AND) can have multiple versions:
+Slow version → smaller size, less power, but higher delay.
+Fast version → bigger size, more power, but lower delay.
+Medium versions are also available for trade-offs.
+
+
+This allows the synthesis tool to choose the best gate version depending on performance, area, and power constraints.
+
+🔹 Why Different Flavours of Gates?
+1. Combinational Delay and Setup Time
+
+In a sequential circuit, data flows from Flip-Flop A → Combinational Logic → Flip-Flop B.
+
+For correct operation:
+TCLK ≥ TCQA + TCOMBI +T SETUPB
+
+If TCOMBI is too large, the design cannot meet the required clock frequency.
+👉 Therefore, faster cells (with lower delay) are needed to reduce TCOMBI
+
+
+2. Hold Time Constraint
+
+Apart from setup, circuits must also satisfy hold time:
+
+TCQA + TCOMBI ≥ THOLDB
+
+If combinational delay is too small (very fast cells), data may reach flip-flop B too early, violating hold time.
+👉 In such cases, slower cells or deliberate delay elements are inserted.
+
+🔹 Conclusion
+
+Setup check ensures the circuit can run at the target clock speed.
+Hold check ensures data is stable long enough after the clock edge.
+
+That’s why .lib provides different flavours (slow/medium/fast) of gates → to give the synthesis and timing tools flexibility to balance speed, power, and area while meeting both setup and hold constraints.
+
 
