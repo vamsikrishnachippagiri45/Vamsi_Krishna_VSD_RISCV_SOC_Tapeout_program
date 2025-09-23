@@ -35,11 +35,11 @@ we use gtkwave for viewing output waveforms.
 ## 2) Lab using Iverilog and gtkwave (simulation of 2x1 mux)
 
 #### step1 : clone the repository into a folder.
-''' 
+``` 
 sudo -i
 
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-'''
+```
 This git contains all the verilog files and libraries. 
 The DC_WORKSHOP contain the lib folder which contain library and verilog files folder which contains verilog files and testbenches.
 <img width="1796" height="893" alt="image" src="https://github.com/user-attachments/assets/7c8dc666-c735-4512-a619-5eb6989656a8" />
