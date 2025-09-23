@@ -76,7 +76,7 @@ This will install GVim (graphical Vim editor), which provides a more user-friend
 
 <img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/1061f4d3-10f4-4cb9-aa8b-d51471c7609d" />
 
-## Introduction to Yosys 
+## 3) Introduction to Yosys 
 Yosys is an open-source RTL synthesis tool.
 It takes a Verilog RTL design and a standard cell library (.lib), then produces a gate-level netlist.
 
