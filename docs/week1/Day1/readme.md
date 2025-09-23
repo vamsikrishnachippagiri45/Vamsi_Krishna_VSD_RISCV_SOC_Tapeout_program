@@ -6,14 +6,14 @@ A simulator tool is used to execute and verify the behavior of Verilog code befo
 
 We use Icarus Verilog (iverilog) simulator.
 
-#### Design 
+### Design 
 A Design is a set of Verilog RTL codes written to implement the intended functionality.
 It describes the digital circuit behavior at register-transfer level.
 
 Example: A multiplexer, adder, counter, etc.
 
 
-#### Testbench 
+### Testbench 
 A Testbench is a separate Verilog code used to verify the design.
 It does not represent actual hardware; instead, it: 1) Provides stimulus (inputs) to the design. 2) Monitors and checks the outputs of the design.
 
@@ -22,7 +22,7 @@ Testbenches help in ensuring that the design meets the functional specification.
 <img width="1419" height="674" alt="Screenshot from 2025-09-23 10-20-14" src="https://github.com/user-attachments/assets/fa540de8-5932-428b-8f22-812afc53d76a" />
 
 
-#### How simulator work (Iverilog based simulation flow): 
+### How simulator work (Iverilog based simulation flow): 
 
 The simulator mimics how the digital circuit behaves over time. It: Reads the design code (DUT – Design Under Test), Reads the testbench code (stimulus + checks).
 
@@ -35,7 +35,7 @@ we use gtkwave for viewing output waveforms.
 
 ## 2) Lab using Iverilog and gtkwave (simulation of 2x1 mux)
 
-#### step1 : clone the repository into a folder.
+### (i) clone the repository into a folder.
 ``` 
 sudo -i
 
@@ -45,7 +45,7 @@ This git contains all the verilog files and libraries.
 The DC_WORKSHOP contain the lib folder which contain standard cell library and verilog files folder which contains verilog files and testbenches.
 <img width="1796" height="893" alt="image" src="https://github.com/user-attachments/assets/7c8dc666-c735-4512-a619-5eb6989656a8" />
 
-#### step2 : Load design and testbench in iverilog
+### (ii) Load design and testbench in iverilog
 ```
 iverilog good_mux.v tb_good_mux.v
 ```
@@ -60,4 +60,19 @@ gtkwave tb_good_mux.vcd
 
 <img width="1836" height="871" alt="image" src="https://github.com/user-attachments/assets/25ff4f1d-9b67-4e08-9546-1b3fdeb7312c" />
 <img width="1843" height="462" alt="image" src="https://github.com/user-attachments/assets/c3e1e68f-7475-4879-9a0a-63009bc58bb1" />
+
+## 2) Analyse the verilog code 
+To open both the design file and the testbench file side by side using gvim, use:
+```
+gvim tb_good_mux.v -o good_mux.v 
+```
+Installing GVim (if not installed) : 
+If gvim is not already installed on your system, install it using:
+```
+sudo apt update
+sudo apt install vim-gtk3 -y
+```
+This will install GVim (graphical Vim editor), which provides a more user-friendly interface for editing Verilog files compared to the terminal-only vim.
+
+<img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/1061f4d3-10f4-4cb9-aa8b-d51471c7609d" />
 
