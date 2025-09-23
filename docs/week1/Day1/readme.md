@@ -13,7 +13,8 @@ It describes the digital circuit behavior at register-transfer level.
 Example: A multiplexer, adder, counter, etc.
 
 
-#### Testbench : A Testbench is a separate Verilog code used to verify the design.
+#### Testbench 
+A Testbench is a separate Verilog code used to verify the design.
 It does not represent actual hardware; instead, it: 1) Provides stimulus (inputs) to the design. 2) Monitors and checks the outputs of the design.
 
 Testbenches help in ensuring that the design meets the functional specification.
