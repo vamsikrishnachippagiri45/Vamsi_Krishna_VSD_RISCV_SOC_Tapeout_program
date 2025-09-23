@@ -147,7 +147,7 @@ Timing information (propagation delay, setup time, hold time).
 Power consumption.
 Area of the cell.
 
-🔹 Different Flavours of Same Gate
+#### 🔹 Different Flavours of Same Gate
 
 A gate (e.g., 2-input AND) can have multiple versions:
 Slow version → smaller size, less power, but higher delay.
@@ -184,5 +184,35 @@ Setup check ensures the circuit can run at the target clock speed.
 Hold check ensures data is stable long enough after the clock edge.
 
 That’s why .lib provides different flavours (slow/medium/fast) of gates → to give the synthesis and timing tools flexibility to balance speed, power, and area while meeting both setup and hold constraints.
+
+
+#### 🔹 Faster Cells vs Slower Cells
+
+The load in a digital circuit = capacitance (wires + gates connected).
+Delay depends on how fast this capacitance can be charged/discharged.
+
+To reduce delay:
+Use wider transistors → can drive more current → faster charging → less delay.
+But wider transistors = more area + more power.
+
+To save area and power:
+Use narrower transistors → smaller, less power → but more delay.
+
+✅ Key point: Faster cells are not free → they cost area and power.
+
+🔹 Selection of Cells
+
+The synthesizer has to choose the right mix of cells (fast vs slow).
+
+If it uses too many fast cells:
+Circuit will be fast but consume more power and area.
+May also cause hold violations (signals arrive too early).
+
+If it uses too many slow cells:
+Circuit will be power efficient but may miss timing (not meet performance).
+
+Therefore, we guide the synthesizer with constraints (timing, area, power targets).
+Based on these constraints, the tool automatically selects the optimum combination of fast and slow cells.
+
 
 
