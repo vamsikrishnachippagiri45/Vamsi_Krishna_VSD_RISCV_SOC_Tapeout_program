@@ -215,7 +215,7 @@ Therefore, we guide the synthesizer with constraints (timing, area, power target
 Based on these constraints, the tool automatically selects the optimum combination of fast and slow cells.
 
 
-## 4) Lan using Yosys and Sky130 PDK 
+## 4) Lab using Yosys and Sky130 PDK 
 Invoke yosys 
 
 ```
