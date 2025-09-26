@@ -196,3 +196,6 @@ endmodule
 ```
 <img width="1552" height="452" alt="image" src="https://github.com/user-attachments/assets/fabc454d-468b-4419-bd53-3456bee0beba" />
 
+### Synthesis using Yosys 
+
+
