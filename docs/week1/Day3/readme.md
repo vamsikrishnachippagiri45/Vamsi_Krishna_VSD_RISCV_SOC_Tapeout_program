@@ -14,9 +14,7 @@ If some inputs are fixed (0 or 1), the circuit can be simplified.
 
 Example:
 
-Y=((A⋅B)+C)′
-
-If A=0  → Y = (0+C)′ = C′
+Y=((A⋅B)+C)′ => If A=0  → Y = (0+C)′ = C′
 
 Result: big circuit reduced to just an inverter (from 6 MOSFETs → 2 MOSFETs).
 
