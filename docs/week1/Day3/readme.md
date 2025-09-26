@@ -64,3 +64,27 @@ Example: shifting registers forward or backward to reduce critical path delay.
 Duplicates sequential elements (flip-flops/latches) to improve placement and routing.
 Useful in physical-aware synthesis to reduce interconnect delay and congestion.
 
+## Lab for Optimization 
+In Yosys, the command
+```
+opt_clean -purge
+```
+is an optimization pass. use this afer synthesis. Here’s what it does:
+
+opt_clean - 
+
+Removes unused or redundant objects from the netlist:
+Unused wires
+Unconnected cells
+Dangling nets (signals not driving anything)
+Basically, it cleans up the design after other optimization passes.
+
+purge option -
+
+Without -purge, Yosys only removes obviously unused wires/cells.
+With -purge, Yosys becomes more aggressive:
+Removes all unused wires and cells, even if they are publicly visible or marked for "keep" by default.
+Cleans up constants or redundant flip-flops/latches that serve no purpose.
+
+
+
