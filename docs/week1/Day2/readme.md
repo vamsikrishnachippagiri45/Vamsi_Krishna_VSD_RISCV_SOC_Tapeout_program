@@ -29,3 +29,9 @@ Affects delay (lower V = slower).
 Example: -40°C (cold, fast) vs 125°C (hot, slow).
 
 Libraries are provided for different PVT corners → so your silicon works in all conditions.
+
+CMOS technology cells leak power depending on input state.
+Larger cells = more area → higher leakage.
+Smaller cells = less area → lower leakage but slower.
+
+
