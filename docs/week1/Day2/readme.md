@@ -226,5 +226,40 @@ module mul2 (input [2:0] a, output [3:0] y);
 	assign y = a * 2;
 endmodule
 ```
+Netlist : 
+```
+module mul2(a, y);
+  input [2:0] a;
+  wire [2:0] a;
+  output [3:0] y;
+  wire [3:0] y;
+  assign y = { a, 1'h0 };
+endmodule
+```
 <img width="710" height="676" alt="image" src="https://github.com/user-attachments/assets/1fc243c1-26a4-4d97-b62f-5c54fafc6265" />
+### multiply by 9
+a×9 = a×(8+1) = (a×8)+(a×1)
 
+a × 8 = left shift by 3 (a << 3).
+
+a × 1 = just a.
+
+So:
+a×9=(a<<3)+a
+
+```
+module mult8 (input [2:0] a , output [5:0] y);
+	assign y = a * 9;
+endmodule
+```
+Netlist :
+```
+module mult8(a, y);
+  input [2:0] a;
+  wire [2:0] a;
+  output [5:0] y;
+  wire [5:0] y;
+  assign y = { a, a };
+endmodule
+```
+<img width="993" height="676" alt="image" src="https://github.com/user-attachments/assets/1d63d94c-f9b9-4f16-ba5d-2ca6d288c4e0" />
