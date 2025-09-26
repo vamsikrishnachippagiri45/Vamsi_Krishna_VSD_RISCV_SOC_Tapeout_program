@@ -215,7 +215,7 @@ dfflibmap -liberty /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKS
 <img width="1403" height="676" alt="image" src="https://github.com/user-attachments/assets/53e15d23-c930-47e5-8886-db35945c8ad1" />
 
 ## Optimization (special cases)
-### multiply by 2 
+### Multiply by 2 
 Synthesis tools identify arithmetic/boolean simplifications:
 Replace multiplication by 2, 4, 8 → shift operations.
 Replace multiplication by powers of 2 with wiring.
@@ -237,7 +237,8 @@ module mul2(a, y);
 endmodule
 ```
 <img width="710" height="676" alt="image" src="https://github.com/user-attachments/assets/1fc243c1-26a4-4d97-b62f-5c54fafc6265" />
-### multiply by 9
+
+### Multiply by 9
 a×9 = a×(8+1) = (a×8)+(a×1)
 
 a × 8 = left shift by 3 (a << 3).
