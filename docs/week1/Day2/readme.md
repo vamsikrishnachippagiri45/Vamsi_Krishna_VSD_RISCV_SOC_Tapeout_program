@@ -34,7 +34,7 @@ CMOS technology cells leak power depending on input state.
 Larger cells = more area → higher leakage.
 Smaller cells = less area → lower leakage but slower.
 
-## Hierarchical design 
+## Hierarchical and Flatten synthesis.
 In hierarchical synthesis, a design is divided into multiple modules (sub-blocks).
 Each module is synthesized separately and then combined into the top-level netlist.
 
@@ -102,3 +102,15 @@ Divide and Conquer:
 In large designs (e.g., CPUs, SoCs), synthesizing everything at once is complex.
 Breaking into smaller submodules → synthesize individually → combine later.
 Makes debugging, timing closure, and optimization easier.
+
+## Efficient flop coding styles
+Why Flip-Flops are Used?
+
+1. Glitch-Free Storage
+Combinational logic can generate glitches due to propagation delays (inputs arriving at different times).
+A flip-flop samples data only on the clock edge, ensuring that temporary glitches don’t propagate further.
+
+2. Reset/Set Control:
+Flip-flops can be reset or set to a known value (synchronous or asynchronous).
+Helps bring circuits into a defined state during power-up or error recovery.
+
