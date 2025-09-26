@@ -237,7 +237,7 @@ read_verilog good_mux.v
 synthesis the design by using top module
 
 ```
-synth -top good_mux.v
+synth -top good_mux
 ```
 
 After synthesis, we have to generate the netlist (we already read verilog file(design), liberty files(library) )
