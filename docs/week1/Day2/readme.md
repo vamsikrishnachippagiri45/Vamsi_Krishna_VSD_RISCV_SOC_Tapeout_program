@@ -1,3 +1,4 @@
+# Day2 : Library file, hierarchical Vs flat synthesis and Efficient flop coding styles
 ## Introduction to library files
 Meaning of sky130_fd_sc_hd__tt_025C_1v80.lib
 
