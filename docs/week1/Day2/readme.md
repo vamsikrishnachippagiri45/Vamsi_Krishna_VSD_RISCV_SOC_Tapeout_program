@@ -114,3 +114,39 @@ A flip-flop samples data only on the clock edge, ensuring that temporary glitche
 Flip-flops can be reset or set to a known value (synchronous or asynchronous).
 Helps bring circuits into a defined state during power-up or error recovery.
 
+Coding Styles of D Flip-Flops (with Hardware Significance):
+
+1) Asynchronous Reset DFF
+: Reset works immediately, regardless of clock. Output forced to 0.
+
+Hardware significance:
+Implemented with an extra transistor network directly controlling the latch inside the flip-flop.
+
+2) Asynchronous Set DFF
+: Output forced to 1 immediately, without waiting for clock.
+
+Hardware significance:
+Similar to async reset but sets the storage node HIGH.
+
+
+3) Synchronous Reset DFF
+:Reset only takes effect on clock edge.
+
+Hardware significance:
+Implemented by adding a multiplexer at D input (choosing between D or 0 when reset=1).
+
+4) Synchronous Set DFF
+:Output becomes 1 at the next clock edge.
+
+Hardware significance:
+Also implemented using a multiplexer at the D input (choosing between D or 1).
+
+5) Both Synchronous and Asynchronous Reset
+   
+The flip-flop has two reset mechanisms:
+Asynchronous reset → Acts immediately, independent of the clock.
+Synchronous reset → Acts only on the active clock edge.
+
+Priority order is always defined in RTL:
+Usually: Async Reset > Sync Reset > Normal D input
+
