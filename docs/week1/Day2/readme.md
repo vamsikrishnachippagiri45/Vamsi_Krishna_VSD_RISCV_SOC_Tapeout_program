@@ -204,9 +204,12 @@ dfflibmap replaces these abstract DFFs with real technology-specific flip-flops 
 ```
 dfflibmap -liberty /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP//lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-#### DFF using Asyncronous reset
+
+####  DFF using Asyncronous reset
 <img width="1731" height="724" alt="image" src="https://github.com/user-attachments/assets/bcc42e42-9675-4c1e-be80-bafa151665d7" />
-#### DFF using Syncronous reset 
+
+####  DFF using Syncronous reset 
 <img width="1473" height="724" alt="image" src="https://github.com/user-attachments/assets/1da72366-38ef-4f75-9f1b-c4b7fb7cda5a" />
-#### DFF using Asyncronous and Syncronous reset 
+
+####  DFF using Asyncronous and Syncronous reset 
 <img width="1403" height="676" alt="image" src="https://github.com/user-attachments/assets/53e15d23-c930-47e5-8886-db35945c8ad1" />
