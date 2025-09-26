@@ -180,4 +180,19 @@ endmodule
 ```
 <img width="1576" height="494" alt="image" src="https://github.com/user-attachments/assets/067b4c00-cf54-4e8a-844d-735dfaa658da" />
 
+#### DFF using Asyncronous and Syncronous reset 
+```
+module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<img width="1552" height="452" alt="image" src="https://github.com/user-attachments/assets/fabc454d-468b-4419-bd53-3456bee0beba" />
 
