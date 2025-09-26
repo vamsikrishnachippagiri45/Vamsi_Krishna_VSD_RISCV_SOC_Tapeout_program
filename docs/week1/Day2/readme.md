@@ -86,3 +86,19 @@ The flattened netlist can be seen (No heirarchical modules are present)
 And the mutiple module after flattening 
 <img width="1854" height="891" alt="image" src="https://github.com/user-attachments/assets/b9efd505-596b-41b8-a2f6-a67e542da9a6" />
 
+We can synthesis the submodules also:
+
+To synthesize only a specific submodule:
+```
+synth -top submodule1
+```
+Why Use Submodule Synthesis?
+
+Efficiency (Reuse of Netlist):
+If the same submodule is instantiated multiple times in the top-level design,
+Synthesizing it once → generating a netlist → reusing it saves time and effort.
+
+Divide and Conquer:
+In large designs (e.g., CPUs, SoCs), synthesizing everything at once is complex.
+Breaking into smaller submodules → synthesize individually → combine later.
+Makes debugging, timing closure, and optimization easier.
