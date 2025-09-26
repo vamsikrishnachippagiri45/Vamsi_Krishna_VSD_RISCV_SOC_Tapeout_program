@@ -85,6 +85,7 @@ Removes all unused wires and cells, even if they are publicly visible or marked 
 Cleans up constants or redundant flip-flops/latches that serve no purpose.
 
 #### Lab for constant propagation combinational logic optimization
+1)
 ```
 module opt_check (input a , input b , input c , output y1, output y2);
 wire a1;
@@ -96,6 +97,10 @@ endmodule
 After optimization the generated netlist is : 
 <img width="1143" height="676" alt="image" src="https://github.com/user-attachments/assets/2fd54990-4f70-4951-aea1-f36efd71e3d9" />
 
-
-
+2)
+```
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
 
