@@ -72,7 +72,6 @@ opt_clean -purge
 is an optimization pass. use this afer synthesis. Here’s what it does:
 
 opt_clean - 
-
 Removes unused or redundant objects from the netlist:
 Unused wires
 Unconnected cells
@@ -80,7 +79,6 @@ Dangling nets (signals not driving anything)
 Basically, it cleans up the design after other optimization passes.
 
 purge option -
-
 Without -purge, Yosys only removes obviously unused wires/cells.
 With -purge, Yosys becomes more aggressive:
 Removes all unused wires and cells, even if they are publicly visible or marked for "keep" by default.
