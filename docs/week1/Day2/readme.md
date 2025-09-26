@@ -34,4 +34,8 @@ CMOS technology cells leak power depending on input state.
 Larger cells = more area → higher leakage.
 Smaller cells = less area → lower leakage but slower.
 
+## Hierarchical design 
+
+<img width="1064" height="676" alt="image" src="https://github.com/user-attachments/assets/db180981-e043-40ce-85f1-0d0e2b8fb1cb" />
+
 
