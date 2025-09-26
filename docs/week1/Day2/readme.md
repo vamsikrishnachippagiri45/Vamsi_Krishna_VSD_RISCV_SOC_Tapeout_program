@@ -150,3 +150,34 @@ Synchronous reset → Acts only on the active clock edge.
 Priority order is always defined in RTL:
 Usually: Async Reset > Sync Reset > Normal D input
 
+## Lab for different flop coding styles
+### Simulation using Iverilog
+#### DFF using Asyncronous reset
+```
+module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<img width="1577" height="515" alt="image" src="https://github.com/user-attachments/assets/1ef9f74a-8ccd-49a3-b02f-697b780e82a5" />
+
+#### DFF using Syncronous reset 
+```
+module dff_syncres ( input clk , input sync_reset , input d , output reg q );
+always @ (posedge clk )
+begin
+	if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<img width="1576" height="494" alt="image" src="https://github.com/user-attachments/assets/067b4c00-cf54-4e8a-844d-735dfaa658da" />
+
+
