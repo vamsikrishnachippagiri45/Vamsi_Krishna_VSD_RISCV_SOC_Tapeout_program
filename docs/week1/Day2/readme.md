@@ -1,5 +1,5 @@
 ## Introduction to library files
-sky130_fd_sc_hd__tt_025C_1v80.lib
+Meaning of sky130_fd_sc_hd__tt_025C_1v80.lib
 
 sky130_fd_sc_hd → Process and library name (SkyWater 130nm, standard cells, high density).
 
