@@ -450,6 +450,17 @@ endmodule
 
 <img width="1417" height="516" alt="image" src="https://github.com/user-attachments/assets/2b0be304-2c03-455f-8721-ae7f87cff334" />
 
+Implemented 4:1 MUX in Verilog using a for loop.
+
+Inputs combined into a 4-bit bus using concatenation {i3,i2,i1,i0}.
+
+Loop checks k == sel → assigns correct input to output y.
+
+Equivalent to standard MUX case/if statement.
+
+Simulation (Icarus Verilog): verified correct functionality with waveform.
+
+Synthesis (Yosys): design mapped to 4:1 multiplexer logic.
 
 ### Lab 2 - Demux using for loop 
 
@@ -480,7 +491,21 @@ endmodule
 
 <img width="1098" height="621" alt="image" src="https://github.com/user-attachments/assets/47242544-c1f2-47fe-8a10-49369ba58769" />
 
+Implemented 1-to-8 Demultiplexer in Verilog using a for loop.
 
+Outputs grouped into an 8-bit register (y_int).
+
+Loop iterates k=0 to 7, sets y_int[k]= i when k == sel.
+
+All other outputs remain 0 (reset with y_int = 8'b0).
+
+Equivalent to case-based demux design.
+
+Simulation (Icarus Verilog): verified correct output routing.
+
+Synthesis (Yosys): design mapped to 1:8 demux hardware.
+
+Demonstrates use of for loop in always block for scalable demux design.
 
 ### Lab 3 - Ripple Carry Adder (RCA) using generate loop 
 
@@ -498,7 +523,6 @@ generate
 endgenerate
 fa u_fa_0 (.a(num1[0]),.b(num2[0]),.c(1'b0),.co(int_co[0]),.sum(int_sum[0]));
 
-
 assign sum[7:0] = int_sum;
 assign sum[8] = int_co[7];
 endmodule
@@ -513,3 +537,18 @@ endmodule
 <img width="1206" height="854" alt="image" src="https://github.com/user-attachments/assets/8f3ce65f-9b59-432c-834c-3b2362e79eda" />
 
 
+Designed 8-bit Ripple Carry Adder (RCA) using generate loop.
+
+Full Adder (fa) module is instantiated repeatedly for each bit.
+
+Carry output of each stage connected to carry input of next stage.
+
+First FA takes c=0, remaining FAs connected via generate loop.
+
+Final carry (int_co[7]) becomes MSB of sum.
+
+Simulation (Icarus Verilog): verified correct addition.
+
+Synthesis (Yosys): design mapped to full-adder chain (RCA structure).
+
+Demonstrates use of generate-for for scalable adder design.
