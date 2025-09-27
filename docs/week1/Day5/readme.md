@@ -2,7 +2,7 @@
 
 ## Table of contents
 -[If and Case Constructs](#introduction)
- -[1. If-Else Construct](#1. If-Else Construct)
+
  
 
 ## If and Case Constructs
