@@ -175,3 +175,5 @@ Simulation may look acceptable, but synthesis shows unintended hardware.
 Always cover all conditions:
 Use a final else.
 Or provide a default assignment at the beginning of the block.
+
+
