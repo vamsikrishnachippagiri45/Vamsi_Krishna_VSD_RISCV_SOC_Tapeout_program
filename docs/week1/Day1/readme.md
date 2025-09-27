@@ -5,7 +5,7 @@
   - [Simulator, Design and Testbench](#simulator-design-and-testbench)
     - [Design](#design)
     - [Testbench](#testbench)
-    - [How Simulator Works (Iverilog based)](#how-simulator-works-iverilog-based)
+    - [How Simulator Works (Iverilog based simulation flow)](#how-simulator-works-iverilog-based-simulation-flow)
   - [Lab Using Iverilog and GTKWave (2x1 Mux)](#lab-using-iverilog-and-gtkwave-2x1-mux)
     - [Clone Repository](#clone-repository)
     - [Load Design and Testbench](#load-design-and-testbench)
