@@ -1,5 +1,27 @@
 # Day4 : GLS (Gate level simulation), Sybthesis-Simulation Mismatch , Blocking and Non-blocking statements
 
+## Table of Contents
+- [Day4 : GLS (Gate Level Simulation), Synthesis-Simulation Mismatch, Blocking and Non-blocking statements](#day4--gls-gate-level-simulation-synthesis-simulation-mismatch-blocking-and-non-blocking-statements)
+  - [What is GLS (Gate Level Simulation)](#what-is-gls-gate-level-simulation)
+  - [Why GLS](#why-gls)
+  - [GLS Flow (with Icarus Verilog & GTKWave)](#gls-flow-with-icarus-verilog--gtkwave)
+  - [RTL → Netlist → Gate Models](#rtl--netlist--gate-models)
+  - [Synthesis-Simulation Mismatches](#synthesis-simulation-mismatches)
+    - [Missing sensitivity list](#missing-sensitivity-list)
+    - [Blocking vs Non-blocking misuse](#blocking-vs-non-blocking-misuse)
+    - [Non-standard Verilog coding styles](#non-standard-verilog-coding-styles)
+  - [Missing Sensitivity List Example](#missing-sensitivity-list-example)
+  - [Blocking vs Non-Blocking Assignments](#blocking-vs-non-blocking-assignments)
+    - [Sequential logic caveats](#sequential-logic-caveats)
+    - [Combinational logic caveats](#combinational-logic-caveats)
+  - [Key Notes / Takeaways](#key-notes--takeaways)
+  - [Labs for GLS](#labs-for-gls)
+    - [Lab 1: Ternary operator mux](#lab-1-ternary-operator-mux)
+    - [Lab 2: Synthesis-simulation mismatch due to sensitivity list](#lab-2-synthesis-simulation-mismatch-due-to-sensitivity-list)
+    - [Lab 3: Synthesis-simulation mismatch due to blocking statements](#lab-3-synthesis-simulation-mismatch-due-to-blocking-statements)
+  - [Conclusion](#conclusion)
+
+
 ## What is GLS (Gate Level Simulation)
 
 * GLS = Running testbench on **post-synthesis netlist** (instead of RTL).
