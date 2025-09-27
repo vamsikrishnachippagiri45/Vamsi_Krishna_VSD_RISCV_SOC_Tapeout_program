@@ -196,13 +196,23 @@ endmodule
 
 <img width="1457" height="483" alt="image" src="https://github.com/user-attachments/assets/e46b0afa-d6e4-4857-90a0-7bcdaba765f9" />
 
+RTL Simulation (Icarus Verilog / GTKWave)
+For sel = 2'b00 → y = i0.
+For sel = 2'b01 → y = i1.
+For sel = 2'b10 or 2'b11 → no assignment → y retains its previous value.
+Retention of previous value indicates memory-like behavior.
 
 #### Synthesis using Yosys
 
 <img width="1624" height="515" alt="image" src="https://github.com/user-attachments/assets/1ea9d636-3715-4b0d-bb5d-4bfb7a8370cc" />
 
+Synthesized circuit shows:
+Multiplexer for sel=00 and sel=01.
+For sel=10 or sel=11, tool infers latch to hold y.
+Netlist confirms unintended latch insertion.
 
-
-
+case statement did not cover all possible input combinations of sel (00, 01, 10, 11).
+For uncovered values, y has no assignment.
+To preserve simulation behavior, synthesis inserts a latch to hold the last value of y.
 
 
