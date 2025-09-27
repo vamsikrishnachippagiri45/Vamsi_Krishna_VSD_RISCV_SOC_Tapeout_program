@@ -303,6 +303,8 @@ y → fully assigned in all cases.
 x → missing assignment in one branch (sel = 01).
 Result → Latch inferred only for x.
 
+---
+
 ## Lab 6 (Overlapping condition in case statement)
 
 ```
@@ -322,6 +324,15 @@ endmodule
 ```
 #### Simulation using Iverilog
 
+<img width="1694" height="525" alt="image" src="https://github.com/user-attachments/assets/b66e12d2-f294-42d7-84dc-2f8c94ac4cc5" />
+
 
 #### Synthesis using Yosys
+
+The GLS after synthesis:
+
+<img width="1629" height="518" alt="image" src="https://github.com/user-attachments/assets/0a1b1702-d5c3-493c-bc83-3bc3689f5dd3" />
+
+
+<img width="1362" height="424" alt="image" src="https://github.com/user-attachments/assets/f66f4409-a912-4b95-b1fe-48db5077b676" />
 
