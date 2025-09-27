@@ -14,7 +14,7 @@
     - [Inputs to Yosys](#inputs-to-yosys)
     - [Output from Yosys](#output-from-yosys)
     - [Verifying the Design](#verifying-the-design)
-  - [About .lib Files](#about-lib-files)
+  - [About library Files](#about-library-files)
     - [Different Flavours of Same Gate](#different-flavours-of-same-gate)
     - [Faster vs Slower Cells](#faster-vs-slower-cells)
     - [Selection of Cells](#selection-of-cells)
@@ -157,7 +157,7 @@ Designers can visually check whether the output waveforms match the expected beh
 If RTL simulation and gate-level simulation produce the same waveforms, synthesis is considered successful.
 <img width="1074" height="490" alt="image" src="https://github.com/user-attachments/assets/92b0c140-893e-47f7-a865-d5ed01acdb63" />
 
-### About .lib 
+### About library files 
 
 .lib is a Library File that contains information about standard cells in a technology.
 It is a collection of logical modules (cells) like AND, OR, NOT, NAND, NOR, DFF, etc.
