@@ -215,4 +215,40 @@ case statement did not cover all possible input combinations of sel (00, 01, 10,
 For uncovered values, y has no assignment.
 To preserve simulation behavior, synthesis inserts a latch to hold the last value of y.
 
+---
 
+## Lab 4 (Complete case statement)
+
+```
+module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+always @ (*)
+begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+		default : y = i2;
+	endcase
+end
+endmodule
+```
+
+#### Simulation using Iverilog
+
+<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/37331efd-2e63-46b7-994b-a91d5cd36712" />
+
+For sel = 2'b00 → y = i0.
+For sel = 2'b01 → y = i1.
+For all other cases (sel = 2'b10 or 2'b11) → y = i2.
+Output always has a defined value → no memory behavior.
+
+#### Synthesis using Yosys
+
+<img width="1624" height="515" alt="image" src="https://github.com/user-attachments/assets/ef1f6606-f387-4e10-a2ba-524cfc5b9050" />
+
+Synthesized hardware: a multiplexer.
+No latch is inferred since every possible sel value leads to an assignment for y.
+Clean combinational logic.
+
+All possible input combinations of sel are covered (00, 01, others via default).
+Hence, y is always assigned for every sel.
+This guarantees purely combinational hardware → no storage element needed.
