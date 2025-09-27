@@ -1,5 +1,26 @@
 # Day5 : Optimization in synthesis
 
+## Table of Contents
+- [Day5 : Optimization in synthesis](#day5--optimization-in-synthesis)
+  - [If and Case Constructs](#if-and-case-constructs)
+    - [1. If–Else Construct](#1-ifelse-construct)
+    - [2. Dangers with `if`](#2-dangers-with-if)
+    - [3. Sequential Example (Counter)](#3-sequential-example-counter)
+    - [4. Case Statement](#4-case-statement)
+    - [5. Caveats with Case](#5-caveats-with-case)
+    - [6. If vs Case](#6-if-vs-case)
+    - [Best Practices](#best-practices)
+  - [Lab 1 for Incomplete If statement](#lab-1-for-incomplete-if-statement)
+  - [Lab 2 for Incomplete If statement](#lab-2-for-incomplete-if-statement)
+  - [Lab 3 (Incomplete case statement)](#lab-3-incomplete-case-statement)
+  - [Lab 4 (Complete case statement)](#lab-4-complete-case-statement)
+  - [Lab 5 (Partial assignment case statement)](#lab-5-partial-assignment-case-statement)
+  - [Lab 6 (Overlapping condition in case statement)](#lab-6-overlapping-condition-in-case-statement)
+  - [For loop and For Generate constructs](#for-loop-and-for-generate-constructs)
+  - [Labs for for loop , for generate](#labs-for-for-loop--for-generate)
+    - [Lab 1 - Mux using for loop](#lab-1---mux-using-for-loop)
+    - [Lab 2 - Demux using for loop](#lab-2---demux-using-for-loop)
+    - [Lab 3 - Ripple Carry Adder (RCA) using generate loop](#lab-3---ripple-carry-adder-rca-using-generate-loop)
 
 ## If and Case Constructs
 
