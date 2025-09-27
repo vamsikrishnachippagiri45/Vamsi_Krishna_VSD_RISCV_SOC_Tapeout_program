@@ -421,12 +421,91 @@ Instantiating multiple identical modules (e.g., 32-bit register file).
 Creating arrays of multiplexers or flip-flops.
 Replicating repetitive combinational logic like AND/OR gates.
 
+---
+## Labs for for loop , for generate
+
+### Lab 1 - Mux using for loop 
+
+```
+module mux_generate (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
+wire [3:0] i_int;
+assign i_int = {i3,i2,i1,i0};
+integer k;
+always @ (*)
+begin
+for(k = 0; k < 4; k=k+1) begin
+	if(k == sel)
+		y = i_int[k];
+end
+end
+endmodule
+```
+
+### Simulation using Iverilog 
+
+<img width="1596" height="414" alt="image" src="https://github.com/user-attachments/assets/60bef68a-b4ee-445a-a2b6-2b088a4b01e0" />
+
+
+### Synthesis using Yosys
+
+
+### Lab 2 - Demux using for loop 
+
+```
+module demux_generate (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output o7 , input [2:0] sel  , input i);
+reg [7:0]y_int;
+assign {o7,o6,o5,o4,o3,o2,o1,o0} = y_int;
+integer k;
+always @ (*)
+begin
+y_int = 8'b0;
+for(k = 0; k < 8; k++) begin
+	if(k == sel)
+		y_int[k] = i;
+end
+end
+endmodule
+
+
+```
+
+### Simulation using Iverilog 
+
+<img width="1759" height="464" alt="image" src="https://github.com/user-attachments/assets/7ec0db64-263e-4a43-8caa-ff90571d05f2" />
+
+
+### Synthesis using Yosys
 
 
 
 
+### Lab 3 - Ripple Carry Adder (RCA) using generate loop 
+
+```
+module rca (input [7:0] num1 , input [7:0] num2 , output [8:0] sum);
+wire [7:0] int_sum;
+wire [7:0]int_co;
+
+genvar i;
+generate
+	for (i = 1 ; i < 8; i=i+1) begin
+		fa u_fa_1 (.a(num1[i]),.b(num2[i]),.c(int_co[i-1]),.co(int_co[i]),.sum(int_sum[i]));
+	end
+
+endgenerate
+fa u_fa_0 (.a(num1[0]),.b(num2[0]),.c(1'b0),.co(int_co[0]),.sum(int_sum[0]));
+
+
+assign sum[7:0] = int_sum;
+assign sum[8] = int_co[7];
+endmodule
+```
+
+### Simulation using Iverilog 
+<img width="1737" height="414" alt="image" src="https://github.com/user-attachments/assets/58acacf2-b84c-4bf3-8231-f94437e38127" />
 
 
 
+### Synthesis using Yosys
 
 
