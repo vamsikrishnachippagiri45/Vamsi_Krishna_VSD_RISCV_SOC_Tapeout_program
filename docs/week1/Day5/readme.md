@@ -142,6 +142,8 @@ Incomplete if statement: not all input conditions assign a value to y.
 In combinational logic (always @(*)), every output must be assigned for every input combination.
 If not, the tool assumes storage is required → infers a level-sensitive latch.
 
+--- 
+
 ## Lab 2 for Incomplete If statement
 
 ```
