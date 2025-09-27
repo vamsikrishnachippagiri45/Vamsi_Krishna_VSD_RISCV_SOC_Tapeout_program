@@ -176,4 +176,33 @@ Always cover all conditions:
 Use a final else.
 Or provide a default assignment at the beginning of the block.
 
+---
+
+## Lab 3 (Incomplete case statement)
+
+```
+module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+always @ (*)
+begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+	endcase
+end
+endmodule
+```
+
+#### Simulation using Iverilog
+
+<img width="1457" height="483" alt="image" src="https://github.com/user-attachments/assets/e46b0afa-d6e4-4857-90a0-7bcdaba765f9" />
+
+
+#### Synthesis using Yosys
+
+<img width="1624" height="515" alt="image" src="https://github.com/user-attachments/assets/1ea9d636-3715-4b0d-bb5d-4bfb7a8370cc" />
+
+
+
+
+
 
