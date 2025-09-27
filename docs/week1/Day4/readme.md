@@ -214,3 +214,18 @@ After simulating with Netlist :
 
 We can see that there is mismatch in the simulation and synthesis of the bad_mux.v
 Using GLS it used correct mux , but the code we wrote does not specify the mux. 
+
+Issue:
+Sensitivity list is incomplete (always @(sel) only).
+
+In RTL simulation:
+Block triggers only when sel changes.
+If i0 or i1 change while sel stays constant, y is not updated → wrong behavior.
+
+In Synthesis:
+Tool infers a proper mux cell (sky130_fd_sc_hd__mux2_1).
+Real mux reacts to all inputs (i0, i1, sel).
+Hardware works correctly.
+
+RTL simulation can lie if sensitivity lists are incomplete.
+Synthesis + GLS reflect the real hardware.
