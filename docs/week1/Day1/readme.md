@@ -42,7 +42,7 @@ Testbenches help in ensuring that the design meets the functional specification.
 <img width="1419" height="674" alt="Screenshot from 2025-09-23 10-20-14" src="https://github.com/user-attachments/assets/fa540de8-5932-428b-8f22-812afc53d76a" />
 
 
-### How simulator work (Iverilog based simulation flow): 
+### How simulator work (Iverilog based simulation flow)
 
 The simulator mimics how the digital circuit behaves over time. It: Reads the design code (DUT – Design Under Test), Reads the testbench code (stimulus + checks).
 
