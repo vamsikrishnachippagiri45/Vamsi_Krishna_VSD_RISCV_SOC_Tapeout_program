@@ -510,5 +510,6 @@ endmodule
 
 
 ### Synthesis using Yosys
+<img width="1206" height="854" alt="image" src="https://github.com/user-attachments/assets/8f3ce65f-9b59-432c-834c-3b2362e79eda" />
 
 
