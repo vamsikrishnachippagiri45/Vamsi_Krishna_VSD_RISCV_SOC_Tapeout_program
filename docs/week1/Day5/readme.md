@@ -1,4 +1,4 @@
-# Optimization in synthesis
+# Day5 : Optimization in synthesis
 
 ## If and Case Constructs
 
@@ -252,3 +252,76 @@ Clean combinational logic.
 All possible input combinations of sel are covered (00, 01, others via default).
 Hence, y is always assigned for every sel.
 This guarantees purely combinational hardware → no storage element needed.
+
+---
+
+## Lab 5 (Partial assignment case statement)
+
+```
+module partial_case_assign (input i0 , input i1 , input i2 , input [1:0] sel, output reg y , output reg x);
+always @ (*)
+begin
+	case(sel)
+		2'b00 : begin
+			y = i0;
+			x = i2;
+			end
+		2'b01 : y = i1;
+		default : begin
+		           x = i1;
+			   y = i2;
+			  end
+	endcase
+end
+endmodule
+```
+
+#### Simulation using Iverilog
+
+<img width="1425" height="541" alt="image" src="https://github.com/user-attachments/assets/401225d0-498a-4faa-9202-241a527974c5" />
+
+RTL Simulation (Icarus Verilog / GTKWave)
+sel = 00: y = i0, x = i2.
+sel = 01: y = i1, but x is not assigned → simulation holds the old value of x.
+sel = others: y = i2, x = i1.
+Output shows memory-like behavior for x.
+
+
+
+#### Synthesis using Yosys
+
+<img width="1624" height="708" alt="image" src="https://github.com/user-attachments/assets/03c19e40-5abf-468e-b8b7-2c0e0a408a34" />
+
+Synthesized circuit shows:
+For y: always assigned in every case → pure combinational logic.
+For x: not assigned when sel = 01 → synthesis adds latch for x to store previous value.
+Netlist confirms latch inference for only one signal.
+
+In combinational always @(*) blocks, every output signal must be assigned in every branch.
+Here:
+y → fully assigned in all cases.
+x → missing assignment in one branch (sel = 01).
+Result → Latch inferred only for x.
+
+## Lab 6 (Overlapping condition in case statement)
+
+```
+module bad_case (input i0 , input i1, input i2, input i3 , input [1:0] sel, output reg y);
+always @(*)
+begin
+	case(sel)
+		2'b00: y = i0;
+		2'b01: y = i1;
+		2'b10: y = i2;
+		2'b1?: y = i3;
+		//2'b11: y = i3;
+	endcase
+end
+
+endmodule
+```
+#### Simulation using Iverilog
+
+
+#### Synthesis using Yosys
+
