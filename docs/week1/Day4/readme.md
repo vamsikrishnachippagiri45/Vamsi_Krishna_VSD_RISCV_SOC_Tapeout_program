@@ -178,8 +178,8 @@ tb_ternary_operator_mux.v → your testbench (stimulus + waveform dump).
 Together, they allow GLS to run and verify correctness of the synthesized design.
 
 ```
-iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v \
-        /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v \
+iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v 
+        /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v 
         ternary_operator_mux_net.v tb_ternary_operator_mux.v
 ```
 <img width="1474" height="609" alt="image" src="https://github.com/user-attachments/assets/2ac12005-9901-49ac-abb4-4d3ede3445b9" />
