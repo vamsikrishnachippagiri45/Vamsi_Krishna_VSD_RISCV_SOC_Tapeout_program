@@ -285,7 +285,7 @@ end
 
 endmodule
 ```
-<img width="1403" height="531" alt="Screenshot from 2025-09-27 04-41-23" src="https://github.com/user-attachments/assets/f1a0b917-bc51-466f-a782-a911b58f9b2c" />
+<img width="1193" height="525" alt="Screenshot from 2025-09-27 04-57-52" src="https://github.com/user-attachments/assets/d73e7782-a30e-44ed-b399-5e9c4b4be4be" />
 
 
 #### Lab 13 (counter_opt2.v)
@@ -304,5 +304,3 @@ end
 
 endmodule
 ```
-<img width="1193" height="525" alt="Screenshot from 2025-09-27 04-57-52" src="https://github.com/user-attachments/assets/d73e7782-a30e-44ed-b399-5e9c4b4be4be" />
-
