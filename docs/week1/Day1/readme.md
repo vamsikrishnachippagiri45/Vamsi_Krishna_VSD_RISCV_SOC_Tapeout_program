@@ -55,7 +55,7 @@ we use gtkwave for viewing output waveforms.
 
 ## Lab using Iverilog and gtkwave (simulation of 2x1 mux)
 
-### (i) clone the repository into a folder.
+### clone the repository into a folder.
 ``` 
 sudo -i
 
@@ -65,7 +65,7 @@ This git contains all the verilog files and libraries.
 The DC_WORKSHOP contain the lib folder which contain standard cell library and verilog files folder which contains verilog files and testbenches.
 <img width="1796" height="893" alt="image" src="https://github.com/user-attachments/assets/7c8dc666-c735-4512-a619-5eb6989656a8" />
 
-### (ii) Load design and testbench in iverilog
+### Load design and testbench in iverilog
 ```
 iverilog good_mux.v tb_good_mux.v
 ```
@@ -81,7 +81,7 @@ gtkwave tb_good_mux.vcd
 <img width="1836" height="871" alt="image" src="https://github.com/user-attachments/assets/25ff4f1d-9b67-4e08-9546-1b3fdeb7312c" />
 <img width="1843" height="462" alt="image" src="https://github.com/user-attachments/assets/c3e1e68f-7475-4879-9a0a-63009bc58bb1" />
 
-### (iii) Analyse the verilog code 
+###  Analyse the verilog code 
 To open both the design file and the testbench file side by side using gvim, use:
 ```
 gvim tb_good_mux.v -o good_mux.v 
@@ -96,7 +96,7 @@ This will install GVim (graphical Vim editor), which provides a more user-friend
 
 <img width="1439" height="853" alt="image" src="https://github.com/user-attachments/assets/1061f4d3-10f4-4cb9-aa8b-d51471c7609d" />
 
-## 3) Introduction to Yosys 
+## Introduction to Yosys 
 Yosys is an open-source RTL synthesis tool.
 It takes a Verilog RTL design and a standard cell library (.lib), then produces a gate-level netlist.
 
@@ -168,7 +168,7 @@ Timing information (propagation delay, setup time, hold time).
 Power consumption.
 Area of the cell.
 
-#### 🔹 Different Flavours of Same Gate
+#### Different Flavours of Same Gate
 
 A gate (e.g., 2-input AND) can have multiple versions:
 Slow version → smaller size, less power, but higher delay.
@@ -207,7 +207,7 @@ Hold check ensures data is stable long enough after the clock edge.
 That’s why .lib provides different flavours (slow/medium/fast) of gates → to give the synthesis and timing tools flexibility to balance speed, power, and area while meeting both setup and hold constraints.
 
 
-#### 🔹 Faster Cells vs Slower Cells
+####  Faster Cells vs Slower Cells
 
 The load in a digital circuit = capacitance (wires + gates connected).
 Delay depends on how fast this capacitance can be charged/discharged.
