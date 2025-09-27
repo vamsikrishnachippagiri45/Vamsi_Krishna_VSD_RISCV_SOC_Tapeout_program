@@ -574,3 +574,22 @@ Simulation (Icarus Verilog): verified correct addition.
 Synthesis (Yosys): design mapped to full-adder chain (RCA structure).
 
 Demonstrates use of generate-for for scalable adder design.
+
+
+
+## Conclusion
+
+In this session, we examined how `if-else`, `case`, `for`, and `generate` constructs influence synthesis and hardware mapping. The labs clearly showed how incomplete or incorrect coding styles lead to unintended latch inference, while good practices ensure clean combinational logic.
+
+### Key Takeaways
+- Always complete conditional constructs:  
+  - Add a final **`else`** in `if-else`.  
+  - Add a **`default`** in `case`.  
+- **If-Else** → suited for **priority logic**.  
+- **Case** → suited for **multiplexing/parallel selection**.  
+- Avoid **partial assignments** inside conditionals to prevent latch inference.  
+- Avoid **overlapping cases** to keep design intent clear.  
+- **For loops** → runtime evaluation (simulation use).  
+- **Generate-for loops** → compile-time instantiation (scalable hardware).  
+
+By applying these practices, RTL code remains **synthesizable, predictable, and efficient**, bridging the gap between simulation intent and synthesized hardware.  
