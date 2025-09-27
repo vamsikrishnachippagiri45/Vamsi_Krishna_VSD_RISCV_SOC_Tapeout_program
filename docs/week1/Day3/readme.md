@@ -267,3 +267,42 @@ end
 endmodule
 ```
 <img width="1403" height="531" alt="Screenshot from 2025-09-27 04-41-23" src="https://github.com/user-attachments/assets/ab0bd553-a12a-4f72-97bd-f3b330608bae" />
+
+### Lab for sequential logic optimization of unused states
+#### Lab 12 (counter_opt.v)
+```
+module counter_opt (input clk , input en, input reset , output q);
+reg [3:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 4'b0000;
+	else if(en)
+		count <= count + 1;
+end
+
+endmodule
+```
+<img width="1403" height="531" alt="Screenshot from 2025-09-27 04-41-23" src="https://github.com/user-attachments/assets/f1a0b917-bc51-466f-a782-a911b58f9b2c" />
+
+
+#### Lab 13 (counter_opt2.v)
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+<img width="1193" height="525" alt="Screenshot from 2025-09-27 04-57-52" src="https://github.com/user-attachments/assets/d73e7782-a30e-44ed-b399-5e9c4b4be4be" />
+
