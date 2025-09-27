@@ -14,7 +14,7 @@
   - [Blocking vs Non-Blocking Assignments](#blocking-vs-non-blocking-assignments)
     - [Sequential logic caveats](#sequential-logic-caveats)
     - [Combinational logic caveats](#combinational-logic-caveats)
-  - [Key Notes / Takeaways](#key-notes--takeaways)
+  - [Key Notes](#key-notes)
   - [Labs for GLS](#labs-for-gls)
     - [Lab 1: Ternary operator mux](#lab-1-ternary-operator-mux)
     - [Lab 2: Synthesis-simulation mismatch due to sensitivity list](#lab-2-synthesis-simulation-mismatch-due-to-sensitivity-list)
