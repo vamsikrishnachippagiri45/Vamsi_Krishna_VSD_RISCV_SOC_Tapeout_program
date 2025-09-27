@@ -196,6 +196,7 @@ end
 
 endmodule
 ```
+<img width="813" height="435" alt="image" src="https://github.com/user-attachments/assets/8149a687-0e01-4e7f-9988-ad8569d9c053" />
 
 #### Lab 9 (dff_const3.v)
 ```
@@ -218,6 +219,9 @@ end
 
 endmodule
 ```
+<img width="1662" height="507" alt="image" src="https://github.com/user-attachments/assets/8e2ada9e-ef5b-4f2f-aed1-c5e6ce42ec76" />
+
+
 #### Lab 10 (dff_const4.v)
 ```
 module dff_const4(input clk, input reset, output reg q);
@@ -239,6 +243,8 @@ end
 
 endmodule
 ```
+<img width="1403" height="531" alt="image" src="https://github.com/user-attachments/assets/a5d1c27c-34a0-410f-abed-9b748dd7db63" />
+
 #### Lab 11 (dff_const5.v)
 ```
 module dff_const5(input clk, input reset, output reg q);
