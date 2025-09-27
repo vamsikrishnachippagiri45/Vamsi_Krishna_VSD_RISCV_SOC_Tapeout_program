@@ -336,3 +336,11 @@ The GLS after synthesis:
 
 <img width="1362" height="424" alt="image" src="https://github.com/user-attachments/assets/f66f4409-a912-4b95-b1fe-48db5077b676" />
 
+
+Even though the RTL had overlap (2'b10 and 2'b1?), the synthesis tool resolved it into a clean mux4 (no ambiguity in hardware).
+This matches the priority behavior of the RTL, but the design intent can be misleading:
+In RTL sim: 2’b10 matched i2 (first match priority).
+In hardware: the tool mapped sel=10 → i2, sel=11 → i3.
+So in this case, the hardware ended up consistent with simulation — but only because the tool picked the "expected" priority.
+
+---
