@@ -119,7 +119,7 @@ end
   
 ---
 
-## Lab for Incomplete If statement
+## Lab 1 for Incomplete If statement
 
 ```
 module incomp_if (input i0 , input i1 , input i2 , output reg y);
@@ -142,3 +142,34 @@ Incomplete if statement: not all input conditions assign a value to y.
 In combinational logic (always @(*)), every output must be assigned for every input combination.
 If not, the tool assumes storage is required → infers a level-sensitive latch.
 
+## Lab 2 for Incomplete If statement
+
+```
+module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
+always @ (*)
+begin
+	if(i0)
+		y <= i1;
+	else if (i2)
+		y <= i3;
+
+end
+endmodule
+```
+#### Simulation using Iverilog
+
+<img width="1554" height="489" alt="image" src="https://github.com/user-attachments/assets/b849331f-e5e5-4672-bd1d-330b11ed702d" />
+
+#### Synthesis using Yosys
+
+<img width="1166" height="454" alt="image" src="https://github.com/user-attachments/assets/c6e47c97-bd3a-4061-b152-47a7feb8e16e" />
+
+In combinational always @(*) blocks, all outputs must be assigned in every condition.
+Here, there is no assignment when i0=0 and i2=0.
+Synthesis compensates by creating a latch to hold the previous value of y.
+
+If–Else If without Else is still incomplete → infers latch.
+Simulation may look acceptable, but synthesis shows unintended hardware.
+Always cover all conditions:
+Use a final else.
+Or provide a default assignment at the beginning of the block.
