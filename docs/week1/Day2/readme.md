@@ -1,4 +1,22 @@
 # Day2 : Library file, hierarchical Vs flat synthesis and Efficient flop coding styles
+
+## Table of Contents
+- [Day2 : Library file, Hierarchical vs Flat Synthesis and Efficient Flop Coding Styles](#day2--library-file-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+  - [Introduction to Library Files](#introduction-to-library-files)
+  - [Hierarchical and Flatten Synthesis](#hierarchical-and-flatten-synthesis)
+  - [Efficient Flop Coding Styles](#efficient-flop-coding-styles)
+    - [Asynchronous Reset DFF](#asynchronous-reset-dff)
+    - [Synchronous Reset DFF](#synchronous-reset-dff)
+    - [Asynchronous + Synchronous Reset DFF](#asynchronous--synchronous-reset-dff)
+  - [Lab for Different Flop Coding Styles](#lab-for-different-flop-coding-styles)
+    - [DFF using Asynchronous Reset](#dff-using-asynchronous-reset)
+    - [DFF using Synchronous Reset](#dff-using-synchronous-reset)
+    - [DFF using Asynchronous and Synchronous Reset](#dff-using-asynchronous-and-synchronous-reset)
+  - [Optimization (Special Cases)](#optimization-special-cases)
+    - [Multiply by 2](#multiply-by-2)
+    - [Multiply by 9](#multiply-by-9)
+  - [Conclusion](#conclusion)
+
 ## Introduction to library files
 Meaning of sky130_fd_sc_hd__tt_025C_1v80.lib
 
@@ -264,3 +282,7 @@ module mult8(a, y);
 endmodule
 ```
 <img width="993" height="676" alt="image" src="https://github.com/user-attachments/assets/1d63d94c-f9b9-4f16-ba5d-2ca6d288c4e0" />
+
+## Conclusion
+
+Understanding library files helps synthesize designs for PVT variations. Hierarchical synthesis improves modularity and reuse, while flattening simplifies the netlist. Efficient flip-flop coding (async/sync resets) ensures correct hardware behavior. Arithmetic optimizations like multiplications by constants reduce area, power, and delay.
