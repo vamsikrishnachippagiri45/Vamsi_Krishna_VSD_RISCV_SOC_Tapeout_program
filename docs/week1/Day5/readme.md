@@ -22,6 +22,7 @@
     - [Lab 2 - Demux using for loop](#lab-2---demux-using-for-loop)
     - [Lab 3 - Ripple Carry Adder (RCA) using generate loop](#lab-3---ripple-carry-adder-rca-using-generate-loop)
   - [Conclusion](#conclusion)
+
 ## If and Case Constructs
 
 ### 1. If–Else Construct
