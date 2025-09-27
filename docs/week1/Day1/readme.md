@@ -21,7 +21,7 @@
   - [Lab Using Yosys and Sky130 PDK](#lab-using-yosys-and-sky130-pdk)
   - [Conclusion](#conclusion)
 
-## 1) Simulator, Design and Testbench 
+## Simulator, Design and Testbench 
 RTL (Register Transfer Level) design is checked for adherence to the specification by simulating the design.
 A simulator tool is used to execute and verify the behavior of Verilog code before moving to synthesis.
 
@@ -53,7 +53,7 @@ we use gtkwave for viewing output waveforms.
 
 <img width="1536" height="693" alt="Screenshot from 2025-09-23 10-20-46" src="https://github.com/user-attachments/assets/b388fa91-9c12-422d-bd93-4fc1467ee494" />
 
-## 2) Lab using Iverilog and gtkwave (simulation of 2x1 mux)
+## Lab using Iverilog and gtkwave (simulation of 2x1 mux)
 
 ### (i) clone the repository into a folder.
 ``` 
@@ -236,7 +236,7 @@ Therefore, we guide the synthesizer with constraints (timing, area, power target
 Based on these constraints, the tool automatically selects the optimum combination of fast and slow cells.
 
 
-## 4) Lab using Yosys and Sky130 PDK 
+## Lab using Yosys and Sky130 PDK 
 Invoke yosys 
 
 ```
