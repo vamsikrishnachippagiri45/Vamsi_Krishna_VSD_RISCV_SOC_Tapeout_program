@@ -153,6 +153,27 @@ module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 	assign y = sel?i1:i0;
 	endmodule
 ```
-1) RTL simulation using Iveriog
+#### i) RTL simulation using Iveriog
 <img width="1470" height="493" alt="image" src="https://github.com/user-attachments/assets/71facf70-f854-4bc1-98ff-d84a94328b95" />
+#### ii) GLS using Iverilog
+First we have synthesize the design using yosys to get the netlist and then we have to give the netlist to Iverilog
+
+The Netlist after synthesis is : 
+<img width="992" height="649" alt="image" src="https://github.com/user-attachments/assets/8bfef131-d46e-4a45-8b21-07e4c12d03eb" />
+
+To check whether the synthesized netlist (gate-level design) behaves the same as your RTL design, using real standard-cell models from the Sky130 library.
+
+Inputs to the command:
+primitives.v → defines basic logic primitives (AND, OR, etc.).
+sky130_fd_sc_hd.v → functional models of Sky130 standard cells.
+ternary_operator_mux_net.v → your synthesized gate-level netlist.
+tb_ternary_operator_mux.v → your testbench (stimulus + waveform dump).
+Together, they allow GLS to run and verify correctness of the synthesized design.
+
+```
+iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v \
+        /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v \
+        ternary_operator_mux_net.v tb_ternary_operator_mux.v
+```
+
 
