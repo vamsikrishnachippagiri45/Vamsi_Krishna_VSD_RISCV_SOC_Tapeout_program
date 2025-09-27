@@ -448,6 +448,8 @@ endmodule
 
 ### Synthesis using Yosys
 
+<img width="1417" height="516" alt="image" src="https://github.com/user-attachments/assets/2b0be304-2c03-455f-8721-ae7f87cff334" />
+
 
 ### Lab 2 - Demux using for loop 
 
