@@ -164,10 +164,15 @@ The Netlist after synthesis is :
 To check whether the synthesized netlist (gate-level design) behaves the same as your RTL design, using real standard-cell models from the Sky130 library.
 
 Inputs to the command:
+
 primitives.v → defines basic logic primitives (AND, OR, etc.).
+
 sky130_fd_sc_hd.v → functional models of Sky130 standard cells.
+
 ternary_operator_mux_net.v → your synthesized gate-level netlist.
+
 tb_ternary_operator_mux.v → your testbench (stimulus + waveform dump).
+
 Together, they allow GLS to run and verify correctness of the synthesized design.
 
 ```
@@ -175,5 +180,6 @@ iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_mod
         /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v \
         ternary_operator_mux_net.v tb_ternary_operator_mux.v
 ```
+<img width="1474" height="609" alt="image" src="https://github.com/user-attachments/assets/2ac12005-9901-49ac-abb4-4d3ede3445b9" />
 
 
