@@ -293,3 +293,7 @@ d = (a | b) & c;
 Hardware muxes and gates ensure correct dependency. GLS produces correct result.
 
 Note : Reorder assignments so variables are updated before use. or Use blocking (=) in combinational blocks with care. Use non-blocking (<=) in sequential (clocked) blocks.
+
+## Conclusion 
+
+Gate Level Simulation (GLS) is a crucial step to verify that synthesized netlists function correctly and meet timing requirements, capturing issues that may not appear in RTL simulation. Common mismatches arise from incomplete sensitivity lists, improper use of blocking versus non-blocking assignments, and non-standard coding practices. Writing clear, synthesizable Verilog—using always @(*) with blocking for combinational logic and <= for sequential logic—ensures consistency between simulation and hardware. GLS labs demonstrate that RTL simulations can sometimes mislead due to coding mistakes, while GLS reflects the true hardware behavior, highlighting the importance of adhering to best coding practices.
