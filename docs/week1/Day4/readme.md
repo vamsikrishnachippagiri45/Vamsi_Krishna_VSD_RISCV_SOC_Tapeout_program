@@ -184,7 +184,7 @@ iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_mod
 ```
 <img width="1474" height="609" alt="image" src="https://github.com/user-attachments/assets/2ac12005-9901-49ac-abb4-4d3ede3445b9" />
 
-### Lab 2 (Synthesis-Simulation Mismatch - bad_mux.v)
+### Lab 2 (Synthesis-Simulation Mismatch due to sensitivity list- bad_mux.v)
 
 ```
 module bad_mux (input i0 , input i1 , input sel , output reg y);
@@ -229,3 +229,27 @@ Hardware works correctly.
 
 RTL simulation can lie if sensitivity lists are incomplete.
 Synthesis + GLS reflect the real hardware.
+
+### Lab 3 (Synthesis-Simulation Mismatch due to Blocking Statements)
+
+```
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule
+```
+
+#### i) RTL simulation using Iveriog
+
+<img width="1583" height="454" alt="image" src="https://github.com/user-attachments/assets/3b521202-3aed-48b6-825b-6aac52115854" />
+
+
+#### ii) GLS using Iverilog
+
+The Netlist is : 
+<img width="936" height="632" alt="image" src="https://github.com/user-attachments/assets/10b1e34c-2dda-4592-8951-f87c62600455" />
+
