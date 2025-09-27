@@ -20,8 +20,6 @@
 * Hardware mapping: cascaded multiplexers.
 * **Priority**: only the first satisfied condition is executed.
 
----
-
 ### 2. Dangers with `if`
 
 * If an **incomplete if** is written (without a final `else`), it may cause **inferred latches**.
@@ -34,8 +32,6 @@
     ```
   * Hardware: latch inferred to hold value when no condition is true → BAD coding style.
 * **Best practice:** Always include an `else` to cover all conditions.
-
----
 
 ### 3. Sequential Example (Counter)
 
@@ -52,7 +48,6 @@ end
 * Here, if **enable is not high**, count retains its previous value (expected behavior).
 * Correct usage of sequential `if`.
 
----
 
 ### 4. Case Statement
 
@@ -68,8 +63,6 @@ end
   endcase
   ```
 * Hardware: single **n:1 multiplexer**.
-
----
 
 ### 5. Caveats with Case
 
@@ -104,8 +97,6 @@ end
      ```
    * Fix: Ensure **all outputs are assigned** in **all case branches**.
 
----
-
 ### 6. If vs Case
 
 * **If–Else:**
@@ -118,7 +109,6 @@ end
   * Better for multiplexer-style selection.
   * Beware of **overlapping cases** → unpredictable outputs.
 
----
 
 **Best Practices**
 
