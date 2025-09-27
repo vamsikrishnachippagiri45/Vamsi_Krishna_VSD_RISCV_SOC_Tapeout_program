@@ -304,3 +304,4 @@ end
 
 endmodule
 ```
+<img width="1733" height="812" alt="image" src="https://github.com/user-attachments/assets/14e7dbc2-4ad7-4b1e-b095-74bab2d188f0" />
