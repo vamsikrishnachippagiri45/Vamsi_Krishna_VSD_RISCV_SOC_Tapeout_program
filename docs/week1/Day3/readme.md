@@ -1,4 +1,36 @@
 # Day3 : Logic optimizations 
+
+## Table of Contents
+- [Day3 : Logic Optimizations](#day3--logic-optimizations)
+  - [Combinational Logic Optimization](#combinational-logic-optimization)
+    - [Constant Propagation](#constant-propagation)
+    - [Boolean Logic Optimization](#boolean-logic-optimization)
+    - [Methods Used](#methods-used)
+  - [Sequential Logic Optimization](#sequential-logic-optimization)
+    - [Sequential Constant Propagation](#sequential-constant-propagation)
+    - [Advanced Sequential Logic Optimizations](#advanced-sequential-logic-optimizations)
+      - [State Optimization](#state-optimization)
+      - [Retiming](#retiming)
+      - [Sequential Logic Cloning](#sequential-logic-cloning-floorplan-aware-synthesis)
+  - [Labs for Optimization](#labs-for-optimization)
+    - [Combinational Logic Optimization Labs](#labs-for-combinational-logic-optimization)
+      - [Lab 1: opt_check.v](#lab-1-opt_checkv)
+      - [Lab 2: opt_check2.v](#lab-2-opt_check2v)
+      - [Lab 3: opt_check3.v](#lab-3-opt_check3v)
+      - [Lab 4: opt_check4.v](#lab-4-opt_check4v)
+      - [Lab 5: multiple_module_opt.v](#lab-5-multiple_module_optv)
+      - [Lab 6: multiple_module_opt2.v](#lab-6-multiple_module_opt2v)
+    - [Sequential Logic Optimization Labs](#labs-for-sequential-logic-optimization)
+      - [Lab 7: dff_const1.v](#lab-7-dff_const1v)
+      - [Lab 8: dff_const2.v](#lab-8-dff_const2v)
+      - [Lab 9: dff_const3.v](#lab-9-dff_const3v)
+      - [Lab 10: dff_const4.v](#lab-10-dff_const4v)
+      - [Lab 11: dff_const5.v](#lab-11-dff_const5v)
+      - [Lab 12: counter_opt.v](#lab-12-counter_optv)
+      - [Lab 13: counter_opt2.v](#lab-13-counter_opt2v)
+  - [Conclusion](#conclusion)
+
+
 ## Combinational logic optimization
 
 Combinational Logic Optimization is reducing the logic to get a smaller, faster, and power-efficient design without changing functionality.
@@ -305,3 +337,10 @@ end
 endmodule
 ```
 <img width="1733" height="812" alt="image" src="https://github.com/user-attachments/assets/14e7dbc2-4ad7-4b1e-b095-74bab2d188f0" />
+
+
+## Conclusion
+
+Logic optimization reduces circuit size, power, and delay while maintaining functionality. Combinational optimization simplifies gates, and sequential optimization reduces states and balances timing, resulting in efficient, hardware-ready designs.
+
+
