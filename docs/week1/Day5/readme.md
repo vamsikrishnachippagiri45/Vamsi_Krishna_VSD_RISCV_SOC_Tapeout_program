@@ -112,8 +112,8 @@ end
 
 **Best Practices**
 
-* Always cover all possibilities (`else` for if, `default` for case).
+* Always cover all possibilities (else for if, default for case).
 * Avoid partial assignments.
-* Use `if-else` for priority logic, `case` for multiplexing.
-* Avoid overlapping conditions in `case`.
+* Use if-else for priority logic, case for multiplexing.
+* Avoid overlapping conditions in case.
 
