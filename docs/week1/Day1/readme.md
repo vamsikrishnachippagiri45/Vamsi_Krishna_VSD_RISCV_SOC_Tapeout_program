@@ -1,5 +1,26 @@
 # Day1 : Introduction to Verilog RTL Design and synthesis
 
+## Table of Contents
+- [Day1 : Introduction to Verilog RTL Design and Synthesis](#day1--introduction-to-verilog-rtl-design-and-synthesis)
+  - [Simulator, Design and Testbench](#simulator-design-and-testbench)
+    - [Design](#design)
+    - [Testbench](#testbench)
+    - [How Simulator Works (Iverilog based)](#how-simulator-works-iverilog-based)
+  - [Lab Using Iverilog and GTKWave (2x1 Mux)](#lab-using-iverilog-and-gtkwave-2x1-mux)
+    - [Clone Repository](#clone-repository)
+    - [Load Design and Testbench](#load-design-and-testbench)
+    - [Analyze Verilog Code](#analyze-verilog-code)
+  - [Introduction to Yosys](#introduction-to-yosys)
+    - [Inputs to Yosys](#inputs-to-yosys)
+    - [Output from Yosys](#output-from-yosys)
+    - [Verifying the Design](#verifying-the-design)
+  - [About .lib Files](#about-lib-files)
+    - [Different Flavours of Same Gate](#different-flavours-of-same-gate)
+    - [Faster vs Slower Cells](#faster-vs-slower-cells)
+    - [Selection of Cells](#selection-of-cells)
+  - [Lab Using Yosys and Sky130 PDK](#lab-using-yosys-and-sky130-pdk)
+  - [Conclusion](#conclusion)
+
 ## 1) Simulator, Design and Testbench 
 RTL (Register Transfer Level) design is checked for adherence to the specification by simulating the design.
 A simulator tool is used to execute and verify the behavior of Verilog code before moving to synthesis.
@@ -264,3 +285,7 @@ write_verilog good_mux_netlist.v    or   write_verilog -noattr good_mux_netlist.
 ```
 
 <img width="1184" height="632" alt="image" src="https://github.com/user-attachments/assets/3efcecf0-408e-47d1-ae7e-8ef85d0bdc06" />
+
+## Conclusion
+
+Day1 covers the RTL design flow from simulation to synthesis. Using Iverilog and GTKWave ensures functional correctness through testbenches. Yosys performs RTL-to-gate-level synthesis using a standard cell library (.lib), producing netlists optimized for timing, area, and power. Different flavours of cells (fast, medium, slow) allow the synthesizer to balance performance and power. Overall, combining simulation, synthesis, and proper library usage ensures robust digital design implementation.
