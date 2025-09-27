@@ -116,4 +116,29 @@ end
 * Avoid partial assignments.
 * Use if-else for priority logic, case for multiplexing.
 * Avoid overlapping conditions in case.
+  
+---
+
+## Lab for Incomplete If statement
+
+```
+module incomp_if (input i0 , input i1 , input i2 , output reg y);
+always @ (*)
+begin
+	if(i0)
+		y <= i1;
+end
+endmodule
+```
+#### Simulation using Iverilog
+
+<img width="1503" height="490" alt="image" src="https://github.com/user-attachments/assets/7aefe955-1655-483f-9255-b036995a77c0" />
+
+#### Synthesis using Yosys
+
+<img width="1391" height="395" alt="image" src="https://github.com/user-attachments/assets/f00996a3-33c6-4b8c-81a4-101f8535cbe6" />
+
+Incomplete if statement: not all input conditions assign a value to y.
+In combinational logic (always @(*)), every output must be assigned for every input combination.
+If not, the tool assumes storage is required → infers a level-sensitive latch.
 
