@@ -253,3 +253,21 @@ endmodule
 The Netlist is : 
 <img width="936" height="632" alt="image" src="https://github.com/user-attachments/assets/10b1e34c-2dda-4592-8951-f87c62600455" />
 
+After simulating with Netlist : 
+<img width="1342" height="503" alt="image" src="https://github.com/user-attachments/assets/0a5c8445-91f1-4330-b7c4-854ec8c40aed" />
+
+Behavior in RTL Simulation : 
+Simulation executes statements line by line (blocking =).
+d = x & c; is computed using the previous value of x.
+Then x is updated (x = a | b;).
+Result: d lags one step behind expected value. Results in Wrong functional behavior.
+
+Behavior in Synthesis / GLS :
+Synthesizer analyzes intent, not line order.
+It sees that d depends on a, b, c.
+Netlist built as:
+x = a | b;
+d = (a | b) & c;
+Hardware muxes and gates ensure correct dependency. GLS produces correct result.
+
+Note : Reorder assignments so variables are updated before use. or Use blocking (=) in combinational blocks with care. Use non-blocking (<=) in sequential (clocked) blocks.
