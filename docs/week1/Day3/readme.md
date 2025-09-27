@@ -266,3 +266,4 @@ end
 
 endmodule
 ```
+<img width="1403" height="531" alt="Screenshot from 2025-09-27 04-41-23" src="https://github.com/user-attachments/assets/ab0bd553-a12a-4f72-97bd-f3b330608bae" />
