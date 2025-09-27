@@ -3,6 +3,10 @@
 ## Table of contents
 -[If and Case Constructs](#introduction)
 
+-[Lab 1 for Incomplete If statement](#Lab 1 for Incomplete If statement)
+
+-[Lab 2 for Incomplete If statement](#Lab 2 for Incomplete If statement)
+
  
 
 ## If and Case Constructs
