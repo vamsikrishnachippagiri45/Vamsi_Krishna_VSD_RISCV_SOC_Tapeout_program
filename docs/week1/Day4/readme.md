@@ -155,7 +155,9 @@ module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 ```
 #### i) RTL simulation using Iveriog
 <img width="1470" height="493" alt="image" src="https://github.com/user-attachments/assets/71facf70-f854-4bc1-98ff-d84a94328b95" />
+
 #### ii) GLS using Iverilog
+
 First we have synthesize the design using yosys to get the netlist and then we have to give the netlist to Iverilog
 
 The Netlist after synthesis is : 
