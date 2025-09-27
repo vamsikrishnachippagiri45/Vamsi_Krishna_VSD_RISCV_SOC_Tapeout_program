@@ -1,13 +1,5 @@
 # Day5 : Optimization in synthesis
 
-## Table of contents
--[If and Case Constructs](#introduction)
-
--[Lab 1 for Incomplete If statement](#lab 1 for incomplete if statement)
-
--[Lab 2 for Incomplete If statement](#Lab 2 for Incomplete If statement)
-
- 
 
 ## If and Case Constructs
 
