@@ -106,7 +106,7 @@ endmodule
 After optimization the generated netlist is : 
 <img width="1029" height="676" alt="image" src="https://github.com/user-attachments/assets/ab0a46d4-ebff-4bc1-995b-c25098ac9e77" />
 
-Lab3 3 (opt_check3.v)
+Lab 3 (opt_check3.v)
 ```
 module opt_check3 (input a , input b, input c , output y);
 	assign y = a?(c?b:0):0;
@@ -114,3 +114,9 @@ endmodule
 ```
 <img width="1004" height="676" alt="image" src="https://github.com/user-attachments/assets/051f675f-5f59-46fc-be15-b7755f65518e" />
 
+Lab 4 (opt_check4.v)
+```
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
