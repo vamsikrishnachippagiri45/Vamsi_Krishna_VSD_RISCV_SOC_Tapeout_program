@@ -184,4 +184,23 @@ iverilog /home/vamsi/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_mod
 ```
 <img width="1474" height="609" alt="image" src="https://github.com/user-attachments/assets/2ac12005-9901-49ac-abb4-4d3ede3445b9" />
 
+### Lab 2 (Synthesis-Simulation Mismatch - bad_mux.v)
+
+```
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+
+#### i) RTL simulation using Iveriog
+
+<img width="1408" height="474" alt="image" src="https://github.com/user-attachments/assets/93f22e17-e909-4ea2-bd24-b487cf6a9268" />
+
+#### ii) GLS using Iverilog
 
