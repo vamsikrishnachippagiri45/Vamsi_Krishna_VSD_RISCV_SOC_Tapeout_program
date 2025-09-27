@@ -85,7 +85,7 @@ Removes all unused wires and cells, even if they are publicly visible or marked 
 Cleans up constants or redundant flip-flops/latches that serve no purpose.
 
 #### Lab for constant propagation combinational logic optimization
-verilog code 1 (opt_check.v):
+Lab 1 (opt_check.v):
 ```
 module opt_check (input a , input b , input c , output y1, output y2);
 wire a1;
@@ -97,7 +97,7 @@ endmodule
 After optimization the generated netlist is : 
 <img width="1143" height="676" alt="image" src="https://github.com/user-attachments/assets/2fd54990-4f70-4951-aea1-f36efd71e3d9" />
 
-verilog code 2 (opt_check2.v):
+Lab 2 (opt_check2.v):
 ```
 module opt_check2 (input a , input b , output y);
 	assign y = a?1:b;
@@ -106,9 +106,11 @@ endmodule
 After optimization the generated netlist is : 
 <img width="1029" height="676" alt="image" src="https://github.com/user-attachments/assets/ab0a46d4-ebff-4bc1-995b-c25098ac9e77" />
 
-verilog code 3 (opt_check3.v)
+Lab3 3 (opt_check3.v)
 ```
-
+module opt_check3 (input a , input b, input c , output y);
+	assign y = a?(c?b:0):0;
+endmodule
 ```
 <img width="1004" height="676" alt="image" src="https://github.com/user-attachments/assets/051f675f-5f59-46fc-be15-b7755f65518e" />
 
