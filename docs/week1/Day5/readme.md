@@ -344,3 +344,89 @@ In hardware: the tool mapped sel=10 → i2, sel=11 → i3.
 So in this case, the hardware ended up consistent with simulation — but only because the tool picked the "expected" priority.
 
 ---
+
+## For loop and For Generate constructs
+
+Verilog supports loops mainly in two contexts:
+1) for loop
+2) generate for loop
+
+###  for Loop
+
+Purpose: Used for evaluating expressions repeatedly.
+
+Context: Inside always blocks or procedural blocks.
+
+Key Characteristics:
+
+Executes at runtime during simulation.
+Not meant for generating hardware instances.
+Can contain blocking or non-blocking assignments.
+Useful for repetitive logic calculations or sequential operations.
+
+Example:
+```
+reg [3:0] sum;
+integer i;
+
+always @(*) begin
+    sum = 0;
+    for(i = 0; i < 4; i = i + 1) begin
+        sum = sum + i;  // evaluates expression
+    end
+end
+```
+
+### generate For Loop
+
+Purpose: Used for instantiating multiple hardware blocks (modules, wires, registers).
+
+Context: Must be outside procedural blocks (always).
+
+Key Characteristics:
+Executes at compile-time (synthesizable).
+Can instantiate multiple copies of hardware components.
+Cannot contain regular procedural statements like blocking/non-blocking assignments directly.
+Useful for replicating structures like buses, registers, or multiplexers.
+
+Example : 
+```
+genvar i;
+generate
+    for(i = 0; i < 4; i = i + 1) begin : mux_block
+        assign y[i] = sel[i] ? i1[i] : i0[i];  // generates 4 muxes
+    end
+endgenerate
+
+```
+
+| Feature               | `for` Loop                          | `generate for` Loop                                         |
+| --------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| Execution             | Runtime (simulation)                | Compile-time (synthesis)                                    |
+| Context               | Inside `always` or procedural block | Outside `always`                                            |
+| Use                   | Expression evaluation               | Hardware instantiation                                      |
+| Blocking/Non-blocking | Allowed                             | Not allowed                                                 |
+| Example               | `for(i=0;i<4;i=i+1) y=y+i;`         | `for(genvar i=0;i<4;i=i+1) assign y[i]=sel[i]?i1[i]:i0[i];` |
+
+
+Use Cases
+
+for Loop:
+Summing elements in an array.
+Performing bitwise operations on buses.
+Sequential calculations inside always blocks.
+
+generate For Loop:
+Instantiating multiple identical modules (e.g., 32-bit register file).
+Creating arrays of multiplexers or flip-flops.
+Replicating repetitive combinational logic like AND/OR gates.
+
+
+
+
+
+
+
+
+
+
