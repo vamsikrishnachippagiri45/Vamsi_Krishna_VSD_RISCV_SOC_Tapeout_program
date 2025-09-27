@@ -1,2 +1,148 @@
 # Day4 : GLS (Gate level simulation), Sybthesis-Simulation Mismatch , Blocking and Non-blocking statements
 
+## What is GLS (Gate Level Simulation)
+
+* GLS = Running testbench on **post-synthesis netlist** (instead of RTL).
+* Netlist = logically same as RTL, but expressed as **primitive gates**.
+* Same testbench works (if RTL was coded properly).
+
+### Why GLS
+
+* To verify **logical correctness** of design after synthesis.
+* To ensure **timing is met** (requires delay-annotated gate models).
+* Helps catch issues not visible in RTL simulation.
+
+### GLS Flow (with Icarus Verilog & GTKWave)
+
+1. **Inputs:**
+
+   * Synthesized **netlist** (gate-level Verilog).
+   * **Testbench**.
+   * **Standard cell library models** (gate-level models).
+2. Run with **iverilog** → produces executable + VCD (Value Change Dump).
+3. View waveforms in **gtkwave**.
+4. If models have **delays**, GLS also checks **timing**.
+
+### 3. RTL → Netlist → Gate Models
+
+Example:
+RTL:
+
+```verilog
+assign y = (a & b) | c;
+```
+
+Netlist:
+
+```verilog
+and u1 (.a(a), .b(b), .y(n1));
+or  u2 (.a(n1), .b(c), .y(y));
+```
+
+* Gate models are **functional** (AND, OR, etc.).
+* With delay annotation → **timing-aware**.
+* GLS checks both **functionality + timing**.
+
+---
+
+## Synthesis-Simulation Mismatches
+
+Causes of mismatch between RTL sim vs. GLS sim:
+
+1. **Missing sensitivity list**
+
+   * Using `always @(sel)` in combinational logic misses inputs.
+   * Correct form: `always @(*)` (sensitive to all inputs).
+2. **Blocking (`=`) vs Non-Blocking (`<=`) misuse**
+
+   * Wrong use can cause mismatch between intended hardware vs. simulation.
+3. **Non-standard Verilog coding styles**
+
+   * E.g., latch inference, mixed blocking assignments.
+
+
+
+## Missing Sensitivity List Example
+
+```verilog
+// Wrong
+always @(sel) begin
+   if(sel) y = i1;
+   else    y = i0;
+end
+
+// Correct
+always @(*) begin
+   if(sel) y = i1;
+   else    y = i0;
+end
+```
+
+* `@(*)` = automatic sensitivity to all RHS signals.
+* Prevents mismatches between RTL sim and synthesized logic.
+
+
+## Blocking vs Non-Blocking Assignments
+
+* Inside `always` block:
+
+  * `=` (blocking): sequential execution (line by line).
+  * `<=` (non-blocking): parallel execution (all RHS evaluated first).
+* **Guideline:**
+
+  * Use **blocking (`=`)** for **combinational always blocks**.
+  * Use **non-blocking (`<=`)** for **sequential (clocked) always blocks**.
+
+
+### Caveats with Blocking Assignments
+
+### Example 1 (Sequential Logic):
+
+```verilog
+always @(posedge clk) begin
+   q  = q0;   // uses updated q0 immediately
+   q0 = d;
+end
+```
+
+* Hardware intended = two flip-flops.
+* Simulation = one flop because of blocking order.
+* Fix: use non-blocking (`<=`).
+
+```verilog
+always @(posedge clk) begin
+   q  <= q0;
+   q0 <= d;
+end
+```
+
+### Example 2 (Combinational Logic):
+
+```verilog
+always @(*) begin
+   y  = q0 & c;   // uses old value of q0
+   q0 = a | b;
+end
+```
+
+* Simulation uses **stale q0**.
+* Synthesizer rearranges → mismatch.
+* Correct order: update q0 first OR use separate always block.
+
+---
+
+## Key Notes
+
+* GLS = essential step after synthesis to validate logic & timing.
+* Common mismatches arise from **coding mistakes**:
+
+  * Incomplete sensitivity lists.
+  * Wrong use of blocking vs non-blocking.
+  * Poor coding styles.
+* Always follow Verilog best practices:
+
+  * `always @(*)` for combinational.
+  * `<=` for sequential.
+  * Clear, synthesizable code only.
+
+
