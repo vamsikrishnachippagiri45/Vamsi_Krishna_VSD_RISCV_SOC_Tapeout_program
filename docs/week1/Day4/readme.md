@@ -204,3 +204,13 @@ endmodule
 
 #### ii) GLS using Iverilog
 
+The Netlist is : 
+
+<img width="960" height="547" alt="image" src="https://github.com/user-attachments/assets/f29b28fc-e1eb-43cb-977f-5471644a8906" />
+
+After simulating with Netlist : 
+
+<img width="1553" height="455" alt="image" src="https://github.com/user-attachments/assets/ba73c488-afb1-4564-a349-93debb9544e9" />
+
+We can see that there is mismatch in the simulation and synthesis of the bad_mux.v
+Using GLS it used correct mux , but the code we wrote does not specify the mux. 
