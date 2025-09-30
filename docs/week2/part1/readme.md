@@ -13,7 +13,5 @@ A System-on-Chip (SoC) is an electronic circuit that integrates almost all the c
 The driving force behind SoC design is efficiency and size. Because all the internal parts are physically right next to each other:
 
 Power is Saved: Data signals don't have far to travel, requiring much less energy. This is crucial for battery-powered devices.
-
 Speed is Increased: Communication between the main processor and memory is incredibly fast.
-
 Size is Minimized: A complete system can fit into a device the size of your fingertip.
