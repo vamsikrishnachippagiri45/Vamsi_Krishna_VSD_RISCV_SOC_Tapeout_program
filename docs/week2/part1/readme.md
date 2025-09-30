@@ -44,4 +44,4 @@ The chip's operation flows from the PLL (creating timing stability) to the RVMYT
 ### RVMYTH 
 The RVMYTH core is built on the RISC-V (Reduced Instruction Set Computer - Five) architecture, typically implementing the RV32I (32-bit Integer) base instruction set. This modern, open ISA makes the core highly flexible and relevant for current industry trends.
 
-
+RVMYTH typically implements a single-cycle or very simple multi-cycle pipeline. This structure breaks down instruction execution into discrete stages (Fetch, Decode, Execute, Memory, Write back).  It contains the standard 32 general-purpose 32-bit registers required by the RV32I specification (e.g., r0 is hardwired to zero, r17 is used for data output in BabySoC).
