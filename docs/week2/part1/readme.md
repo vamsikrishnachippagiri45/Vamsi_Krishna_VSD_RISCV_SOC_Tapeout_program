@@ -58,3 +58,14 @@ It actively improves signal quality by reducing Clock Jitter (timing variations)
 The Digital-to-Analog Converter (DAC) is the critical mixed-signal bridge in the BabySoC, responsible for translating the digital output of the RVMYTH CPU into a continuous, usable analog signal for the external world. Its core function is signal conversion: it takes the discrete binary codes (0s and 1s) from the processor's registers (like r17) and transforms them into a proportional output voltage or current.
 
 In the VSDBabySoC, the DAC is typically a 10-bit device, meaning it can resolve 1,024 distinct analog levels, which defines the precision of the generated waveform (e.g., sound or video). The internal design often utilizes a highly scalable structure like the R-2R Ladder DAC for accurate weighted conversion. By completing this digital-to-analog step, the DAC allows the BabySoC to function as a complete embedded system, enabling it to drive multimedia outputs (speakers, displays) and interface directly with the analog environment.
+
+## Why BabySoC
+Focus on Fundamentals: It strips away non-essential components, forcing the learner to focus on the core concepts of processor-peripheral interfacing, memory access, and clock stability, rather than being overwhelmed by a full industrial design.
+
+Enables Full Flow Practice: The small size allows students to take the entire design from high-level modeling (Functional Modelling) through detailed RTL, synthesis, and physical layout in a reasonable timeframe. This provides a complete, hands-on view of the RTL-to-GDSII process.
+
+Reduced Debug Complexity: With only a few IP blocks (RVMYTH, PLL, DAC), debugging is simplified. Errors are easier to isolate and trace using simulation tools (like GTKWave), speeding up the learning curve significantly.
+
+Teaches IP Integration: It demonstrates the essential task of integrating diverse IPs: a digital processor (RVMYTH), a timing block (PLL), and a mixed-signal block (DAC). This teaches the complexities of synchronizing different hardware domains.
+
+Introduces RISC-V: It uses a simple RISC-V core (RVMYTH), exposing learners to a modern, open-source Instruction Set Architecture that is highly relevant in current embedded and custom hardware design.
