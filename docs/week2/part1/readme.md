@@ -26,3 +26,30 @@ The Central Processor (CPU) is undeniably the "Brain" of the SoC. Its primary fu
 In modern SoCs, the CPU subsystem rarely relies on a single core. Instead, it uses Heterogeneous Computing (different types of cores working together). This typically involves:
 Performance Cores (Big Cores): These are high-power cores dedicated to handling demanding tasks like running complex applications, intense calculations, or gaming.
 Efficiency Cores (Little Cores): These are low-power cores that manage background tasks, system monitoring, and simple data processing. This setup allows the SoC to optimize for battery life by only waking up the "Big Cores" when high performance is genuinely needed.
+
+###  Memory
+The Memory Subsystem serves as the local storage and data manager for the processor. Its design is tiered for speed and capacity.
+
+On-Chip Memory (Caches and SRAM): These are extremely fast memory blocks located physically close to the CPU. Caches (L1, L2, L3) hold the data and instructions the CPU will need immediately, dramatically speeding up execution. SRAM (Static Random-Access Memory) is used for other essential local storage.
+
+Memory Controllers: These are specialized logic blocks that act as the librarians for the massive, external memory (the main DRAM or RAM). They manage the complex protocols needed to read from and write to the large off-chip memory modules, ensuring fast and correct data transfers between the processor and the system's main storage pool.
+
+### Peripherals and I/O Blocks 
+Peripherals are the "Hands, Eyes, and Ears" of the chip—all the specialized components that allow the SoC to interact with the outside world and manage internal utilities. They are crucial for system function but generally don't run the main operating system.
+
+These blocks include a wide variety of interfaces and controllers:
+
+External Interfaces: USB, Wi-Fi, Bluetooth, Camera controllers, Display drivers, and General Purpose Input/Output (GPIO). These enable communication with connected components.
+
+Utility Blocks: Timers for scheduling events, Clock Generators for ensuring system timing, and the Interrupt Controller. The Interrupt Controller is critical; it receives signals (interrupts) from peripherals (e.g., a button being pressed) and alerts the CPU, allowing the peripheral to work independently without constantly demanding the processor's attention.
+
+###  Interconnects
+The Interconnect is the "High-Speed Highway System" of the SoC. It's the communication fabric that enables all the components—CPU, memory, and peripherals—to exchange data efficiently. Without an effective interconnect, the SoC would suffer from bottlenecks and poor performance.
+
+Modern SoCs have moved beyond simple, shared buses to sophisticated Network-on-Chip (NoC) designs:
+
+Bus Protocols (e.g., AHB): These are simpler architectures where only one block can use the "road" at a time, making them suitable for slower peripherals.
+
+Advanced Protocols (e.g., AXI): This is a highly efficient standard that allows for burst transfers, multiple simultaneous transactions, and parallel data movement. The Interconnect manages arbitration (who gets to talk when) and ensures data integrity at high clock speeds, acting as the system's traffic police.
+
+
