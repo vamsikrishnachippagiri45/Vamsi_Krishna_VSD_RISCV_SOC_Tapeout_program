@@ -70,6 +70,17 @@ Reduced Debug Complexity: With only a few IP blocks (RVMYTH, PLL, DAC), debuggin
 
 Enables Full Flow Practice: The small size allows us to take the entire design from high-level modeling (Functional Modelling) through detailed RTL, synthesis, and physical layout in a reasonable timeframe. This provides a complete, hands-on view of the RTL-to-GDSII process.
 
+## Functional Modelling 
+Functional Modelling (TLM) is the crucial initial verification step in SoC design. Its key roles are:
+
+RTL Prerequisite: It provides the final confirmation that the design concept is sound before committing to the detailed hardware implementation in RTL.
+
+Enabling Co-Design: Its speed allows Hardware and Software teams to work in parallel (co-design), significantly accelerating the product's time-to-market.
+
+High-Speed Verification: Uses abstraction (TLM) to model data flow, allowing verification runs to be thousands of times faster than detailed RTL simulations.
+
+Preventing Costly Errors: This is the cheapest and fastest stage to fix major architectural flaws. It mitigates the risk of a multi-million dollar, time-consuming chip re-spin later in the process.
+
 
 
 
