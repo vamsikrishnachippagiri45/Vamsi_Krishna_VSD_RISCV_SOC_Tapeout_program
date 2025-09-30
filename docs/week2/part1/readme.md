@@ -51,7 +51,7 @@ The PLL's fundamental purpose is to act as a closed-loop feedback system that en
 The PLL operates by continuously adjusting its output. The Phase Detector (PD) compares the input and output phases, generating an error voltage. This voltage is smoothed by the Loop Filter (LF) and then controls the Voltage-Controlled Oscillator (VCO), which adjusts the output frequency until phase lock is achieved.
 
 The PLL is integral because it overcomes the limitations of external clocks:
-It performs frequency multiplication (like the 8x operation) to generate the high-speed clock required by the RVMYTH CPU from a slow reference.
+It performs frequency multiplication to generate the high-speed clock required by the RVMYTH CPU from a slow reference.
 It actively improves signal quality by reducing Clock Jitter (timing variations) and mitigating inaccuracies from external components. By providing a clean, synchronized internal clock, the PLL ensures the data integrity of all on-chip transfers.
 
 ### DAC
