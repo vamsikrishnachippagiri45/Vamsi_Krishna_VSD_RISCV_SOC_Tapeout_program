@@ -32,6 +32,8 @@ Peripherals extend the SoC’s ability to interact with its environment. These i
 ###  Interconnects
 The interconnect provides the communication backbone of the SoC, linking the CPU, memory, and peripherals. While early designs relied on simple buses, modern SoCs employ advanced protocols like AXI, which support parallel transactions and high-speed burst transfers. For large, complex systems, Network-on-Chip (NoC) architectures are used, offering scalable, packet-based communication with mechanisms for arbitration and quality of service. This ensures smooth dataflow and prevents bottlenecks, maintaining system performance even under demanding workloads.
 
+---
+
 ## VSDBabySoC Architecture
 The VSDBabySoC is a compact, functional SoC built around the RISC-V architecture, designed specifically to validate and interface core IP blocks.
 The chip's operation flows from the PLL (creating timing stability) to the RVMYTH (processing data) to the DAC (outputting the converted analog signal).
