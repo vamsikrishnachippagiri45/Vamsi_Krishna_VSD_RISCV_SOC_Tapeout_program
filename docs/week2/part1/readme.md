@@ -38,7 +38,7 @@ The chip's operation flows from the PLL (creating timing stability) to the RVMYT
 | Component | Function | Role in System |
 | :--- | :--- | :--- |
 | **RVMYTH CPU** | The processing core, based on open-source RISC-V. | Executes instructions and sequentially updates the **r17 register** to generate continuous data streams for analog output. |
-| **8x PLL** | Phase-Locked Loop control system. | Generates a **stable, synchronized clock signal** from a reference frequency, essential for coordinating all digital and analog activities and mitigating off-chip timing issues (jitter, delays). |
+| **PLL** | Phase-Locked Loop control system. | Generates a **stable, synchronized clock signal** from a reference frequency, essential for coordinating all digital and analog activities and mitigating off-chip timing issues (jitter, delays). |
 | **10-bit DAC** | Digital-to-Analog Converter. | Converts the digital data from RVMYTH into a continuous **analog signal** (e.g., sound or video) for interfacing with external devices. |
 
 ### RVMYTH 
@@ -51,5 +51,9 @@ A Phase-Locked Loop (PLL) is a critical clock-generation circuit in the BabySoC,
 
 This synchronization is paramount for the entire SoC. The PLL achieves this synchronization through a continuous process involving three main blocks. First, the Phase Detector (PD) compares the phase of the output signal with the input reference, generating an error voltage proportional to the phase difference. This error voltage is then fed into the Loop Filter (LF), which smooths out high-frequency noise and stabilizes the control signal. Finally, the stable voltage controls the Voltage-Controlled Oscillator (VCO), which generates the actual output clock signal, adjusting its frequency until the phase lock is achieved. 
 
-### DAC
+The PLL is integral to the BabySoC because it solves critical timing issues inherent to external clock distribution. It performs frequency multiplication (e.g., the 8x operation) to create the high-speed clock required by the RVMYTH CPU from a slow, stable source. Crucially, the PLL actively reduces Clock Jitter (undesired timing variations) and mitigates manufacturing inaccuracies (like ppm error) from external crystals. By providing a highly clean and synchronized internal clock, the PLL ensures the data integrity of all sequential transfers across the SoC.
 
+### DAC
+The Digital-to-Analog Converter (DAC) is the critical mixed-signal bridge in the BabySoC, responsible for translating the digital output of the RVMYTH CPU into a continuous, usable analog signal for the external world. Its core function is signal conversion: it takes the discrete binary codes (0s and 1s) from the processor's registers (like r17) and transforms them into a proportional output voltage or current.
+
+In the VSDBabySoC, the DAC is typically a 10-bit device, meaning it can resolve 1,024 distinct analog levels, which defines the precision of the generated waveform (e.g., sound or video). The internal design often utilizes a highly scalable structure like the R-2R Ladder DAC for accurate weighted conversion. By completing this digital-to-analog step, the DAC allows the BabySoC to function as a complete embedded system, enabling it to drive multimedia outputs (speakers, displays) and interface directly with the analog environment.
