@@ -34,6 +34,7 @@ The interconnect provides the communication backbone of the SoC, linking the CPU
 
 ## VSDBabySoC Architecture
 The VSDBabySoC is a compact, functional SoC built around the RISC-V architecture, designed specifically to validate and interface core IP blocks.
+The chip's operation flows from the PLL (creating timing stability) to the RVMYTH (processing data) to the DAC (outputting the converted analog signal).
 | Component | Function | Role in System |
 | :--- | :--- | :--- |
 | **RVMYTH CPU** | The processing core, based on open-source RISC-V. | Executes instructions and sequentially updates the **r17 register** to generate continuous data streams for analog output. |
