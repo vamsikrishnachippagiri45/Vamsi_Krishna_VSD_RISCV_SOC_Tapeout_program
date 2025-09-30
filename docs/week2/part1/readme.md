@@ -1,3 +1,21 @@
+# Table of Contents
+
+1. [What is an SoC](#what-is-an-soc)
+2. [Why SoCs are Essential](#why-socs-are-essential)
+3. [Components Present in a Typical SoC](#components-present-in-a-typical-soc)
+    - [CPU](#cpu)
+    - [Memory](#memory)
+    - [Peripherals and I/O Blocks](#peripherals-and-io-blocks)
+    - [Interconnects](#interconnects)
+4. [VSDBabySoC Architecture](#vsdbabysoc-architecture)
+    - [Overview](#overview)
+    - [RVMYTH CPU](#rvmyth-cpu)
+    - [PLL](#pll)
+    - [DAC](#dac)
+5. [Why BabySoC](#why-babysoc)
+6. [Functional Modelling](#functional-modelling)
+
+
 # System on Chip (SoC) Fundamentals
 
 ## What is an SoC 
