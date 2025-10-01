@@ -63,6 +63,9 @@ The chip's operation flows from the PLL (creating timing stability) to the RVMYT
 | **PLL** | Phase-Locked Loop control system. | Generates a **stable, synchronized clock signal** from a reference frequency, essential for coordinating all digital and analog activities and mitigating off-chip timing issues (jitter, delays). |
 | **10-bit DAC** | Digital-to-Analog Converter. | Converts the digital data from RVMYTH into a continuous **analog signal** (e.g., sound or video) for interfacing with external devices. |
 
+
+<img width="2270" height="1260" alt="image" src="https://github.com/user-attachments/assets/271de676-9b9f-46f5-a76f-70f88e50e431" />
+
 ### RVMYTH 
 The RVMYTH core is built on the RISC-V (Reduced Instruction Set Computer - Five) architecture, typically implementing the RV32I (32-bit Integer) base instruction set. This modern, open ISA makes the core highly flexible and relevant for current industry trends.
 
