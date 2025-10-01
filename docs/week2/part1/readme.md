@@ -50,7 +50,6 @@ Peripherals extend the SoC’s ability to interact with its environment. These i
 ###  Interconnects
 The interconnect provides the communication backbone of the SoC, linking the CPU, memory, and peripherals. While early designs relied on simple buses, modern SoCs employ advanced protocols like AXI, which support parallel transactions and high-speed burst transfers. For large, complex systems, Network-on-Chip (NoC) architectures are used, offering scalable, packet-based communication with mechanisms for arbitration and quality of service. This ensures smooth dataflow and prevents bottlenecks, maintaining system performance even under demanding workloads.
 
-<img width="2270" height="1260" alt="image" src="https://github.com/user-attachments/assets/271de676-9b9f-46f5-a76f-70f88e50e431" />
 
 ---
 
