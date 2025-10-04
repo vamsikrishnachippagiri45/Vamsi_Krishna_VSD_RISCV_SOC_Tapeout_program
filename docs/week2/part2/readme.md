@@ -130,8 +130,14 @@ This waveform snippet confirms the clock source operation within the BabySoC.
 This plot confirms that the clock signal, essential for synchronous operation, is stable and correctly available to the digital logic from the start of the simulation. 
 It validates the clocking interface, ensuring the RVMYTH core (stubbed) receives the required synchronization signal to begin its operations.
 
+### DAC verification
 
+This close-up view shows the functional steps of the DAC in response to the processor's output:
+The D[9:0] signal, which is the 10-bit digital input from the processor (likely derived from a register write), changes its value incrementally (e.g., 000→001→002...). This confirms the processor is executing its test program and successfully driving the DAC interface.
+The OUT signal, which is modeled as a real (analog) data type, changes immediately after the digital input D[9:0] changes.
+Verification: This confirms the digital interface is working and the behavioral model of the DAC is correctly translating the incremental digital input values into corresponding real (analog) output voltage levels.
 <img width="1520" height="633" alt="image" src="https://github.com/user-attachments/assets/625c5376-7f6d-4e59-b467-983a2935bbd5" />
+
 
 <img width="1520" height="633" alt="image" src="https://github.com/user-attachments/assets/1c1f0cfd-b373-4e46-a1b3-7b88d458adaa" />
 
