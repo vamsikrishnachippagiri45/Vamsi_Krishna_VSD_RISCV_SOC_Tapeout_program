@@ -119,3 +119,13 @@ gtkwave pre_synth_sim.vcd
 ```
 Output: GTKWave starts and reports the time boundaries of the simulation run.
 The user can now graphically analyze the signals (clocking, reset, and dataflow) to verify the BabySoC's functional correctness.
+
+### Observations in GTKWave
+
+#### Clocking verification 
+This waveform snippet confirms the clock source operation within the BabySoC. 
+
+<img width="1520" height="620" alt="image" src="https://github.com/user-attachments/assets/3b498d0a-46d4-4821-809b-4bdbe9c76b0f" />
+
+This plot confirms that the clock signal, essential for synchronous operation, is stable and correctly available to the digital logic from the start of the simulation. 
+It validates the clocking interface, ensuring the RVMYTH core (stubbed) receives the required synchronization signal to begin its operations.
