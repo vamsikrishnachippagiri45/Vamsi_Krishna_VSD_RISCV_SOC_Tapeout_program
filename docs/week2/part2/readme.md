@@ -185,13 +185,13 @@ Verification: This validates the overall system-level functionality where the pr
 <img width="1520" height="599" alt="image" src="https://github.com/user-attachments/assets/f9a44a25-e147-4d80-9616-bb296013a1c4" />
 This waveform demonstrates the correct synchronous operation and data integrity across the entire VSDBabySoC system at the top level (uut), relying on the stubbing methodology for the core and peripherals.
 
-1. Verification of Core Interfaces (Reset and Clocking)
+1)Verification of Core Interfaces (Reset and Clocking)
 
 CLK (Clock): The signal shows a continuous square wave, confirming the PLL module is correctly generating the stable system clock required for all digital operations.
 
 RESET: The signal is shown transitioning from active to inactive (high pulse shown initially), confirming the system reset sequence completes successfully, clearing internal states and enabling the RVMYTH core to begin execution.
 
-2. Verification of Data Path (RVMYTH to DAC)
+2)Verification of Data Path (RVMYTH to DAC)
 
 RV_TO_DAC[9:0]: This critical signal represents the data bus carrying the digital output from the RVMYTH core (which is running the stub program) destined for the DAC.
 The signal shows a clear, periodic pattern of changing digital values (indicated by the distinct steps in the waveform). This confirms that the RVMYTH core is executing its program, calculating and writing new data synchronously.
