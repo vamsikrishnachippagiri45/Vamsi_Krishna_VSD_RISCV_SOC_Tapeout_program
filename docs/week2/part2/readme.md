@@ -24,22 +24,58 @@ Module Directory (src/module/): Contains all the core IP component => Peripheral
 
 The RVMYTH core's primary source file (rvmyth.tlv) is unreadable by the Icarus Verilog simulator. The following two methods allow the processor to be included in the functional simulation:
 
-### Method 1: Translation (Full Path) 
+Convert TLV File to verilog/system verilog:
 
-This approach utilizes an external tool to convert the core to a standard HDL format, enabling simulation of the full RVMYTH logic.
+The repository includes a file rvmyth.tlv (Transaction-Level Verilog).
+TLV is not directly supported by iverilog, hence it cannot be compiled as-is.
+To use the TLV description, one needs the SandPiper tool from Redwood EDA, which converts .tlv files into synthesizable SystemVerilog (.sv) files. This is the Sandpiper Method of simulation.
 
-Source Files Used: rvmyth_verilog.sv and rvmyth_verilog_gen.sv.
+Stub Method (Used Here):
 
-Pros:Full Verification: Simulates the complete RVMYTH core logic as intended by the design. High Fidelity: Provides higher confidence in the processor's functional correctness before synthesis.
-Cons: External Dependency: Requires the use of the external sandpiper−saas tool (and a Python virtual environment) to generate the necessary .sv files prior to compilation.
+A stub is a simplified placeholder module that mimics the interface (inputs/outputs) of a real module but does not implement its full functionality.
+Using the stub allowed me to compile and run the SoC testbench with iverilog, ensuring that the integration and connectivity of the SoC modules could be checked.
+This method bypasses TLV translation and is mainly used for quick verification of the SoC flow.
 
- ### Method 2: Stubbing (Simple Path)
+The Stub used for pre-synthesis simulation is :
+```
+module rvmyth_stub(
+   output real OUT,
+    input CLK,
+    input reset
+);
+    // 10-bit digital counter
+    reg [9:0] counter;   // goes from 0 to 1023 (3FF)
+    reg dir;             // direction: 0 = up, 1 = down
 
-This approach uses a pre-written behavioral model to bypass the core's complexity, allowing immediate system-level testing.
+    always @(posedge CLK or posedge reset) begin
+        if (reset) begin
+            counter <= 10'd0;
+            dir <= 1'b0; // start by counting up
+        end else begin
+            if (!dir) begin
+                if (counter == 10'd1023) begin
+                    dir <= 1'b1;          // switch to down
+                    counter <= counter - 1;
+                end else begin
+                    counter <= counter + 1;
+                end
+            end else begin
+                if (counter == 10'd0) begin
+                    dir <= 1'b0;          // switch to up
+                    counter <= counter + 1;
+                end else begin
+                    counter <= counter - 1;
+                end
+            end
+        end
+    end
 
-Source File Used: rvmyth_stub.v.
+    // Convert digital counter to real (for DAC output visualization)
+    always @(*) begin
+        OUT = counter * 1.0;   // scale if needed, e.g., * (3.3/1023.0) for volts
+    end
 
-Pros: Simplest Execution: Requires no external tools or file conversion steps. Fast Setup: Allows immediate integration and verification of the system's wrapper and peripherals (PLL/DAC).
+endmodule
+```
 
-Cons:
-        Limited Verification: Only verifies the interface (I/O signals and ports). The actual processor logic is replaced by a simplified model (e.g., a counter or hard-coded sequence), meaning the core itself is not functionally tested.
+
