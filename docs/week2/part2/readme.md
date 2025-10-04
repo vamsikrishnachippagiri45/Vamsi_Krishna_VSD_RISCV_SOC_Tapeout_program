@@ -78,4 +78,8 @@ module rvmyth_stub(
 endmodule
 ```
 
+Use case: Learning SoC integration, debugging processor-peripheral connections, verifying SoC design flow.
+
+
+
 
