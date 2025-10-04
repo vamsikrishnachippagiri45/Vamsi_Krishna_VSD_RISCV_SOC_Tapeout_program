@@ -122,6 +122,26 @@ The user can now graphically analyze the signals (clocking, reset, and dataflow)
 
 ### Observations in GTKWave
 
+#### Core (RVMYTH Stub) verification
+
+<img width="1520" height="630" alt="Screenshot from 2025-10-04 05-22-21" src="https://github.com/user-attachments/assets/1ad53016-1d59-49ff-8238-13f46f13ea31" />
+
+RVMYTH Core Reset and Initialization:
+Signals : 
+
+reset: The signal is initially high (asserted) or transitioning from high to low.
+
+CLK: The clock signal is stable and continuously pulsing (provided by the PLL model).
+
+counter[9:0]: This is the internal data output of the stub. It is shown initially as XXX (unknown) or 000 during reset.
+
+Data Transition: The moment the reset signal is deasserted (goes low), the counter immediately transitions to a known value (000) and starts changing sequentially.
+
+Verification: This confirms the reset operation is successful. The core (stub) moves from an unknown or reset state to a functional state (000) exactly when the reset signal is removed.
+
+<img width="1520" height="636" alt="Screenshot from 2025-10-04 05-23-25" src="https://github.com/user-attachments/assets/15f81ae3-0356-4a70-bc82-59644741c45f" />
+
+
 #### Clocking verification 
 This waveform snippet confirms the clock source operation within the BabySoC. 
 
