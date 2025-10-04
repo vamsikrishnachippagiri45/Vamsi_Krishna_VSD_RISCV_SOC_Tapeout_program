@@ -152,7 +152,7 @@ counter[9:0]: The counter signal begins a sequential increment (001→002→003.
 
 Verification: This validates the synchronous\ clocking\ and\ data\ flow of the stub. The counter[9:0] signal updates its value precisely on the active clock edge (e.g., the rising edge of CLK) during each cycle. This proves that the stub is correctly driven by the system clock and generates predictable output data, which is essential for validating the downstream interfaces (like the DAC).
 
-#### Clocking verification 
+#### PLL (Clocking) verification 
 This waveform snippet confirms the clock source operation within the BabySoC. 
 
 <img width="1520" height="620" alt="image" src="https://github.com/user-attachments/assets/3b498d0a-46d4-4821-809b-4bdbe9c76b0f" />
