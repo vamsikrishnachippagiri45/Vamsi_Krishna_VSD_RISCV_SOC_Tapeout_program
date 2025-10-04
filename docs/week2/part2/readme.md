@@ -81,5 +81,9 @@ endmodule
 Use case: Learning SoC integration, debugging processor-peripheral connections, verifying SoC design flow.
 
 
+## Presynthsis simulation 
+
+
+<img width="1376" height="365" alt="image" src="https://github.com/user-attachments/assets/1f0ae13c-4443-453b-a411-c794383a9b2e" />
 
 
