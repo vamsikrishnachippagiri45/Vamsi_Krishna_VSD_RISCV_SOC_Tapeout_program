@@ -144,4 +144,10 @@ The time delay you observe in the first few nanoseconds (ns) of the simulation, 
 
 <img width="1520" height="633" alt="image" src="https://github.com/user-attachments/assets/1c1f0cfd-b373-4e46-a1b3-7b88d458adaa" />
 
+This wider view over a longer simulation time shows the cumulative effect of the processor's program:
+The D[9:0] input is shown transitioning across a range of values (the thick green band).
+The OUT signal displays a smooth, continuous analog waveform.
+
+Verification: This validates the overall system-level functionality where the processor's sequence of digital data writes results in the desired analog output pattern. It confirms that the dataflow path from the RVMYTH core, through the SoC wrapper, and into the DAC interface is fully functional.
+
 
