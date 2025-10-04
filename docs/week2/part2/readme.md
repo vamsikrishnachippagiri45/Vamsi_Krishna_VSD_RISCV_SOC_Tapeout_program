@@ -30,17 +30,16 @@ This approach utilizes an external tool to convert the core to a standard HDL fo
 
 Source Files Used: rvmyth_verilog.sv and rvmyth_verilog_gen.sv.
 
-    Pros:Full Verification: Simulates the complete RVMYTH core logic as intended by the design. High Fidelity: Provides higher confidence in the processor's functional correctness before synthesis.
-
-    Cons: External Dependency: Requires the use of the external sandpiper−saas tool (and a Python virtual environment) to generate the necessary .sv files prior to compilation.
+Pros:Full Verification: Simulates the complete RVMYTH core logic as intended by the design. High Fidelity: Provides higher confidence in the processor's functional correctness before synthesis.
+Cons: External Dependency: Requires the use of the external sandpiper−saas tool (and a Python virtual environment) to generate the necessary .sv files prior to compilation.
 
  ### Method 2: Stubbing (Simple Path)
 
 This approach uses a pre-written behavioral model to bypass the core's complexity, allowing immediate system-level testing.
 
-    Source File Used: rvmyth_stub.v.
+Source File Used: rvmyth_stub.v.
 
-    Pros: Simplest Execution: Requires no external tools or file conversion steps. Fast Setup: Allows immediate integration and verification of the system's wrapper and peripherals (PLL/DAC).
+Pros: Simplest Execution: Requires no external tools or file conversion steps. Fast Setup: Allows immediate integration and verification of the system's wrapper and peripherals (PLL/DAC).
 
-    Cons:
+Cons:
         Limited Verification: Only verifies the interface (I/O signals and ports). The actual processor logic is replaced by a simplified model (e.g., a counter or hard-coded sequence), meaning the core itself is not functionally tested.
