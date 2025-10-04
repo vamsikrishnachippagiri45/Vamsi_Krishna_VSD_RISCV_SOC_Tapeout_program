@@ -129,3 +129,10 @@ This waveform snippet confirms the clock source operation within the BabySoC.
 
 This plot confirms that the clock signal, essential for synchronous operation, is stable and correctly available to the digital logic from the start of the simulation. 
 It validates the clocking interface, ensuring the RVMYTH core (stubbed) receives the required synchronization signal to begin its operations.
+
+
+<img width="1520" height="633" alt="image" src="https://github.com/user-attachments/assets/625c5376-7f6d-4e59-b467-983a2935bbd5" />
+
+<img width="1520" height="633" alt="image" src="https://github.com/user-attachments/assets/1c1f0cfd-b373-4e46-a1b3-7b88d458adaa" />
+
+
