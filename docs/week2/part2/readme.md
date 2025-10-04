@@ -24,13 +24,13 @@ Module Directory (src/module/): Contains all the core IP component => Peripheral
 
 The RVMYTH core's primary source file (rvmyth.tlv) is unreadable by the Icarus Verilog simulator. The following two methods allow the processor to be included in the functional simulation:
 
-### Convert TLV File to verilog/system verilog
+### (i) Convert TLV File to verilog/system verilog
 
 The repository includes a file rvmyth.tlv (Transaction-Level Verilog).
 TLV is not directly supported by iverilog, hence it cannot be compiled as-is.
 To use the TLV description, one needs the SandPiper tool from Redwood EDA, which converts .tlv files into synthesizable SystemVerilog (.sv) files. This is the Sandpiper Method of simulation.
 
-### Stub Method (Used Here):
+### (ii) Stub Method (Used Here):
 
 A stub is a simplified placeholder module that mimics the interface (inputs/outputs) of a real module but does not implement its full functionality.
 Using the stub allowed me to compile and run the SoC testbench with iverilog, ensuring that the integration and connectivity of the SoC modules could be checked.
