@@ -86,4 +86,36 @@ Use case: Learning SoC integration, debugging processor-peripheral connections, 
 
 <img width="1376" height="365" alt="image" src="https://github.com/user-attachments/assets/1f0ae13c-4443-453b-a411-c794383a9b2e" />
 
+The terminal output shows three critical steps executed from the main project directory (~/VLSI/VSDBabySoC):
 
+1. Compilation (iverilog)
+
+The first command compiles all necessary Verilog source files into a single simulation executable.
+
+Command:
+```
+iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I src/include -I src/module src/module/testbench.v
+```
+Purpose: This tells the compiler to take all design files (testbench.v and any files inside the specified include paths, which would contain the SoC's components like the PLL, DAC, and RVMYTH) and create an executable output file (-o). The macro -DPRE_SYNTH_SIM is often used to activate behavioral models (stubs) or simulation-specific logic within the Verilog files.
+This creates an executable file pre_synth_sim.out.
+
+2. Simulation Execution (./pre_synth_sim.out)
+
+The second command executes the compiled simulation file using the vvp runtime engine (which is implicitly called when executing the .out file directly).
+```
+./output/pre_synth_sim/pre_synth_sim.out
+```
+ Output: The simulation log confirms:
+        A Value Change Dump (.vcd) file named pre_synth_sim.vcd was opened for waveform output.
+        The testbench execution finished ($finish called) at time 169998000 (picoseconds).
+This shows Generation of the pre_synth_sim.vcd file, which contains the entire signal history (the Simulation Log).
+
+3. Waveform Analysis (gtkwave)
+
+The final command loads the simulation results into the waveform viewer.
+Command: 
+```
+gtkwave pre_synth_sim.vcd
+```
+Output: GTKWave starts and reports the time boundaries of the simulation run.
+The user can now graphically analyze the signals (clocking, reset, and dataflow) to verify the BabySoC's functional correctness.
