@@ -40,3 +40,6 @@ Hold violation occurs if data changes too early after clock edge.
 Hold slack = Arrival time – Required time
 → Negative slack = hold failure.
 
+## Types of setup/hold Analysis
+
+
