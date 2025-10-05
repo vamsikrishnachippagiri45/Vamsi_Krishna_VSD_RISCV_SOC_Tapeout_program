@@ -130,4 +130,11 @@ reset: Shown as inactive (low), indicating the system is running.
 RV_TO_DAC[9:0]: The [9:0] data bus coming from the RVMYTH Core Stub (the processor's output).
 OUT: The real (analog) output of the DAC module.
 
+#### PLL (Clocking) Verification
 
+<img width="1403" height="612" alt="Screenshot from 2025-10-05 04-24-24" src="https://github.com/user-attachments/assets/58c84fe5-49a4-4831-90a4-80d2fb369bc2" />
+
+
+The waveform snippet demonstrates the clock source operation within the BabySoC, which is essential for synchronous verification.
+
+CLK Signal Stability: The main signal (CLK) is shown as a clean, continuous square wave with a highly precise and consistent period (35.416... ns is visible in the marker data). System Status: The stability of the CLK signal validates the clocking interface and timing adherence, proving the system is ready for synchronous data processing.
