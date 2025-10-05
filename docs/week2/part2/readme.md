@@ -127,5 +127,5 @@ Signals Observed:
 
 CLK (Clock): Provides the consistent synchronous reference.
 reset: Shown as inactive (low), indicating the system is running.
-RV_TO_DAC[9:0]: The $\mathbf{10\text{-bit\ digital\ input}$ data bus coming from the RVMYTH Core Stub (the processor's output).
+RV_TO_DAC[9:0]: The [9:0] data bus coming from the RVMYTH Core Stub (the processor's output).
 OUT: The real (analog) output of the DAC module.
