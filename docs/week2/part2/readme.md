@@ -109,7 +109,7 @@ Correct SoC operation before synthesis.
 
     RESET Signal: Shows a transition from active to inactive early in the simulation, confirming the system initialization sequence completed successfully, preparing the core to begin executing its program.
 
-2. Verification of Data Path (RVMYTH Stub → DAC)
+2. Verification of Data Path (RVMYTH → DAC)
 
     RV_TO_DAC[9:0]: This digital signal exhibits a clear, periodic stepping pattern (a thick band of changing values), confirming that the RVMYTH Core Stub is executing its internal counting logic and successfully driving its output interface synchronously.
 
