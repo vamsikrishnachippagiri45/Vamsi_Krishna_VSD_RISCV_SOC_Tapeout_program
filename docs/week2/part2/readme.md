@@ -39,6 +39,10 @@ git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
 This module provides the DAC interface that converts the digital output of the processor to an analog signal.
 It helps visualize or analyze the analog behavior corresponding to digital computations within the SoC.
 
+
+<img width="1854" height="890" alt="Screenshot from 2025-10-04 18-51-22" src="https://github.com/user-attachments/assets/3dac0d25-aef4-4267-822c-381864d988da" />
+
+
 Step 5: Create Output Directory for Pre-Synthesis Simulation
 ```
 cd VSDBabySoC
