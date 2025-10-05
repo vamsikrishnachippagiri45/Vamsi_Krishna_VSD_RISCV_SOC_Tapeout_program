@@ -1,3 +1,21 @@
+## 📘 Table of Contents  
+
+1. [Functional Simulation of VSDBabySoC (Pre-synthesis Simulation)](#functional-simulation-of-vsdbabysoc-pre-synthesis-simulation)  
+2. [Pre-Synthesis Simulation](#pre-synthesis-simulation)  
+ 2.1 [Step 1: Clone VSDBabySoC - Top-Level SoC Module](#step-1-clone-vsdbabysoc---top-level-soc-module)  
+ 2.2 [Step 2: Clone rvmyth - RISC-V Core](#step-2-clone-rvmyth---risc-v-core)  
+ 2.3 [Step 3: Clone avsdpll - PLL](#step-3-clone-avsdpll---pll)  
+ 2.4 [Step 4: Clone avsddac - DAC](#step-4-clone-avsddac---dac)  
+ 2.5 [Step 5: Create Output Directory for Pre-Synthesis Simulation](#step-5-create-output-directory-for-pre-synthesis-simulation)  
+ 2.6 [Step 6: Compile the Design using Icarus Verilog](#step-6-compile-the-design-using-icarus-verilog)  
+ 2.7 [Step 7: Run the Simulation](#step-7-run-the-simulation)  
+ 2.8 [Step 8: Open Waveform in GTKWave](#step-8-open-waveform-in-gtkwave)  
+3. [Observations in Pre-Synthesis Simulation](#observations-in-pre-synthesis-simulation)  
+ 3.1 [Verification of Core Interfaces (Clock and Reset)](#verification-of-core-interfaces-clock-and-reset)  
+ 3.2 [Verification of Data Path (RVMYTH → DAC)](#verification-of-data-path-rvmyth--dac)  
+ 3.3 [DAC Module Verification: Digital-to-Analog Data Transfer](#dac-module-verification-digital-to-analog-data-transfer)  
+ 3.4 [PLL (Clocking) Verification](#pll-clocking-verification)  
+4. [Conclusion](#conclusion)  
 
 
 # Functional simulation of VSDBabySoC (Pre-synthesis simulation)
