@@ -118,3 +118,6 @@ Correct SoC operation before synthesis.
     Data Path Integrity: The successful translation of the discrete digital steps (RV_TO_DAC) into the smooth analog pattern (OUT) validates the entire dataflow path from the processor to the output peripheral is correctly connected and functioning.
 
 <img width="1920" height="922" alt="Screenshot from 2025-10-05 04-03-39" src="https://github.com/user-attachments/assets/e5962302-08f2-4a04-9b57-2fdccbba4172" />
+
+<img width="1403" height="633" alt="image" src="https://github.com/user-attachments/assets/3eb02664-c93b-45a8-b3ab-f760013a212d" />
+
