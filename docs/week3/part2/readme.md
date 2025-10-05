@@ -4,8 +4,8 @@ Static Timing Analysis (STA) is a method used to verify the timing performance o
 
 Static Timing Analysis (STA) is a process used to verify that a digital circuit meets its timing requirements under all conditions, without running simulations. STA involves three main aspects — **timing checks, constraints, and library delay models**.
 
-Timing checks ensure signals arrive at the correct time (like setup and hold checks).
+**Timing checks** ensure signals arrive at the correct time (like setup and hold checks).
 
-Constraints define the required timing conditions, such as clock period, input/output delays, and margins.
+**Constraints** define the required timing conditions, such as clock period, input/output delays, and margins.
 
-Library delay models (like NLDM and Current Source models) describe how cell delays vary with load and input transition, enabling accurate timing prediction.
+**Library delay models** (like NLDM and Current Source models) describe how cell delays vary with load and input transition, enabling accurate timing prediction.
