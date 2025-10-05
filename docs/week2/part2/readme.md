@@ -8,7 +8,7 @@ For the VSDBabySoC, the goal is to confirm the high-level operation and data int
 
 ## PreSynthesis Simulation
 ### Steps 
-Step 1: Clone VSDBabySoC - Top-Level SoC Module
+#### Step 1: Clone VSDBabySoC - Top-Level SoC Module
 ```
 git clone https://github.com/manili/VSDBabySoC.git
 ```
@@ -18,7 +18,7 @@ RVMYTH — RISC-V core (processor),
 AVSDPLL — Phase-Locked Loop (clock generator),
 AVSDDAC — Digital-to-Analog Converter.
 
-Step 2: Clone rvmyth - RISC-V
+#### Step 2: Clone rvmyth - RISC-V
 ```
 git clone https://github.com/kunalg123/rvmyth.git
 ```
@@ -26,13 +26,13 @@ This repository contains the RISC-V processor core (named rvmyth), designed in V
 It serves as the CPU inside the VSDBabySoC.
 The rvmyth core is responsible for instruction fetch, decode, execution, and memory operations.
 
-Step 3: Clone avsdpll - PLL
+#### Step 3: Clone avsdpll - PLL
 ```
 git clone https://github.com/lakshmi-sathi/avsdpll_1v8.git
 ```
 This repository provides the PLL (Phase-Locked Loop) module that generates a stable, high-frequency clock for the processor from a low-frequency input.
 
-Step 4: Clone avsddac - DAC
+#### Step 4: Clone avsddac - DAC
 ```
 git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
 ```
@@ -43,7 +43,7 @@ It helps visualize or analyze the analog behavior corresponding to digital compu
 <img width="1854" height="890" alt="Screenshot from 2025-10-04 18-51-22" src="https://github.com/user-attachments/assets/3dac0d25-aef4-4267-822c-381864d988da" />
 
 
-Step 5: Create Output Directory for Pre-Synthesis Simulation
+#### Step 5: Create Output Directory for Pre-Synthesis Simulation
 ```
 cd VSDBabySoC
 mkdir -p output/pre_synth_sim
@@ -57,7 +57,7 @@ Organizing the output into separate directories helps maintain a clean and struc
 
 After setting up the directories and ensuring all module files (RVMYTH, PLL, DAC, SoC top, testbench) are available, the next steps involve compiling and running the simulation.
 
-Step 6: Compile the Design using Icarus Verilog
+#### Step 6: Compile the Design using Icarus Verilog
 ```
 iverilog -o /home/vamsi/VLSI/VSDBabySoC/output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I /home/vamsi/VLSI/VSDBabySoC/src/include -I /home/vamsi/VLSI/VSDBabySoC/src/module /home/vamsi/VLSI/VSDBabySoC/src/module/testbench.v
 ```
@@ -75,7 +75,7 @@ testbench.v	=> Specifies the top-level testbench that drives and monitors the So
 
 A compiled simulation executable: pre_synth_sim.out -> generated inside the /output/pre_synth_sim/ directory.
 
-Step 7: Run the Simulation
+#### Step 7: Run the Simulation
 ```
 cd output/pre_synth_sim
 ./pre_synth_sim.out
@@ -86,7 +86,7 @@ The testbench stimulates the SoC (reset, clock, signals).
 The simulation runs for a defined number of cycles.
 A waveform file (pre_synth_sim.vcd) is generated automatically.
 
-Step 8: Open Waveform in GTKWave
+#### Step 8: Open Waveform in GTKWave
 ```
 gtkwave pre_synth_sim.vcd
 ```
