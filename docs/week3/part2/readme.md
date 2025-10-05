@@ -75,3 +75,39 @@ Unlike flip-flops, latches enable time borrowing, meaning if a signal arrives la
 This helps relax setup time requirements for slow paths.
 However, if a latch borrows time, the next stage must give time, meaning it has less time to complete its own operation.
 Hence, latch-based designs balance time borrow and time given across pipeline stages to improve overall timing performance.
+
+Static Timing Analysis (STA) performs several supporting analyses to ensure reliable signal transitions, proper loading, and a stable clock network. These checks help maintain timing accuracy and circuit integrity.
+
+### Slew/Transition Analysis
+This analysis verifies the rise and fall times of signals to ensure transitions are neither too slow nor too fast.
+
+Data Slew (max/min):
+Max slew (slow transition) → increases delay → possible setup violations.
+Min slew (too fast) → may cause unrealistic timing optimism.
+
+Clock Slew (max/min):
+Slow clock transitions degrade both setup and hold margins, affecting flip-flop triggering accuracy.
+
+### Load Analysis
+
+Ensures each gate drives an appropriate load for correct timing and signal quality.
+
+Fanout (max/min):
+Max fanout → overloaded net → high capacitance → slow slew.
+Min fanout → ensures efficient loading for signal integrity.
+
+Capacitance (max/min):
+Checks total load capacitance on each net.
+Excess capacitance increases delay and causes signal distortion.
+
+### Clock Analysis
+
+Evaluates the clock network quality, since all STA checks depend on accurate clock timing.
+
+Clock Skew:
+Difference between capture and launch clock arrival times.
+Directly impacts setup and hold margins.
+
+Pulse Width:
+Ensures the clock high and low durations meet the minimum width requirement.
+Violations can cause metastability or missed clocking events.
