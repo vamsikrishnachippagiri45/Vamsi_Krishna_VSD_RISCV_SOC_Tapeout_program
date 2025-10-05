@@ -64,9 +64,13 @@ iverilog -o /home/vamsi/VLSI/VSDBabySoC/output/pre_synth_sim/pre_synth_sim.out -
 This command compiles the Verilog design files and testbench using the Icarus Verilog simulator (iverilog).
 
 -o	=> Specifies the output executable file name and path. In this case, it’s pre_synth_sim.out inside the output directory.
+
 -DPRE_SYNTH_SIM	=> Defines a simulation macro (PRE_SYNTH_SIM) used inside the Verilog code to conditionally include/exclude certain parts meant for pre-synthesis simulation.
+
 -I /src/include	 => Includes the directory containing Verilog header files (*.vh), like sp_verilog.vh.
+
 -I /src/module	=> Includes the folder containing module definitions (like vsdbabysoc.v, rvmyth.v, etc.).
+
 testbench.v	=> Specifies the top-level testbench that drives and monitors the SoC signals. It instantiates the vsdbabysoc module.
 
 
