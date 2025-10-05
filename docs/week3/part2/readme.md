@@ -78,9 +78,10 @@ This helps relax setup time requirements for slow paths.
 However, if a latch borrows time, the next stage must give time, meaning it has less time to complete its own operation.
 Hence, latch-based designs balance time borrow and time given across pipeline stages to improve overall timing performance.
 
----
 
 Static Timing Analysis (STA) performs several supporting analyses to ensure reliable signal transitions, proper loading, and a stable clock network. These checks help maintain timing accuracy and circuit integrity.
+
+---
 
 ### Slew/Transition Analysis
 This analysis verifies the rise and fall times of signals to ensure transitions are neither too slow nor too fast.
