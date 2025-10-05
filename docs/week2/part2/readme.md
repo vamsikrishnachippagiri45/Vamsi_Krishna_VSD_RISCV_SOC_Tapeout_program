@@ -99,6 +99,8 @@ Correct SoC operation before synthesis.
 
 <img width="1466" height="607" alt="image" src="https://github.com/user-attachments/assets/bdcec371-24d9-4c08-afba-fcd8566d4b87" />
 
+--- 
+
 ### Observations in presynthesis simulations
 
 <img width="1920" height="922" alt="Screenshot from 2025-10-05 04-03-39" src="https://github.com/user-attachments/assets/e5962302-08f2-4a04-9b57-2fdccbba4172" />
