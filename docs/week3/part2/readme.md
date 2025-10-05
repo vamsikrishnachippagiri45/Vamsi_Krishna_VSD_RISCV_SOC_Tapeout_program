@@ -40,6 +40,8 @@ Hold violation occurs if data changes too early after clock edge.
 Hold slack = Arrival time – Required time
 → Negative slack = hold failure.
 
+---
+
 ##  Timing Checks Analysis
 
 ### Types of setup/hold Analysis
@@ -76,6 +78,8 @@ This helps relax setup time requirements for slow paths.
 However, if a latch borrows time, the next stage must give time, meaning it has less time to complete its own operation.
 Hence, latch-based designs balance time borrow and time given across pipeline stages to improve overall timing performance.
 
+---
+
 Static Timing Analysis (STA) performs several supporting analyses to ensure reliable signal transitions, proper loading, and a stable clock network. These checks help maintain timing accuracy and circuit integrity.
 
 ### Slew/Transition Analysis
@@ -88,6 +92,8 @@ Min slew (too fast) → may cause unrealistic timing optimism.
 Clock Slew (max/min):
 Slow clock transitions degrade both setup and hold margins, affecting flip-flop triggering accuracy.
 
+---
+
 ### Load Analysis
 
 Ensures each gate drives an appropriate load for correct timing and signal quality.
@@ -99,6 +105,8 @@ Min fanout → ensures efficient loading for signal integrity.
 Capacitance (max/min):
 Checks total load capacitance on each net.
 Excess capacitance increases delay and causes signal distortion.
+
+---
 
 ### Clock Analysis
 
