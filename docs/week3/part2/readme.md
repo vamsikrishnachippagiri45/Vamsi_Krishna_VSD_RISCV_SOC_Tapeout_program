@@ -107,7 +107,7 @@ Capacitance (max/min):
 Checks total load capacitance on each net.
 Excess capacitance increases delay and causes signal distortion.
 
----
+--
 
 ### Clock Analysis
 
