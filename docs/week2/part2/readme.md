@@ -73,4 +73,27 @@ This command compiles the Verilog design files and testbench using the Icarus Ve
 
 testbench.v	=> Specifies the top-level testbench that drives and monitors the SoC signals. It instantiates the vsdbabysoc module.
 
+A compiled simulation executable: pre_synth_sim.out -> generated inside the /output/pre_synth_sim/ directory.
+
+Step 7: Run the Simulation
+```
+cd output/pre_synth_sim
+./pre_synth_sim.out
+```
+Executes the compiled simulation.
+During execution:
+The testbench stimulates the SoC (reset, clock, signals).
+The simulation runs for a defined number of cycles.
+A waveform file (pre_synth_sim.vcd) is generated automatically.
+
+Step 8: Open Waveform in GTKWave
+```
+gtkwave pre_synth_sim.vcd
+```
+
+Open the generated .vcd waveform file in GTKWave — a graphical waveform viewer.
+This allows you to analyze and verify:
+Proper reset and clock behavior , 
+Functional data flow between rvmyth, pll, and dac &
+Correct SoC operation before synthesis.
 
