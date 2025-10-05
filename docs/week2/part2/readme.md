@@ -1,7 +1,7 @@
 ## 📘 Table of Contents  
 
 1. [Functional Simulation of VSDBabySoC (Pre-synthesis Simulation)](#functional-simulation-of-vsdbabysoc-pre-synthesis-simulation)  
-2. [Pre-Synthesis Simulation](#pre-synthesis-simulation)  
+2. [PreSynthesis Simulation](#pre-synthesis-simulation)  
  2.1 [Step 1: Clone VSDBabySoC - Top-Level SoC Module](#step-1-clone-vsdbabysoc---top-level-soc-module)  
  2.2 [Step 2: Clone rvmyth - RISC-V Core](#step-2-clone-rvmyth---risc-v-core)  
  2.3 [Step 3: Clone avsdpll - PLL](#step-3-clone-avsdpll---pll)  
