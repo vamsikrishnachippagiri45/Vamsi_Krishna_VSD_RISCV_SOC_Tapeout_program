@@ -140,3 +140,14 @@ OUT: The real (analog) output of the DAC module.
 The waveform snippet demonstrates the clock source operation within the BabySoC, which is essential for synchronous verification.
 
 CLK Signal Stability: The main signal (CLK) is shown as a clean, continuous square wave with a highly precise and consistent period (35.416... ns is visible in the marker data). System Status: The stability of the CLK signal validates the clocking interface and timing adherence, proving the system is ready for synchronous data processing.
+
+## Conclusion 
+
+The functional simulation of the VSDBabySoC was successful. Utilizing the RVMYTH Core and behavioral models for the PLL and DAC, the simulation confirmed all critical functional criteria:
+
+Synchronization: The system operates synchronously, with the RVMYTH Core Stub adhering strictly to the stable CLK signal provided by the PLL model.
+Initialization: The RESET sequence correctly clears and initializes the system, preparing the core for execution.
+Data Path Integrity: The core's digital output (RV_TO_DAC[9:0]) is correctly transmitted and received by the DAC, which produces the expected analog output waveform.
+
+The functional model validates that the major IP blocks are correctly interconnected and operating as designed, verifying the SoC's architecture prior to moving to physical synthesis.
+
