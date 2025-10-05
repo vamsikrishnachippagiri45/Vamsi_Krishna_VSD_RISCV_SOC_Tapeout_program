@@ -1,4 +1,4 @@
-## 📘 Table of Contents  
+# 📘 Table of Contents  
 
 1. [Functional Simulation of VSDBabySoC (Pre-synthesis Simulation)](#functional-simulation-of-vsdbabysoc-pre-synthesis-simulation)  
 2. [PreSynthesis Simulation](#pre-synthesis-simulation)  
@@ -18,7 +18,7 @@
 4. [Conclusion](#conclusion)  
 
 
-# Functional simulation of VSDBabySoC (Pre-synthesis simulation)
+## Functional simulation of VSDBabySoC (Pre-synthesis simulation)
 
 Functional simulation, or pre-synthesis simulation, is the first and most critical step in verifying any digital design. Its objective is to validate the design's logic and behavior against the specification, irrespective of timing delays or physical implementation.
 
