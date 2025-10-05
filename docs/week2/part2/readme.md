@@ -97,3 +97,7 @@ Proper reset and clock behavior ,
 Functional data flow between rvmyth, pll, and dac &
 Correct SoC operation before synthesis.
 
+<img width="1466" height="607" alt="image" src="https://github.com/user-attachments/assets/bdcec371-24d9-4c08-afba-fcd8566d4b87" />
+
+
+
