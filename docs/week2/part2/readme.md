@@ -103,23 +103,23 @@ Correct SoC operation before synthesis.
 
 <img width="1920" height="922" alt="Screenshot from 2025-10-05 04-03-39" src="https://github.com/user-attachments/assets/e5962302-08f2-4a04-9b57-2fdccbba4172" />
 
-1. Verification of Core Interfaces (Clock and Reset)
+#### Verification of Core Interfaces (Clock and Reset)
 
     CLK Signal: Displays a stable, continuous square wave, verifying that the PLL module (behavioral model) is correctly providing the essential synchronous timing signal to the entire digital system.
 
     RESET Signal: Shows a transition from active to inactive early in the simulation, confirming the system initialization sequence completed successfully, preparing the core to begin executing its program.
 
-2. Verification of Data Path (RVMYTH → DAC)
+#### Verification of Data Path (RVMYTH → DAC)
 
     RV_TO_DAC[9:0]: This digital signal exhibits a clear, periodic stepping pattern (a thick band of changing values), confirming that the RVMYTH Core Stub is executing its internal counting logic and successfully driving its output interface synchronously.
 
     OUT (DAC Output): Displays a corresponding smooth, periodic analog-like waveform (rising and falling curve). This is the functional output of the DAC behavioral model.
 
     Data Path Integrity: The successful translation of the discrete digital steps (RV_TO_DAC) into the smooth analog pattern (OUT) validates the entire dataflow path from the processor to the output peripheral is correctly connected and functioning.
-   
-<img width="1403" height="633" alt="image" src="https://github.com/user-attachments/assets/3bb540ec-f91c-4b92-b5d3-b951f65836df" />
 
-DAC Module Verification: Digital-to-Analog Data Transfer
+#### DAC Module Verification: Digital-to-Analog Data Transfer
+
+<img width="1403" height="633" alt="image" src="https://github.com/user-attachments/assets/3bb540ec-f91c-4b92-b5d3-b951f65836df" />
 
 The waveform demonstrates the successful data transfer and conversion at the DAC peripheral interface during active operation.
 
@@ -129,3 +129,5 @@ CLK (Clock): Provides the consistent synchronous reference.
 reset: Shown as inactive (low), indicating the system is running.
 RV_TO_DAC[9:0]: The [9:0] data bus coming from the RVMYTH Core Stub (the processor's output).
 OUT: The real (analog) output of the DAC module.
+
+
