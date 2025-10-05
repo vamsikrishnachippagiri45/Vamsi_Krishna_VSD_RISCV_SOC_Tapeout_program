@@ -18,15 +18,15 @@
 4. [Conclusion](#conclusion)  
 
 
-## Functional simulation of VSDBabySoC (Pre-synthesis simulation)
+# Functional simulation of VSDBabySoC (Pre-synthesis simulation)
 
 Functional simulation, or pre-synthesis simulation, is the first and most critical step in verifying any digital design. Its objective is to validate the design's logic and behavior against the specification, irrespective of timing delays or physical implementation.
 
 For the VSDBabySoC, the goal is to confirm the high-level operation and data integrity among the main IP blocks: the RVMYTH processor, the PLL , and the DAC.
 
-## PreSynthesis Simulation
-### Steps 
-#### Step 1: Clone VSDBabySoC - Top-Level SoC Module
+# PreSynthesis Simulation
+## Steps 
+### Step 1: Clone VSDBabySoC - Top-Level SoC Module
 ```
 git clone https://github.com/manili/VSDBabySoC.git
 ```
@@ -36,7 +36,7 @@ RVMYTH — RISC-V core (processor),
 AVSDPLL — Phase-Locked Loop (clock generator),
 AVSDDAC — Digital-to-Analog Converter.
 
-#### Step 2: Clone rvmyth - RISC-V
+### Step 2: Clone rvmyth - RISC-V
 ```
 git clone https://github.com/kunalg123/rvmyth.git
 ```
@@ -44,13 +44,13 @@ This repository contains the RISC-V processor core (named rvmyth), designed in V
 It serves as the CPU inside the VSDBabySoC.
 The rvmyth core is responsible for instruction fetch, decode, execution, and memory operations.
 
-#### Step 3: Clone avsdpll - PLL
+### Step 3: Clone avsdpll - PLL
 ```
 git clone https://github.com/lakshmi-sathi/avsdpll_1v8.git
 ```
 This repository provides the PLL (Phase-Locked Loop) module that generates a stable, high-frequency clock for the processor from a low-frequency input.
 
-#### Step 4: Clone avsddac - DAC
+### Step 4: Clone avsddac - DAC
 ```
 git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
 ```
@@ -61,7 +61,7 @@ It helps visualize or analyze the analog behavior corresponding to digital compu
 <img width="1854" height="890" alt="Screenshot from 2025-10-04 18-51-22" src="https://github.com/user-attachments/assets/3dac0d25-aef4-4267-822c-381864d988da" />
 
 
-#### Step 5: Create Output Directory for Pre-Synthesis Simulation
+### Step 5: Create Output Directory for Pre-Synthesis Simulation
 ```
 cd VSDBabySoC
 mkdir -p output/pre_synth_sim
@@ -75,7 +75,7 @@ Organizing the output into separate directories helps maintain a clean and struc
 
 After setting up the directories and ensuring all module files (RVMYTH, PLL, DAC, SoC top, testbench) are available, the next steps involve compiling and running the simulation.
 
-#### Step 6: Compile the Design using Icarus Verilog
+### Step 6: Compile the Design using Icarus Verilog
 ```
 iverilog -o /home/vamsi/VLSI/VSDBabySoC/output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I /home/vamsi/VLSI/VSDBabySoC/src/include -I /home/vamsi/VLSI/VSDBabySoC/src/module /home/vamsi/VLSI/VSDBabySoC/src/module/testbench.v
 ```
@@ -93,7 +93,7 @@ testbench.v	=> Specifies the top-level testbench that drives and monitors the So
 
 A compiled simulation executable: pre_synth_sim.out -> generated inside the /output/pre_synth_sim/ directory.
 
-#### Step 7: Run the Simulation
+### Step 7: Run the Simulation
 ```
 cd output/pre_synth_sim
 ./pre_synth_sim.out
@@ -104,7 +104,7 @@ The testbench stimulates the SoC (reset, clock, signals).
 The simulation runs for a defined number of cycles.
 A waveform file (pre_synth_sim.vcd) is generated automatically.
 
-#### Step 8: Open Waveform in GTKWave
+### Step 8: Open Waveform in GTKWave
 ```
 gtkwave pre_synth_sim.vcd
 ```
@@ -119,17 +119,17 @@ Correct SoC operation before synthesis.
 
 --- 
 
-### Observations in presynthesis simulations
+# Observations in presynthesis simulations
 
 <img width="1920" height="922" alt="Screenshot from 2025-10-05 04-03-39" src="https://github.com/user-attachments/assets/e5962302-08f2-4a04-9b57-2fdccbba4172" />
 
-#### Verification of Core Interfaces (Clock and Reset)
+### Verification of Core Interfaces (Clock and Reset)
 
 CLK Signal: Displays a stable, continuous square wave, verifying that the PLL module (behavioral model) is correctly providing the essential synchronous timing signal to the entire digital system.
 
 RESET Signal: Shows a transition from active to inactive early in the simulation, confirming the system initialization sequence completed successfully, preparing the core to begin executing its program.
 
-#### Verification of Data Path (RVMYTH → DAC)
+### Verification of Data Path (RVMYTH → DAC)
 
 RV_TO_DAC[9:0]: This digital signal exhibits a clear, periodic stepping pattern (a thick band of changing values), confirming that the RVMYTH Core Stub is executing its internal counting logic and successfully driving its output interface synchronously.
 
@@ -137,7 +137,7 @@ OUT (DAC Output): Displays a corresponding smooth, periodic analog-like waveform
 
 Data Path Integrity: The successful translation of the discrete digital steps (RV_TO_DAC) into the smooth analog pattern (OUT) validates the entire dataflow path from the processor to the output peripheral is correctly connected and functioning.
 
-#### DAC Module Verification: Digital-to-Analog Data Transfer
+### DAC Module Verification: Digital-to-Analog Data Transfer
 
 <img width="1403" height="633" alt="image" src="https://github.com/user-attachments/assets/3bb540ec-f91c-4b92-b5d3-b951f65836df" />
 
@@ -150,7 +150,7 @@ reset: Shown as inactive (low), indicating the system is running.
 RV_TO_DAC[9:0]: The [9:0] data bus coming from the RVMYTH Core Stub (the processor's output).
 OUT: The real (analog) output of the DAC module.
 
-#### PLL (Clocking) Verification
+### PLL (Clocking) Verification
 
 <img width="1403" height="612" alt="Screenshot from 2025-10-05 04-24-24" src="https://github.com/user-attachments/assets/58c84fe5-49a4-4831-90a4-80d2fb369bc2" />
 
@@ -159,7 +159,7 @@ The waveform snippet demonstrates the clock source operation within the BabySoC,
 
 CLK Signal Stability: The main signal (CLK) is shown as a clean, continuous square wave with a highly precise and consistent period (35.416... ns is visible in the marker data). System Status: The stability of the CLK signal validates the clocking interface and timing adherence, proving the system is ready for synchronous data processing.
 
-## Conclusion 
+# Conclusion 
 
 The functional simulation of the VSDBabySoC was successful. Utilizing the RVMYTH Core and behavioral models for the PLL and DAC, the simulation confirmed all critical functional criteria:
 
