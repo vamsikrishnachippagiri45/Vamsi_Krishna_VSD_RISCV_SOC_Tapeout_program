@@ -152,6 +152,11 @@ Total number of cells and flip-flops ,
 Number of logic levels. 
 Useful for checking synthesis quality.
 
+<img width="1356" height="915" alt="image" src="https://github.com/user-attachments/assets/7b16d153-8d98-4ebf-b4f8-30e0cb8c2ead" />
+
+
+<img width="1356" height="915" alt="image" src="https://github.com/user-attachments/assets/d6da0238-8499-4f43-a7a6-65d4377250b0" />
+
 
 ###  Write the synthesized netlist
 
