@@ -135,7 +135,6 @@ Launch Register: Source flip-flop where data starts.
 Combinational Logic: Intermediate logic gates causing delay.
 Capture Register: Destination flip-flop where data is captured.
 Path Delay: Sum of cell delays and interconnect delays between launch and capture.
-
 Timing paths are checked for both setup (maximum delay) and hold (minimum delay) requirements.
 
 
