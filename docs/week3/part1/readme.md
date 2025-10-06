@@ -10,6 +10,8 @@ Verification that synthesis did not alter functionality.
 
 GLS ensures logical equivalence between the RTL design and the synthesized hardware before physical design.
 
+---
+
 ## Synthesis with Yosys
 
 Goal: Convert RTL (behavioral Verilog) → Gate-level netlist using standard cells from Sky130 library.
@@ -153,7 +155,7 @@ write_verilog -noattr /home/vamsi/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabys
 Writes the final synthesized gate-level netlist to a Verilog file.
 This file (vsdbabysoc.synth.v) will be used for post-synthesis (GLS) simulation.
 
-
+---
 
 ## Post-Synthesis Simulation (GLS)
 
@@ -203,3 +205,9 @@ gtkwave post_synth_sim.vcd
 ```
 
 Launches GTKWave, a waveform viewer, to visualize signal transitions, check clock/reset, and verify that the post-synth design behaves the same as the RTL simulation.
+
+
+<img width="1636" height="475" alt="Post_synthesis_simulation_GLS" src="https://github.com/user-attachments/assets/58af3f6e-651a-4a3b-81f1-abf4b7983f13" />
+
+---
+
