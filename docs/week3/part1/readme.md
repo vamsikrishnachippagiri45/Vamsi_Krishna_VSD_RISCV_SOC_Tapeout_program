@@ -152,3 +152,54 @@ write_verilog -noattr /home/vamsi/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabys
 
 Writes the final synthesized gate-level netlist to a Verilog file.
 This file (vsdbabysoc.synth.v) will be used for post-synthesis (GLS) simulation.
+
+
+
+## Post-Synthesis Simulation (GLS)
+
+Goal: Verify the post-synthesis netlist behaves identically to the RTL design.
+
+### Compile the design and testbench
+
+```
+iverilog -o /home/vamsi/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out \
+-DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 \
+-I /home/vamsi/VLSI/VSDBabySoC/src/include \
+-I /home/vamsi/VLSI/VSDBabySoC/src/module \
+-I /home/vamsi/VLSI/VSDBabySoC/output/post_synth_sim \
+-I /home/vamsi/VLSI/VSDBabySoC/src/gls_model \
+/home/vamsi/VLSI/VSDBabySoC/src/module/testbench.v
+
+```
+
+Compiles the testbench and synthesized netlist for GLS using iverilog.
+
+| Flag               | Meaning                                                                         |
+| ------------------ | ------------------------------------------------------------------------------- |
+| `-o`               | Output file name (`post_synth_sim.out`).                                        |
+| `-DPOST_SYNTH_SIM` | Macro for conditional compilation (used to switch between RTL and GLS).         |
+| `-DFUNCTIONAL`     | Uses **functional models** of standard cells (without transistor-level delays). |
+| `-DUNIT_DELAY=#1`  | Assigns a **unit delay (#1)** to each gate for simple timing behavior.          |
+| `-I`               | Add include paths for header files, models, and the synthesized netlist.        |
+| `testbench.v`      | Top-level testbench to simulate the design.                                     |
+
+
+### Run the simulation
+
+```
+cd /home/vamsi/VLSI/VSDBabySoC/output/post_synth_sim
+./post_synth_sim.out
+```
+
+Executes the compiled simulation binary.
+This will generate:
+VCD waveform file (post_synth_sim.vcd) for waveform analysis.
+
+
+### Open the waveform
+
+```
+gtkwave post_synth_sim.vcd
+```
+
+Launches GTKWave, a waveform viewer, to visualize signal transitions, check clock/reset, and verify that the post-synth design behaves the same as the RTL simulation.
