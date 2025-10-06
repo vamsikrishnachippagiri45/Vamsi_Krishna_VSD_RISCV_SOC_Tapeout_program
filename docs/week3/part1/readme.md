@@ -158,6 +158,9 @@ Useful for checking synthesis quality.
 <img width="1356" height="915" alt="image" src="https://github.com/user-attachments/assets/d6da0238-8499-4f43-a7a6-65d4377250b0" />
 
 
+<img width="1356" height="321" alt="image" src="https://github.com/user-attachments/assets/4d9d65c7-43b6-4ba4-a3cc-ba63d50bef93" />
+
+
 ###  Write the synthesized netlist
 
 ```
