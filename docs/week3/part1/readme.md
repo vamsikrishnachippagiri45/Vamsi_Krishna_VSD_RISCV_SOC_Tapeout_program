@@ -234,7 +234,7 @@ The analysis of your Post-Synthesis Simulation (GLS) compared to the Pre-Synthes
 <img width="1886" height="569" alt="image" src="https://github.com/user-attachments/assets/aa6db18e-f76c-4540-817e-8043adfbcaca" />
 
 
-1. Functional Equivalence
+ ### Functional Equivalence
 
 The simulation proves the core logic and system behavior remain correct following translation by Yosys:
 Clocking and Synchronization: The CLK signal remains a functionally identical, clean square wave in the GLS, validating that the PLL interface is correctly driving the synthesized clock network.
@@ -244,7 +244,7 @@ Data Path Integrity: The digital data on the RV_TO_DAC[9:0] bus and the resultin
 <img width="1770" height="569" alt="image" src="https://github.com/user-attachments/assets/e86ed924-6987-4df8-b9ee-5f2331a43f3e" />
 
 
-2. Reset and Initialization
+ ### Reset and Initialization
 
 The reset network built from primitive gates functions correctly:
 The RESET signal shows a sharp transition from active to inactive, and the design successfully clears its state.
