@@ -110,6 +110,8 @@ After flattening, Yosys creates a single-level design, which simplifies simulati
 ```
 setundef -zero
 ```
+Replaces all undefined (x) or high-impedance (z) signals with logic 0.
+This prevents unknown or unpredictable behavior during simulation.
 
 ### Clean the design
 
