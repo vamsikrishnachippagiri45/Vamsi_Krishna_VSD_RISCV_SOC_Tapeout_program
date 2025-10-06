@@ -231,6 +231,7 @@ Launches GTKWave, a waveform viewer, to visualize signal transitions, check cloc
 <img width="1886" height="569" alt="image" src="https://github.com/user-attachments/assets/aa6db18e-f76c-4540-817e-8043adfbcaca" />
 
 
+<img width="1770" height="569" alt="image" src="https://github.com/user-attachments/assets/e86ed924-6987-4df8-b9ee-5f2331a43f3e" />
 
 
 
