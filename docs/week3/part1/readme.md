@@ -250,6 +250,7 @@ The reset network built from primitive gates functions correctly:
 The RESET signal shows a sharp transition from active to inactive, and the design successfully clears its state.
 Data Signal Settling: While the RTL model shows data settling instantly after reset, the GLS shows the data signals remaining in an unknown (X or Z) state for a slightly longer duration. This difference is expected at the gate level, as it reflects the actual propagation time required for the physical gates and flip-flops to stabilize after the reset signal is released.
 
+---
 
 ## Conclusion 
 
