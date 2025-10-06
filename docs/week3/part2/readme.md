@@ -89,7 +89,6 @@ This analysis verifies the rise and fall times of signals to ensure transitions 
 Data Slew (max/min):
 Max slew (slow transition) → increases delay → possible setup violations.
 Min slew (too fast) → may cause unrealistic timing optimism.
-
 Clock Slew (max/min):
 Slow clock transitions degrade both setup and hold margins, affecting flip-flop triggering accuracy.
 
@@ -111,6 +110,7 @@ Excess capacitance increases delay and causes signal distortion.
 ### Clock Analysis
 
 Evaluates the clock network quality, since all STA checks depend on accurate clock timing.
+
 Clock Skew:
 Difference between capture and launch clock arrival times.
 Directly impacts setup and hold margins.
