@@ -129,11 +129,11 @@ Violations can cause metastability or missed clocking events.
 
 A timing path represents the flow of a signal from one register (flip-flop) to another through combinational logic.
 In STA, this path is analyzed to ensure data launched by one register is correctly captured by the next within the clock period.
-A typical register-to-register path consists of:
-Launch Register: Source flip-flop where data starts.
-Combinational Logic: Intermediate logic gates causing delay.
-Capture Register: Destination flip-flop where data is captured.
-Path Delay: Sum of cell delays and interconnect delays between launch and capture.
+A typical register-to-register path consists of :
+Launch Register  :  Source flip-flop where data starts.
+Combinational Logic  :  Intermediate logic gates causing delay.
+Capture Register  :  Destination flip-flop where data is captured.
+Path Delay  :  Sum of cell delays and interconnect delays between launch and capture.
 Timing paths are checked for both setup (maximum delay) and hold (minimum delay) requirements.
 
 
