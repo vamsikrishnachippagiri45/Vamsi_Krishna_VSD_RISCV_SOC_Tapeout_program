@@ -226,3 +226,17 @@ Launches GTKWave, a waveform viewer, to visualize signal transitions, check cloc
 
 ---
 
+## Observations from GLS (Post-Synthesis simulation) 
+
+
+
+
+
+
+
+
+
+
+
+
+
