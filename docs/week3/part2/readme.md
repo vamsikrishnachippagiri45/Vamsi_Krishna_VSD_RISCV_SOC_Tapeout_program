@@ -89,6 +89,7 @@ This analysis verifies the rise and fall times of signals to ensure transitions 
 Data Slew (max/min):
 Max slew (slow transition) → increases delay → possible setup violations.
 Min slew (too fast) → may cause unrealistic timing optimism.
+
 Clock Slew (max/min):
 Slow clock transitions degrade both setup and hold margins, affecting flip-flop triggering accuracy.
 
@@ -101,6 +102,7 @@ Ensures each gate drives an appropriate load for correct timing and signal quali
 Fanout (max/min):
 Max fanout → overloaded net → high capacitance → slow slew.
 Min fanout → ensures efficient loading for signal integrity.
+
 Capacitance (max/min):
 Checks total load capacitance on each net.
 Excess capacitance increases delay and causes signal distortion.
@@ -114,6 +116,23 @@ Evaluates the clock network quality, since all STA checks depend on accurate clo
 Clock Skew:
 Difference between capture and launch clock arrival times.
 Directly impacts setup and hold margins.
+
 Pulse Width:
 Ensures the clock high and low durations meet the minimum width requirement.
 Violations can cause metastability or missed clocking events.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
