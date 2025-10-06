@@ -137,13 +137,55 @@ Path Delay  :  Sum of cell delays and interconnect delays between launch and cap
 Timing paths are checked for both setup (maximum delay) and hold (minimum delay) requirements.
 
 
+### Timing Graphs (Directed Acyclic Graph – DAG)
+
+In STA, the circuit is represented as a Directed Acyclic Graph (DAG) for efficient computation of arrival and required times.
+Nodes: Represent pins of logic gates or registers.
+Edges: Represent signal propagation (delays) between pins.
+The graph is acyclic since timing flows from inputs to outputs without loops.
+This graph model helps tools efficiently calculate path delays, slack, and critical paths.
 
 
+### Logic Gates to Nodes
+
+Each logic gate pin (input/output) is converted into a node in the timing graph.
+This allows detailed tracking of timing for each connection and ensures precise delay propagation from one gate to another.
+
+### Actual Arrival Time (AAT)
+
+The actual arrival time is when the signal actually reaches a specific node or pin in the circuit.
+Calculated by accumulating delays along the path from the start point.
+
+### Required Arrival Time (RAT)
+
+The required arrival time is the latest (for setup) or earliest (for hold) time by which a signal must arrive at a node for correct operation.
+Derived from clock period and constraints.
+Used as a timing reference to compare against AAT.
+
+### Slack
+
+Slack = Required Arrival Time – Actual Arrival Time.
+Indicates the timing margin of a path.
+Positive Slack: Timing met.
+Negative Slack: Timing violated.
 
 
+### Graph-Based Analysis (GBA)
+
+GBA calculates timing for all paths simultaneously using the DAG model.
+Fast and efficient but sometimes overly pessimistic, as it assumes the worst-case conditions for every path.
+Used in early design stages for quick timing closure estimation.
 
 
+### Path-Based Analysis (PBA)
+
+PBA focuses on specific critical paths identified from GBA.
+It re-evaluates the exact path delays more accurately by removing pessimistic assumptions.
+Provides realistic slack values, improving correlation with post-layout timing.
 
 
+### Converting Pins to Nodes for Complete Slack Analysis
+
+In detailed STA, each input and output pin of a gate is represented as a node to track the exact timing through every transition.
 
 
