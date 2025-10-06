@@ -102,7 +102,6 @@ Ensures each gate drives an appropriate load for correct timing and signal quali
 Fanout (max/min):
 Max fanout → overloaded net → high capacitance → slow slew.
 Min fanout → ensures efficient loading for signal integrity.
-
 Capacitance (max/min):
 Checks total load capacitance on each net.
 Excess capacitance increases delay and causes signal distortion.
@@ -112,11 +111,9 @@ Excess capacitance increases delay and causes signal distortion.
 ### Clock Analysis
 
 Evaluates the clock network quality, since all STA checks depend on accurate clock timing.
-
 Clock Skew:
 Difference between capture and launch clock arrival times.
 Directly impacts setup and hold margins.
-
 Pulse Width:
 Ensures the clock high and low durations meet the minimum width requirement.
 Violations can cause metastability or missed clocking events.
