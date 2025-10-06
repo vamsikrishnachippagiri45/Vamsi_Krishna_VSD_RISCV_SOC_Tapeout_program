@@ -78,6 +78,9 @@ synth -top vsdbabysoc
 Performs RTL-to-gate-level synthesis for the top-level module vsdbabysoc.
 It converts behavioral RTL (written with always blocks, assign, etc.) into a netlist made of generic gates.
 
+<img width="1836" height="475" alt="image" src="https://github.com/user-attachments/assets/a6755af3-6d71-4373-bc6d-5967d4efa4b7" />
+
+
 ### Map flip-flops to technology cells
 
 ```
