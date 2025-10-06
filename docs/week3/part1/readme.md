@@ -58,6 +58,10 @@ read_liberty -lib /home/vamsi/VLSI/VSDBabySoC/src/lib/avsddac.lib
 Loads the DAC macro library.
 This allows Yosys to understand the timing and interface of the analog DAC used in your SoC.
 
+
+<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/b06705b0-dd8b-4465-93d6-a933592e8b30" />
+
+
 ### Read the PLL macro library
 
 ```
