@@ -251,7 +251,10 @@ The RESET signal shows a sharp transition from active to inactive, and the desig
 Data Signal Settling: While the RTL model shows data settling instantly after reset, the GLS shows the data signals remaining in an unknown (X or Z) state for a slightly longer duration. This difference is expected at the gate level, as it reflects the actual propagation time required for the physical gates and flip-flops to stabilize after the reset signal is released.
 
 
+## Conclusion 
 
+The synthesis and subsequent Gate-Level Simulation (GLS) successfully verified the structural and functional correctness of the VSDBabySoC design.
+The simulation confirmed functional equivalence: the gate-level netlist produced by Yosys generated the exact same periodic data patterns (RV_TO_DAC) and analog output waveform (OUT) as the original RTL model. This proves the logic translation was flawless. The only observable difference was in initialization: the GLS showed a slightly longer settling time (data remaining in the X state) after reset, which is an expected consequence of simulating the actual propagation delay through the physical gate structure of the reset network. This successful GLS validates the synthesized netlist and confirms the design is ready for physical implementation.
 
 
 
