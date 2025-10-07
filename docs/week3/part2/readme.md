@@ -188,4 +188,16 @@ Provides realistic slack values, improving correlation with post-layout timing.
 
 In detailed STA, each input and output pin of a gate is represented as a node to track the exact timing through every transition.
 
+---
+
+## Setup Time, Hold Time, Clock-to-Q Delay, Clock Skew and Jitter
+
+| **Parameter**                                       | **Definition**                                                                          | **Effect on Timing**                                                   | **Timing Equation (Including Skew & Jitter)**                          | **Remarks / Notes**                                           |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Setup Time (T<sub>setup</sub>)**                  | Minimum time before the **clock edge** that data must be stable at the flip-flop input. | If violated → **Setup violation**, data not captured correctly.        | ( T_{cq} + T_{comb} + T_{setup} \leq T_{clk} + T_{skew} - T_{jitter} ) | Reduces **maximum clock frequency**; affects performance.     |
+| **Hold Time (T<sub>hold</sub>)**                    | Minimum time after the **clock edge** that data must remain stable.                     | If violated → **Hold violation**, old data may be overwritten.         | ( T_{cq} + T_{comb} \geq T_{hold} + T_{skew} + T_{jitter} )            | Affects data stability; fixed by adding delay in short paths. |
+| **Clock-to-Q Delay (T<sub>cq</sub>)**               | Time from the **clock edge** to when output (Q) changes after a valid clock.            | Contributes to total data path delay.                                  | Used in both setup and hold equations.                                 | Depends on **technology**, **load**, and **input slew**.      |
+| **Clock Skew (T<sub>skew</sub>)**                   | Difference in **clock arrival times** between launch and capture flip-flops.            | Positive skew helps setup but hurts hold; negative skew does opposite. | Added/subtracted in both equations as shown.                           | Controlled by **Clock Tree Synthesis (CTS)**.                 |
+| **Clock Jitter / Uncertainty (T<sub>jitter</sub>)** | Variation in the **actual clock edge timing** from its ideal position.                  | Reduces setup margin and tightens hold checks.                         | Appears as negative in setup, positive in hold equation.               | Modeled using STA constraint: `set_clock_uncertainty <value>` |
+
 
