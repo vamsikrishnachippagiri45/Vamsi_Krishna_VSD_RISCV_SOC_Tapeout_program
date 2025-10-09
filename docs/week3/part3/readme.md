@@ -41,7 +41,8 @@ sta
 
 File Organization : 
 
-Netlist: **vsdbabysoc.synth.v**  and 
+Netlist: **vsdbabysoc.synth.v** (The netlist file that got Post synthesis)
+
 Constraints: **vsdbabysoc_synthesis.sdc**
 
 Timing Libraries:
