@@ -41,13 +41,13 @@ sta
 
 File Organization : 
 
-Netlist: vsdbabysoc.synth.v  and 
-Constraints: vsdbabysoc_synthesis.sdc
+Netlist: **vsdbabysoc.synth.v**  and 
+Constraints: **vsdbabysoc_synthesis.sdc**
 
 Timing Libraries:
-sky130_fd_sc_hd__tt_025C_1v80.lib , 
-avsdpll.lib , 
-avsddac.lib
+**sky130_fd_sc_hd__tt_025C_1v80.lib**  , 
+**avsdpll.lib** , 
+**avsddac.lib**.
 
 Netlist & Constraints are placed under ~/VLSI/OpenSTA/examples/BabySOC/ and timing libraries under ~/VLSI/OpenSTA/examples/timing_libs/.
 
