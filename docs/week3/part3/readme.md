@@ -88,8 +88,8 @@ exit
 
 | Command Block | Commands | Explanation |
 | :--- | :--- | :--- |
-| **1. Load Libraries** | `read_liberty -min ...` `read_liberty -max ...` | These commands load the **Liberty files (`.lib`)**, which contain the timing characteristics (delays, timing arcs) of all standard cells. You are loading three separate libraries (`sky130`, `avsddac`, `avsdpll`) and explicitly loading **both the minimum (`-min`) and maximum (`-max`) delay corners** for each. |
-| **2. Load Design** | `read_verilog /.../vsdbabysoc.synth.v` | Loads the structural **synthesized netlist** of your design, which defines how the standard cells are connected. |
+| **1. Load Libraries** | `read_liberty -min ...` `read_liberty -max ...` | These commands load the **Liberty files (`.lib`)**, which contain the timing characteristics (delays, timing arcs) of all standard cells. Here we are loading three separate libraries (`sky130`, `avsddac`, `avsdpll`) and explicitly loading **both the minimum (`-min`) and maximum (`-max`) delay corners** for each. |
+| **2. Load Design** | `read_verilog /.../vsdbabysoc.synth.v` | Loads the structural **synthesized netlist** of design, which defines how the standard cells are connected. |
 | **3. Link Design** | `link_design vsdbabysoc` | This is a crucial step. It **resolves** the cell names found in the Verilog netlist by mapping them to the specific cell definitions and timing data stored in the Liberty files. This makes the design ready for timing analysis. |
 | **4. Load Constraints** | `read_sdc /.../vsdbabysoc_synthesis.sdc` | Loads the **Synopsys Design Constraints (SDC)** file. This file tells the STA tool the timing requirements: clock frequency, clock source, input/output delays, and any timing exceptions (like false paths). |
 | **5. Initial Check** | `report_checks` | Runs a general summary check, often looking for basic issues like unconstrained inputs, unclocked registers, or timing loops. |
@@ -97,7 +97,7 @@ exit
 
 ### Timing Analysis and Reporting Commands
 
-These commands execute the core STA checks and save the output as required for your submission.
+These commands execute the core STA checks and save the output.
 
 | Command | Path Target | Purpose & Output |
 | :--- | :--- | :--- |
