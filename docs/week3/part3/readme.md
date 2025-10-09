@@ -58,9 +58,29 @@ And a TCL script file (run_sta.tcl) is created to give input to the OpenSTA.
 
 ## OpenSTA TCL Script
 
+OpenSTA is an EDA (Electronic Design Automation) tool designed to perform complex Static Timing Analysis. Like many command-line EDA tools (e.g., those for synthesis, place-and-route), it uses TCL (Tool Command Language) as its scripting and command interface. 
+
+TCL script sets up the entire Static Timing Analysis (STA) environment for the vsdbabysoc design, performs the analysis, and generates the necessary reports.
 
 
-
+```
+read_liberty -min /home/vamsi/VLSI/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max /home/vamsi/VLSI/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min /home/vamsi/VLSI/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -max /home/vamsi/VLSI/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -min /home/vamsi/VLSI/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -max /home/vamsi/VLSI/OpenSTA/examples/timing_libs/avsdpll.lib
+read_verilog /home/vamsi/VLSI/OpenSTA/examples/BabySOC/vsdbabysoc.synth.v
+link_design vsdbabysoc
+read_sdc /home/vamsi/VLSI/OpenSTA/examples/BabySOC/vsdbabysoc_synthesis.sdc
+report_checks
+report_checks -path_delay max -format full -group_path_count 1 -sort_by_slack > /home/vamsi/VLSI/OpenSTA/reports/setup_critical_path.txt
+report_checks -path_delay min -format full -group_path_count 1 -sort_by_slack > /home/vamsi/VLSI/OpenSTA/reports/hold_critical_path.txt
+report_wns -max > /home/vamsi/VLSI/OpenSTA/reports/wns_setup.txt
+report_tns -max > /home/vamsi/VLSI/OpenSTA/reports/tns_setup.txt
+puts "Timing analysis complete."
+exit
+```
 
 
 
