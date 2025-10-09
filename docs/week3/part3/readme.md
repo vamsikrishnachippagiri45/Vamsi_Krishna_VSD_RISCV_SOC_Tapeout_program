@@ -39,10 +39,9 @@ sta
 
 ## OpenSTA Input Files
 
-File Organization
+File Organization : 
 
-Netlist: vsdbabysoc.synth.v
-
+Netlist: vsdbabysoc.synth.v  and 
 Constraints: vsdbabysoc_synthesis.sdc
 
 Timing Libraries:
