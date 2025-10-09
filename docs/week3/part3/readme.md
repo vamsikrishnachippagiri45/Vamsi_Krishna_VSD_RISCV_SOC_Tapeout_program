@@ -294,3 +294,5 @@ Rendering : Graphviz dot engine to process the .dot file.
 ```
 dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot -o /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.png
 ```
+
+<img width="977" height="59" alt="hold_critical_path" src="https://github.com/user-attachments/assets/c489b707-6aef-4cb6-9e76-e489bbc1f0dd" />
