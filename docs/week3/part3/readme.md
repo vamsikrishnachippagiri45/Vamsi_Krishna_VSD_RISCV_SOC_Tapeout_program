@@ -84,7 +84,7 @@ exit
 
 
 
-## OpenSTA TCL Script Explanation
+### OpenSTA TCL Script Explanation
 
 | Command Block | Commands | Explanation |
 | :--- | :--- | :--- |
@@ -94,9 +94,8 @@ exit
 | **4. Load Constraints** | `read_sdc /.../vsdbabysoc_synthesis.sdc` | Loads the **Synopsys Design Constraints (SDC)** file. This file tells the STA tool the timing requirements: clock frequency, clock source, input/output delays, and any timing exceptions (like false paths). |
 | **5. Initial Check** | `report_checks` | Runs a general summary check, often looking for basic issues like unconstrained inputs, unclocked registers, or timing loops. |
 
-***
 
-## Timing Analysis and Reporting Commands
+### Timing Analysis and Reporting Commands
 
 These commands execute the core STA checks and save the output as required for your submission.
 
