@@ -119,6 +119,8 @@ sta ../examples/BabySOC/run_sta.tcl
 <img width="1576" height="519" alt="image" src="https://github.com/user-attachments/assets/85e49c98-b738-4248-b991-5b521731b75a" />
 
 
+<img width="906" height="849" alt="image" src="https://github.com/user-attachments/assets/0021cdf8-7d79-49f1-a18a-0cf18c11a0ee" />
+
 
 
 Output files:
