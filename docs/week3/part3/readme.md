@@ -203,6 +203,8 @@ dot -V
 ```
 ### Generating Timing Graphs with Graphviz
 
+#### Setup critical path timing diagram 
+
 DOT File Creation:
 
 ```
