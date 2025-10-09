@@ -109,6 +109,10 @@ These commands execute the core STA checks and save the output.
 | **Final Exit** | `puts "..."` `exit` | Displays a confirmation message and cleanly exits the OpenSTA tool. |
 
 
+## Run OpenSTA
 
-
+```
+cd ~/VLSI/OpenSTA/build
+sta ../examples/BabySOC/run_sta.tcl
+```
 
