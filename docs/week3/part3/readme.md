@@ -254,5 +254,7 @@ The result is a visual timing graph (a schematic image) showing the critical pat
 
 <img width="986" height="255" alt="image" src="https://github.com/user-attachments/assets/23a6b2fa-233e-4f79-820c-44d7a5ef78cf" />
 
+The resulting timing Graph is : 
+
 <img width="1769" height="132" alt="setup_critical_path" src="https://github.com/user-attachments/assets/8a6a565e-c244-4562-b4c8-20c07eaa5e6d" />
 
