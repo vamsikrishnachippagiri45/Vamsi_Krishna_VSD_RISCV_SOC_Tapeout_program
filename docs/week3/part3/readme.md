@@ -188,6 +188,8 @@ Path Type: min
 
 ```
 
+---
+
 ## Timing graphs 
 
 A timing graph is essentially a directed acyclic graph (DAG) where nodes are logic elements (gates or flip-flops) and edges are nets (wires) with associated delays.
@@ -201,9 +203,10 @@ sudo apt update
 sudo apt install graphviz
 dot -V
 ```
+
 ### Generating Timing Graphs with Graphviz
 
-#### Setup critical path timing diagram 
+#### 1) Setup critical path timing diagram 
 
 DOT File Creation:
 
@@ -261,3 +264,33 @@ The resulting timing Graph is :
 
 <img width="1769" height="132" alt="setup_critical_path" src="https://github.com/user-attachments/assets/8a6a565e-c244-4562-b4c8-20c07eaa5e6d" />
 
+#### 2) Hold critical path timing graph
+
+DOT File Creation:
+
+```
+nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot 
+```
+
+
+
+
+Convert the .txt data from the OpenSTA into .dot file and update setup_critical_path.dot file.
+
+```
+digraph hold_critical_path {
+    rankdir=LR;
+    node [shape=box];
+
+    "_8411_/CLK" -> "_8411_/Q" [label="0.27"];
+    "_8411_/Q" -> "_9157_/D" [label="0.00"];
+    "_9157_/D" -> "_9157_/CLK" [label="0.00"];
+    "_9157_/CLK" -> "_9157_/Q" [label="-0.03"];
+}
+```
+
+Rendering : Graphviz dot engine to process the .dot file.
+
+```
+dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot -o /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.png
+```
