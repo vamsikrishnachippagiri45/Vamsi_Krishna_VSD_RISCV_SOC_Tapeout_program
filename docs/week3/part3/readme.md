@@ -208,3 +208,46 @@ DOT File Creation:
 ```
 nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/setup_critical_path.dot 
 ```
+
+Convert the .txt data from the OpenSTA into .dot file and update setup_critical_path.dot file.
+
+```
+digraph SetupCriticalPath {
+    rankdir=LR;  // left to right
+
+    node [shape=box, style=filled, color=lightblue];
+
+    // Nodes
+    "_9169_/CLK" [label="Start FF CLK\n_9169_", color=lightgreen];
+    "_9169_/Q" [label="_9169_/Q"];
+    "_4026_/Y" [label="_4026_/Y"];
+    "_4159_/Y" [label="_4159_/Y"];
+    "_5444_/X" [label="_5444_/X"];
+    "_6241_/Y" [label="_6241_/Y"];
+    "_6306_/Y" [label="_6306_/Y"];
+    "_8516_/D" [label="End FF D\n_8516_", color=lightgreen];
+    "_8516_/CLK" [label="_8516_/CLK"];
+
+    // Edges with delays (ns)
+    "_9169_/CLK" -> "_9169_/Q" [label="0.29"];
+    "_9169_/Q" -> "_4026_/Y" [label="5.22"];
+    "_4026_/Y" -> "_4159_/Y" [label="0.68"];
+    "_4159_/Y" -> "_5444_/X" [label="0.73"];
+    "_5444_/X" -> "_6241_/Y" [label="4.32"];
+    "_6241_/Y" -> "_6306_/Y" [label="0.38"];
+    "_6306_/Y" -> "_8516_/D" [label="0.00"];
+    "_8516_/CLK" -> "_8516_/D" [label="Library setup time -0.58", style=dashed, color=red];
+}
+```
+
+Rendering :Graphviz dot engine to process the .dot file.
+
+-Tpng specifies the output format should be a PNG image.The output is directed to the final PNG image file (hold_critical_path.png).
+
+```
+dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot -o /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.png
+```
+
+The result is a visual timing graph (a schematic image) showing the path that failed the hold check (or the worst-case hold path). This image is often much clearer for identifying logic stages than the numerical text report.
+
+
