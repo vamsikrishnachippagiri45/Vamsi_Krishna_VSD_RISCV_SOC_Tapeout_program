@@ -202,3 +202,9 @@ sudo apt install graphviz
 dot -V
 ```
 ### Generating Timing Graphs with Graphviz
+
+DOT File Creation:
+
+```
+nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/setup_critical_path.dot 
+```
