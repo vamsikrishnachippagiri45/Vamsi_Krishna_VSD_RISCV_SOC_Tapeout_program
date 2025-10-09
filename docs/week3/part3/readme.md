@@ -242,7 +242,7 @@ digraph SetupCriticalPath {
 }
 ```
 
-Rendering :Graphviz dot engine to process the .dot file.
+Rendering : Graphviz dot engine to process the .dot file.
 
 -Tpng specifies the output format should be a PNG image.The output is directed to the final PNG image file (hold_critical_path.png).
 
@@ -251,5 +251,7 @@ dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/setup_critical_path.dot -o /hom
 ```
 
 The result is a visual timing graph (a schematic image) showing the critical path. This image is often much clearer for identifying logic stages than the numerical text report.
+
+<img width="986" height="255" alt="image" src="https://github.com/user-attachments/assets/23a6b2fa-233e-4f79-820c-44d7a5ef78cf" />
 
 
