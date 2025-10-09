@@ -119,8 +119,42 @@ sta ../examples/BabySOC/run_sta.tcl
 
 
 
-Output files:
+## Output files 
 
-reports/setup_critical_path.txt → Setup critical path
+1) reports/setup_critical_path.txt → Setup critical path
+
+```
+Startpoint: _9169_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _8516_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _9169_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.29    0.29 v _9169_/Q (sky130_fd_sc_hd__dfxtp_1)
+   5.22    5.51 ^ _4026_/Y (sky130_fd_sc_hd__nor4_1)
+   0.68    6.19 v _4159_/Y (sky130_fd_sc_hd__a31oi_1)
+   0.73    6.92 v _5444_/X (sky130_fd_sc_hd__or3_1)
+   4.32   11.24 ^ _6241_/Y (sky130_fd_sc_hd__nor4_1)
+   0.38   11.61 v _6306_/Y (sky130_fd_sc_hd__a311oi_1)
+   0.00   11.61 v _8516_/D (sky130_fd_sc_hd__dfxtp_1)
+          11.61   data arrival time
+
+  13.00   13.00   clock clk (rise edge)
+   0.00   13.00   clock network delay (ideal)
+   0.00   13.00   clock reconvergence pessimism
+          13.00 ^ _8516_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.58   12.42   library setup time
+          12.42   data required time
+---------------------------------------------------------
+          12.42   data required time
+         -11.61   data arrival time
+---------------------------------------------------------
+           0.81   slack (MET)
+
+```
 
 reports/hold_critical_path.txt → Hold critical path
