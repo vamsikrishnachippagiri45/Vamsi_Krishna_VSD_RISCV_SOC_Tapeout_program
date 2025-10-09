@@ -192,6 +192,8 @@ Path Type: min
 
 A timing graph is essentially a directed acyclic graph (DAG) where nodes are logic elements (gates or flip-flops) and edges are nets (wires) with associated delays.
 
+### Install Graphviz
+
 Update Package Lists and Install Graphviz:
 
 ```
@@ -199,4 +201,4 @@ sudo apt update
 sudo apt install graphviz
 dot -V
 ```
-
+### Generating Timing Graphs with Graphviz
