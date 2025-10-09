@@ -121,7 +121,7 @@ sta ../examples/BabySOC/run_sta.tcl
 
 ## Output files 
 
-1) reports/setup_critical_path.txt → Setup critical path
+### 1) reports/setup_critical_path.txt → Setup critical path
 
 ```
 Startpoint: _9169_ (rising edge-triggered flip-flop clocked by clk)
@@ -157,4 +157,33 @@ Path Type: max
 
 ```
 
-reports/hold_critical_path.txt → Hold critical path
+### 2) reports/hold_critical_path.txt → Hold critical path
+
+```
+Startpoint: _8411_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _9157_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _8411_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.27    0.27 ^ _8411_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.00    0.27 ^ _9157_/D (sky130_fd_sc_hd__dfxtp_1)
+           0.27   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _9157_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.03   -0.03   library hold time
+          -0.03   data required time
+---------------------------------------------------------
+          -0.03   data required time
+          -0.27   data arrival time
+---------------------------------------------------------
+           0.31   slack (MET)
+
+```
