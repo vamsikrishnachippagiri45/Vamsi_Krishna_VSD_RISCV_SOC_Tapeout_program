@@ -188,5 +188,6 @@ Path Type: min
 
 ```
 
+## Timing graphs 
 
-
+A timing graph is essentially a directed acyclic graph (DAG) where nodes are logic elements (gates or flip-flops) and edges are nets (wires) with associated delays.
