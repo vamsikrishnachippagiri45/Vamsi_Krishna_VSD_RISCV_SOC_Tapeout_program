@@ -52,7 +52,7 @@ Timing Libraries:
 Netlist & Constraints are placed under ~/VLSI/OpenSTA/examples/BabySOC/ and timing libraries under ~/VLSI/OpenSTA/examples/timing_libs/.
 
 
-
+## OpenSTA TCL Script
 
 
 
