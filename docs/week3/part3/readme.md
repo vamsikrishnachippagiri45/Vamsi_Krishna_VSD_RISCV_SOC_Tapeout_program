@@ -116,3 +116,17 @@ cd ~/VLSI/OpenSTA/build
 sta ../examples/BabySOC/run_sta.tcl
 ```
 
+<img width="1576" height="519" alt="image" src="https://github.com/user-attachments/assets/85e49c98-b738-4248-b991-5b521731b75a" />
+
+
+
+
+Output files:
+
+reports/setup_critical_path.txt → Setup critical path
+
+reports/hold_critical_path.txt → Hold critical path
+
+reports/wns_setup.txt → WNS (setup)
+
+reports/wns_hold.txt → WNS (hold)
