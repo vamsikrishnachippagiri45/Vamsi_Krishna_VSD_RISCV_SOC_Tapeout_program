@@ -77,8 +77,6 @@ read_sdc /home/vamsi/VLSI/OpenSTA/examples/BabySOC/vsdbabysoc_synthesis.sdc
 report_checks
 report_checks -path_delay max -format full -group_path_count 1 -sort_by_slack > /home/vamsi/VLSI/OpenSTA/reports/setup_critical_path.txt
 report_checks -path_delay min -format full -group_path_count 1 -sort_by_slack > /home/vamsi/VLSI/OpenSTA/reports/hold_critical_path.txt
-report_wns -max > /home/vamsi/VLSI/OpenSTA/reports/wns_setup.txt
-report_tns -max > /home/vamsi/VLSI/OpenSTA/reports/tns_setup.txt
 puts "Timing analysis complete."
 exit
 ```
@@ -105,8 +103,6 @@ These commands execute the core STA checks and save the output.
 | **Detailed Setup Report** | `report_checks -path_delay max -format full -group_path_count 1 -sort_by_slack > .../setup_critical_path.txt` | **Generates the critical path report for Setup (Max Delay).** **`-path_delay max`**: Focuses on the slowest paths. **`-format full`**: Provides the detailed path breakdown (the required "graph" of cell and net delays). **`-group_path_count 1`**: Restricts the report to only the single worst path. |
 | **Detailed Hold Report** | `report_checks -path_delay min -format full -group_path_count 1 -sort_by_slack > .../hold_critical_path.txt` | **Generates the critical path report for Hold (Min Delay).** **`-path_delay min`**: Focuses on the fastest paths. This check ensures data doesn't arrive too early relative to the clock edge. |
 | **WNS Metric** | `report_wns -max > .../wns_setup.txt` | Calculates and reports the **Worst Negative Slack (WNS)** for setup checks. This is the absolute worst timing violation (or best margin) in your entire design. |
-| **TNS Metric** | `report_tns -max > .../tns_setup.txt` | Calculates and reports the **Total Negative Slack (TNS)** for setup checks. This is the sum of all negative slacks, indicating the overall severity of timing failures. |
-| **Final Exit** | `puts "..."` `exit` | Displays a confirmation message and cleanly exits the OpenSTA tool. |
 
 
 ## Run OpenSTA
@@ -128,7 +124,3 @@ Output files:
 reports/setup_critical_path.txt → Setup critical path
 
 reports/hold_critical_path.txt → Hold critical path
-
-reports/wns_setup.txt → WNS (setup)
-
-reports/wns_hold.txt → WNS (hold)
