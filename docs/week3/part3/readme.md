@@ -51,8 +51,13 @@ Timing Libraries:
 
 Netlist & Constraints are placed under ~/VLSI/OpenSTA/examples/BabySOC/ and timing libraries under ~/VLSI/OpenSTA/examples/timing_libs/.
 
+And a TCL script file (run_sta.tcl) is created to give input to the OpenSTA.
+
+<img width="756" height="343" alt="image" src="https://github.com/user-attachments/assets/838b8d4a-3f1b-4d05-8bb4-30dde82bd18b" />
+
 
 ## OpenSTA TCL Script
+
 
 
 
