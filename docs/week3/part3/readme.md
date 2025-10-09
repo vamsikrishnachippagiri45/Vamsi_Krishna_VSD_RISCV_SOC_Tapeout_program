@@ -34,5 +34,7 @@ which sta
 sta
 ```
 
+<img width="996" height="365" alt="image" src="https://github.com/user-attachments/assets/3b8aae42-f510-4d3d-8a2a-2508e9d3cce4" />
+
 
 
