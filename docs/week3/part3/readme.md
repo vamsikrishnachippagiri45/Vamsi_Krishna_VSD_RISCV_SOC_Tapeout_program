@@ -272,6 +272,7 @@ DOT File Creation:
 nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot 
 ```
 
+<img width="976" height="277" alt="image" src="https://github.com/user-attachments/assets/b6a55308-377f-40ca-b5db-2f0704b07bb0" />
 
 
 
