@@ -206,6 +206,10 @@ dot -V
 
 ### Generating Timing Graphs with Graphviz
 
+
+<img width="1676" height="321" alt="image" src="https://github.com/user-attachments/assets/98a07bd7-d3c7-407c-85ae-85a3fe5ae861" />
+
+
 #### 1) Setup critical path timing diagram 
 
 DOT File Creation:
@@ -215,7 +219,7 @@ nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/setup_critical_path.dot
 ```
 
 
-<img width="986" height="255" alt="image" src="https://github.com/user-attachments/assets/23a6b2fa-233e-4f79-820c-44d7a5ef78cf" />
+
 
 
 Convert the .txt data from the OpenSTA into .dot file and update setup_critical_path.dot file.
@@ -262,7 +266,7 @@ The result is a visual timing graph (a schematic image) showing the critical pat
 
 The resulting timing Graph is : 
 
-<img width="1769" height="132" alt="setup_critical_path" src="https://github.com/user-attachments/assets/8a6a565e-c244-4562-b4c8-20c07eaa5e6d" />
+
 
 #### 2) Hold critical path timing graph
 
@@ -272,7 +276,6 @@ DOT File Creation:
 nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot 
 ```
 
-<img width="976" height="277" alt="image" src="https://github.com/user-attachments/assets/b6a55308-377f-40ca-b5db-2f0704b07bb0" />
 
 
 
@@ -296,4 +299,4 @@ Rendering : Graphviz dot engine to process the .dot file.
 dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot -o /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.png
 ```
 
-<img width="977" height="59" alt="hold_critical_path" src="https://github.com/user-attachments/assets/c489b707-6aef-4cb6-9e76-e489bbc1f0dd" />
+
