@@ -205,7 +205,6 @@ In detailed STA, each input and output pin of a gate is represented as a node to
 
 ###  On-Chip Variation (OCV) in STA
 
-####  Definition:
 On-Chip Variation (OCV) refers to the **timing differences** among identical cells or paths within the same chip caused by **manufacturing process variations** such as **etching** and **oxide thickness** variation.
 
 
