@@ -201,7 +201,7 @@ In detailed STA, each input and output pin of a gate is represented as a node to
 | **Clock Jitter / Uncertainty (T<sub>jitter</sub>)** | Variation in the **actual clock edge timing** from its ideal position.                  | Reduces setup margin and tightens hold checks.                         | Appears as negative in setup, positive in hold equation.                                                        | Modeled using STA constraint: `set_clock_uncertainty <value>` |
 
 
-
+---
 
 ###  On-Chip Variation (OCV) in STA
 
@@ -251,7 +251,7 @@ t_PD = f(R) = f(I_d) = f(t_ox, W, L)
 These cause transistor dimension changes (t_ox, W, L), leading to **drain current variation**, which alters **resistance** and thus **propagation delay (t_pd)**.  
 In STA, OCV is modeled using **derating factors** (e.g., +8%, -9%) to account for these variations in setup and hold time analysis.
 
-
+---
 
 
 
