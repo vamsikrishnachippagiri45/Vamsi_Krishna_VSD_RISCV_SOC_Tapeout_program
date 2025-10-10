@@ -200,3 +200,62 @@ In detailed STA, each input and output pin of a gate is represented as a node to
 | **Clock Skew (T<sub>skew</sub>)**                   | Difference in **clock arrival times** between launch and capture flip-flops.            | Positive skew helps setup but hurts hold; negative skew does opposite. | Added/subtracted in both equations as shown.                                                                    | Controlled by **Clock Tree Synthesis (CTS)**.                 |
 | **Clock Jitter / Uncertainty (T<sub>jitter</sub>)** | Variation in the **actual clock edge timing** from its ideal position.                  | Reduces setup margin and tightens hold checks.                         | Appears as negative in setup, positive in hold equation.                                                        | Modeled using STA constraint: `set_clock_uncertainty <value>` |
 
+
+
+
+###  On-Chip Variation (OCV) in STA
+
+####  Definition:
+On-Chip Variation (OCV) refers to the **timing differences** among identical cells or paths within the same chip caused by **manufacturing process variations** such as **etching** and **oxide thickness** variation.
+
+
+####  Relation:
+t_PD = f(R) = f(I_d) = f(t_ox, W, L)
+
+
+
+#### Chain of Effect:
+1. **Variation Sources:**
+   - **Etching variation** → changes **channel length (L)**
+   - **Oxide thickness variation (tₒₓ)** → changes **gate capacitance (Cₒₓ)**
+
+2. **These variations cause change in drain current:**
+   I_d = μ * (ε_ox / t_ox) * (W / L) * [(V_gs - V_t)V_ds - (V_ds² / 2)]
+
+3. **Change in drain current (I_d) affects resistance:**
+   R ∝ 1 / I_d
+
+4. **Change in resistance affects delay:**
+   t_pd = f(R)
+
+
+
+####  Final Impact:
+→ Variation in t_ox, W, L → causes change in I_d  
+→ which changes R  
+→ and finally affects **propagation delay (t_pd)**
+
+
+
+#### Example:
+| Corner Type | Delay | Variation |
+|--------------|--------|------------|
+| Fast Corner | 91 ps | -9% |
+| Typical | 100 ps | 0% |
+| Slow Corner | 108 ps | +8% |
+
+**OCV derates = +8%, -9%**
+
+
+**On-Chip Variation (OCV)** arises due to **etching** and **oxide thickness** variations in fabrication.  
+These cause transistor dimension changes (t_ox, W, L), leading to **drain current variation**, which alters **resistance** and thus **propagation delay (t_pd)**.  
+In STA, OCV is modeled using **derating factors** (e.g., +8%, -9%) to account for these variations in setup and hold time analysis.
+
+
+
+
+
+
+
+
+
