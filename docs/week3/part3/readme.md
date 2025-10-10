@@ -102,7 +102,7 @@ These commands execute the core STA checks and save the output.
 | :--- | :--- | :--- |
 | **Detailed Setup Report** | `report_checks -path_delay max -format full -group_path_count 1 -sort_by_slack > .../setup_critical_path.txt` | **Generates the critical path report for Setup (Max Delay).** **`-path_delay max`**: Focuses on the slowest paths. **`-format full`**: Provides the detailed path breakdown (the required "graph" of cell and net delays). **`-group_path_count 1`**: Restricts the report to only the single worst path. |
 | **Detailed Hold Report** | `report_checks -path_delay min -format full -group_path_count 1 -sort_by_slack > .../hold_critical_path.txt` | **Generates the critical path report for Hold (Min Delay).** **`-path_delay min`**: Focuses on the fastest paths. This check ensures data doesn't arrive too early relative to the clock edge. |
-| **WNS Metric** | `report_wns -max > .../wns_setup.txt` | Calculates and reports the **Worst Negative Slack (WNS)** for setup checks. This is the absolute worst timing violation (or best margin) in your entire design. |
+
 
 
 ## Run OpenSTA
