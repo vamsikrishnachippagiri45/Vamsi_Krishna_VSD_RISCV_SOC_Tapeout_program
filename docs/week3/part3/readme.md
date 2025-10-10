@@ -218,38 +218,57 @@ DOT File Creation:
 nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/setup_critical_path.dot 
 ```
 
-
-
-
-
 Convert the .txt data from the OpenSTA into .dot file and update setup_critical_path.dot file.
 
 ```
 digraph SetupCriticalPath {
     rankdir=LR;  // left to right
 
-    node [shape=box, style=filled, color=lightblue];
+    label = "Setup Critical Path Analysis\nUser ID: vamsi@Ubuntu-24 | Date: 10th Oct 2025"; 
+    labelloc = "t"; 
 
-    // Nodes
-    "_9169_/CLK" [label="Start FF CLK\n_9169_", color=lightgreen];
-    "_9169_/Q" [label="_9169_/Q"];
-    "_4026_/Y" [label="_4026_/Y"];
-    "_4159_/Y" [label="_4159_/Y"];
-    "_5444_/X" [label="_5444_/X"];
-    "_6241_/Y" [label="_6241_/Y"];
-    "_6306_/Y" [label="_6306_/Y"];
-    "_8516_/D" [label="End FF D\n_8516_", color=lightgreen];
-    "_8516_/CLK" [label="_8516_/CLK"];
+    // Nodes (FFs are highlighted in green)
+    node [shape=box];
+    
+    // STARTPOINT (Launch FF)
+    "_9169_/CLK" [label="Launch FF CLK\n@0.00 ns", color=lightgreen, style=filled];
+    "_9169_/Q" [label="_9169_/Q (Q)"];
+    
+    // LOGIC GATES
+    "_4026_/Y" [label="_4026_/Y (NOR4)"];
+    "_4159_/Y" [label="_4159_/Y (A31OI)"];
+    "_5444_/X" [label="_5444_/X (OR3)"];
+    "_6241_/Y" [label="_6241_/Y (NOR4)"];
+    "_6306_/Y" [label="_6306_/Y (A311OI)"];
+    
+    // ENDPOINT (Capture FF)
+    "_8516_/D" [label="Capture FF D\nData Arrival: 11.61", color=lightyellow, style=filled];
+    "_8516_/CLK" [label="_8516_/CLK\nCapture Edge: 13.00", color=lightgreen, style=filled];
 
-    // Edges with delays (ns)
-    "_9169_/CLK" -> "_9169_/Q" [label="0.29"];
-    "_9169_/Q" -> "_4026_/Y" [label="5.22"];
-    "_4026_/Y" -> "_4159_/Y" [label="0.68"];
-    "_4159_/Y" -> "_5444_/X" [label="0.73"];
-    "_5444_/X" -> "_6241_/Y" [label="4.32"];
-    "_6241_/Y" -> "_6306_/Y" [label="0.38"];
-    "_6306_/Y" -> "_8516_/D" [label="0.00"];
-    "_8516_/CLK" -> "_8516_/D" [label="Library setup time -0.58", style=dashed, color=red];
+    // EDGES: Data Path Delays (Arrival Path)
+    "_9169_/CLK" -> "_9169_/Q" [label="Clk-Q: 0.29 ns"];
+    "_9169_/Q" -> "_4026_/Y" [label="Delay: 5.22 ns"];
+    "_4026_/Y" -> "_4159_/Y" [label="Delay: 0.68 ns"];
+    "_4159_/Y" -> "_5444_/X" [label="Delay: 0.73 ns"];
+    "_5444_/X" -> "_6241_/Y" [label="Delay: 4.32 ns"];
+    "_6241_/Y" -> "_6306_/Y" [label="Delay: 0.38 ns"];
+    "_6306_/Y" -> "_8516_/D" [label="Delay: 0.00 ns"]; 
+
+    // EDGES: Setup Requirement (Required Path)
+    "_8516_/CLK" -> "_8516_/D" [
+        label="Required Time: 12.42 ns\n(13.00 - 0.58)",
+        style=dashed,
+        color=red,
+        fontcolor=red
+    ];
+    
+    // === TIMING SUMMARY SUBGRAPH ===
+    subgraph cluster_summary {
+        label = "Timing Summary (Setup)";        
+        "Arrival" [label="Data Arrival: 11.61 ns", shape=box, style=filled, color="#ADD8E6"]; // Light Blue
+        "Required" [label="Data Required: 12.42 ns", shape=box, style=filled, color="#FFFFE0"]; // Light Yellow
+        "Slack" [label="Slack: +0.81 ns (MET)", shape=box, style=filled, color="#90EE90"]; // Light Green
+    }
 }
 ```
 
@@ -266,6 +285,7 @@ The result is a visual timing graph (a schematic image) showing the critical pat
 
 The resulting timing Graph is : 
 
+<img width="2965" height="453" alt="setup_critical_path" src="https://github.com/user-attachments/assets/268dac43-bf92-4215-8181-04e3c5b48f9d" />
 
 
 #### 2) Hold critical path timing graph
@@ -276,20 +296,40 @@ DOT File Creation:
 nano /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot 
 ```
 
-
-
-
 Convert the .txt data from the OpenSTA into .dot file and update setup_critical_path.dot file.
 
 ```
 digraph hold_critical_path {
     rankdir=LR;
-    node [shape=box];
-
-    "_8411_/CLK" -> "_8411_/Q" [label="0.27"];
-    "_8411_/Q" -> "_9157_/D" [label="0.00"];
-    "_9157_/D" -> "_9157_/CLK" [label="0.00"];
-    "_9157_/CLK" -> "_9157_/Q" [label="-0.03"];
+    node [shape=box, style=filled, color=lightblue];
+    
+    label = "Setup Critical Path Analysis\nUser ID: vamsi@Ubuntu-24 | Date: 10th Oct 2025"; 
+    labelloc = "t"; 
+    
+    "Start_CLK" [label="CLK\n@0.00 ns", color=lightgreen];
+    "Start_Q" [label="_8411_/Q", color=lightyellow];
+    "End_D"   [label="_9157_/D", color=lightyellow];
+    "End_CLK" [label="CLK\n@0.00 ns", color=lightgreen];
+    
+    // Data Path Edges (Arrival Time)
+    "Start_CLK" -> "Start_Q" [label="0.27 (Clk-Q)"];
+    "Start_Q" -> "End_D" [label="0.00"];
+    
+    // Clock Path Edge (Required Time)
+    "End_CLK" -> "End_D" [
+        label="Required Hold Time: 0.03 ns",
+        style=dashed,
+        color=red,
+        fontcolor=red
+    ];
+    
+    // Arrival and Required Time Summary
+    subgraph cluster_summary {
+        label = "Timing Summary";
+        "Arrival" [label="Data Arrival: 0.27 ns"];
+        "Required" [label="Data Required: -0.03 ns"];
+        "Slack" [label="Slack: 0.31 ns (MET)", style=filled, color=green];
+    }
 }
 ```
 
@@ -299,4 +339,7 @@ Rendering : Graphviz dot engine to process the .dot file.
 dot -Tpng /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.dot -o /home/vamsi/VLSI/OpenSTA/Timing_graphs/hold_critical_path.png
 ```
 
+The resulting timing graph is : 
+
+<img width="984" height="453" alt="hold_critical_path" src="https://github.com/user-attachments/assets/c1ea5d04-71e9-489b-8334-ae23b54e5462" />
 
