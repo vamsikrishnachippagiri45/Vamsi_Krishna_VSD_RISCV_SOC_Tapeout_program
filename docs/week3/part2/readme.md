@@ -332,5 +332,86 @@ This **removes the pessimism** and makes timing more realistic.
 
 
 
+---
+
+### Hold Analysis with Clock Pull-Up / Push-Down (OCV)
+
+#### Concept:
+In **Hold Timing Analysis**, data launched by a clock edge must **not reach the capture flip-flop too soon** after the same edge.  
+OCV (On-Chip Variation) can alter clock arrival times, creating worst-case or best-case hold situations.
 
 
+
+#### Two OCV Clock Scenarios in Hold Analysis:
+
+##### Clock Pull-Up (Launch Clock Late)
+- **Launch clock** is delayed (slower path due to OCV).  
+- Capture clock remains typical.  
+- Data launches late → capture happens before the data stabilizes.  
+- **Hold margin decreases** → Possible **hold violation**.
+
+**Effect:**  
+Launch delay ↑ → Data arrives later → Hold margin ↓
+
+
+##### Clock Push-Down (Capture Clock Early)
+- **Capture clock** arrives earlier (faster path due to OCV).  
+- Launch clock remains typical.  
+- Capture occurs too early → Data not stable yet.  
+- **Hold margin decreases** further.
+
+**Effect:**  
+Capture early → Sampling window shortens → Hold margin ↓
+
+
+
+### Worst-Case Hold Scenario:
+- **Launch Clock → Pull-Up (late)**  
+- **Capture Clock → Push-Down (early)**  
+
+This combination minimizes hold slack and is used in STA for **worst-case hold timing**.
+
+
+### Hold Timing Equation:
+\[
+(\theta + Δ₁) > (\theta + Δ₂) + H
+\]
+Where:
+- \( Δ₁ \): Data path delay  
+- \( Δ₂ \): Clock path delay  
+- \( H \): Hold time of the flip-flop  
+
+**Slack = (Data Required Time) – (Data Arrival Time)**  
+Slack ≥ 0 → No violation ✅  
+Slack < 0 → Hold violation ❌  
+
+
+###  Pessimism Removal (CPPR – Common Path Pessimism Removal)
+
+#### Concept:
+In hold analysis, OCV derates are also applied separately to **launch** and **capture** clock paths.  
+If both clocks share a **common portion** of the clock tree, this portion might incorrectly get **different OCV delays**, causing **extra pessimism**.
+
+
+#### Example:
+If the common clock path delay = 80 ps:  
+- Launch clock derated by +8% → 86.4 ps  
+- Capture clock derated by –9% → 72.8 ps  
+
+The difference (86.4 – 72.8 = 13.6 ps) is **artificial**, since both paths share the same clock segment.
+
+
+#### Solution — CPPR:
+- The **difference in common path delay (13.6 ps)** is **added back** to the hold slack.  
+- This adjustment **removes pessimism** and gives a realistic hold result.
+
+
+
+#### Summary:
+- **Clock Pull-Up:** Launch clock late → Hold margin ↓  
+- **Clock Push-Down:** Capture clock early → Hold margin ↓  
+- **Worst Case:** Pull-Up (launch late) + Push-Down (capture early)  
+- **CPPR:** Eliminates false pessimism by adjusting for the common clock path having different derates.
+
+
+---
