@@ -253,6 +253,81 @@ In STA, OCV is modeled using **derating factors** (e.g., +8%, -9%) to account fo
 ---
 
 
+### Setup Analysis with Clock Pull-Up / Push-Out (OCV)
+
+#### Concept:
+In **Setup Timing Analysis**, data must arrive **before** the next active clock edge at the capture flip-flop.  
+OCV (On-Chip Variation) causes clock paths to vary in delay, leading to different timing cases.
+
+
+
+#### Two OCV Clock Scenarios in Setup Analysis:
+
+##### Clock Pull-Up (Capture Clock Early)
+- Capture clock arrives **earlier** due to OCV.
+- Launch clock remains typical or slower.
+- The **available setup time window reduces**, increasing the chance of **setup violation**.
+- Used for **worst-case setup** analysis.
+
+**Effect:**  
+Smaller time between launch and capture → Setup margin ↓
+
+
+
+##### Clock Push-Out (Capture Clock Late)
+- Capture clock arrives **later** due to OCV.
+- Launch clock remains typical or faster.
+- The **available setup time increases**, so **setup timing improves**.
+- Used for **best-case setup** analysis.
+
+**Effect:**  
+Larger time between launch and capture → Setup margin ↑
+
+
+
+#### Setup Timing Equation:
+\[
+(\theta + Δ₁) < (T + Δ₂) - S - SU
+\]
+Where:
+- \( Δ₁ \): Data path delay  
+- \( Δ₂ \): Clock path delay  
+- \( S \): Skew  
+- \( SU \): Setup time of flip-flop  
+
+**Slack = (Data Required Time) – (Data Arrival Time)**  
+Slack ≥ 0 → No violation ✅  
+Slack < 0 → Setup violation ❌  
+
+
+### Pessimism Removal (CPPR – Common Path Pessimism Removal)
+
+#### Concept:
+- In STA, OCV derates are applied **independently** to launch and capture clock paths.  
+- However, **a part of the clock path is common** to both flops.  
+- The tool may assign **different OCV delays** to this **common path**, which is **physically impossible**.
+
+
+####  Example:
+If common clock path delay is 100 ps:
+- Launch clock path derated to **+8%** → 108 ps  
+- Capture clock path derated to **–9%** → 91 ps  
+
+→ Same common segment cannot be both 108 ps and 91 ps simultaneously.  
+This adds **extra pessimism** in analysis.
+
+
+#### Solution — CPPR:
+- Compute the difference in the **common clock path delay** (108 – 91 = 17 ps).  
+- **Subtract this difference** from the total setup path delay.  
+
+This **removes the pessimism** and makes timing more realistic.
+
+
+### Summary:
+> - **Clock Pull-Up:** Capture clock early → Setup margin decreases (worst case).  
+> - **Clock Push-Out:** Capture clock late → Setup margin increases (best case).  
+> - **CPPR:** Removes false pessimism due to different OCV values on common clock segments by adjusting (adding/subtracting) the difference.
 
 
 
