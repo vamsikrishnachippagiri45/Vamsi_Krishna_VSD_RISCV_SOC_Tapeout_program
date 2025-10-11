@@ -325,9 +325,10 @@ This **removes the pessimism** and makes timing more realistic.
 
 
 ### Summary:
-> - **Clock Pull-Up:** Capture clock early → Setup margin decreases (worst case).  
-> - **Clock Push-Out:** Capture clock late → Setup margin increases (best case).  
-> - **CPPR:** Removes false pessimism due to different OCV values on common clock segments by adjusting (adding/subtracting) the difference.
+
+- **Clock Pull-Up:** Capture clock early → Setup margin decreases (worst case).  
+- **Clock Push-Out:** Capture clock late → Setup margin increases (best case).
+- **CPPR:** Removes false pessimism due to different OCV values on common clock segments by adjusting (adding/subtracting) the difference.
 
 
 
