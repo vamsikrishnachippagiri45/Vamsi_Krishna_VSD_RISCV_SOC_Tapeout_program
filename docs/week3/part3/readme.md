@@ -343,3 +343,15 @@ The resulting timing graph is :
 
 <img width="984" height="453" alt="hold_critical_path" src="https://github.com/user-attachments/assets/c1ea5d04-71e9-489b-8334-ae23b54e5462" />
 
+
+---
+
+## Observations 
+
+The timing analysis in OpenSTA identified the critical path starting from flip-flop 9169 (Q) and ending at flip-flop 8516 (D), both clocked by clk. The data signal passes through several combinational gates, including nor4_1, a31oi_1, or3_1, and a311oi_1, which together contribute to the longest delay in the circuit. The total data arrival time was 11.61 ns, while the required time was 12.42 ns, resulting in a positive slack of +0.81 ns. This indicates that the circuit meets the setup timing requirement, and no timing violation occurs.
+
+For hold analysis, the same flip-flop pair (8411 → 9157) was observed for the minimum delay path. The hold slack was +0.31 ns, confirming that there are no hold violations and data remains stable during the clock edge transition.
+
+The timing graphs generated using Graphviz visually depict the sequential flow of signals through the critical path, helping to identify delay-contributing cells. The presence of large NOR and AOI gates increases delay, which can be optimized if required.
+
+In summary, both setup and hold analyses show positive slack, meaning the design is timing clean. The critical path mainly consists of high fan-in logic gates, and the overall timing performance is within constraints, ensuring correct synchronous operation of the design.
