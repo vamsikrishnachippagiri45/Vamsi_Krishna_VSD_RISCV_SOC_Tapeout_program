@@ -77,4 +77,9 @@ For example:
 The MOSFET line defines connections for drain, gate, source, and bulk terminals, along with its physical dimensions W and L.
 Resistors and voltage sources connect between specific nodes with given values.
 Each node number or label corresponds to a potential (voltage) in the circuit that SPICE will solve.
-Hence, the netlist acts as the blueprint for simulation — it tells SPICE what to solve and how all elements are interconnected.
+Hence, the netlist acts as the blueprint for simulation , it tells SPICE what to solve and how all elements are interconnected.
+
+---
+
+
+
