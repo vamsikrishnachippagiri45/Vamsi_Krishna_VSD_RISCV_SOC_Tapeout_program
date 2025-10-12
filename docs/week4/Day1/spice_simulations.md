@@ -40,9 +40,9 @@ SPICE combines the circuit description with device models to solve nonlinear dif
 | **Component** | **Description** | **Role in Simulation** |
 |:--------------|:----------------|:------------------------|
 | **SPICE Netlist** | Text file defining the circuit’s connectivity (nodes and components such as M1, R1, Vdd, Vin). | Defines what the simulator solves. |
-| **SPICE Model Parameters** | Physical and electrical parameters ( \(V_{T0}, \gamma, \Phi_f, \lambda, \mu_n, C_{ox}\) ) from process technology. | Defines how each transistor behaves. |
+| **SPICE Model Parameters** | Physical and electrical parameters ($V_{T0}$, $\gamma$, $\Phi_f$, $\lambda$, $\mu_n$, $C_{ox}$) from process technology. | Defines how each transistor behaves. |
 | **SPICE Software** | The solver engine combining netlist, model, and analysis commands. | Performs numerical simulation. |
-| **Output** | I–V characteristics (e.g., \(I_D\) vs \(V_{DS}\)) or transient waveforms. | Visualizes results and verifies behavior. |
+| **Output** | I–V characteristics (e.g., $I_D$ vs $V_{DS}$) or transient waveforms. | Visualizes results and verifies behavior. |
 
 ---
 
@@ -52,10 +52,10 @@ The accuracy of the simulation depends on parameters linking process technology 
 
 | **Parameter** | **Governing Equation** | **Source of Value** |
 |:---------------|:------------------------|:--------------------|
-| **Threshold Voltage ( \(V_t\) )** | ```math V_t = V_{t0} + \gamma \left( \sqrt{| -2\Phi_f + V_{SB} |} - \sqrt{| -2\Phi_f |} \right) ``` | Depends on substrate bias \(V_{SB}\) and body effect coefficient \( \gamma \). |
-| **Body Effect Coefficient ( \( \gamma \) )** | ```math \gamma = \frac{ \sqrt{2 q \epsilon_{si} N_A} }{ C_{ox} } ``` | Depends on substrate doping \(N_A\) and oxide capacitance \(C_{ox}\). |
-| **Fermi Potential ( \( \Phi_f \) )** | ```math \Phi_f = -\Phi_T \ln \left( \frac{N_A}{n_i} \right) ``` | Determined by substrate doping \(N_A\) and intrinsic carrier concentration \(n_i\). |
-| **Drain Current ( \( I_D \) )** | Linear region: ```math I_D = k_n[(V_{GS} - V_t)V_{DS} - \tfrac{V_{DS}^2}{2}]``` <br> Saturation region: ```math I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})``` | \(k_n = \mu_n C_{ox} \tfrac{W}{L}\), \( \lambda \) = channel-length modulation parameter. |
+| **Threshold Voltage ($V_t$)** | $$V_t = V_{t0} + \gamma \left( \sqrt{| -2\Phi_f + V_{SB} |} - \sqrt{| -2\Phi_f |} \right)$$ | Depends on substrate bias $V_{SB}$ and body effect coefficient $\gamma$. |
+| **Body Effect Coefficient ($\gamma$)** | $$\gamma = \frac{ \sqrt{2 q \epsilon_{si} N_A} }{ C_{ox} }$$ | Depends on substrate doping $N_A$ and oxide capacitance $C_{ox}$. |
+| **Fermi Potential ($\Phi_f$)** | $$\Phi_f = -\Phi_T \ln \left( \frac{N_A}{n_i} \right)$$ | Determined by substrate doping $N_A$ and intrinsic carrier concentration $n_i$. |
+| **Drain Current ($I_D$)** | Linear region: $$I_D = k_n[(V_{GS} - V_t)V_{DS} - \tfrac{V_{DS}^2}{2}]$$ <br> Saturation region: $$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})$$ | $k_n = \mu_n C_{ox} \tfrac{W}{L}$, $\lambda$ = channel-length modulation parameter. |
 
 > 🧠 These parameters are defined in the **Technology File** (also called *Model* or *Library File*).
 
@@ -82,6 +82,6 @@ Technology parameters are linked using `.LIB` or `.INCLUDE` commands:
 
 ```spice
 .LIB "xxxx_025um_model.mod" CMOS_MODELS
-
-
+; or
+.INCLUDE "xxxx_1um_model.mod"
 
