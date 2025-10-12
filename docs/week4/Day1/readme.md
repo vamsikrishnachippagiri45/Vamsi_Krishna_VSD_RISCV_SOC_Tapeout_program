@@ -85,7 +85,7 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 $V_{GS} = 1\,\text{V},\; V_{DS} = 0.05\,\text{V},\; V_t = 0.45\,\text{V}$
 
 
-#### Channel Charge and Current Flow**
+#### Channel Charge and Current Flow
 
 ##### (a) **Channel Charge ($Q_i(x)$)**
 
