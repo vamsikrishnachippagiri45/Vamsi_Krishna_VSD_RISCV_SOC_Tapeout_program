@@ -310,11 +310,11 @@ $$
 
 #### Example
 
-Let \(V_{GS}=1.0\ \text{V}\), \(V_t=0.45\ \text{V}\):  
-- \(V_{DS,sat}=V_{GS}-V_t=0.55\ \text{V}\).  
-- For \(V_{DS}=0.05\ \text{V}\) → Linear region (resistive).  
-- For \(V_{DS}=0.65\ \text{V}\) → Saturation (pinch-off established).  
-- If \(\lambda>0\), \(I_D\) will slowly increase with \(V_{DS}\) in saturation.
+Let $\(V_{GS}=1.0\ \text{V}\), \(V_t=0.45\ \text{V}\)$:  
+- $\(V_{DS,sat}=V_{GS}-V_t=0.55\ \text{V}\)$.  
+- For $\(V_{DS}=0.05\ \text{V}\)$ → Linear region (resistive).  
+- For $\(V_{DS}=0.65\ \text{V}\)$ → Saturation (pinch-off established).  
+- If $\(\lambda>0\), \(I_D\)$ will slowly increase with $\(V_{DS}\)$ in saturation.
 
 ---
 
