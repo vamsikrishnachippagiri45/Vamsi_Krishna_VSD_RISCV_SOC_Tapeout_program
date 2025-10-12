@@ -198,9 +198,9 @@ As the drain-to-source voltage \(V_{DS}\) increases, an NMOS operating in strong
 
 - The local effective gate-to-channel voltage at position \(x\) is:
   
-  $$
+  $
   V_{GC}(x) = V_{GS} - V(x)
-  $$
+  $
   
   where \(V(x)\) is the local channel potential (0 at source, \(V_{DS}\) at drain).
 
