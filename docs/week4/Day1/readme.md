@@ -1,4 +1,4 @@
-# Circuit design and spice simulation 
+# Circuit design
 
 ## Introduction to SPICE Simulation
 
