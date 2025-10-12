@@ -2,6 +2,7 @@
 
 ##  **Basic Circuit Element** : NMOS
 
+---
 
 ### **1. NMOS – Basics**
 
@@ -15,6 +16,7 @@
   * Current flows between **Source (S)** and **Drain (D)** when a voltage is applied at **Gate (G)**.
   * At **$V_{GS} = 0$**, no channel exists → **Transistor OFF** (high resistance).
 
+---
 
 ### **2. Strong Inversion & Threshold Voltage ($V_t$)**
 
@@ -31,7 +33,7 @@
 * If **$V_{GS} < V_t$ → OFF (no conduction)**
 * If **$V_{GS} ≥ V_t$ → ON (channel formed, current flows)**
 
-
+---
 
 ### **3. Body (Substrate) Effect**
 
@@ -64,12 +66,11 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 * **Body Effect:** Higher $V_{SB}$ → Higher $V_t$ → NMOS harder to turn ON.
 
 
+---
 
+### 4. NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the Linear (Resistive) Region
 
-### 4. NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region
-
-
-### **1. Region Definition**
+#### Linear Region
 
 **Transistor Type:** N-channel MOSFET (NMOS)  
 **Region:** Resistive / Linear / Triode Region  
@@ -84,9 +85,9 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 $V_{GS} = 1\,\text{V},\; V_{DS} = 0.05\,\text{V},\; V_t = 0.45\,\text{V}$
 
 
-### **2. Channel Charge and Current Flow**
+#### Channel Charge and Current Flow**
 
-#### (a) **Channel Charge ($Q_i(x)$)**
+##### (a) **Channel Charge ($Q_i(x)$)**
 
 At a distance **x** from the Source, potential = $V(x)$.
 
@@ -98,7 +99,7 @@ $$
 * The charge is **negative** (due to electrons).
 
 
-#### (b) **Electron Velocity**
+##### (b) **Electron Velocity**
 
 $$
 v_n(x) = -\mu_n \frac{dV}{dx}
@@ -108,7 +109,7 @@ $$
 * $\frac{dV}{dx}$: Electric field along the channel  
 
 
-#### (c) **Drain Current ($I_D$)**
+##### (c) **Drain Current ($I_D$)**
 
 $$
 I_D = W \cdot Q_i(x) \cdot v_n(x)
@@ -122,7 +123,7 @@ $$
 
 
 
-### **3. Integration Along the Channel**
+#### Integration Along the Channel**
 
 Integrate from Source (x=0, V=0) to Drain (x=L, V=V_{DS}):
 
@@ -135,7 +136,7 @@ I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2} \B
 $$
 
 
-### **4. Simplified Form**
+#### Simplified Form**
 
 Define constants:
 
@@ -151,7 +152,7 @@ $$
 
 
 
-### **5. Linear Approximation (for Very Small $V_{DS}$)**
+#### Linear Approximation (for Very Small $V_{DS}$)**
 
 If $V_{DS}$ is **very small**,  
 the quadratic term $\frac{V_{DS}^2}{2} \ll (V_{GS} - V_t)V_{DS}$.
@@ -162,11 +163,11 @@ $$
 I_D \approx k_n (V_{GS} - V_t)V_{DS}
 $$
 
-➡️ **Transistor behaves like a resistor**, with resistance controlled by $V_{GS}$.
+ **Transistor behaves like a resistor**, with resistance controlled by $V_{GS}$.
 
 
 
-### **6. Example Calculation**
+#### Example Calculation**
 
 Given:  
 $V_{GS}=1\,\text{V},\; V_{DS}=0.05\,\text{V},\; V_t=0.45\,\text{V}$
