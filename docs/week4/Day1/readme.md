@@ -97,6 +97,7 @@ $$
 
 * $C_{ox}$: Oxide capacitance per unit area  
 * The charge is **negative** (due to electrons).
+* \big[(V_{GS} - V(x)) \big] is the effective gate voltage at a point x along channel. (At source(x=0) -> V(x)=0 , and At Drain(x=L) -> V(x)=Vds )
 
 
 ##### (b) **Electron Velocity**
@@ -123,7 +124,7 @@ $$
 
 
 
-#### Integration Along the Channel**
+#### Integration Along the Channel
 
 Integrate from Source (x=0, V=0) to Drain (x=L, V=V_{DS}):
 
@@ -136,7 +137,7 @@ I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2} \B
 $$
 
 
-#### Simplified Form**
+#### Simplified Form
 
 Define constants:
 
@@ -167,7 +168,7 @@ $$
 
 
 
-#### Example Calculation**
+#### Example Calculation
 
 Given:  
 $V_{GS}=1\,\text{V},\; V_{DS}=0.05\,\text{V},\; V_t=0.45\,\text{V}$
