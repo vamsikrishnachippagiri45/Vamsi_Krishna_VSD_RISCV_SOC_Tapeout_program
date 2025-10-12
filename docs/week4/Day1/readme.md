@@ -66,10 +66,7 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
   $$V_t ↑ \text{ when } V_{SB} ↑$$
   → Harder to turn ON the NMOS.
 
-**Equation:**
-[
-V_t = V_{t0} + \gamma \left(\sqrt{|2\Phi_f + V_{SB}|} - \sqrt{|2\Phi_f|}\right)
-]
+The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} + \gamma (\sqrt{|-2\Phi_f + V_{sb}|} - \sqrt{|-2\Phi_f|})$$
 
 | Symbol   | Meaning                         |
 | :------- | :------------------------------ |
