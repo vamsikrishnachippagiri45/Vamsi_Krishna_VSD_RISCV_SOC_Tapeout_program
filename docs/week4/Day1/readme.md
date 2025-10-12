@@ -190,21 +190,21 @@ Since the second term is **small**, linear approximation is valid.
 ### 5. NMOS: Transition from Linear (Resistive) Region to Saturation — Pinch-Off & Channel-Length Modulation
 
 #### Overview
-As the drain-to-source voltage \(V_{DS}\) increases, an NMOS operating in strong inversion transitions from the **Linear (Resistive/Triode)** region into the **Saturation** region. The transition is governed by the **pinch-off** phenomenon at the drain end of the channel.
+As the drain-to-source voltage $\(V_{DS}\)$ increases, an NMOS operating in strong inversion transitions from the **Linear (Resistive/Triode)** region into the **Saturation** region. The transition is governed by the **pinch-off** phenomenon at the drain end of the channel.
 
 
 
 #### Pinch-Off Condition
 
-- The local effective gate-to-channel voltage at position \(x\) is:
+- The local effective gate-to-channel voltage at position $\(x\)$ is:
   
 $$
 V_{GC}(x) = V_{GS} - V(x)
 $$
   
-where \(V(x)\) is the local channel potential (0 at source, \(V_{DS}\) at drain).
+where $\(V(x)\)$ is the local channel potential (0 at source, $\(V_{DS}\)$ at drain).
 
-- In the **Linear** region, \(V_{DS}\) is small and the channel remains inverted along its entire length:
+- In the **Linear** region, $\(V_{DS}\)$ is small and the channel remains inverted along its entire length:
 
 $$
 V_{GD} = V_{GS} - V_{DS} \quad\text{and}\quad V_{GD} > V_t
@@ -234,11 +234,11 @@ $$\(V_{DS}>0.55\text{ V}\)$$ → saturation (pinch-off region at drain)
 
 #### What Physically Happens at Pinch-Off
 
-- As \(V_{DS}\) rises, the local potential \(V(x)\) near the drain approaches \(V_{GS} - V_t\), reducing \(V_{GC}\) there.
-- When \(V_{GC}\) at drain = \(V_t\), the inversion layer is just removed at the drain end → **pinch-off**.
+- As $\(V_{DS}\)$ rises, the local potential $\(V(x)\)$ near the drain approaches $\(V_{GS} - V_t\)$, reducing $\(V_{GC}\)$ there.
+- When $\(V_{GC}\)$ at drain = $\(V_t\)$, the inversion layer is just removed at the drain end → **pinch-off**.
 - After pinch-off, the channel does not extend fully to the drain: a small **depletion/pinch-off region** forms near the drain.
 - **Current flow continues** because carriers are injected from the channel edge and accelerated across the strong electric field in the pinch-off region to the drain terminal.
-- **Result:** increasing \(V_{DS}\) beyond \(V_{DS,sat}\) does **not** appreciably increase the current in the ideal model → transistor behaves like a **(nearly) constant current source**.
+- **Result:** increasing $\(V_{DS}\)$ beyond $\(V_{DS,sat}\)$ does **not** appreciably increase the current in the ideal model → transistor behaves like a **(nearly) constant current source**.
 
 
 
@@ -251,6 +251,7 @@ $$
 $$
 
 where
+
 $$
 k_n = \mu_n C_{ox}\,\frac{W}{L} \quad\text{(gain factor)}
 $$
@@ -265,45 +266,48 @@ This expression assumes:
 #### Channel-Length Modulation 
 
 **Why ideal current is not perfectly constant:**  
-When \(V_{DS}\) increases beyond \(V_{DS,sat}\), the pinch-off point moves slightly from the drain toward the source. This shortens the **effective channel length** \(L'\) (i.e., \(L' < L\)). A shorter channel increases the current (because \(k_n \propto W/L'\)), so \(I_D\) grows weakly with \(V_{DS}\).
+When $\(V_{DS}\)$ increases beyond $\(V_{DS,sat}\)$, the pinch-off point moves slightly from the drain toward the source. This shortens the **effective channel length** $\(L'\)$ (i.e., $\(L' < L\))$. A shorter channel increases the current (because $\(k_n \propto W/L'\))$, so $\(I_D\)$ grows weakly with $\(V_{DS}\)$.
 
-**Phenomenological model (introduce \(\lambda\)):**
 
 $$
 \boxed{I_D = \tfrac{1}{2}\,k_n\,(V_{GS} - V_t)^2\,(1 + \lambda\,V_{DS})}
 $$
 
-- \(\lambda\) = channel-length modulation parameter (units: V\(^{-1}\))
-- For small \(\lambda\), the device is **almost** an ideal current source; larger \(\lambda\) means stronger dependence on \(V_{DS}\).
+- $\(\lambda\)$ = channel-length modulation parameter (units: $V\(^{-1}\)$)
+- For small $\(\lambda\)$, the device is **almost** an ideal current source; larger $\(\lambda\)$ means stronger dependence on $\(V_{DS}\)$.
 
 **Interpretation of \(\lambda\):**
-- \(\lambda \approx \frac{1}{L_{\text{eff}}}\)-like scaling (shorter devices → larger \(\lambda\))
-- Extracted from measurements by fitting \(I_D\) vs \(V_{DS}\) in saturation.
+- $\(\lambda \approx \frac{1}{L_{\text{eff}}}\)-like scaling (shorter devices → larger \(\lambda\))$
+- Extracted from measurements by fitting $\(I_D\)$ vs $\(V_{DS}\)$ in saturation.
 
 
 
 #### Putting It Together — Region Conditions & Key Equations
 
 **Region conditions:**
-- **Cutoff:** \(V_{GS} < V_t\)  
-  $$I_D \approx 0$$
+- **Cutoff:** $\(V_{GS} < V_t\) $
+$$I_D \approx 0$$
 
-- **Linear (Resistive/Triode):** \(V_{GS} > V_t\) and \(V_{DS} < V_{GS} - V_t\)  
-  $$I_D = k_n\Big[(V_{GS}-V_t)V_{DS} - \tfrac{V_{DS}^2}{2}\Big]$$  
-  (For very small \(V_{DS}\): \(I_D \approx k_n (V_{GS}-V_t) V_{DS}\).)
+- **Linear (Resistive/Triode):** $\(V_{GS} > V_t\) and \(V_{DS} < V_{GS} - V_t\) $
+  
+$$I_D = k_n\Big[(V_{GS}-V_t)V_{DS} - \tfrac{V_{DS}^2}{2}\Big]$$  
+(For very small $\(V_{DS}\)$: $\(I_D \approx k_n (V_{GS}-V_t) V_{DS}\)$.)
 
-- **Saturation (pinch-off):** \(V_{DS} \ge V_{GS} - V_t\)  
+- **Saturation (pinch-off):** $\(V_{DS} \ge V_{GS} - V_t\)$
   *Ideal:*
-  $$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2$$  
+
+$$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2$$
+  
   *With CLM:*
-  $$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})$$
+  
+$$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})$$
 
 
 #### Note
 
 - **Channel-Length Modulation** is analogous to the Early effect in BJTs: it creates finite output conductance in saturation.
-- **Velocity Saturation (high field)**: in deep submicron processes, carrier velocity saturates and the square-law becomes invalid; saturation current becomes closer to linear with \(V_{GS}-V_t\).
-- **Body Effect / Substrate Bias:** changing \(V_{SB}\) modifies \(V_t\) (body effect), which shifts \(V_{DS,sat}\) and all \(I_D\) expressions.
+- **Velocity Saturation (high field)**: in deep submicron processes, carrier velocity saturates and the square-law becomes invalid; saturation current becomes closer to linear with $ \(V_{GS}-V_t\)$.
+- **Body Effect / Substrate Bias:** changing $\(V_{SB}\)$ modifies $\(V_t\)$ (body effect), which shifts $\(V_{DS,sat}\)$ and all $\(I_D\)$ expressions.
 - **Short-channel effects** (DIBL, mobility degradation, series resistances) further modify the simple models and typically require process-specific parameters.
 
 
