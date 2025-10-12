@@ -25,7 +25,7 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
 
 ---
 
-##  **Basic Circuit Element **: NMOS
+##  **Basic Circuit Element** : NMOS
 
 
 ### **1. NMOS – Basic Concept**
