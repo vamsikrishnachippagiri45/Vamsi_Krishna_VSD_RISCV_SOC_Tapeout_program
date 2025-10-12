@@ -57,27 +57,4 @@ These parameters are defined in the **Technology File** (also called *Model* or 
 
 
 
-### 3.  SPICE Netlist and Technology File
-
-#### A. Netlist Description (Circuit Connectivity)
-
-A **netlist** is a textual representation of the circuit schematic.
-
-| **Netlist Line** | **Component** | **Description** |
-|:-----------------|:--------------|:----------------|
-| `M1 vdd n1 0 0 nmos W=1.8u L=1.2u` | MOSFET (M1) | Connects Drain (vdd), Gate (n1), Source (0/Vss), and Bulk (0/Vss). Uses model **nmos** with given W/L. |
-| `R1 in n1 55` | Resistor (R1) | Connects node **in** and **n1** with 55 Ω. |
-| `Vdd vdd 0 2.5` | DC Source (Vdd) | Supplies 2.5 V between node **vdd** and **ground**. |
-| `Vin in 0 2.5` | DC Source (Vin) | Applies 2.5 V between node **in** and **ground**. |
-
-
-
-#### B. Technology File Inclusion
-
-Technology parameters are linked using `.LIB` or `.INCLUDE` commands:
-
-```spice
-.LIB "xxxx_025um_model.mod" CMOS_MODELS
-; or
-.INCLUDE "xxxx_1um_model.mod"
 
