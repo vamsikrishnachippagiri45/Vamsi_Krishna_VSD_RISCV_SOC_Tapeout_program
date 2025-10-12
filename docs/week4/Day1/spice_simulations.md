@@ -1,6 +1,5 @@
 # Spice simulation 
 
----
 
 ## Introduction to SPICE Simulation
 
