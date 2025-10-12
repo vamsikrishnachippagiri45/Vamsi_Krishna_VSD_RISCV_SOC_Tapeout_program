@@ -55,25 +55,14 @@ The accuracy of the simulation depends on parameters linking process technology 
 
 These parameters are defined in the **Technology File** (also called *Model* or *Library File*).
 
-Technology File Inclusion
+#### Technology File Inclusion
 
 SPICE relies on device models that describe how a transistor behaves electrically. These models contain parameters extracted from the semiconductor fabrication process (e.g., 0.25 µm or 1 µm technology).
 
 To include these models, the netlist links an external technology file using directives like .LIB or .INCLUDE.
 These statements tell SPICE where to find the process-specific transistor parameters that define threshold voltage, carrier mobility, oxide thickness, and other physical effects.
 
-The technology file (for example, xxxx_025um_model.mod) contains several .MODEL statements — one for NMOS and one for PMOS.
-Each .MODEL defines key parameters such as:
-
-VTH0 – zero-bias threshold voltage
-
-U0 – low-field carrier mobility
-
-GAMMA1 – body-effect coefficient that adjusts $V_t$ with substrate bias
-
-TOX – oxide thickness determining gate capacitance ($C_{ox} = \frac{\varepsilon_{ox}}{t_{ox}}$)
-
-LAMBDA – channel-length modulation factor modeling finite output resistance
+The technology file (for example, xxxx_025um_model.mod) contains several .MODEL statements.
 
 These parameters link physical fabrication characteristics (like doping and oxide thickness) to the electrical equations that SPICE uses internally to compute drain current $I_D$, threshold voltage $V_t$, and other transistor behaviors.
 
