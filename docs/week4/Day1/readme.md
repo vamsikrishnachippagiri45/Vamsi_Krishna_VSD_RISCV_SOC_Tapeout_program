@@ -66,364 +66,118 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 
 
 
-NMOS Current–Voltage (I 
-D
-​
- –V 
-DS
-​
- ) Relationship in the Linear (Resistive) Region
-1. Region Definition
-Transistor Type: N-channel MOSFET (NMOS)
+### **4. NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region**
 
-Region: Resistive / Linear / Triode Region
 
-Conditions:
+### **1. Region Definition**
 
-V 
-GS
-​
- >V 
-t
-​
-  (Transistor ON, strong inversion)
+**Transistor Type:** N-channel MOSFET (NMOS)  
+**Region:** Resistive / Linear / Triode Region  
 
-V 
-DS
-​
- <(V 
-GS
-​
- −V 
-t
-​
- ) (Channel exists fully from Source to Drain)
+**Conditions:**
 
-V 
-DS
-​
-  is small
+* $V_{GS} > V_t$ → Transistor **ON** (strong inversion)
+* $V_{DS} < (V_{GS} - V_t)$ → Channel exists fully from Source to Drain
+* $V_{DS}$ is **small**
 
-Example:
+**Example:**  
+$V_{GS} = 1\,\text{V},\; V_{DS} = 0.05\,\text{V},\; V_t = 0.45\,\text{V}$
 
-V 
-GS
-​
- =1V, V 
-DS
-​
- =0.05V, V 
-t
-​
- =0.45V
 
-2. Channel Charge and Current Flow
-(a) Channel Charge (Q 
-i
-​
- (x))
-At a distance x from the Source, potential is V(x). The charge is negative (due to electrons).
+### **2. Channel Charge and Current Flow**
 
-Q 
-i
-​
- (x)=−C 
-ox
-​
- [(V 
-GS
-​
- −V(x))−V 
-t
-​
- ]
+#### (a) **Channel Charge ($Q_i(x)$)**
 
-(C 
-ox
-​
- : Oxide capacitance per unit area)
+At a distance **x** from the Source, potential = $V(x)$.
 
-(b) Electron Velocity
-The velocity is proportional to the electric field ( 
-dx
-dV
-​
- ):
+$$
+Q_i(x) = -C_{ox} \big[(V_{GS} - V(x)) - V_t \big]
+$$
 
-v 
-n
-​
- (x)=−μ 
-n
-​
-  
-dx
-dV
-​
- 
+* $C_{ox}$: Oxide capacitance per unit area  
+* The charge is **negative** (due to electrons).
 
-(μ 
-n
-​
- : Electron mobility)
 
-(c) Drain Current (I 
-D
-​
- )
-The current is the flow of charge across the channel width W:
+#### (b) **Electron Velocity**
 
-I 
-D
-​
- =W⋅Q 
-i
-​
- (x)⋅v 
-n
-​
- (x)
+$$
+v_n(x) = -\mu_n \frac{dV}{dx}
+$$
 
-Substituting Q 
-i
-​
- (x) and v 
-n
-​
- (x):
+* $\mu_n$: Electron mobility  
+* $\frac{dV}{dx}$: Electric field along the channel  
 
-I 
-D
-​
- =μ 
-n
-​
- C 
-ox
-​
- W[(V 
-GS
-​
- −V(x))−V 
-t
-​
- ] 
-dx
-dV
-​
- 
-3. Integration Along the Channel
-Integrate I 
-D
-​
- ⋅dx from x=0 to x=L and the voltage terms from V=0 (Source) to V=V 
-DS
-​
-  (Drain):
 
-I 
-D
-​
- ∫ 
-0
-L
-​
- dx=μ 
-n
-​
- C 
-ox
-​
- W∫ 
-0
-V 
-DS
-​
- 
-​
- [(V 
-GS
-​
- −V 
-t
-​
- )−V]dV
+#### (c) **Drain Current ($I_D$)**
 
-Solving the integral, we get the fundamental equation:
+$$
+I_D = W \cdot Q_i(x) \cdot v_n(x)
+$$
 
-I 
-D
-​
- = 
-L
-μ 
-n
-​
- C 
-ox
-​
- W
-​
- [(V 
-GS
-​
- −V 
-t
-​
- )V 
-DS
-​
- − 
-2
-V 
-DS
-2
-​
- 
-​
- ]
-4. Simplified Form
+Substitute $Q_i(x)$ and $v_n(x)$:
+
+$$
+I_D = \mu_n C_{ox} W \big[(V_{GS} - V(x)) - V_t \big] \frac{dV}{dx}
+$$
+
+
+
+### **3. Integration Along the Channel**
+
+Integrate from Source (x=0, V=0) to Drain (x=L, V=V_{DS}):
+
+$$
+I_D = \frac{\mu_n C_{ox} W}{L} \int_0^{V_{DS}} \big[(V_{GS} - V) - V_t \big] dV
+$$
+
+$$
+I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2} \Big]
+$$
+
+
+### **4. Simplified Form**
+
 Define constants:
 
-k 
-n
-′
-​
- =μ 
-n
-​
- C 
-ox
-​
- andk 
-n
-​
- =k 
-n
-′
-​
-  
-L
-W
-​
- (Gain factor)
+$$
+k_n' = \mu_n C_{ox} \quad \text{and} \quad k_n = k_n' \frac{W}{L}
+$$
 
-Final Equation for the Resistive Region:
+**Final Equation:**
 
-I 
-D
-​
- =k 
-n
-​
- [(V 
-GS
-​
- −V 
-t
-​
- )V 
-DS
-​
- − 
-2
-V 
-DS
-2
-​
- 
-​
- ]
-​
- 
-5. Linear Approximation (for Very Small V 
-DS
-​
- )
-If V 
-DS
-​
-  is very small, the quadratic term  
-2
-V 
-DS
-2
-​
- 
-​
-  is negligible compared to the linear term (V 
-GS
-​
- −V 
-t
-​
- )V 
-DS
-​
- .
-The equation simplifies to a linear relationship:
+$$
+\boxed{I_D = k_n \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]}
+$$
 
-I 
-D
-​
- ≈k 
-n
-​
- (V 
-GS
-​
- −V 
-t
-​
- )V 
-DS
-​
- 
 
-⇒ The transistor behaves like a voltage-controlled resistor, with resistance inversely proportional to (V 
-GS
-​
- −V 
-t
-​
- ).
 
-6. Example Calculation
-Given: V 
-GS
-​
- =1V,V 
-DS
-​
- =0.05V,V 
-t
-​
- =0.45V
+### **5. Linear Approximation (for Very Small $V_{DS}$)**
 
-I 
-D
-​
- =k 
-n
-​
- [(1−0.45)(0.05)− 
-2
-(0.05) 
-2
- 
-​
- ]
-I 
-D
-​
- =k 
-n
-​
- [0.0275−0.00125]=k 
-n
-​
- (0.02625)
+If $V_{DS}$ is **very small**,  
+the quadratic term $\frac{V_{DS}^2}{2} \ll (V_{GS} - V_t)V_{DS}$.
 
-The quadratic term (0.00125) is small compared to the linear term (0.0275), validating the linear approximation.
+So,
 
+$$
+I_D \approx k_n (V_{GS} - V_t)V_{DS}
+$$
+
+➡️ **Transistor behaves like a resistor**, with resistance controlled by $V_{GS}$.
+
+
+
+### **6. Example Calculation**
+
+Given:  
+$V_{GS}=1\,\text{V},\; V_{DS}=0.05\,\text{V},\; V_t=0.45\,\text{V}$
+
+$$
+I_D = k_n \Big[(1 - 0.45)(0.05) - \frac{(0.05)^2}{2}\Big]
+$$
+
+$$
+I_D = k_n [0.0275 - 0.00125] = k_n (0.02625)
+$$
+
+Since the second term is **small**, linear approximation is valid.
 
