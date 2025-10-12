@@ -183,3 +183,4 @@ $$
 
 Since the second term is **small**, linear approximation is valid.
 
+---
