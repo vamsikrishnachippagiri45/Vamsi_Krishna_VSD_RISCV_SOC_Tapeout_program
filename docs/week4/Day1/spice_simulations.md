@@ -48,7 +48,7 @@ The accuracy of the simulation depends on parameters linking process technology 
 
 | **Parameter** | **Governing Equation** | **Source of Value** |
 |:---------------|:------------------------|:--------------------|
-| **Threshold Voltage ($V_t$)** | $$V_t = V_{t0} + \gamma \left( \sqrt{ -2\Phi_f + V_{SB} } - \sqrt{| -2\Phi_f |} \right)$$ | Depends on substrate bias $V_{SB}$ and body effect coefficient $\gamma$. |
+| **Threshold Voltage ($V_t$)** | $V_t = V_{t0} + \gamma \left( \sqrt{ -2\Phi_f + V_{SB} } - \sqrt{| -2\Phi_f |} \right)$ | Depends on substrate bias $V_{SB}$ and body effect coefficient $\gamma$. |
 | **Body Effect Coefficient ($\gamma$)** | $$\gamma = \frac{ \sqrt{2 q \epsilon_{si} N_A} }{ C_{ox} }$$ | Depends on substrate doping $N_A$ and oxide capacitance $C_{ox}$. |
 | **Fermi Potential ($\Phi_f$)** | $$\Phi_f = -\Phi_T \ln \left( \frac{N_A}{n_i} \right)$$ | Determined by substrate doping $N_A$ and intrinsic carrier concentration $n_i$. |
 | **Drain Current ($I_D$)** | Linear region: $$I_D = k_n[(V_{GS} - V_t)V_{DS} - \tfrac{V_{DS}^2}{2}]$$ <br> Saturation region: $$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})$$ | $k_n = \mu_n C_{ox} \tfrac{W}{L}$, $\lambda$ = channel-length modulation parameter. |
