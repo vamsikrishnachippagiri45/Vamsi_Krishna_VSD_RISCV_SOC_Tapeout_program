@@ -97,7 +97,7 @@ $$
 
 * $C_{ox}$: Oxide capacitance per unit area  
 * The charge is **negative** (due to electrons).
-* \big[(V_{GS} - V(x)) \big] is the effective gate voltage at a point x along channel. (At source(x=0) -> V(x)=0 , and At Drain(x=L) -> V(x)=Vds )
+* $$\big[(V_{GS} - V(x)) \big]$$ is the effective gate voltage at a point x along channel. (At source(x=0) -> V(x)=0 , and At Drain(x=L) -> V(x)=Vds )
 
 
 ##### (b) **Electron Velocity**
