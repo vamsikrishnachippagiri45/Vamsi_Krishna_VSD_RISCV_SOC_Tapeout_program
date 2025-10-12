@@ -87,7 +87,7 @@ $V_{GS} = 1\,\text{V},\; V_{DS} = 0.05\,\text{V},\; V_t = 0.45\,\text{V}$
 
 #### Channel Charge and Current Flow
 
-##### (a) **Channel Charge ($Q_i(x)$)**
+##### (a) **Channel Charge ($$Q_i(x)$$)**
 
 At a distance **x** from the Source, potential = $V(x)$.
 
@@ -152,7 +152,7 @@ $$
 
 
 
-#### Linear Approximation (for Very Small $V_{DS}$)**
+#### Linear Approximation (for Very Small $V_{DS}$)
 
 If $V_{DS}$ is **very small**,  
 the quadratic term $\frac{V_{DS}^2}{2} \ll (V_{GS} - V_t)V_{DS}$.
