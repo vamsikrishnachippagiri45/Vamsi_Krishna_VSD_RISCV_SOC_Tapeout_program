@@ -27,13 +27,10 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
 ---
 
 
-## ⚙️ NMOS SPICE Simulation Setup
+## NMOS SPICE Simulation Setup
 
-The uploaded images illustrate the **complete SPICE simulation setup** for an NMOS transistor, encompassing the physical and electrical parameters, circuit description (netlist), technology files, and simulation commands to generate characteristic curves.
 
----
-
-### 1. 🔹 SPICE Simulation Overview
+### 1. SPICE Simulation Overview
 
 SPICE combines the circuit description with device models to solve nonlinear differential equations that describe the circuit behavior.
 
@@ -44,9 +41,8 @@ SPICE combines the circuit description with device models to solve nonlinear dif
 | **SPICE Software** | The solver engine combining netlist, model, and analysis commands. | Performs numerical simulation. |
 | **Output** | I–V characteristics (e.g., $I_D$ vs $V_{DS}$) or transient waveforms. | Visualizes results and verifies behavior. |
 
----
 
-### 2. 🔸 SPICE Model Parameters & Key Equations
+### 2. SPICE Model Parameters & Key Equations
 
 The accuracy of the simulation depends on parameters linking process technology to device physics.
 
@@ -57,11 +53,11 @@ The accuracy of the simulation depends on parameters linking process technology 
 | **Fermi Potential ($\Phi_f$)** | $$\Phi_f = -\Phi_T \ln \left( \frac{N_A}{n_i} \right)$$ | Determined by substrate doping $N_A$ and intrinsic carrier concentration $n_i$. |
 | **Drain Current ($I_D$)** | Linear region: $$I_D = k_n[(V_{GS} - V_t)V_{DS} - \tfrac{V_{DS}^2}{2}]$$ <br> Saturation region: $$I_D = \tfrac{1}{2} k_n (V_{GS} - V_t)^2 (1 + \lambda V_{DS})$$ | $k_n = \mu_n C_{ox} \tfrac{W}{L}$, $\lambda$ = channel-length modulation parameter. |
 
-> 🧠 These parameters are defined in the **Technology File** (also called *Model* or *Library File*).
+These parameters are defined in the **Technology File** (also called *Model* or *Library File*).
 
----
 
-### 3. 🔹 SPICE Netlist and Technology File
+
+### 3.  SPICE Netlist and Technology File
 
 #### A. Netlist Description (Circuit Connectivity)
 
@@ -74,7 +70,7 @@ A **netlist** is a textual representation of the circuit schematic.
 | `Vdd vdd 0 2.5` | DC Source (Vdd) | Supplies 2.5 V between node **vdd** and **ground**. |
 | `Vin in 0 2.5` | DC Source (Vin) | Applies 2.5 V between node **in** and **ground**. |
 
----
+
 
 #### B. Technology File Inclusion
 
