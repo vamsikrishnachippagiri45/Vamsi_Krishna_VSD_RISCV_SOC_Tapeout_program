@@ -66,7 +66,7 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 
 
 
-### **4. NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region**
+### 4. NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region
 
 
 ### **1. Region Definition**
