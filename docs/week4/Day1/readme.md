@@ -9,16 +9,16 @@ DC Analysis: Finds steady-state operating point ,
 AC Analysis: Analyzes frequency response (filters, amplifiers) , 
 Transient Analysis: Studies time-domain behavior (waveforms, rise/fall times).
 
-Why SPICE Simulations Are Needed in IC Design
+Why SPICE Simulations Are Needed in IC Design : 
 
-To Understand Cell Delay:
+1) To Understand Cell Delay:
 Delay comes from internal transistor switching and output load capacitance (fanout + interconnects).
 SPICE uses accurate transistor models to calculate true propagation delay under specific conditions (input slew & output load).
 
-To Ensure Delay Models Are Accurate:
+2) To Ensure Delay Models Are Accurate:
 STA tools use pre-characterized delay tables (.lib) generated using SPICE simulations.
 SPICE is the “gold standard” for building these models.
 
-To Verify STA Results (Signoff):
+3) To Verify STA Results (Signoff):
 SPICE verifies critical timing paths detected by STA.
 Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before tapeout.
