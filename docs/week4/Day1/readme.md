@@ -60,11 +60,17 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
 
 ### **3. Body (Substrate) Effect**
 
-* **Definition:** $V_t$ increases if there is a voltage difference between **Source (S)** and **Bulk (B)**.
-* **Cause:** A positive **$V_{SB}$** (Source higher than Bulk) makes the **depletion region wider**, requiring a higher Gate voltage to invert the channel.
-* **Result:**
-  $$V_t ↑ \text{ when } V_{SB} ↑$$
-  → Harder to turn ON the NMOS.
+When $V_{SB} \neq 0$ (Source is at a higher potential than Bulk):
+The Source becomes positive with respect to the Bulk (Substrate).
+This increases the reverse bias of the p–n junction between Source (n+) and Bulk (p).
+
+Due to this stronger reverse bias:
+More holes are repelled from the channel region.
+The depletion region widens under the Gate.
+So, fewer electrons are available near the surface to form the n-channel.
+
+Because the Source is positive, it tends to attract the channel electrons downward, away from the inversion layer.
+Therefore, the Gate must apply a higher positive voltage ($V_{GS}$) to pull enough electrons toward the surface and re-form the inversion layer.
 
 The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} + \gamma (\sqrt{|-2\Phi_f + V_{sb}|} - \sqrt{|-2\Phi_f|})$$
 
