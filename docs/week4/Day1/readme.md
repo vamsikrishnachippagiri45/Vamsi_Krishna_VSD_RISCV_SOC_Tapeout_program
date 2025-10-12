@@ -3,7 +3,7 @@
 ##  **Basic Circuit Element** : NMOS
 
 
-### **1. NMOS – Basic Concept**
+### **1. NMOS – Basics**
 
 * **NMOS (N-channel MOSFET)** is a **voltage-controlled switch**.
 * **Structure:**
