@@ -135,97 +135,147 @@ Where:
 | (V_{SB}) | Source-to-Bulk voltage          |
 | (\Phi_f) | Fermi potential                 |
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ⚡ NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region**
+
 ---
 
-## ⚡ NMOS ( I_D - V_{DS} ) Relationship (Linear / Resistive Region)
+### **1. Region Definition**
 
-### **1. Operating Region**
+**Transistor Type:** N-channel MOSFET (NMOS)
+**Region:** Resistive / Linear / Triode Region
 
-**Condition for Linear Region:**
+**Conditions:**
 
-```latex
-$$V_{GS} > V_t \quad \text{and} \quad V_{DS} < (V_{GS} - V_t)$$
-```
+* ( V_{GS} > V_t )  → Transistor **ON** (strong inversion)
+* ( V_{DS} < (V_{GS} - V_t) ) → Channel exists fully from Source to Drain
+* ( V_{DS} ) is **small**
 
-Here, the transistor conducts and behaves like a **voltage-controlled resistor**.
+**Example:**
+( V_{GS} = 1V,; V_{DS} = 0.05V,; V_t = 0.45V )
 
 ---
 
 ### **2. Channel Charge and Current Flow**
 
-At a distance **x** from the Source:
+#### (a) **Channel Charge (( Q_i(x) ))**
 
-```latex
-$$Q_i(x) = -C_{ox}\big[(V_{GS} - V(x)) - V_t\big]$$
-```
+At a distance **x** from the Source, potential = ( V(x) ).
 
-* ( Q_i(x) ): Inversion charge per unit area
-* ( C_{ox} ): Gate oxide capacitance per unit area
+[
+Q_i(x) = -C_{ox} \big[(V_{GS} - V(x)) - V_t \big]
+]
 
-Electron drift velocity:
+* ( C_{ox} ): Oxide capacitance per unit area
+* The charge is **negative** (due to electrons).
 
-```latex
-$$v_n(x) = -\mu_n \frac{dV}{dx}$$
-```
+---
 
-Drain current at that point:
+#### (b) **Electron Velocity**
 
-```latex
-$$I_D = \mu_n C_{ox} W \big[(V_{GS} - V(x)) - V_t\big] \frac{dV}{dx}$$
-```
+[
+v_n(x) = -\mu_n \frac{dV}{dx}
+]
+
+* ( \mu_n ): Electron mobility
+* ( \frac{dV}{dx} ): Electric field along the channel
+
+---
+
+#### (c) **Drain Current (( I_D ))**
+
+[
+I_D = W \cdot Q_i(x) \cdot v_n(x)
+]
+Substitute ( Q_i(x) ) and ( v_n(x) ):
+[
+I_D = \mu_n C_{ox} W \big[(V_{GS} - V(x)) - V_t \big] \frac{dV}{dx}
+]
 
 ---
 
 ### **3. Integration Along the Channel**
 
-Integrate from **Source (x=0, V=0)** to **Drain (x=L, V=V_{DS})**:
+Integrate from Source (x=0, V=0) to Drain (x=L, V=V_{DS}):
 
-```latex
-$$I_D = \frac{\mu_n C_{ox} W}{L} \int_0^{V_{DS}} \big[(V_{GS} - V) - V_t\big]\,dV$$
-```
+[
+I_D = \frac{\mu_n C_{ox} W}{L} \int_0^{V_{DS}} \big[(V_{GS} - V) - V_t \big] dV
+]
 
-After integration:
-
-```latex
-$$I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]$$
-```
+[
+I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2} \Big]
+]
 
 ---
 
-### **4. Simplified with Process Parameters**
+### **4. Simplified Form**
 
-Define:
+Define constants:
 
-```latex
-$$k_n' = \mu_n C_{ox} \quad \text{and} \quad k_n = k_n' \frac{W}{L}$$
-```
+[
+k_n' = \mu_n C_{ox} \quad \text{and} \quad k_n = k_n' \frac{W}{L}
+]
+
+**Final Equation:**
+
+[
+\boxed{I_D = k_n \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]}
+]
+
+---
+
+### **5. Linear Approximation (for Very Small ( V_{DS} ))**
+
+If ( V_{DS} ) is **very small**,
+the quadratic term ( \frac{V_{DS}^2}{2} ) ≪ ( (V_{GS} - V_t)V_{DS} ).
 
 So,
+[
+I_D \approx k_n (V_{GS} - V_t)V_{DS}
+]
 
-```latex
-$$I_D = k_n \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]$$
-```
-
----
-
-### **5. Linear Approximation (for Small (V_{DS}))**
-
-If ( V_{DS} ) is very small:
-
-```latex
-$$I_D \approx k_n (V_{GS} - V_t)V_{DS}$$
-```
-
-➡️ The transistor behaves like a **resistor** controlled by ( V_{GS} ).
+➡️ **Transistor behaves like a resistor**, with resistance controlled by ( V_{GS} ).
 
 ---
 
-### **6. Saturation Region**
+### **6. Example Calculation**
 
-When ( V_{DS} \ge (V_{GS} - V_t) ):
+Given:
+( V_{GS}=1V, V_{DS}=0.05V, V_t=0.45V )
 
+[
+I_D = k_n \Big[(1 - 0.45)(0.05) - \frac{(0.05)^2}{2}\Big]
+]
+[
+I_D = k_n [0.0275 - 0.00125] = k_n (0.02625)
+]
 
-$$I_D = \frac{1}{2}k_n (V_{GS} - V_t)^2$$
+Since the second term is **small**, linear approximation is valid.
+
+---
+
+### ✅ **Summary**
+
+| Region                 | Condition                                 | Equation                                               | Behavior                              |
+| :--------------------- | :---------------------------------------- | :----------------------------------------------------- | :------------------------------------ |
+| **Cutoff**             | ( V_{GS} < V_t )                          | ( I_D = 0 )                                            | OFF                                   |
+| **Linear (Resistive)** | ( V_{GS} > V_t ), ( V_{DS} < V_{GS}-V_t ) | ( I_D = k_n[(V_{GS}-V_t)V_{DS} - \frac{V_{DS}^2}{2}] ) | Acts like voltage-controlled resistor |
+| **Saturation**         | ( V_{DS} ≥ V_{GS}-V_t )                   | ( I_D = \frac{1}{2}k_n(V_{GS}-V_t)^2 )                 | Acts like current source              |
+
 
 
 
