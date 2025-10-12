@@ -25,47 +25,62 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
 
 ---
 
-## Basic Circuit Element - NMOS
-
-### 1. NMOS: Basic Structure and Operation
-
-The **N-channel Metal-Oxide-Semiconductor (NMOS)** transistor is a basic circuit element, essentially a voltage-controlled switch.
-
-* **Structure:** It consists of two heavily doped n-type regions (**Source 'S'** and **Drain 'D'**) embedded in a p-type semiconductor substrate (**Bulk 'B'**). A metal or polysilicon **Gate 'G'** is separated from the substrate by a thin layer of silicon dioxide (oxide).
-* **Function:** It controls the flow of electrons (current) between the Source and Drain using the voltage applied to the Gate.
-* **Default State ($V_{GS}=0$):** With the Gate, Source, Drain, and Bulk connected to ground, the p-substrate/n-regions form a reversed-biased **p-n junction**. The resistance between Source and Drain is very **high** (switch is **OFF**).
+##  Simplified Notes: NMOS, Strong Inversion & Threshold Voltage
 
 
+### **1. NMOS – Basic Concept**
 
-### 2. Strong Inversion and Threshold Voltage ($V_t$)
+* **NMOS (N-channel MOSFET)** is a **voltage-controlled switch**.
+* **Structure:**
 
-To turn the NMOS switch **ON**, a positive voltage ($V_{GS}$) is applied to the Gate.
+  * Two **n+ regions** (Source & Drain) in a **p-type substrate**.
+  * **Gate** is separated by a thin **oxide layer**.
+* **Working:**
 
-* **Depletion:** The positive Gate voltage attracts negative charge carriers (electrons) and repels positive charge carriers (holes) away from the surface of the p-substrate, forming a **depletion region** beneath the Gate.
-* **Strong Inversion:** As $V_{GS}$ increases, the surface beneath the Gate becomes so strongly electron-rich that its electrical properties effectively **invert** from p-type to n-type material. This forms a continuous n-channel connecting the Source and Drain.
-* **Threshold Voltage ($V_t$):** The specific **Gate-to-Source voltage ($V_{GS}$)** at which **strong inversion** occurs and the channel starts to conduct is called the **Threshold Voltage ($V_t$)**.
-    * For $V_{GS} < V_t$, the transistor is **OFF**.
-    * For $V_{GS} \ge V_t$, the transistor is **ON**, and its conductivity is modulated by $V_{GS}$.
-
+  * Current flows between **Source (S)** and **Drain (D)** when a voltage is applied at **Gate (G)**.
+  * At **$V_{GS} = 0$**, no channel exists → **Transistor OFF** (high resistance).
 
 
-### 3. Threshold Voltage with Substrate (Body) Effect
+### **2. Strong Inversion & Threshold Voltage ($V_t$)**
 
-The Threshold Voltage ($V_t$) is not a fixed value; it changes if there is a voltage difference between the Source and the Bulk (Substrate). This phenomenon is called the **Body Effect** or **Substrate Effect**.
+* When **Gate voltage ($V_{GS}$)** increases:
 
-* **Condition:** The effect occurs when the **Source-to-Bulk voltage ($V_{SB}$) is a positive value** (i.e., the Source is at a higher potential than the Bulk).
-* **Effect on Depletion:** A positive $V_{SB}$ creates an **additional reverse bias** between the Source and Bulk. This increases the width of the depletion region near the Source.
-* **Effect on $V_t$:** To achieve the same level of strong inversion and form a channel, a **higher Gate voltage ($V_{GS}$)** is now required to counteract the larger depletion region.
-    $$\text{A positive } V_{SB} \Rightarrow \text{Higher } V_t \Rightarrow \text{Harder to turn the transistor ON}$$
+  * Electrons are attracted toward the Gate area.
+  * A **depletion region** forms first.
+  * At a certain $V_{GS}$, enough electrons accumulate → **n-channel forms**.
+* This condition is called **Strong Inversion**.
+* The **voltage at which this happens** is called **Threshold Voltage ($V_t$)**.
 
-The **Threshold Voltage Equation** expresses this relationship:
+**Behavior:**
 
-$$V_t = V_{t0} + \gamma (\sqrt{|-2\Phi_f + V_{sb}|} - \sqrt{|-2\Phi_f|})$$
+* If **$V_{GS} < V_t$ → OFF (no conduction)**
+* If **$V_{GS} ≥ V_t$ → ON (channel formed, current flows)**
 
-| Term | Description |
-| :--- | :--- |
-| $\mathbf{V_t}$ | New Threshold Voltage. |
-| $\mathbf{V_{t0}}$ | Threshold Voltage when $V_{sb}=0$. |
-| $\mathbf{\gamma}$ | **Body Effect Coefficient** (Expresses the impact of $V_{sb}$ changes). |
-| $\mathbf{V_{sb}}$ | Source-to-Bulk/Substrate voltage (the cause of the Body Effect). |
-| $\mathbf{\Phi_f}$ | Fermi Potential (a semiconductor physics parameter). |
+
+
+### **3. Body (Substrate) Effect**
+
+* **Definition:** $V_t$ increases if there is a voltage difference between **Source (S)** and **Bulk (B)**.
+* **Cause:** A positive **$V_{SB}$** (Source higher than Bulk) makes the **depletion region wider**, requiring a higher Gate voltage to invert the channel.
+* **Result:**
+  $$V_t ↑ \text{ when } V_{SB} ↑$$
+  → Harder to turn ON the NMOS.
+
+**Equation:**
+[
+V_t = V_{t0} + \gamma \left(\sqrt{|2\Phi_f + V_{SB}|} - \sqrt{|2\Phi_f|}\right)
+]
+
+| Symbol   | Meaning                         |
+| :------- | :------------------------------ |
+| $V_t$    | New threshold voltage           |
+| $V_{t0}$ | Threshold voltage at $V_{SB}=0$ |
+| $\gamma$ | Body effect coefficient         |
+| $V_{SB}$ | Source-to-Bulk voltage          |
+| $\Phi_f$ | Fermi potential                 |
+
+**Summary:**
+
+* **$V_{GS}$ controls NMOS conduction.**
+* **$V_t$** = minimum voltage needed to form channel.
+* **Body Effect:** Higher $V_{SB}$ → Higher $V_t$ → NMOS harder to turn ON.
