@@ -1,5 +1,7 @@
 # Spice simulation 
 
+---
+
 ## Introduction to SPICE Simulation
 
 SPICE (Simulation Program with Integrated Circuit Emphasis) is an industry-standard circuit simulator developed at UC Berkeley for analog and mixed-signal analysis. It solves circuit equations (using nodal analysis and Newton-Raphson methods) from a netlist to find voltages and currents at each node.
