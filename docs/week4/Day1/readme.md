@@ -197,29 +197,38 @@ As the drain-to-source voltage \(V_{DS}\) increases, an NMOS operating in strong
 #### Pinch-Off Condition
 
 - The local effective gate-to-channel voltage at position \(x\) is:
+  
   $$
   V_{GC}(x) = V_{GS} - V(x)
   $$
+  
   where \(V(x)\) is the local channel potential (0 at source, \(V_{DS}\) at drain).
 
 - In the **Linear** region, \(V_{DS}\) is small and the channel remains inverted along its entire length:
+
   $$
   V_{GD} = V_{GS} - V_{DS} \quad\text{and}\quad V_{GD} > V_t
   $$
 
 - **Pinch-off (Saturation Boundary)** occurs when the gate-to-channel voltage at the drain end equals the threshold:
+  
   $$
   V_{GS} - V_{DS,sat} = V_t
   $$
+  
   therefore
+  
   $$
   \boxed{V_{DS,sat} = V_{GS} - V_t}
   $$
 
-**Interpretation (example):** for \(V_{GS}=1\text{ V}\) and \(V_t=0.45\text{ V}\):
-- \(V_{DS}<0.55\text{ V}\) → linear (channel continuous)
-- \(V_{DS}=0.55\text{ V}\) → pinch-off onset (boundary)
-- \(V_{DS}>0.55\text{ V}\) → saturation (pinch-off region at drain)
+**Interpretation (example):** for $$\(V_{GS}=1\text{ V}\)$$ and $$\(V_t=0.45\text{ V}\)$$ :
+
+- $$\(V_{DS}<0.55\text{ V}\)$$→ linear (channel continuous)
+  
+- $$\(V_{DS}=0.55\text{ V}\)$$ → pinch-off onset (boundary)
+  
+- $$\(V_{DS}>0.55\text{ V}\)$$ → saturation (pinch-off region at drain)
 
 
 
