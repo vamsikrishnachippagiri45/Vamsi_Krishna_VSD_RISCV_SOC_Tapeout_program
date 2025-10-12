@@ -224,9 +224,9 @@ $$I_D \approx k_n (V_{GS} - V_t)V_{DS}$$
 
 When ( V_{DS} \ge (V_{GS} - V_t) ):
 
-```latex
+
 $$I_D = \frac{1}{2}k_n (V_{GS} - V_t)^2$$
-```
+
 
 
 
