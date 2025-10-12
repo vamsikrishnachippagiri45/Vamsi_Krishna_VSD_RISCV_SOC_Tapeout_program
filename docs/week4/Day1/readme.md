@@ -25,7 +25,7 @@ Final signoff simulations (FastSPICE/full SPICE) ensure accurate timing before t
 
 ---
 
-##  Simplified Notes: NMOS, Strong Inversion & Threshold Voltage
+##  **Basic Circuit Element **: NMOS
 
 
 ### **1. NMOS – Basic Concept**
