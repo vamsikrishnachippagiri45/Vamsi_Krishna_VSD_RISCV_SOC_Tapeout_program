@@ -73,121 +73,160 @@ The **Threshold Voltage Equation** expresses this relationship: $$V_t = V_{t0} +
 
 
 
-## ⚡ NMOS Current–Voltage (𝐼ᴅ–Vᴅs) Relationship in the **Linear (Resistive) Region**
+Perfect 👍 Here’s the **complete version** — with both **theory and equations** in **GitHub-ready Markdown format** (using LaTeX blocks).
+You can copy-paste this directly into your `.md` file.
 
 ---
 
-### **1. Region Definition**
+## 🧠 NMOS, Strong Inversion & Threshold Voltage
 
-**Transistor Type:** N-channel MOSFET (NMOS)
-**Region:** Resistive / Linear / Triode Region
+### **1. NMOS – Basic Concept**
 
-**Conditions:**
+The **N-channel MOSFET (NMOS)** acts as a **voltage-controlled switch**.
 
-* ( V_{GS} > V_t )  → Transistor **ON** (strong inversion)
-* ( V_{DS} < (V_{GS} - V_t) ) → Channel exists fully from Source to Drain
-* ( V_{DS} ) is **small**
+* **Structure:**
+  Two **n⁺ regions** (Source & Drain) in a **p-type substrate**, with a **Gate** separated by a thin **oxide** layer.
 
-**Example:**
-( V_{GS} = 1V,; V_{DS} = 0.05V,; V_t = 0.45V )
+* **Working:**
+  Current flows between **Source (S)** and **Drain (D)** when a voltage is applied at **Gate (G)**.
+  At ( V_{GS} = 0 ), no channel exists → **Transistor OFF**.
+
+---
+
+### **2. Strong Inversion & Threshold Voltage**
+
+As ( V_{GS} ) increases:
+
+* Electrons are attracted toward the Gate area.
+* A **depletion region** forms beneath the oxide.
+* At a certain ( V_{GS} ), enough electrons accumulate to form an **n-channel** → transistor turns **ON**.
+
+The voltage at which this occurs is the **Threshold Voltage ( V_t )**.
+
+| Condition          | Transistor State    |
+| :----------------- | :------------------ |
+| ( V_{GS} < V_t )   | OFF (no channel)    |
+| ( V_{GS} \ge V_t ) | ON (channel formed) |
+
+---
+
+### **3. Body (Substrate) Effect**
+
+When the **Source** is at a higher potential than the **Bulk** (( V_{SB} > 0 )):
+
+* The **p–n junction** between Source and Bulk becomes more **reverse biased**.
+* The **depletion region widens**, repelling more holes.
+* Fewer electrons remain near the surface → **harder to invert**.
+* Thus, the **Gate must apply a higher voltage** to form the same channel.
+
+Hence, the **Threshold Voltage increases** with ( V_{SB} ):
+
+```latex
+$$V_t = V_{t0} + \gamma \left(\sqrt{|2\Phi_f + V_{SB}|} - \sqrt{|2\Phi_f|}\right)$$
+```
+
+Where:
+
+| Symbol   | Meaning                         |
+| :------- | :------------------------------ |
+| (V_t)    | New threshold voltage           |
+| (V_{t0}) | Threshold voltage at (V_{SB}=0) |
+| (\gamma) | Body-effect coefficient         |
+| (V_{SB}) | Source-to-Bulk voltage          |
+| (\Phi_f) | Fermi potential                 |
+
+---
+
+## ⚡ NMOS ( I_D - V_{DS} ) Relationship (Linear / Resistive Region)
+
+### **1. Operating Region**
+
+**Condition for Linear Region:**
+
+```latex
+$$V_{GS} > V_t \quad \text{and} \quad V_{DS} < (V_{GS} - V_t)$$
+```
+
+Here, the transistor conducts and behaves like a **voltage-controlled resistor**.
 
 ---
 
 ### **2. Channel Charge and Current Flow**
 
-#### (a) **Channel Charge (( Q_i(x) ))**
+At a distance **x** from the Source:
 
-At a distance **x** from the Source, potential = ( V(x) ).
+```latex
+$$Q_i(x) = -C_{ox}\big[(V_{GS} - V(x)) - V_t\big]$$
+```
 
-[
-Q_i(x) = -C_{ox} \big[(V_{GS} - V(x)) - V_t \big]
-]
+* ( Q_i(x) ): Inversion charge per unit area
+* ( C_{ox} ): Gate oxide capacitance per unit area
 
-* ( C_{ox} ): Oxide capacitance per unit area
-* The charge is **negative** (due to electrons).
+Electron drift velocity:
 
----
+```latex
+$$v_n(x) = -\mu_n \frac{dV}{dx}$$
+```
 
-#### (b) **Electron Velocity**
+Drain current at that point:
 
-[
-v_n(x) = -\mu_n \frac{dV}{dx}
-]
-
-* ( \mu_n ): Electron mobility
-* ( \frac{dV}{dx} ): Electric field along the channel
-
----
-
-#### (c) **Drain Current (( I_D ))**
-
-[
-I_D = W \cdot Q_i(x) \cdot v_n(x)
-]
-Substitute ( Q_i(x) ) and ( v_n(x) ):
-[
-I_D = \mu_n C_{ox} W \big[(V_{GS} - V(x)) - V_t \big] \frac{dV}{dx}
-]
+```latex
+$$I_D = \mu_n C_{ox} W \big[(V_{GS} - V(x)) - V_t\big] \frac{dV}{dx}$$
+```
 
 ---
 
 ### **3. Integration Along the Channel**
 
-Integrate from Source (x=0, V=0) to Drain (x=L, V=V_{DS}):
+Integrate from **Source (x=0, V=0)** to **Drain (x=L, V=V_{DS})**:
 
-[
-I_D = \frac{\mu_n C_{ox} W}{L} \int_0^{V_{DS}} \big[(V_{GS} - V) - V_t \big] dV
-]
+```latex
+$$I_D = \frac{\mu_n C_{ox} W}{L} \int_0^{V_{DS}} \big[(V_{GS} - V) - V_t\big]\,dV$$
+```
 
-[
-I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2} \Big]
-]
+After integration:
+
+```latex
+$$I_D = \frac{\mu_n C_{ox} W}{L} \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]$$
+```
 
 ---
 
-### **4. Simplified Form**
+### **4. Simplified with Process Parameters**
 
-Define constants:
+Define:
 
-[
-k_n' = \mu_n C_{ox} \quad \text{and} \quad k_n = k_n' \frac{W}{L}
-]
-
-**Final Equation:**
-
-[
-\boxed{I_D = k_n \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]}
-]
-
-
-
-### **5. Linear Approximation (for Very Small ( V_{DS} ))**
-
-If ( V_{DS} ) is **very small**,
-the quadratic term ( \frac{V_{DS}^2}{2} ) ≪ ( (V_{GS} - V_t)V_{DS} ).
+```latex
+$$k_n' = \mu_n C_{ox} \quad \text{and} \quad k_n = k_n' \frac{W}{L}$$
+```
 
 So,
-[
-I_D \approx k_n (V_{GS} - V_t)V_{DS}
-]
 
-**Transistor behaves like a resistor**, with resistance controlled by ( V_{GS} ).
+```latex
+$$I_D = k_n \Big[(V_{GS} - V_t)V_{DS} - \frac{V_{DS}^2}{2}\Big]$$
+```
 
-Example Calculation
+---
 
-Given:
-( V_{GS}=1V, V_{DS}=0.05V, V_t=0.45V )
+### **5. Linear Approximation (for Small (V_{DS}))**
 
-[
-I_D = k_n \Big[(1 - 0.45)(0.05) - \frac{(0.05)^2}{2}\Big]
-]
-[
-I_D = k_n [0.0275 - 0.00125] = k_n (0.02625)
-]
+If ( V_{DS} ) is very small:
 
-Since the second term is **small**, linear approximation is valid.
+```latex
+$$I_D \approx k_n (V_{GS} - V_t)V_{DS}$$
+```
 
+➡️ The transistor behaves like a **resistor** controlled by ( V_{GS} ).
 
+---
+
+### **6. Saturation Region**
+
+When ( V_{DS} \ge (V_{GS} - V_t) ):
+
+```latex
+$$I_D = \frac{1}{2}k_n (V_{GS} - V_t)^2$$
+```
 
 
 
