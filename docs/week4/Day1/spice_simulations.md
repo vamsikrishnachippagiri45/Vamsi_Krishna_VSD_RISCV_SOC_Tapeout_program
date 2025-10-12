@@ -66,4 +66,15 @@ The technology file (for example, xxxx_025um_model.mod) contains several .MODEL 
 
 These parameters link physical fabrication characteristics (like doping and oxide thickness) to the electrical equations that SPICE uses internally to compute drain current $I_D$, threshold voltage $V_t$, and other transistor behaviors.
 
+### 3. Netlist Description (Circuit Connectivity)
 
+The SPICE netlist represents a circuit in textual form. It defines how each component is connected, what parameters it has, and which nodes are linked together.
+Every line in the netlist corresponds to one element of the circuit — such as a MOSFET, resistor, or voltage source.
+
+The netlist translates the schematic into mathematical form that SPICE can interpret. Each device is assigned a name, connected to specific nodes, and associated with electrical values (e.g., resistance, voltage, transistor width/length).
+
+For example:
+The MOSFET line defines connections for drain, gate, source, and bulk terminals, along with its physical dimensions W and L.
+Resistors and voltage sources connect between specific nodes with given values.
+Each node number or label corresponds to a potential (voltage) in the circuit that SPICE will solve.
+Hence, the netlist acts as the blueprint for simulation — it tells SPICE what to solve and how all elements are interconnected.
