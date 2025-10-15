@@ -171,8 +171,24 @@ Useful to see the steady-state behavior of the circuit.
 DC sweep simulation:
 Sweeps Vdd from 0 → 1.8 V in 0.1 V steps.
 Sweeps Vin from 0 → 1.8 V in 0.2 V steps.
+Generates a 2D sweep table of output voltages/currents to see how the NMOS responds to Vgs and Vds variations.
 
-Generates a 2D sweep table of output voltages/currents to see how the NMOS responds to input and supply variations.
+#### Control Block
+
+```
+.control
+run
+display
+setplot dc1
+.endc
+```
+
+-.control starts an interactive control section.
+-run → runs all simulations.
+-display → shows the results of simulations.
+-setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
+-.endc ends the control block.
+
 
 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
