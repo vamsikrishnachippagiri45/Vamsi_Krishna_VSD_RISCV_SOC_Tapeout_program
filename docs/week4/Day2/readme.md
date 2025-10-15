@@ -58,8 +58,9 @@ A widely used empirical model combines both regions:
 v_n = \frac{\mu_n \mathcal{E}}{1 + (\mathcal{E}/\mathcal{E}_c)}
 ]
 
-* For $\mathcal{E} \ll \mathcal{E}_c$, denominator ≈ 1 ⇒ $v_n ≈ \mu_n \mathcal{E}$
-* For $\mathcal{E} \gg \mathcal{E}*c$, $v_n$ → $v*{sat}$
+* For $\mathcal{E} \ll \mathcal{E}_c$, denominator ≈ 1 ⇒ $v_n \approx \mu_n \mathcal{E}$
+* For $\mathcal{E} \gg \mathcal{E}_c$, $v_n \rightarrow v_{sat}$
+
 
 📊 **Graph Interpretation:**
 
