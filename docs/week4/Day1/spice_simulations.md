@@ -81,14 +81,14 @@ Hence, the netlist acts as the blueprint for simulation , it tells SPICE what to
 
 ---
 
-### Lab : Spice simulation (Id vs Vds)
+## Lab : Spice simulation (Id vs Vds)
 
 <img width="1136" height="519" alt="image" src="https://github.com/user-attachments/assets/87b644ff-bbb9-40f0-bece-65815fdfd7dd" />
 
 <img width="1136" height="673" alt="image" src="https://github.com/user-attachments/assets/47ce028d-d00f-48a5-946e-dc118605175a" />
 
 
-#### Netlist 
+### Netlist 
 
 ```
 *Model Description
@@ -122,7 +122,7 @@ setplot dc1
 ```
 
 
-##### Model Parameter
+#### Model Parameter
 
 ```
 .param temp=27
@@ -131,20 +131,31 @@ setplot dc1
 This defines a parameter named temp with a value of 27°C.
 SPICE can use this parameter to adjust temperature-dependent models.
 
-##### Include Technology/Library File
+#### Include Technology/Library File
 
 ```
 .lib "sky130_fd_pr/models/sky130.lib.spice" tt
 ```
 
 .lib includes a technology library for the SkyWater 130nm PDK.
-
 "tt" specifies the typical-typical process corner (used in timing, voltage, and temperature simulations).
-
 This library contains NMOS, PMOS, and other device models with their parameters.
 
 
+#### Netlist Description / Circuit
 
+XM1 is a MOSFET instance.
+Vdd → Drain, n1 → Gate, 0 → Source, 0 → Bulk/Substrate.
+sky130_fd_pr__nfet_01v8 → Model of NMOS transistor from the SkyWater library.
+w=5 l=2 → Width = 5µm, Length = 2µm.
+So this is a basic NMOS with gate connected to n1, drain to Vdd and source/bulk to GND.
+
+R1 is a resistor connecting node in to node n1.
+Resistance = 55 Ω.
+This could act as a gate resistor or input series resistor for the NMOS gate.
+
+Vdd is a DC supply of 1.8 V between vdd and 0 (ground).
+Vin is the input voltage applied between in and 0 with a DC value of 1.8 V.
 
 
 
