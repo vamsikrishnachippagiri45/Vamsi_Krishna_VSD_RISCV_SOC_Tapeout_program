@@ -149,9 +149,21 @@ setplot dc1
 
 ---
 
-### Key Comparisons
-- **Saturation onset:** Short-channel devices saturate at much smaller Vds.  
-- **Saturation mechanism:** Long-channel → pinch-off; Short-channel → velocity saturation (v_sat-limited).  
-- **Vgs dependence in saturation:** Long-channel ≈ quadratic; Short-channel ≈ linear.  
-- **Peak current:** Short-channel shows lower Id for the same W/L.  
-- **Output slope (g_ds) & gm:** Short-channel has higher g_ds and lower gm in saturation compared to long-channel.
+## Comparison: Long-Channel vs Short-Channel MOSFETs
+
+| Characteristic | Long-Channel MOSFET (W = 1.8 µm, L = 1.2 µm) | Short-Channel MOSFET (W = 0.375 µm, L = 0.25 µm) | Notes / Physical Explanation |
+|----------------|-----------------------------------------------|--------------------------------------------------|------------------------------|
+| **Triode/Linear Region (Low Vds)** | Id rises quadratically with Vds and Vgs (Id ∝ (Vgs − Vt)·Vds − Vds²/2). | Initial quadratic rise is very small; Id quickly becomes linear with Vds. | Short channel → higher electric field along the channel → early velocity saturation. |
+| **Saturation Onset (Vdsat)** | Occurs at higher Vds, determined by pinch-off condition Vdsat ≈ Vgs − Vt. | Occurs at smaller Vds, determined by velocity saturation: Vdsat ≈ Ec · L. | In short-channel devices, the channel is so short that even moderate Vds produces a high electric field exceeding Ec. |
+| **Id vs Vgs in Saturation** | Quadratic increase with Vgs (Id ∝ (Vgs − Vt)²). | Linear increase with Vgs (Id ∝ Vgt), reflecting v_sat-limited current. | Velocity saturation dominates in short-channel devices, limiting carrier velocity and making Id proportional to Vgt rather than Vgt². |
+| **Peak Drain Current (Id,max)** | Higher peak Id for same W/L ratio. | Lower peak Id for same W/L ratio. | Velocity saturation limits the maximum carrier velocity in short-channel devices, reducing current. |
+| **Output Conductance (g_ds)** | Low in saturation (flatter Id vs Vds plateau). | Higher in saturation (Id vs Vds plateau has noticeable slope). | Higher g_ds in short-channel devices indicates less ideal saturation due to velocity-limited behavior. |
+| **Transconductance (gm = dId/dVgs)** | High in saturation (steep Id vs Vgs curve). | Reduced in saturation (less steep Id vs Vgs curve). | Reduced gm in short-channel devices is due to velocity saturation limiting current increase with Vgs. |
+| **Saturation Mechanism** | Pinch-off: channel charge at the drain end goes to zero. | Velocity saturation: carrier velocity limited to v_sat due to high electric field. | Fundamental difference in physics between long- and short-channel devices. |
+| **Id vs Vds Shape** | Clear quadratic-to-flat transition (triode to pinch-off). | Rapid transition from initial rise to nearly linear plateau (triode to velocity saturation). | Short-channel effect modifies the curve early; the flat region is less “perfect.” |
+| **Effect of Channel Length (L)** | Longer channel → lower electric field → pinch-off occurs before velocity saturation. | Short channel → higher electric field → velocity saturation dominates before pinch-off. | Shows why short-channel devices behave differently even with same W/L ratio. |
+
+**Summary :**
+- Long-channel MOSFETs: Classic quadratic Id–Vgs and clear pinch-off saturation; good saturation with low g_ds.  
+- Short-channel MOSFETs: Early saturation due to velocity-limited carriers; linear Id–Vgs in saturation; reduced peak current, higher output conductance, and lower transconductance.  
+- Short-channel devices require **velocity saturation models** for accurate current prediction, unlike long-channel devices where the quadratic model is sufficient.
