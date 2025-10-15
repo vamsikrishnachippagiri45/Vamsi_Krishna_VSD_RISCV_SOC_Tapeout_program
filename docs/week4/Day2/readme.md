@@ -104,7 +104,7 @@ $$
 I_d = k_n \cdot \left[(V_{gt} \cdot V_{\text{min}}) - \frac{V_{\text{min}}^2}{2}\right] \cdot \left[1 + \lambda V_{ds}\right]
 $$
 
-  V{$\text{min}$} = $\min$ ( $V_{gt}$ , $V_{ds}$ , $V_{dsat}$ )
+  $V_{min}$ = $\min$ ( $V_{gt}$ , $V_{ds}$ , $V_{dsat}$ )
   and $V_{dsat} = \mathcal{E}_c L$
 
 
