@@ -28,7 +28,10 @@ $v_{sat}$  $\approx$ $10^5$ $\text{ m/s}$
 
 ---
 
-## 📉 2. Velocity vs. Electric Field Graph (Observation 1)
+## 📉 2. Velocity vs. Electric Field Graph
+
+<img width="763" height="381" alt="image" src="https://github.com/user-attachments/assets/b3407166-eba3-45ee-8f44-ef9d3113a8a6" />
+
 
 ### (a) What the Graph Shows
 
