@@ -153,18 +153,26 @@ So this is a basic NMOS with gate connected to n1, drain to Vdd and source/bulk 
 R1 is a resistor connecting node in to node n1.
 Resistance = 55 Ω.
 This could act as a gate resistor or input series resistor for the NMOS gate.
-
 Vdd is a DC supply of 1.8 V between vdd and 0 (ground).
 Vin is the input voltage applied between in and 0 with a DC value of 1.8 V.
 
+#### Simulation Commands
 
+```
+.op
+```
+Operating point analysis:
+Calculates DC voltages and currents at all nodes without any time dependency.
+Useful to see the steady-state behavior of the circuit.
 
+```
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+```
+DC sweep simulation:
+Sweeps Vdd from 0 → 1.8 V in 0.1 V steps.
+Sweeps Vin from 0 → 1.8 V in 0.2 V steps.
 
-
-
-
-
-
+Generates a 2D sweep table of output voltages/currents to see how the NMOS responds to input and supply variations.
 
 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
