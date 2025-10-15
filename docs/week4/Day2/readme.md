@@ -23,9 +23,9 @@ When $\mathcal{E}$ becomes **very large**, the carriers gain high kinetic energy
 The velocity tends to a **constant maximum**, called the **saturation velocity ($v_{sat}$)**.
 
 Typical value in Si:
-[
+$
 v_{sat} \approx 10^5 \text{ m/s}
-]
+$
 
 ---
 
