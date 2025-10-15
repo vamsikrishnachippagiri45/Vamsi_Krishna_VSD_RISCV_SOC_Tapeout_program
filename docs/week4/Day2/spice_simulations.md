@@ -2,7 +2,7 @@
 
 ## 1) Long channel MOSFET ( W=1.8um , L=1.2um , W/L = 1.5)
 
-#### Spice Netlist for Id Vs Vds:
+### Spice Netlist for Id Vs Vds:
 
 ```
 *Model Description
@@ -29,11 +29,11 @@ setplot dc1
 
 .end
 ```
-#### Plot : Id Vs Vds 
+### Plot : Id Vs Vds 
 
 <img width="1243" height="781" alt="image" src="https://github.com/user-attachments/assets/2ccbe7eb-9f34-4774-9d26-728567bb45b8" />
 
-#### Spice Netlist for Id Vs Vgs:
+### Spice Netlist for Id Vs Vgs:
 
 ```
 *Model Description
@@ -61,14 +61,21 @@ setplot dc1
 .end
 ```
 
-#### Plot : Id Vs Vgs  at Vds = 1.8V
+### Plot : Id Vs Vgs  at Vds = 1.8V
 
 <img width="1147" height="780" alt="image" src="https://github.com/user-attachments/assets/1985b759-ee01-455a-8c85-2b12d2ee4de8" />
 
+### Observations
+- At low Vds, Id rises with Vds quadratically (triode/ohmic region).  
+- Saturation occurs at higher Vds via pinch-off; Id plateaus with strong dependence on Vgs (Id ∝ (Vgs − Vt)²).  
+- Output conductance in saturation is small (good saturation behavior).  
+- Id vs Vgs at Vds = 1.8 V shows a **quadratic increase** with Vgs, confirming long-channel behavior.
+
+---
 
 ## 1) Short channel MOSFET ( W=0.375um , L=0.25um , W/L = 1.5)
 
-#### Spice Netlist for Id Vs Vds:
+### Spice Netlist for Id Vs Vds:
 
 ```
 *Model Description
@@ -95,12 +102,12 @@ setplot dc1
 
 .end
 ```
-#### Plot : Id Vs Vds 
+### Plot : Id Vs Vds 
 
 <img width="1283" height="791" alt="image" src="https://github.com/user-attachments/assets/8e178caa-256c-4917-bf02-b274802f3e88" />
 
 
-#### Spice Netlist for Id Vs Vgs:
+### Spice Netlist for Id Vs Vgs:
 
 ```
 *Model Description
@@ -128,8 +135,23 @@ setplot dc1
 .end
 ```
 
-#### Plot : Id Vs Vgs  at Vds = 1.8V
+### Plot : Id Vs Vgs  at Vds = 1.8V
 
 <img width="1059" height="755" alt="image" src="https://github.com/user-attachments/assets/08a98929-e980-426c-925e-8a64e6d50bc9" />
 
 
+### Observations
+- Initial quadratic rise with Vds is very short; curves flatten early, indicating early onset of velocity saturation.  
+- Saturation current is lower than the long-channel device for the same W/L.  
+- Id in the saturation region shows approximately **linear dependence on Vgs** (Id ∝ Vgt), consistent with velocity-limited behavior.  
+- Output conductance is higher in saturation than long-channel, showing reduced saturation quality.  
+- Id vs Vgs at Vds = 1.8 V shows a **linear increase** with Vgs, characteristic of short-channel velocity saturation.
+
+---
+
+### Key Comparisons
+- **Saturation onset:** Short-channel devices saturate at much smaller Vds.  
+- **Saturation mechanism:** Long-channel → pinch-off; Short-channel → velocity saturation (v_sat-limited).  
+- **Vgs dependence in saturation:** Long-channel ≈ quadratic; Short-channel ≈ linear.  
+- **Peak current:** Short-channel shows lower Id for the same W/L.  
+- **Output slope (g_ds) & gm:** Short-channel has higher g_ds and lower gm in saturation compared to long-channel.
