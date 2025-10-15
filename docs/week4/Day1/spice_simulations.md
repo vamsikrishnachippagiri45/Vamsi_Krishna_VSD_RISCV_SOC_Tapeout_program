@@ -121,5 +121,40 @@ setplot dc1
 .end
 ```
 
+
+##### Model Parameter
+
+```
+.param temp=27
+```
+
+This defines a parameter named temp with a value of 27°C.
+SPICE can use this parameter to adjust temperature-dependent models.
+
+##### Include Technology/Library File
+
+```
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+```
+
+.lib includes a technology library for the SkyWater 130nm PDK.
+
+"tt" specifies the typical-typical process corner (used in timing, voltage, and temperature simulations).
+
+This library contains NMOS, PMOS, and other device models with their parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
