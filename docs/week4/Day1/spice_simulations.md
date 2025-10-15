@@ -190,7 +190,7 @@ setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
 
 <img width="1136" height="673" alt="image" src="https://github.com/user-attachments/assets/47ce028d-d00f-48a5-946e-dc118605175a" />
 
-### Plot Id Vs Vds
+### Plot Id Vs Vds (Output Characteristics)
 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
