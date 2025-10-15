@@ -81,5 +81,11 @@ Hence, the netlist acts as the blueprint for simulation , it tells SPICE what to
 
 ---
 
+### Lab : Spice simulation (Id vs Vds)
 
+<img width="1136" height="519" alt="image" src="https://github.com/user-attachments/assets/87b644ff-bbb9-40f0-bece-65815fdfd7dd" />
+
+<img width="1136" height="673" alt="image" src="https://github.com/user-attachments/assets/47ce028d-d00f-48a5-946e-dc118605175a" />
+
+<img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
