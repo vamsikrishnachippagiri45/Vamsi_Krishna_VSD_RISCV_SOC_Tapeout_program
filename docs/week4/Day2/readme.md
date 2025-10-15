@@ -71,7 +71,7 @@ $$
 
 ---
 
-## ⚙️ 3. Effect on Drain Current ($I_d$)
+## 3. Effect on Drain Current ($I_d$)
 
 The drain current at any point along the channel is:
 [
@@ -94,54 +94,9 @@ $$
 
 * As $V_{ds}$ increases, $\frac{V_{ds}}{\mathcal{E}_c L}$ becomes large.
 * The denominator reduces the effective mobility → current saturates earlier.
-
 ---
 
-## ⚡ 4. Velocity Saturation in Short-Channel Devices
-
-### (a) Electric Field and Channel Length
-
-[
-\mathcal{E} = \frac{V_{ds}}{L}
-]
-In **short-channel MOSFETs (L < 250 nm)**, for the same $V_{ds}$, the electric field $\mathcal{E}$ is much higher.
-Hence, $\mathcal{E}$ easily exceeds $\mathcal{E}*c$ → carriers quickly reach $v*{sat}$.
-
-Thus, in short-channel devices:
-
-* The **drift velocity saturates** even before classical pinch-off.
-* Drain current becomes limited by $v_{sat}$ instead of charge pinch-off.
-
----
-
-## 📈 5. I–V Characteristics: Long vs. Short Channel
-
-| Feature                          | Long Channel                                                                | Short Channel (Velocity Saturation)        |
-| :------------------------------- | :-------------------------------------------------------------------------- | :----------------------------------------- |
-| **Triode Region (Low $V_{ds}$)** | Quadratic dependence: $I_d \propto (V_{gs}-V_t)V_{ds} - \frac{V_{ds}^2}{2}$ | Initially quadratic, then linearizes early |
-| **Saturation Region**            | $I_d \propto (V_{gs}-V_t)^2$                                                | $I_d \propto (V_{gs}-V_t)$ (Linear)        |
-| **Saturation Cause**             | Channel pinch-off                                                           | Velocity limit ($v_{sat}$)                 |
-| **$I_{d,\text{max}}$ Example**   | ≈ 410 µA                                                                    | ≈ 210 µA                                   |
-| **Effect on Transconductance**   | High ($g_m \propto V_{gs}$)                                                 | Lower ($g_m$ saturates early)              |
-
-🧠 **Key Insight:**
-For short-channel MOSFETs, $I_d$ becomes **linearly proportional to gate overdrive ($V_{gs}-V_t$)** rather than **quadratically**.
-This is a hallmark of **velocity-saturated operation**.
-
----
-
-## 🧩 6. Operational Modes Including Velocity Saturation
-
-| Channel Type                | Cutoff     | Resistive (Linear) | Saturation / Velocity Saturation   |
-| :-------------------------- | :--------- | :----------------- | :--------------------------------- |
-| **Long Channel (>250 nm)**  | $V_{gt}<0$ | Low $V_{ds}$       | $V_{ds}>V_{gt}$, Pinch-off         |
-| **Short Channel (<250 nm)** | $V_{gt}<0$ | Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
-
-where $V_{gt}=V_{gs}-V_t$
-
----
-
-## 🧮 7. Unified MOSFET Current Model (for All Regions)
+## 4. Unified MOSFET Current Model (for All Regions)
 
 To avoid using separate equations for each region, we use a **unified model**:
 
@@ -171,7 +126,38 @@ Hence, the unified model **smoothly transitions** between regions without switch
 
 ---
 
-## 🧭 8. Summary of Velocity Saturation Effect
+
+
+## 5. I–V Characteristics: Long vs. Short Channel
+
+| Feature                          | Long Channel                                                                | Short Channel (Velocity Saturation)        |
+| :------------------------------- | :-------------------------------------------------------------------------- | :----------------------------------------- |
+| **Triode Region (Low $V_{ds}$)** | Quadratic dependence: $I_d \propto (V_{gs}-V_t)V_{ds} - \frac{V_{ds}^2}{2}$ | Initially quadratic, then linearizes early |
+| **Saturation Region**            | $I_d \propto (V_{gs}-V_t)^2$                                                | $I_d \propto (V_{gs}-V_t)$ (Linear)        |
+| **Saturation Cause**             | Channel pinch-off                                                           | Velocity limit ($v_{sat}$)                 |
+| **$I_{d,\text{max}}$ Example**   | ≈ 410 µA                                                                    | ≈ 210 µA                                   |
+| **Effect on Transconductance**   | High ($g_m \propto V_{gs}$)                                                 | Lower ($g_m$ saturates early)              |
+
+🧠 **Key Insight:**
+For short-channel MOSFETs, $I_d$ becomes **linearly proportional to gate overdrive ($V_{gs}-V_t$)** rather than **quadratically**.
+This is a hallmark of **velocity-saturated operation**.
+
+---
+
+## 6. Operational Modes Including Velocity Saturation
+
+| Channel Type                | Cutoff     | Resistive (Linear) | Saturation / Velocity Saturation   |
+| :-------------------------- | :--------- | :----------------- | :--------------------------------- |
+| **Long Channel (>250 nm)**  | $V_{gt}<0$ | Low $V_{ds}$       | $V_{ds}>V_{gt}$, Pinch-off         |
+| **Short Channel (<250 nm)** | $V_{gt}<0$ | Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
+
+where $V_{gt}=V_{gs}-V_t$
+
+---
+
+
+
+##  8. Summary of Velocity Saturation Effect
 
 | Aspect                      | Long Channel                      | Short Channel                               |
 | :-------------------------- | :-------------------------------- | :------------------------------------------ |
@@ -184,12 +170,9 @@ Hence, the unified model **smoothly transitions** between regions without switch
 
 ---
 
-### 🧩 Intuitive Understanding:
+###  Intuitive Understanding:
 
 * In **long-channel MOSFETs**, current saturation is due to *depletion* at the drain end (pinch-off).
 * In **short-channel MOSFETs**, carriers hit a **speed limit ($v_{sat}$)** before pinch-off even occurs — this caps the current earlier.
 
 ---
-
-Would you like me to include **graph sketches** (v–E curve and I–V comparison for long vs short channel) in Markdown or as generated figures so you can visualize these effects?
-
