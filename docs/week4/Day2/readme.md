@@ -28,7 +28,7 @@ $v_{sat}$  $\approx$ $10^5$ $\text{ m/s}$
 
 ---
 
-## 📉 2. Velocity vs. Electric Field Graph
+##  2. Velocity vs. Electric Field Graph
 
 <img width="763" height="381" alt="image" src="https://github.com/user-attachments/assets/b3407166-eba3-45ee-8f44-ef9d3113a8a6" />
 
@@ -61,13 +61,10 @@ $$
 
 
 * For $\mathcal{E} \ll \mathcal{E}_c$, denominator ≈ 1 ⇒ $v_n \approx \mu_n \mathcal{E}$
-* For $
-\lim_{\mathcal{E}\to\infty} v_n(\mathcal{E}) = v_{sat}
-  $
 
 
 
-📊 **Graph Interpretation:**
+ **Graph Interpretation:**
 
 * Linear at first, then gradually bends and flattens out.
 * The flattening represents the **velocity saturation region**.
