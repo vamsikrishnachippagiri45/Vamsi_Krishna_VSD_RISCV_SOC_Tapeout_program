@@ -189,7 +189,7 @@ display → shows the results of simulations.
 setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
 .endc ends the control block.
 
-
+.end => Marks the end of the SPICE netlist.
 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
