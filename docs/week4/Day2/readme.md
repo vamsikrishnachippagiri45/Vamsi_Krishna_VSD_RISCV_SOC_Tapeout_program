@@ -100,9 +100,10 @@ $$
 
 To avoid using separate equations for each region, we use a **unified model**:
 
-[
-I_d = k_n \cdot \left[(V_{gt} \cdot V_{\text{min}}) - \frac{V_{\text{min}}^2}{2}\right] \cdot [1 + \lambda V_{ds}]
-]
+$$
+I_d = k_n \cdot \left[(V_{gt} \cdot V_{\text{min}}) - \frac{V_{\text{min}}^2}{2}\right] \cdot \left[1 + \lambda V_{ds}\right]
+$$
+
 where:
 
 * $k_n = \mu_n C_{ox} (W/L)$
@@ -148,8 +149,8 @@ This is a hallmark of **velocity-saturated operation**.
 
 | Channel Type                | Cutoff     | Resistive (Linear) | Saturation / Velocity Saturation   |
 | :-------------------------- | :--------- | :----------------- | :--------------------------------- |
-| **Long Channel (>250 nm)**  | $V_{gt}<0$ | Low $V_{ds}$       | $V_{ds}>V_{gt}$, Pinch-off         |
-| **Short Channel (<250 nm)** | $V_{gt}<0$ | Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
+| **Long Channel (>250 nm)**  | $V_{gt}<0$ |  $V_{gt}>0$ , Low $V_{ds}$       | $V_{ds}>V_{gt}$, Pinch-off         |
+| **Short Channel (<250 nm)** | $V_{gt}<0$ |  $V_{gt}>0$ ,Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
 
 where $V_{gt}=V_{gs}-V_t$
 
@@ -162,15 +163,15 @@ where $V_{gt}=V_{gs}-V_t$
 | Aspect                      | Long Channel                      | Short Channel                               |
 | :-------------------------- | :-------------------------------- | :------------------------------------------ |
 | Dominant limitation         | Pinch-off (charge control)        | Velocity limit ($v_{sat}$)                  |
-| $I_d$–$V_{gs}$ relationship | Quadratic                         | Linear                                      |
-| $I_d$–$V_{ds}$ curve        | Clear saturation at high $V_{ds}$ | Early, gradual saturation                   |
+| $I_d$ – $V_{gs}$ relationship| Quadratic                         | Linear                                      |
+| $I_d$ – $V_{ds}$ curve      | Clear saturation at high $V_{ds}$ | Early, gradual saturation                   |
 | Electric field              | Moderate                          | Very high                                   |
 | Device length               | >250 nm                           | <250 nm                                     |
 | Physical reason             | Mobility constant                 | High-field scattering limits drift velocity |
 
 ---
 
-###  Intuitive Understanding:
+###  Summary:
 
 * In **long-channel MOSFETs**, current saturation is due to *depletion* at the drain end (pinch-off).
 * In **short-channel MOSFETs**, carriers hit a **speed limit ($v_{sat}$)** before pinch-off even occurs — this caps the current earlier.
