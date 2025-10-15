@@ -56,12 +56,15 @@ $$
 A widely used empirical model combines both regions:
 
 $$
-v_n = \frac{\mu_n \, \mathcal{E}}{1 + \left(\frac{\mathcal{E}}{\mathcal{E}_c}\right)}
+v_n = \frac{\mu_n \ \mathcal{E}}{1 + \left(\frac{\mathcal{E}}{\mathcal{E}_c}\right)}
 $$
 
 
 * For $\mathcal{E} \ll \mathcal{E}_c$, denominator ≈ 1 ⇒ $v_n \approx \mu_n \mathcal{E}$
-* For $\mathcal{E} \gg \mathcal{E}_c$, $v_n \rightarrow v_{sat}$
+* For $
+\lim_{\mathcal{E}\to\infty} v_n(\mathcal{E}) = v_{sat}
+  $
+
 
 
 📊 **Graph Interpretation:**
