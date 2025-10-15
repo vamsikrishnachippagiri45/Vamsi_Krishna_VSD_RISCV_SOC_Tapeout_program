@@ -46,8 +46,9 @@ $v_{sat}$  $\approx$ $10^5$ $\text{ m/s}$
 
 The **critical electric field** is approximately:
 
-$\mathcal{E}*c$ = $\frac$ ${2 v*{sat}}{\mu_n}$
-
+[
+\mathcal{E}*c = \frac{2 v*{sat}}{\mu_n}
+]
 
 ### (b) Smooth Empirical Model
 
