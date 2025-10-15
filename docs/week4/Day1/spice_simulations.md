@@ -87,5 +87,39 @@ Hence, the netlist acts as the blueprint for simulation , it tells SPICE what to
 
 <img width="1136" height="673" alt="image" src="https://github.com/user-attachments/assets/47ce028d-d00f-48a5-946e-dc118605175a" />
 
+
+#### Netlist 
+
+```
+*Model Description
+.param temp=27
+
+
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+
+*Netlist Description
+XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+
+R1 n1 in 55
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*simulation commands
+.op
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+
+.control
+
+run
+display
+setplot dc1
+.endc
+
+.end
+```
+
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
