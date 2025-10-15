@@ -151,7 +151,7 @@ setplot dc1
 
 ## Comparison: Long-Channel vs Short-Channel MOSFETs
 
-| Characteristic | Long-Channel MOSFET (W = 1.8 µm, L = 1.2 µm) | Short-Channel MOSFET (W = 0.375 µm, L = 0.25 µm) | Notes / Physical Explanation |
+| Characteristic | Long-Channel MOSFET (W = 1.8 µm, L = 1.2 µm) | Short-Channel MOSFET (W = 0.375 µm, L = 0.25 µm) | Explanation |
 |----------------|-----------------------------------------------|--------------------------------------------------|------------------------------|
 | **Triode/Linear Region (Low Vds)** | Id rises quadratically with Vds and Vgs (Id ∝ (Vgs − Vt)·Vds − Vds²/2). | Initial quadratic rise is very small; Id quickly becomes linear with Vds. | Short channel → higher electric field along the channel → early velocity saturation. |
 | **Saturation Onset (Vdsat)** | Occurs at higher Vds, determined by pinch-off condition Vdsat ≈ Vgs − Vt. | Occurs at smaller Vds, determined by velocity saturation: Vdsat ≈ Ec · L. | In short-channel devices, the channel is so short that even moderate Vds produces a high electric field exceeding Ec. |
