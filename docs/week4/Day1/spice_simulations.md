@@ -183,11 +183,11 @@ setplot dc1
 .endc
 ```
 
--.control starts an interactive control section.
--run → runs all simulations.
--display → shows the results of simulations.
--setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
--.endc ends the control block.
+.control starts an interactive control section.
+run → runs all simulations.
+display → shows the results of simulations.
+setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
+.endc ends the control block.
 
 
 
