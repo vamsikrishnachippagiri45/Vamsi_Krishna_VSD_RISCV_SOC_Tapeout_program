@@ -115,7 +115,7 @@ where:
   ]
   and $V_{dsat} = \mathcal{E}_c L$
 
-### 🔍 How $V_{\text{min}}$ Determines the Region
+###  How $V_{\text{min}}$ Determines the Region
 
 | Region                                  | Condition                         | $V_{\text{min}}$            | Model Behavior                |
 | :-------------------------------------- | :-------------------------------- | :-------------------------- | :---------------------------- |
@@ -139,7 +139,7 @@ Hence, the unified model **smoothly transitions** between regions without switch
 | **$I_{d,\text{max}}$ Example**   | ≈ 410 µA                                                                    | ≈ 210 µA                                   |
 | **Effect on Transconductance**   | High ($g_m \propto V_{gs}$)                                                 | Lower ($g_m$ saturates early)              |
 
-🧠 **Key Insight:**
+**Key Insight:**
 For short-channel MOSFETs, $I_d$ becomes **linearly proportional to gate overdrive ($V_{gs}-V_t$)** rather than **quadratically**.
 This is a hallmark of **velocity-saturated operation**.
 
@@ -150,7 +150,7 @@ This is a hallmark of **velocity-saturated operation**.
 | Channel Type                | Cutoff     | Resistive (Linear) | Saturation / Velocity Saturation   |
 | :-------------------------- | :--------- | :----------------- | :--------------------------------- |
 | **Long Channel (>250 nm)**  | $V_{gt}<0$ |  $V_{gt}>0$ , Low $V_{ds}$       | $V_{ds}>V_{gt}$, Pinch-off         |
-| **Short Channel (<250 nm)** | $V_{gt}<0$ |  $V_{gt}>0$ ,Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
+| **Short Channel (<250 nm)** | $V_{gt}<0$ |  $V_{gt}>0$ , Low $V_{ds}$       | High $\mathcal{E}$ ⇒ $v_n=v_{sat}$ |
 
 where $V_{gt}=V_{gs}-V_t$
 
