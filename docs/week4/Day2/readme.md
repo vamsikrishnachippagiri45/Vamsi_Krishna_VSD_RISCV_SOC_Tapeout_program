@@ -84,11 +84,13 @@ where:
 * $v_n(x)$ = carrier velocity
 
 If we substitute the field-dependent $v_n$ model and integrate along the channel, we get:
-[
-I_d = \frac{\mu_n C_{ox}}{1 + \frac{V_{ds}}{\mathcal{E}*c L}} \cdot \frac{W}{L} \cdot \left[(V*{gs} - V_t)V_{ds} - \frac{V_{ds}^2}{2}\right]
-]
 
-🧩 **Meaning:**
+$$
+I_d = \frac{\mu_n C_{ox}}{1 + \frac{V_{ds}}{\mathcal{E}_c L}} \cdot \frac{W}{L} \cdot \left[(V_{gs} - V_t)V_{ds} - \frac{V_{ds}^2}{2}\right]
+$$
+
+
+**Meaning:**
 
 * As $V_{ds}$ increases, $\frac{V_{ds}}{\mathcal{E}_c L}$ becomes large.
 * The denominator reduces the effective mobility → current saturates earlier.
