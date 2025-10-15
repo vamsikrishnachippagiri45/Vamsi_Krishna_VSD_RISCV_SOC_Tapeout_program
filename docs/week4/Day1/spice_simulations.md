@@ -194,3 +194,24 @@ setplot dc1 → sets the plotting focus on the DC sweep results (name dc1).
 
 <img width="732" height="576" alt="image" src="https://github.com/user-attachments/assets/6256d0f7-d64a-4697-9751-012b9ca58723" />
 
+ 
+The DC sweep simulation produces the classic **drain current ($\(I_D\)$) vs drain-source voltage ($\(V_{DS}\)$)** curves, showing the two fundamental regions of MOSFET operation:
+
+## 1. Triode (Linear) Region
+- **Location:** Low $\(V_{DS}\$) values (approximately 0 V to 0.5–0.6 V).  
+- **Behavior:**  
+  - Drain current $\(I_D\)$ **increases almost linearly** with $\(V_{DS}\)$.  
+  - The MOSFET behaves like a **voltage-controlled resistor**.  
+  - Increasing $\(V_{GS}\)$ (gate voltage) raises the slope of $\(I_D\)$ vs $\(V_{DS}\)$, allowing more current to flow.  
+
+## 2. Saturation Region
+- **Location:** High $\(V_{DS}\)$ (beyond the “knee” of the curve).  
+- **Behavior:**  
+  - Drain current $\(I_D\)$ **saturates** and becomes relatively independent of $\(V_{DS}\)$.  
+  - The MOSFET behaves as a **voltage-controlled current source**.  
+  - Increasing $\(V_{GS}\)$ shifts the curves upward, **increasing $\(I_D\)$ for the same $\(V_{DS}\)$**.  
+
+## 3. Effect of Gate Voltage $\(V_{GS}\)$
+- Each curve corresponds to a different $\(V_{GS}\)$ (from 0 V to 1.8 V in 0.2 V steps).  
+- Higher $\(V_{GS}\)$ **increases the channel conductivity**, allowing more current to flow.  
+- This confirms the MOSFET is functioning correctly: the **gate voltage controls the current between drain and source**.
