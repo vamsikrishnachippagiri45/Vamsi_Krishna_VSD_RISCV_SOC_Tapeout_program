@@ -104,16 +104,18 @@ $$
 I_d = k_n \cdot \left[(V_{gt} \cdot V_{\text{min}}) - \frac{V_{\text{min}}^2}{2}\right] \cdot \left[1 + \lambda V_{ds}\right]
 $$
 
+  $ V_{\text{min}} = \min(V_{gt}, V_{ds}, V_{dsat}) $
+  and $V_{dsat} = \mathcal{E}_c L$
+
+
 where:
 
 * $k_n = \mu_n C_{ox} (W/L)$
 * $\lambda$ = channel-length modulation parameter
 * $V_{gt} = V_{gs} - V_t$
 * $V_{\text{min}}$ decides the operating mode:
-  [
-  V_{\text{min}} = \min(V_{gt}, V_{ds}, V_{dsat})
-  ]
-  and $V_{dsat} = \mathcal{E}_c L$
+  
+ 
 
 ###  How $V_{\text{min}}$ Determines the Region
 
