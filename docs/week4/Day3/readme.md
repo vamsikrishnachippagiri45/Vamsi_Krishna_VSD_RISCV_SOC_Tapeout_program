@@ -129,5 +129,146 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 - During transition (**Regions 2–4**), both transistors conduct → **short-circuit current pulse**.  
 - The **VTC** has a sharp slope (high gain) around the **switching point (VM)** — essential for noise immunity and logic robustness.
 
+---
+
+
+# CMOS Inverter – Switching Threshold (VM) Analysis
+
+This section explains the **Switching Threshold (VM)** of a CMOS Inverter — a key parameter that defines the inverter’s static robustness and determines the symmetry of its Voltage Transfer Characteristic (VTC).
+
+## 1. Switching Threshold (VM) Definition
+
+- The **Switching Threshold (VM)** is the input voltage at which the output voltage is **exactly equal** to the input voltage.
+
+$$
+\mathbf{V_M: \; V_{in} = V_{out}}
+$$
+
+- On the **VTC**, this is the point where the curve intersects the line $V_{out} = V_{in}$.
+- It typically lies in the **high-gain region**, where the output transitions rapidly.
+
+**Significance:**  
+For an ideal symmetric inverter:  
+$$
+V_M = \frac{V_{DD}}{2}
+$$
+A $V_M$ close to $V_{DD}/2$ ensures **equal noise margins** for logic ‘1’ and logic ‘0’, resulting in robust operation.
+
+---
+
+## 2. Derivation Based on Current Equality
+
+The fundamental DC condition at the output node is based on **Kirchhoff’s Current Law (KCL):**
+
+$$
+\mathbf{I_{dsP} + I_{dsN} = 0} \quad \Rightarrow \quad \mathbf{I_{dsP} = -I_{dsN}}
+$$
+
+At the **switching threshold**, $V_{in} = V_{out} = V_M$.  
+Both transistors conduct **equal and opposite** currents.
+
+
+### **Operating Regions at VM**
+
+When $V_{in} = V_{out} = V_M$:
+
+| Transistor | Gate-Source Voltage | Drain-Source Voltage | Region |
+|-------------|---------------------|-----------------------|---------|
+| NMOS | $V_{GSN} = V_M$ | $V_{DSN} = V_M$ | Saturation |
+| PMOS | $V_{GSP} = V_M - V_{DD}$ | $V_{DSP} = V_M - V_{DD}$ | Saturation |
+
+Both are typically in the **saturation region**, which simplifies the derivation.
+
+
+### **Full Current Equation (Generalized Model)**
+
+The images show a general current equation assuming both transistors are near the **saturation–linear boundary** using an effective $V_{DSAT}$ term:
+
+$$
+\mathbf{
+k_p \left[ (V_M - V_{DD} - V_t) V_{dsatp} - \frac{V_{dsatp}^2}{2} \right]
++ k_n \left[ (V_M - V_t) V_{dsatn} - \frac{V_{dsatn}^2}{2} \right]
+= 0
+}
+$$
+
+Where:
+- $k_n, k_p = \mu C_{ox} (W/L)$ → Transistor gain factors  
+- $V_{dsatn}, V_{dsatp}$ → Effective drain-source saturation voltages  
+- $V_t$ → Threshold voltages  
+
+This nonlinear equation must be solved for the **unknown $V_M$**.
+
+---
+
+## 3. Dependence on Transistor Sizing (Beta Ratio)
+
+Since solving the full equation is complex, a simplified **ratio-based expression** is often used to show the dependence of $V_M$ on device sizes.
+
+### **Simplified VM Equation**
+
+$$
+\mathbf{V_M = R \cdot \frac{V_{DD}}{1 + R}}
+$$
+
+Where  
+$$
+\mathbf{R = \frac{\beta_n}{\beta_p}}
+$$  
+is the **transistor strength ratio (beta ratio)**.
+
+### **Expanded Beta Ratio Expression**
+
+$$
+\mathbf{
+R = \frac{K_n' (W_n / L_n) V_{dsatn}}
+{K_p' (W_p / L_p) V_{dsatp}}
+}
+$$
+
+- $K_n' = \mu_n C_{ox}$, $K_p' = \mu_p C_{ox}$  
+- If $L_n = L_p$, then $R$ depends mainly on the **width ratio ($W_p / W_n$)**.
+
+
+### **Design for Symmetric VM**
+
+To achieve an ideal switching point at:
+
+$$
+V_M = \frac{V_{DD}}{2}
+$$
+
+The ratio $R$ must satisfy:
+
+$$
+\frac{V_{DD}}{2} = R \cdot \frac{V_{DD}}{1 + R}
+\quad \Rightarrow \quad R = 1
+$$
+
+However, since **electron mobility ($\mu_n$)** is ~2–3× higher than **hole mobility ($\mu_p$)**,  
+the **PMOS must be wider** to balance current drive:
+
+$$
+\frac{W_p}{W_n} \approx 2 \text{ to } 3
+$$
+
+---
+
+## 4. Example Results (VDD = 2V)
+
+| Sizing | $W_p / W_n$ | $V_M$ | Comment |
+|---------|--------------|-------|----------|
+| $W_n/L_n = 1.5$, $W_p/L_p = 1.5$ | 1 | $V_M ≈ 0.98V$ | Too low |
+| $W_n/L_n = 1.5$, $W_p/L_p = 3.75$ | 2.5 | $V_M ≈ 1.2V$ | Closer to $V_{DD}/2 = 1V$ |
+
+---
+
+### **Summary**
+
+- $V_M$ defines the inverter’s **switching balance** and **noise margins**.  
+- It depends strongly on the **PMOS-to-NMOS size ratio**.  
+- For **symmetric operation**, design $W_p/W_n ≈ 2$–3.  
+- Accurate $V_M$ estimation ensures **robust logic level restoration** in cascaded CMOS circuits.
+
 
 
