@@ -66,6 +66,6 @@ run
 
 <img width="821" height="574" alt="image" src="https://github.com/user-attachments/assets/cb90748b-989d-425b-94a9-c950f39d3c13" />
 
-Rise time : 0.368ns
+Rise time  0.368ns
 
-Fall time : 0.180ns
+Fall time  0.180ns
