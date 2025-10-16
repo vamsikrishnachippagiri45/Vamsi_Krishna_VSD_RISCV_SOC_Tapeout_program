@@ -16,7 +16,7 @@ This analysis is fundamental in **digital VLSI design**.
 - **Output (Vout)** → both drains (D).  
 - A capacitor **(CL)** represents the **load capacitance** at the output node (for dynamic behavior).
 
----
+
 
 ### **Voltage Relations**
 
@@ -25,7 +25,7 @@ This analysis is fundamental in **digital VLSI design**.
 | Gate-to-Source Voltage (VGS) | VGSN = Vin - VSS = Vin | VGSP = Vin - VDD | VSS = 0 |
 | Drain-to-Source Voltage (VDS) | VDSN = Vout - VSS = Vout | VDSP = Vout - VDD | VDSN positive, VDSP negative |
 
----
+
 
 ### **Current Relation (DC Condition)**
 
@@ -40,7 +40,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 - IdsN is defined positive (flowing from Vout → VSS).  
 - IdsP is negative (flowing from VDD → Vout).  
 
----
+
 
 ### **Equivalent Circuits (Dynamic Context)**
 
@@ -61,7 +61,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
   - For Vin > Vtn: current increases (Triode → Saturation).
   - For Vin < Vtn: **Cutoff region** (IdsN ≈ 0).
 
----
+
 
 ### **PMOS Load Curve Transformation**
 
@@ -75,7 +75,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
   - **y-axis:** |IdsP| = -IdsP  
 - Corresponds to IdsN direction (for KCL consistency).
 
----
+
 
 ### **PMOS Behavior Summary**
 
@@ -84,7 +84,6 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 | 0 | Strongly ON | Pulls Vout high |
 | VDD | OFF (Cutoff) | No current flow |
 
----
 
 ## 3. Graphical DC Transfer Characteristic (Load Line Analysis)
 
@@ -94,7 +93,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 - The **intersection points** of corresponding Vin curves give the **DC operating points**:
   IdsN = |IdsP|
 
----
+
 
 ### **Voltage Transfer Characteristic (VTC)**
 
@@ -103,7 +102,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
   - Output transitions from **High (VDD)** → **Low (0V)**  
   - As input increases from 0 → VDD
 
----
+
 
 ### **Five Regions of Operation (Example: VDD = 2V)**
 
@@ -115,15 +114,13 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 | D | High Vin | Linear | Saturation | Decreasing | Decreasing |
 | E | Vin ≈ VDD | Linear | Cutoff | 0 (Low) | ≈ 0 |
 
----
 
-### **Key Takeaways**
+
+### **Key Points**
 
 - In steady states (**Regions 1 & 5**), one transistor is **OFF**, so **static power ≈ 0**.  
 - During transition (**Regions 2–4**), both transistors conduct → **short-circuit current pulse**.  
 - The **VTC** has a sharp slope (high gain) around the **switching point (VM)** — essential for noise immunity and logic robustness.
 
----
 
-**End of Notes**
 
