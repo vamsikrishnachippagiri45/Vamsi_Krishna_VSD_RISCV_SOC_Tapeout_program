@@ -182,7 +182,7 @@ When $V_{in} = V_{out} = V_M$:
 Both are typically in the **saturation region**, which simplifies the derivation.
 
 
-### **Full Current Equation (Generalized Model)**
+### **Full Current Equation**
 
 The images show a general current equation assuming both transistors are near the **saturation–linear boundary** using an effective $V_{DSAT}$ term:
 
