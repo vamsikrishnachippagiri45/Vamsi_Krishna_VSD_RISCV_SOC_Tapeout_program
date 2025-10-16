@@ -60,3 +60,12 @@ run
 .end
 ```
 
+<img width="942" height="659" alt="image" src="https://github.com/user-attachments/assets/28fa63e7-e240-4a8f-a8e7-0c9c5822e95f" />
+
+## plot : transient analysis
+
+<img width="821" height="574" alt="image" src="https://github.com/user-attachments/assets/cb90748b-989d-425b-94a9-c950f39d3c13" />
+
+Rise time : 
+
+Fall time :
