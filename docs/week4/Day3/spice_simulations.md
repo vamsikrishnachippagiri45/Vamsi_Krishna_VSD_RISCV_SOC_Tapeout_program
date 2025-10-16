@@ -1,6 +1,6 @@
 # Static Behaviour Evalution - Switching Threshold(Vm)
 
-Spice simulation is done using 65nm technology model file. This model file is in Day3 folder.
+Spice simulation is done using 130nm technology model file. This model file is in Day3 folder.
 
 ## case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
 
