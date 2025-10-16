@@ -271,5 +271,5 @@ $$
 - For **symmetric operation**, design $W_p/W_n ≈ 2$–3.  
 - Accurate $V_M$ estimation ensures **robust logic level restoration** in cascaded CMOS circuits.
 
-
+---
 
