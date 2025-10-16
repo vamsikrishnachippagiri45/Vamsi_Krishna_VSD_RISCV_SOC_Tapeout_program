@@ -149,9 +149,11 @@ $$
 
 **Significance:**  
 For an ideal symmetric inverter:  
+
 $$
 V_M = \frac{V_{DD}}{2}
 $$
+
 A $V_M$ close to $V_{DD}/2$ ensures **equal noise margins** for logic ‘1’ and logic ‘0’, resulting in robust operation.
 
 ---
