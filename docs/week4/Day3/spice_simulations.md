@@ -2,7 +2,7 @@
 
 Spice simulation is done using 65nm technology model file. This model file is in Day3 folder.
 
-## case 1 : Wn = Wp = 0.375u , Ln = Lp = 0.25u ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ = 1
+## case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
 
 ### Netlist : 
 ```
