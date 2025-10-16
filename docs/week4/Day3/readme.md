@@ -8,6 +8,9 @@ This document explains the **DC (Direct Current) Transfer Characteristics** and 
 
 ### **CMOS Inverter Circuit**
 
+<img width="514" height="500" alt="image" src="https://github.com/user-attachments/assets/02f743d1-7528-40e5-aaf7-22fa33ff3884" />
+
+
 - The inverter consists of a **PMOS (top)** and an **NMOS (bottom)** connected in series.  
 - **VDD** (supply voltage) → PMOS source (S).  
 - **VSS (Ground, 0V)** → NMOS source (S).  
