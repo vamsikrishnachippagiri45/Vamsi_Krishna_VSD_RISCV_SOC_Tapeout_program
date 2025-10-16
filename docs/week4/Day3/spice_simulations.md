@@ -201,9 +201,9 @@ run
 
 <img width="872" height="659" alt="image" src="https://github.com/user-attachments/assets/3ff50515-31ae-488b-aa53-235e7c92d638" />
 
-Rise time = 0.194ns
+Rise time = 0.125ns
 
-Fall time = 0.173ns
+Fall time = 0.187ns
 
 ---
 
