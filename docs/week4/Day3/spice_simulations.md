@@ -36,4 +36,27 @@ display
 From graph , Vm = 0.65V 
 
 
+## Netlist for transient analysis
+
+```
+.include cmos_130nm.txt
+
+M1 out in vdd vdd pmos w=0.195um l=130nm
+M2 out in 0 0 nmos w=0.195um l=130nm
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 PULSE(0 1.8 0 0.1ns 0.1ns 2ns 4ns)
+
+*simulation commands
+
+.tran 1ns 10ns 
+
+.control
+run
+.endc
+
+.end
+```
 
