@@ -72,7 +72,7 @@ Fall time = 0.180ns
 
 ---
 
-# case 2 : Wn = 0.195um , Wp = 0.39um , Ln = Lp = 65nm ,  ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
+# case 2 : Wn = 0.195um,Wp = 0.39um,Ln = Lp = 65nm , ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
 
 ## Netlist for VTC: 
 ```
