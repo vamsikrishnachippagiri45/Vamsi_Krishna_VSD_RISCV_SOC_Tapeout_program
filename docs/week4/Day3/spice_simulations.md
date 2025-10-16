@@ -140,3 +140,68 @@ Fall time = 0.173ns
 
 ---
 
+# Case 2 : Wn=0.195um,Wp=0.585um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 3 ( $\frac{Wp}{Lp}$ )
+
+## Netlist for VTC: 
+```
+.include cmos_65nm.txt
+
+M1 out in vdd vdd pmos w=0.585um l=0.13um
+M2 out in 0 0 nmos w=0.195um l=0.13um
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*simulation commands
+.op
+.dc Vin 0 1.8 0.01
+
+.control
+run
+setplot dc
+display
+.endc
+
+.end
+```
+
+## Plot : VTC Curve 
+
+
+From graph , Vm = 0.75V 
+
+
+## Netlist for transient analysis
+
+```
+.include cmos_130nm.txt
+
+M1 out in vdd vdd pmos w=0.585um l=130nm
+M2 out in 0 0 nmos w=0.195um l=130nm
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 PULSE(0 1.8 0 0.1ns 0.1ns 2ns 4ns)
+
+*simulation commands
+
+.tran 1ns 10ns 
+
+.control
+run
+.endc
+
+.end
+```
+
+## plot : transient analysis
+
+
+Rise time = 0.194ns
+
+Fall time = 0.173ns
+
+---
+
