@@ -4,7 +4,7 @@ Spice simulation is done using 65nm technology model file. This model file is in
 
 ## case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
 
-### Netlist : 
+### Netlist for VTC: 
 ```
 .include cmos_65nm.txt
 
@@ -34,3 +34,6 @@ display
 <img width="633" height="661" alt="image" src="https://github.com/user-attachments/assets/6dc634f0-ed3e-449c-b0f1-f09b556e3be6" />
 
 From graph , Vm = 0.65V 
+
+
+
