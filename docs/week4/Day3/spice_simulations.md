@@ -2,7 +2,7 @@
 
 Spice simulation is done using 130nm technology model file. This model file is in Day3 folder.
 
-# case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
+# Case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
 
 ## Netlist for VTC: 
 ```
@@ -72,7 +72,7 @@ Fall time = 0.180ns
 
 ---
 
-# case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
+# Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
 
 ## Netlist for VTC: 
 ```
@@ -137,3 +137,6 @@ run
 Rise time = 0.194ns
 
 Fall time = 0.173ns
+
+---
+
