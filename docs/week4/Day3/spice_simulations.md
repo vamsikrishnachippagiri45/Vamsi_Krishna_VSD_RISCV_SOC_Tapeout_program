@@ -6,16 +6,10 @@ Spice simulation is done using 65nm technology model file. This model file is in
 
 ### Netlist : 
 ```
-*Model Description
-.param temp=27
+.include cmos_65nm.txt
 
-*Including sky130 library files
-.lib "sky130_fd_pr/models/sky130.lib.spice" tt
-
-*Netlist Description
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.375 l=0.25
-XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.375 l=0.25
-
+M1 out in vdd vdd pmos w=0.195um l=0.13um
+M2 out in 0 0 nmos w=0.195um l=0.13um
 Cload out 0 50fF
 
 Vdd vdd 0 1.8V
@@ -27,7 +21,7 @@ Vin in 0 1.8V
 
 .control
 run
-setplot dc1
+setplot dc
 display
 .endc
 
