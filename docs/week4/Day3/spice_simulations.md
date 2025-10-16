@@ -27,7 +27,9 @@ display
 
 .end
 ```
+<img width="942" height="802" alt="image" src="https://github.com/user-attachments/assets/b904853b-075d-434e-b880-5d0774b7799e" />
 
 ### Plot : VTC Curve 
 
+<img width="633" height="661" alt="image" src="https://github.com/user-attachments/assets/6dc634f0-ed3e-449c-b0f1-f09b556e3be6" />
 
