@@ -1,7 +1,6 @@
-# CMOS Inverter – DC Transfer Characteristics & Load Line Analysis
+# CMOS Inverter – DC Transfer Characteristics
 
-This document explains the **DC (Direct Current) Transfer Characteristics** and **Load Line Analysis** of a CMOS (Complementary Metal-Oxide-Semiconductor) Inverter.  
-This analysis is fundamental in **digital VLSI design**.
+This document explains the **DC (Direct Current) Transfer Characteristics** and **Load Line Analysis** of a CMOS (Complementary Metal-Oxide-Semiconductor) Inverter. This analysis is fundamental in **digital VLSI design**.
 
 ---
 
@@ -75,6 +74,7 @@ IdsP = -IdsN  →  |IdsP| = IdsN
   - **y-axis:** |IdsP| = -IdsP  
 - Corresponds to IdsN direction (for KCL consistency).
 
+<img width="300" height="185" alt="image" src="https://github.com/user-attachments/assets/adc092f5-4d07-48b8-baaa-6688d9a5bd35" />
 
 
 ### **PMOS Behavior Summary**
