@@ -104,7 +104,11 @@ IdsP = -IdsN  →  |IdsP| = IdsN
 
 
 
-### **Five Regions of Operation (Example: VDD = 2V)**
+### **Five Regions of Operation**
+
+<img width="314" height="214" alt="image" src="https://github.com/user-attachments/assets/e8e5137c-35dd-4f4a-98d4-1581ef6c20b2" />
+
+
 
 | Region | Vin Range | NMOS Mode | PMOS Mode | Vout | ID Behavior |
 |--------|------------|------------|------------|--------|--------------|
