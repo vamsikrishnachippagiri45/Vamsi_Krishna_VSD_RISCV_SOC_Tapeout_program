@@ -78,7 +78,7 @@ Fall time = 0.180ns
 ```
 .include cmos_65nm.txt
 
-M1 out in vdd vdd pmos w=0.195um l=0.13um
+M1 out in vdd vdd pmos w=0.39um l=0.13um
 M2 out in 0 0 nmos w=0.195um l=0.13um
 Cload out 0 50fF
 
@@ -97,13 +97,12 @@ display
 
 .end
 ```
-<img width="942" height="802" alt="image" src="https://github.com/user-attachments/assets/b904853b-075d-434e-b880-5d0774b7799e" />
 
 ## Plot : VTC Curve 
 
-<img width="633" height="661" alt="image" src="https://github.com/user-attachments/assets/6dc634f0-ed3e-449c-b0f1-f09b556e3be6" />
+<img width="657" height="685" alt="image" src="https://github.com/user-attachments/assets/aed51dac-de00-43a3-9d50-74e4144b0c0d" />
 
-From graph , Vm = 0.65V 
+From graph , Vm = 0.75V 
 
 
 ## Netlist for transient analysis
@@ -111,7 +110,7 @@ From graph , Vm = 0.65V
 ```
 .include cmos_130nm.txt
 
-M1 out in vdd vdd pmos w=0.195um l=130nm
+M1 out in vdd vdd pmos w=0.39um l=130nm
 M2 out in 0 0 nmos w=0.195um l=130nm
 
 Cload out 0 50fF
@@ -130,12 +129,11 @@ run
 .end
 ```
 
-<img width="942" height="659" alt="image" src="https://github.com/user-attachments/assets/28fa63e7-e240-4a8f-a8e7-0c9c5822e95f" />
-
 ## plot : transient analysis
 
-<img width="821" height="574" alt="image" src="https://github.com/user-attachments/assets/cb90748b-989d-425b-94a9-c950f39d3c13" />
+<img width="835" height="640" alt="image" src="https://github.com/user-attachments/assets/74b89a9b-2597-4313-9578-cc0284482600" />
 
-Rise time = 0.368ns
 
-Fall time = 0.180ns
+Rise time = 0.194ns
+
+Fall time = 0.173ns
