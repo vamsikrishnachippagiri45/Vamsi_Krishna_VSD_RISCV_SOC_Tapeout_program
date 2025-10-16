@@ -214,10 +214,12 @@ $$
 \mathbf{V_M = R \cdot \frac{V_{DD}}{1 + R}}
 $$
 
-Where  
+Where
+
 $$
 \mathbf{R = \frac{\beta_n}{\beta_p}}
 $$  
+
 is the **transistor strength ratio (beta ratio)**.
 
 ### **Expanded Beta Ratio Expression**
