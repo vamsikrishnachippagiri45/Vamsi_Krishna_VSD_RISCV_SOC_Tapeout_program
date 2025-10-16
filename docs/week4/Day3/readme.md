@@ -194,6 +194,7 @@ k_p \left[ (V_M - V_{DD} - V_t) V_{dsatp} - \frac{V_{dsatp}^2}{2} \right]
 }
 $$
 
+
 Where:
 - $k_n, k_p = \mu C_{ox} (W/L)$ → Transistor gain factors  
 - $V_{dsatn}, V_{dsatp}$ → Effective drain-source saturation voltages  
