@@ -187,11 +187,7 @@ Both are typically in the **saturation region**, which simplifies the derivation
 The images show a general current equation assuming both transistors are near the **saturation–linear boundary** using an effective $V_{DSAT}$ term:
 
 $$
-\mathbf{
-k_p \left[ (V_M - V_{DD} - V_t) V_{dsatp} - \frac{V_{dsatp}^2}{2} \right]
-+ k_n \left[ (V_M - V_t) V_{dsatn} - \frac{V_{dsatn}^2}{2} \right]
-= 0
-}
+\mathbf{ k_p \left[ (V_M - V_{DD} - V_t) V_{dsatp} - \frac{V_{dsatp}^2}{2} \right] + k_n \left[ (V_M - V_t) V_{dsatn} - \frac{V_{dsatn}^2}{2} \right] = 0}
 $$
 
 
