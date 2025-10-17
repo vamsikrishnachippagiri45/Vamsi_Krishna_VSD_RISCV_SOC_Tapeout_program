@@ -266,9 +266,10 @@ run
 
 ## plot : transient analysis
 
+<img width="833" height="612" alt="image" src="https://github.com/user-attachments/assets/98d89694-4fb2-429e-9128-21887e41d454" />
 
-Rise time = 0.125ns
+Rise time = 0.097ns
 
-Fall time = 0.187ns
+Fall time = 0.194ns
 
 ---
