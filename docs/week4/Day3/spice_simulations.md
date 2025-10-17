@@ -303,7 +303,7 @@ display
 ## Plot : VTC Curve 
 
 
-From graph , Vm = 0.87V 
+From graph , Vm = 0.91V 
 
 
 ## Netlist for transient analysis
