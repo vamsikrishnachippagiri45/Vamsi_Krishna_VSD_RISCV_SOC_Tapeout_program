@@ -6,7 +6,7 @@ Spice simulation is done using 130nm technology model file. This model file is i
 
 ## Netlist for VTC: 
 ```
-.include cmos_65nm.txt
+.include cmos_130nm.txt
 
 M1 out in vdd vdd pmos w=0.195um l=0.13um
 M2 out in 0 0 nmos w=0.195um l=0.13um
@@ -76,7 +76,7 @@ Fall time = 0.180ns
 
 ## Netlist for VTC: 
 ```
-.include cmos_65nm.txt
+.include cmos_130nm.txt
 
 M1 out in vdd vdd pmos w=0.39um l=0.13um
 M2 out in 0 0 nmos w=0.195um l=0.13um
@@ -340,3 +340,5 @@ Rise time = 0.090ns
 Fall time = 0.188ns
 
 ---
+
+
