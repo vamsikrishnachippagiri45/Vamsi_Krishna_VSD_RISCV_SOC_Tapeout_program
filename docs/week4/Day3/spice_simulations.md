@@ -237,9 +237,10 @@ display
 
 ## Plot : VTC Curve 
 
-<img width="671" height="730" alt="image" src="https://github.com/user-attachments/assets/eb10ca36-8da4-4c98-841c-2027d6dac80d" />
+<img width="632" height="684" alt="image" src="https://github.com/user-attachments/assets/7cf8623e-5790-4434-9150-91e77e8a90c8" />
 
-From graph , Vm = 0.87V 
+
+From graph , Vm = 1.01V 
 
 
 ## Netlist for transient analysis
