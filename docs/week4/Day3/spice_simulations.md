@@ -145,7 +145,7 @@ Fall time = 0.173ns
 
 ## Netlist for VTC: 
 ```
-.include cmos_65nm.txt
+.include cmos_130nm.txt
 
 M1 out in vdd vdd pmos w=0.585um l=0.13um
 M2 out in 0 0 nmos w=0.195um l=0.13um
@@ -169,9 +169,10 @@ display
 
 ## Plot : VTC Curve 
 
-<img width="671" height="681" alt="image" src="https://github.com/user-attachments/assets/b32a4e26-2800-4372-97b0-c20df727d209" />
+<img width="627" height="684" alt="image" src="https://github.com/user-attachments/assets/6d765c54-6057-4ebc-aea5-4a5aa14304c5" />
 
-From graph , Vm = 0.81V 
+
+From graph , Vm = 0.95V 
 
 
 ## Netlist for transient analysis
