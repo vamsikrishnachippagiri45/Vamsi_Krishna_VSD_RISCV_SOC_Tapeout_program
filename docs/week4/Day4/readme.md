@@ -66,9 +66,9 @@ without falling below \(V_{IH}\) (input high threshold).
 
 ##  Transfer Curve and Slope Condition
 
-The **Voltage Transfer Characteristic (VTC)** plots \(V_{OUT}\) vs. \(V_{IN}\).
+The **Voltage Transfer Characteristic (VTC)** plots $\(V_{OUT}\)$ vs. $\(V_{IN}\)$.
 
-- The points \(V_{IL}\) and \(V_{IH}\) are defined where the **slope = –1**, i.e.:
+- The points $\(V_{IL}\)$ and $\(V_{IH}\)$ are defined where the **slope = –1**, i.e.:
   
 $$
 \left| \frac{dV_{OUT}}{dV_{IN}} \right| = 1
@@ -76,23 +76,23 @@ $$
 
 - These points mark the boundaries between low-gain and high-gain regions.
 
-Defining \(V_{IL}\) and \(V_{IH}\) at slope = –1 ensures **maximum noise immunity** and **optimal switching performance**.
+Defining $\(V_{IL}\)$ and $\(V_{IH}\)$ at slope = –1 ensures **maximum noise immunity** and **optimal switching performance**.
 
 ---
 
 ##  Noise Immunity Illustration
 
 ### **Case (a): Logic '0' — Correct Recognition**
-Noise bump < \(NM_L\).  
-Signal remains below \(V_{IL}\) → Still interpreted as logic ‘0’.
+Noise bump < $\(NM_L\)$.  
+Signal remains below $\(V_{IL}\)$ → Still interpreted as logic ‘0’.
 
 ### **Case (b): Undefined Logic**
-Noise bump > \(NM_L\), entering region between \(V_{IL}\) and \(V_{IH}\).  
+Noise bump > $\(NM_L\)$, entering region between $\(V_{IL}\)$ and $\(V_{IH}\)$.  
 Signal becomes **unpredictable**, may toggle between ‘0’ and ‘1’.
 
 ### **Case (c): Logic '1' — Correct Recognition**
-Noise < \(NM_H\).  
-Signal remains above \(V_{IH}\) → Correctly interpreted as logic ‘1’.
+Noise < $\(NM_H\)$.  
+Signal remains above $\(V_{IH}\)$ → Correctly interpreted as logic ‘1’.
 
 ---
 
@@ -101,10 +101,10 @@ Signal remains above \(V_{IH}\) → Correctly interpreted as logic ‘1’.
 | Parameter | Definition | Meaning |
 |------------|-------------|----------|
 | $\(V_{OH}\)$ | Min output voltage for logic ‘1’ | Output HIGH level |
-| \(V_{OL}\) | Max output voltage for logic ‘0’ | Output LOW level |
-| \(V_{IH}\) | Min input voltage recognized as logic ‘1’ | Input HIGH threshold |
-| \(V_{IL}\) | Max input voltage recognized as logic ‘0’ | Input LOW threshold |
-| \(NM_H\) | \(V_{OH} - V_{IH}\) | Noise margin for logic ‘1’ |
-| \(NM_L\) | \(V_{IL} - V_{OL}\) | Noise margin for logic ‘0’ |
+| $\(V_{OL}\)$ | Max output voltage for logic ‘0’ | Output LOW level |
+| $\(V_{IH}\)$ | Min input voltage recognized as logic ‘1’ | Input HIGH threshold |
+| $\(V_{IL}\)$ | Max input voltage recognized as logic ‘0’ | Input LOW threshold |
+| $\(NM_H\)$ | $\(V_{OH} - V_{IH}\)$ | Noise margin for logic ‘1’ |
+| $\(NM_L\)$ | $\(V_{IL} - V_{OL}\)$ | Noise margin for logic ‘0’ |
 
 **Larger noise margins** ⇒ **better noise immunity** and **robust digital operation.**
