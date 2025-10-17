@@ -1,5 +1,5 @@
 
-# # CMOS Inverter Robustness – (ii)Noise Margins
+# CMOS Inverter Robustness – (ii)Noise Margins
 
 ##  Concept of Noise Margin
 
