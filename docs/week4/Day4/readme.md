@@ -78,8 +78,7 @@ $$
 
 Defining $\(V_{IL}\)$ and $\(V_{IH}\)$ at slope = –1 ensures **maximum noise immunity** and **optimal switching performance**.
 
-<img width="259" height="194" alt="image" src="https://github.com/user-attachments/assets/66d737b4-d24f-4bde-96d7-251b417cf755" />
-
+<img width="653" height="325" alt="image" src="https://github.com/user-attachments/assets/8890eff9-0e9d-4198-b8b0-1ab417f32c9c" />
 
 ---
 
