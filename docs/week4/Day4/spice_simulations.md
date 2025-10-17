@@ -2,7 +2,7 @@
 
 ---
 
-# Case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
+# Case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wp}{Lp}$ = $\frac{Wn}{Ln}$ 
 
 ## Plot : VTC Curve 
 
@@ -14,7 +14,7 @@ Voh = 1.8V , Vol = 0V , Vil = 0.375V , Vih =  0.820V
 
 ---
 
-# Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
+# Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 2 ( $\frac{Wn}{Ln}$ )
 
 
 
@@ -27,7 +27,7 @@ Voh = 1.8V , Vol = 0V , Vil = 0.632V , Vih =  1.018V
 
 ---
 
-# Case 3 : Wn=0.195um,Wp=0.585um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 3 ( $\frac{Wp}{Lp}$ )
+# Case 3 : Wn=0.195um,Wp=0.585um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 3 ( $\frac{Wn}{Ln}$ )
 
 ## Plot : VTC Curve 
 
@@ -39,7 +39,7 @@ Voh = 1.8V , Vol = 0V , Vil = 0.728V , Vih =  1.148V
 
 ---
 
-# Case 4 : Wn=0.195um,Wp=0.78um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 4 ( $\frac{Wp}{Lp}$ )
+# Case 4 : Wn=0.195um,Wp=0.78um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 4 ( $\frac{Wn}{Ln}$ )
 
 ## Plot : VTC Curve 
 
@@ -51,7 +51,7 @@ Voh = 1.8V , Vol = 0V , Vil = 0.851V , Vih =  1.20V
 
 ---
 
-# Case 5 : Wn=0.195um,Wp=0.975um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 5 ( $\frac{Wp}{Lp}$ )
+# Case 5 : Wn=0.195um,Wp=0.975um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 5 ( $\frac{Wn}{Ln}$ )
 
 
 ## Plot : VTC Curve 
