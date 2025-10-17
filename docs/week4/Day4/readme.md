@@ -110,3 +110,4 @@ Signal remains above $\(V_{IH}\)$ → Correctly interpreted as logic ‘1’.
 **Larger noise margins** ⇒ **better noise immunity** and **robust digital operation.**
 
 ---
+
