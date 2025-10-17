@@ -1,5 +1,5 @@
 
-#  CMOS Inverter Robustness – (ii)Noise Margins
+# Labs : CMOS Inverter Robustness – (ii)Noise Margins
 
 ##  Simulation Parameters
 
