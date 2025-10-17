@@ -102,7 +102,7 @@ Fall time = 0.180ns
 
 ---
 
-# Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
+# Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 2 ( $\frac{Wn}{Ln}$ )
 
 ## Netlist for VTC: 
 ```
@@ -183,7 +183,7 @@ Fall time = 0.173ns
 
 ---
 
-# Case 3 : Wn=0.195um,Wp=0.585um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 3 ( $\frac{Wp}{Lp}$ )
+# Case 3 : Wn=0.195um,Wp=0.585um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 3 ( $\frac{Wn}{Ln}$ )
 
 ## Netlist for VTC: 
 ```
@@ -264,7 +264,7 @@ Fall time = 0.187ns
 
 ---
 
-# Case 4 : Wn=0.195um,Wp=0.78um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 4 ( $\frac{Wp}{Lp}$ )
+# Case 4 : Wn=0.195um,Wp=0.78um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 4 ( $\frac{Wn}{Ln}$ )
 
 ## Netlist for VTC: 
 ```
@@ -344,7 +344,7 @@ Fall time = 0.194ns
 
 ---
 
-# Case 5 : Wn=0.195um,Wp=0.975um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 5 ( $\frac{Wp}{Lp}$ )
+# Case 5 : Wn=0.195um,Wp=0.975um,Ln=Lp=65nm, ( $\frac{Wp}{Lp}$ ) = 5 ( $\frac{Wn}{Ln}$ )
 
 ## Netlist for VTC: 
 ```
