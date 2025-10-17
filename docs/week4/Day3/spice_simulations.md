@@ -1,4 +1,4 @@
-# CMOS Inverter Robustness – (i)Switching Threshold (Vm) and Delays(rise,fall)
+# Labs : CMOS Inverter Robustness – (i)Switching Threshold (Vm) and Delays(rise,fall)
 
 
 This experiment evaluates the **static behavior** of a CMOS inverter using 130nm CMOS technology.  
