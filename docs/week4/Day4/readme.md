@@ -1,5 +1,5 @@
 
-# Noise Margin in Digital Logic Circuits
+# # CMOS Inverter Robustness – (ii)Noise Margins
 
 ##  Concept of Noise Margin
 
