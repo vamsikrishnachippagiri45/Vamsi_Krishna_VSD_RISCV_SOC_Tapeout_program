@@ -71,6 +71,18 @@ Rise time = 0.368ns
 
 Fall time = 0.180ns
 
+| Parameter | Value |
+|------------|--------|
+| Vm | 0.7V |
+| Rise Time | 0.368ns |
+| Fall Time | 0.180ns |
+
+**Observation:**
+- The inverter is **symmetric** in design (equal drive strengths).
+- Switching threshold (~0.7V) is **less than VDD/2** due to higher mobility of NMOS.
+- Rise time is **higher than fall time** because PMOS is weaker.
+
+
 ---
 
 # Case 2 : Wn=0.195um,Wp=0.39um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 2 ( $\frac{Wp}{Lp}$ )
@@ -138,6 +150,19 @@ run
 Rise time = 0.194ns
 
 Fall time = 0.173ns
+
+
+| Parameter | Value |
+|------------|--------|
+| Vm | 0.86V |
+| Rise Time | 0.194ns |
+| Fall Time | 0.173ns |
+
+**Observation:**
+- Increasing PMOS width increases its drive strength.
+- The switching threshold **moves closer to mid-supply**.
+- Rise time decreases as PMOS becomes stronger, resulting in **more balanced transition times**.
+
 
 ---
 
@@ -207,6 +232,19 @@ Rise time = 0.125ns
 
 Fall time = 0.187ns
 
+
+
+| Parameter | Value |
+|------------|--------|
+| Vm | 0.95V |
+| Rise Time | 0.125ns |
+| Fall Time | 0.187ns |
+
+**Observation:**
+- Further increase in PMOS width shifts Vm **towards VDD/2** and slightly above.
+- Rise time improves due to stronger pull-up action.
+- Fall time remains almost constant since NMOS size is unchanged.
+
 ---
 
 # Case 4 : Wn=0.195um,Wp=0.78um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 4 ( $\frac{Wp}{Lp}$ )
@@ -275,6 +313,18 @@ Rise time = 0.097ns
 
 Fall time = 0.194ns
 
+
+| Parameter | Value |
+|------------|--------|
+| Vm | 1.01V |
+| Rise Time | 0.097ns |
+| Fall Time | 0.194ns |
+
+**Observation:**
+- The inverter becomes **PMOS-dominated**, so switching threshold moves **above mid-supply**.
+- Rise time reduces significantly due to stronger PMOS drive.
+- Fall time slightly increases since NMOS current is relatively weaker.
+
 ---
 
 # Case 5 : Wn=0.195um,Wp=0.975um,Ln=Lp=65nm, ( $\frac{Wn}{Ln}$ ) = 5 ( $\frac{Wp}{Lp}$ )
@@ -342,6 +392,70 @@ Rise time = 0.090ns
 
 Fall time = 0.188ns
 
+| Parameter | Value |
+|------------|--------|
+| Vm | 1.06V |
+| Rise Time | 0.090ns |
+| Fall Time | 0.188ns |
+
+**Observation:**
+- With large PMOS width, **switching point shifts further high**.
+- Rise time becomes very small — PMOS quickly pulls the output high.
+- Fall time remains almost same since NMOS size is constant.
+- The inverter becomes **unbalanced** (PMOS dominates).
+
 ---
 
+# Static Behaviour Evaluation – Switching Threshold (Vm)
+
+This experiment evaluates the **static behavior** of a CMOS inverter using 130nm CMOS technology.  
+The analysis includes:
+- **Voltage Transfer Characteristics (VTC)**
+- **Transient Analysis**
+- **Observation of Switching Threshold (Vm)**
+- **Rise and Fall Time behavior** for different sizing ratios.
+
+---
+
+## ⚙️ Simulation Setup
+
+- **Technology:** 130nm CMOS  
+- **Supply Voltage (VDD):** 1.8V  
+- **Load Capacitance (Cload):** 50fF  
+- **Input:** DC sweep for VTC, PULSE input for transient  
+- **Model File:** `cmos_130nm.txt` (included in Day3 folder)
+
+---
+
+##  Observations
+
+| Case | (Wp/Wn) Ratio | Vm (V) | Rise Time (ns) | Fall Time (ns) |
+|------|---------------|--------|----------------|----------------|
+| 1 | 1 | 0.70 | 0.368 | 0.180 |
+| 2 | 2 | 0.86 | 0.194 | 0.173 |
+| 3 | 3 | 0.95 | 0.125 | 0.187 |
+| 4 | 4 | 1.01 | 0.097 | 0.194 |
+| 5 | 5 | 1.06 | 0.090 | 0.188 |
+
+**Trend Summary:**
+- As **Wp/Wn increases**, the **switching threshold Vm** moves **closer to VDD/2 and above**.  
+- **Rise time decreases** because the stronger PMOS improves the pull-up speed.  
+- **Fall time remains nearly constant**, limited by NMOS size.  
+- Optimum inverter symmetry is achieved when **Wp/Wn ≈ 2–3**, giving Vm ≈ 0.9V.
+
+---
+
+##  Key Insight
+
+Balancing **rise and fall times** requires matching the **effective drive strengths** of PMOS and NMOS.  
+Since electron mobility (µn) ≈ 2–3× hole mobility (µp), PMOS width is typically chosen **2–3× wider** than NMOS.
+
+
+**Conclusion:**  
+For a 130nm CMOS inverter, choosing **Wp ≈ 2–3 × Wn** gives:
+- Switching threshold ≈ 0.9V (≈ VDD/2)
+- Nearly equal rise and fall times  
+→ Hence, the inverter operates **symmetrically and efficiently**.
+
+---
 
