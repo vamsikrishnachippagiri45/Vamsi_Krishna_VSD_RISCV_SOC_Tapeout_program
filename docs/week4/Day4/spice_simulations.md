@@ -1,5 +1,5 @@
 
-#  CMOS Inverter : Static Behaviour Evaluation - Noise margins
+#  CMOS Inverter Robustness – (ii)Noise Margins
 
 ##  Simulation Parameters
 
