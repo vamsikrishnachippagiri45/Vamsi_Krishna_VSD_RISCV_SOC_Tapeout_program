@@ -235,9 +235,9 @@ display
 
 ## Plot : VTC Curve 
 
-<img width="671" height="681" alt="image" src="https://github.com/user-attachments/assets/b32a4e26-2800-4372-97b0-c20df727d209" />
+<img width="671" height="730" alt="image" src="https://github.com/user-attachments/assets/eb10ca36-8da4-4c98-841c-2027d6dac80d" />
 
-From graph , Vm = 0.81V 
+From graph , Vm = 0.87V 
 
 
 ## Netlist for transient analysis
@@ -266,7 +266,6 @@ run
 
 ## plot : transient analysis
 
-<img width="872" height="659" alt="image" src="https://github.com/user-attachments/assets/3ff50515-31ae-488b-aa53-235e7c92d638" />
 
 Rise time = 0.125ns
 
