@@ -100,9 +100,9 @@ display
 
 ## Plot : VTC Curve 
 
-<img width="657" height="685" alt="image" src="https://github.com/user-attachments/assets/aed51dac-de00-43a3-9d50-74e4144b0c0d" />
+<img width="585" height="640" alt="image" src="https://github.com/user-attachments/assets/dfa03bb9-5077-4c25-8d35-978faa90bd6b" />
 
-From graph , Vm = 0.75V 
+From graph , Vm = 0.86V 
 
 
 ## Netlist for transient analysis
