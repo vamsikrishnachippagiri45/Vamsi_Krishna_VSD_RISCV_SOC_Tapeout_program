@@ -63,138 +63,145 @@ Voh = 1.8V , Vol = 0V , Vil = 0.897V , Vih =  1.31V
 
 ---
 
-# 📘 CMOS Inverter – Static Behaviour Evaluation (Corrected Wp / Wn)
+# 🧩 CMOS Inverter — Static Behaviour Evaluation (Corrected Wp / Wn)
 
-> **Note:** previous version had `Wp` and `Wn` labels interchanged. This file uses the corrected device sizing:
-> - \(W_n = 0.195\ \mu m\) (constant)
-> - \(W_p =\) 0.195, 0.39, 0.585, 0.78, 0.975 µm
-> - Thus \(\dfrac{W_p}{W_n} = 1, 2, 3, 4, 5\)
-
----
-
-## ⚙️ Simulation Parameters (summary)
-
-- Technology: **130 nm**  
-- \(V_{DD} = 1.8\ \text{V}\)  
-- \(L_n = L_p = 65\ \text{nm}\)  
-- Tool: **NGSPICE** (Sky130 models)  
-- Input sweep: 0 → 1.8 V
+> **Note:** This document uses the corrected device sizing:
+> - Wn = 0.195 µm (constant)  
+> - Wp = 0.195, 0.39, 0.585, 0.78, 0.975 µm  
+> - Therefore, (Wp/Wn) = 1, 2, 3, 4, 5
 
 ---
 
-## Case-by-case VTC results (corrected)
+## ⚙️ Simulation Parameters
 
-### **Case 1 — \(W_n = 0.195\mu m,\; W_p = 0.195\mu m\) → \(W_p/W_n = 1\)**
+- Technology: **130 nm**
+- VDD = **1.8 V**
+- Ln = Lp = **65 nm**
+- Tool: **NGSPICE (Sky130 models)**
+- Input Sweep: 0 → 1.8 V
 
-**VTC plot:**  
+---
+
+## 📈 Case-by-Case VTC Results
+
+### **Case 1 — (Wp/Wn = 1)**  
+Wn = 0.195 µm, Wp = 0.195 µm
+
+**VTC Plot:**  
 <img width="551" height="620" src="https://github.com/user-attachments/assets/8d21fb4f-8d89-4c85-9d7f-866fd982f448" />
 
-- \(V_M = 0.70\ \text{V}\)  
-- \(V_{OH} = 1.8\ \text{V},\; V_{OL} = 0\ \text{V}\)  
-- \(V_{IL} = 0.375\ \text{V},\; V_{IH} = 0.820\ \text{V}\)
+**From Graph:**  
+- Vm = 0.70 V  
+- Voh = 1.8 V, Vol = 0 V  
+- Vil = 0.375 V, Vih = 0.820 V  
 
-**Noise Margins:**
-- \(NM_H = V_{OH} - V_{IH} = 1.8 - 0.820 = 0.98\ \text{V}\)  
-- \(NM_L = V_{IL} - V_{OL} = 0.375 - 0 = 0.375\ \text{V}\)
+**Noise Margins:**  
+- NMH = Voh − Vih = **0.98 V**  
+- NML = Vil − Vol = **0.375 V**
 
 ---
 
-### **Case 2 — \(W_n = 0.195\mu m,\; W_p = 0.39\mu m\) → \(W_p/W_n = 2\)**
+### **Case 2 — (Wp/Wn = 2)**  
+Wn = 0.195 µm, Wp = 0.39 µm
 
-**VTC plot:**  
+**VTC Plot:**  
 <img width="585" height="640" src="https://github.com/user-attachments/assets/dfa03bb9-5077-4c25-8d35-978faa90bd6b" />
 
-- \(V_M = 0.86\ \text{V}\)  
-- \(V_{OH} = 1.8\ \text{V},\; V_{OL} = 0\ \text{V}\)  
-- \(V_{IL} = 0.632\ \text{V},\; V_{IH} = 1.018\ \text{V}\)
+**From Graph:**  
+- Vm = 0.86 V  
+- Voh = 1.8 V, Vol = 0 V  
+- Vil = 0.632 V, Vih = 1.018 V  
 
-**Noise Margins:**
-- \(NM_H = 1.8 - 1.018 = 0.782\ \text{V}\)  
-- \(NM_L = 0.632 - 0 = 0.632\ \text{V}\)
+**Noise Margins:**  
+- NMH = 1.8 − 1.018 = **0.782 V**  
+- NML = 0.632 − 0 = **0.632 V**
 
 ---
 
-### **Case 3 — \(W_n = 0.195\mu m,\; W_p = 0.585\mu m\) → \(W_p/W_n = 3\)**
+### **Case 3 — (Wp/Wn = 3)**  
+Wn = 0.195 µm, Wp = 0.585 µm
 
-**VTC plot:**  
+**VTC Plot:**  
 <img width="627" height="684" src="https://github.com/user-attachments/assets/6d765c54-6057-4ebc-aea5-4a5aa14304c5" />
 
-- \(V_M = 0.95\ \text{V}\)  
-- \(V_{OH} = 1.8\ \text{V},\; V_{OL} = 0\ \text{V}\)  
-- \(V_{IL} = 0.728\ \text{V},\; V_{IH} = 1.148\ \text{V}\)
+**From Graph:**  
+- Vm = 0.95 V  
+- Voh = 1.8 V, Vol = 0 V  
+- Vil = 0.728 V, Vih = 1.148 V  
 
-**Noise Margins:**
-- \(NM_H = 1.8 - 1.148 = 0.652\ \text{V}\)  
-- \(NM_L = 0.728 - 0 = 0.728\ \text{V}\)
+**Noise Margins:**  
+- NMH = 1.8 − 1.148 = **0.652 V**  
+- NML = 0.728 − 0 = **0.728 V**
 
 ---
 
-### **Case 4 — \(W_n = 0.195\mu m,\; W_p = 0.78\mu m\) → \(W_p/W_n = 4\)**
+### **Case 4 — (Wp/Wn = 4)**  
+Wn = 0.195 µm, Wp = 0.78 µm
 
-**VTC plot:**  
+**VTC Plot:**  
 <img width="632" height="684" src="https://github.com/user-attachments/assets/7cf8623e-5790-4434-9150-91e77e8a90c8" />
 
-- \(V_M = 1.01\ \text{V}\)  
-- \(V_{OH} = 1.8\ \text{V},\; V_{OL} = 0\ \text{V}\)  
-- \(V_{IL} = 0.851\ \text{V},\; V_{IH} = 1.20\ \text{V}\)
+**From Graph:**  
+- Vm = 1.01 V  
+- Voh = 1.8 V, Vol = 0 V  
+- Vil = 0.851 V, Vih = 1.20 V  
 
-**Noise Margins:**
-- \(NM_H = 1.8 - 1.20 = 0.60\ \text{V}\)  
-- \(NM_L = 0.851 - 0 = 0.851\ \text{V}\)
+**Noise Margins:**  
+- NMH = 1.8 − 1.20 = **0.60 V**  
+- NML = 0.851 − 0 = **0.851 V**
 
 ---
 
-### **Case 5 — \(W_n = 0.195\mu m,\; W_p = 0.975\mu m\) → \(W_p/W_n = 5\)**
+### **Case 5 — (Wp/Wn = 5)**  
+Wn = 0.195 µm, Wp = 0.975 µm
 
-**VTC plot:**  
+**VTC Plot:**  
 <img width="632" height="684" src="https://github.com/user-attachments/assets/2933e827-c96f-45e9-8785-cebbd57144eb" />
 
-- \(V_M = 1.06\ \text{V}\)  
-- \(V_{OH} = 1.8\ \text{V},\; V_{OL} = 0\ \text{V}\)  
-- \(V_{IL} = 0.897\ \text{V},\; V_{IH} = 1.31\ \text{V}\)
+**From Graph:**  
+- Vm = 1.06 V  
+- Voh = 1.8 V, Vol = 0 V  
+- Vil = 0.897 V, Vih = 1.31 V  
 
-**Noise Margins:**
-- \(NM_H = 1.8 - 1.31 = 0.49\ \text{V}\)  
-- \(NM_L = 0.897 - 0 = 0.897\ \text{V}\)
+**Noise Margins:**  
+- NMH = 1.8 − 1.31 = **0.49 V**  
+- NML = 0.897 − 0 = **0.897 V**
 
 ---
 
-## 📊 Summary Table (corrected)
+## 📊 Summary Table
 
-| Case | \(W_p/W_n\) | \(V_M\) (V) | \(V_{IL}\) (V) | \(V_{IH}\) (V) | \(NM_H\) (V) | \(NM_L\) (V) |
-|------|-------------:|------------:|---------------:|---------------:|-------------:|-------------:|
+| Case | (Wp/Wn) | Vm (V) | Vil (V) | Vih (V) | NMH (V) | NML (V) |
+|------|----------|--------|---------|---------|---------|---------|
 | 1 | 1 | 0.70 | 0.375 | 0.820 | 0.98 | 0.375 |
 | 2 | 2 | 0.86 | 0.632 | 1.018 | 0.782 | 0.632 |
 | 3 | 3 | 0.95 | 0.728 | 1.148 | 0.652 | 0.728 |
-| 4 | 4 | 1.01 | 0.851 | 1.20  | 0.60  | 0.851 |
-| 5 | 5 | 1.06 | 0.897 | 1.31  | 0.49  | 0.897 |
+| 4 | 4 | 1.01 | 0.851 | 1.20 | 0.60 | 0.851 |
+| 5 | 5 | 1.06 | 0.897 | 1.31 | 0.49 | 0.897 |
 
 ---
 
-## 🔍 Observations (corrected)
+## 🧠 Observations
 
-- **As \(W_p/W_n\) increases (PMOS gets stronger relative to NMOS):**
-  - The **switching threshold \(V_M\)** **increases** (moves toward/above mid-supply in these simulations).
-  - **Noise Margin Low (NM\_L)** **increases** (improved tolerance for low-level noise).
-  - **Noise Margin High (NM\_H)** **decreases** (reduced tolerance for high-level noise).
-- This trade-off is expected: making PMOS stronger shifts the balance so the inverter holds output high better (raising \(V_M\) and NML) while reducing the headroom for robust highs (reducing NMH).
-- **Goal for symmetric noise margins**: choose \(W_p/W_n\) so that \(V_M \approx V_{DD}/2\). In this dataset, the best match to \(V_{DD}/2 = 0.9\) V appears around **Case 2–3** (VM = 0.86–0.95 V).
-
----
-
-## 🧾 Conclusion
-
-- The corrected dataset and table now reflect **real device sizing** where \(W_p\) increases while \(W_n\) is constant.  
-- Use these results to pick a PMOS width that gives the desired trade-off between NMH and NML depending on your noise/immunity priorities.
+- As **Wp/Wn** increases (PMOS becomes stronger relative to NMOS):
+  - The **switching threshold (Vm)** increases.
+  - **NML** (Noise Margin for logic ‘0’) increases.
+  - **NMH** (Noise Margin for logic ‘1’) decreases.
+- The inverter becomes more **biased toward the high state**, as the pull-up network dominates.
+- To achieve **symmetrical noise margins**, select a Wp/Wn ratio that yields Vm ≈ VDD/2.  
+  → In this dataset, that occurs around **Case 2 – Case 3 (Vm ≈ 0.9 V)**.
 
 ---
 
-**Author:** Chippagiri Vamsi Krishna  
-**Tool:** NGSPICE (Sky130)  
+## 🏁 Conclusion
+
+The corrected dataset shows how increasing PMOS width affects inverter balance and noise margins.  
+Case 2 – 3 provides the most balanced operation for a 1.8 V supply.
+
+---
+
+**Author:** *Chippagiri Vamsi Krishna*  
+**Tool:** *NGSPICE (130 nm Sky130)*
 
 
-
-- The **switching threshold** of a CMOS inverter depends on the $\frac{W_p}{W_n}$ ratio.  
-- For **balanced transfer characteristics**, $V_M$ should be around $V_{DD}/2$.  
-- The study confirms that **increasing PMOS width** (higher $\frac{W_p}{W_n}$) improves **NMH** but reduces **NML**.
 
