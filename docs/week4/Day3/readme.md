@@ -1,4 +1,4 @@
-# CMOS Inverter – DC Transfer Characteristics
+# CMOS Inverter Robustness – (i)Switching Threshold (Vm) and Delays(rise,fall)
 
 This document explains the **DC (Direct Current) Transfer Characteristics** and **Load Line Analysis** of a CMOS (Complementary Metal-Oxide-Semiconductor) Inverter. This analysis is fundamental in **digital VLSI design**.
 
