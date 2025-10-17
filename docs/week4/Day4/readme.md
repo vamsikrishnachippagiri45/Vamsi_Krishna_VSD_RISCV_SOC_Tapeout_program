@@ -100,11 +100,11 @@ Signal remains above \(V_{IH}\) → Correctly interpreted as logic ‘1’.
 
 | Parameter | Definition | Meaning |
 |------------|-------------|----------|
-| \(V_{OH}\) | Min output voltage for logic ‘1’ | Output HIGH level |
+| $\(V_{OH}\)$ | Min output voltage for logic ‘1’ | Output HIGH level |
 | \(V_{OL}\) | Max output voltage for logic ‘0’ | Output LOW level |
 | \(V_{IH}\) | Min input voltage recognized as logic ‘1’ | Input HIGH threshold |
 | \(V_{IL}\) | Max input voltage recognized as logic ‘0’ | Input LOW threshold |
 | \(NM_H\) | \(V_{OH} - V_{IH}\) | Noise margin for logic ‘1’ |
 | \(NM_L\) | \(V_{IL} - V_{OL}\) | Noise margin for logic ‘0’ |
 
-> **Larger noise margins** ⇒ **better noise immunity** and **robust digital operation.**
+**Larger noise margins** ⇒ **better noise immunity** and **robust digital operation.**
