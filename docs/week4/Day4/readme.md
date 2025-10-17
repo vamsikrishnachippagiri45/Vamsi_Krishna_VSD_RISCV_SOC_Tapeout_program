@@ -15,15 +15,15 @@ It quantifies how much **noise voltage** can be tolerated before logic levels ar
 Digital gates are defined by four key voltage levels:
 
 ### **1. Output Voltage Levels**
-- **\(V_{OH}\)** — *Voltage Output High:*  
+- **$\(V_{OH}\)$** — *Voltage Output High:*  
   Minimum output voltage guaranteed as logic **‘1’**.  
-- **\(V_{OL}\)** — *Voltage Output Low:*  
+- **$\(V_{OL}\)$** — *Voltage Output Low:*  
   Maximum output voltage guaranteed as logic **‘0’**.  
 
 ### **2. Input Voltage Levels**
-- **\(V_{IH}\)** — *Voltage Input High:*  
+- **$\(V_{IH}\)$** — *Voltage Input High:*  
   Minimum input voltage reliably interpreted as logic **‘1’**.  
-- **\(V_{IL}\)** — *Voltage Input Low:*  
+- **$\(V_{IL}\)$** — *Voltage Input Low:*  
   Maximum input voltage reliably interpreted as logic **‘0’**.  
 
 ---
@@ -33,7 +33,7 @@ Digital gates are defined by four key voltage levels:
 The voltage axis is divided into **three regions**,  in the inverter’s **Voltage Transfer Characteristic (VTC)** curve.
 
 ### **1. Undefined (Indeterminate) Region**
-Region between \(V_{IL}\) and \(V_{IH}\):  
+Region between $\(V_{IL}\)$ and $\(V_{IH}\)$:  
 If the signal lies here, the output becomes **unpredictable** — may oscillate or produce incorrect logic.
 
 
@@ -48,8 +48,8 @@ $$
 NM_L = V_{IL} - V_{OL}
 $$
 
-Represents the maximum noise voltage that can be added to \(V_{OL}\) (output low)  
-without exceeding \(V_{IL}\) (input low threshold).
+Represents the maximum noise voltage that can be added to $\(V_{OL}\)$ (output low)  
+without exceeding $\(V_{IL}\)$ (input low threshold).
 
 
 #### **Noise Margin High (NMH):**
@@ -59,8 +59,8 @@ $$
 NM_H = V_{OH} - V_{IH}
 $$
 
-Represents the maximum noise voltage that can be subtracted from \(V_{OH}\) (output high)  
-without falling below \(V_{IH}\) (input high threshold).
+Represents the maximum noise voltage that can be subtracted from $\(V_{OH}\)$ (output high)  
+without falling below $\(V_{IH}\)$ (input high threshold).
 
 ---
 
