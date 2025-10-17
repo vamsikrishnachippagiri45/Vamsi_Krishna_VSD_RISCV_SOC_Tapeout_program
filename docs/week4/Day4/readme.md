@@ -96,7 +96,7 @@ Signal remains above $\(V_{IH}\)$ → Correctly interpreted as logic ‘1’.
 
 ---
 
-##  Summary
+##  Key Note : 
 
 | Parameter | Definition | Meaning |
 |------------|-------------|----------|
@@ -108,3 +108,5 @@ Signal remains above $\(V_{IH}\)$ → Correctly interpreted as logic ‘1’.
 | $\(NM_L\)$ | $\(V_{IL} - V_{OL}\)$ | Noise margin for logic ‘0’ |
 
 **Larger noise margins** ⇒ **better noise immunity** and **robust digital operation.**
+
+---
