@@ -302,6 +302,7 @@ display
 
 ## Plot : VTC Curve 
 
+<img width="626" height="684" alt="image" src="https://github.com/user-attachments/assets/f678d8dc-c64f-41b0-9974-4786290fe508" />
 
 From graph , Vm = 0.91V 
 
