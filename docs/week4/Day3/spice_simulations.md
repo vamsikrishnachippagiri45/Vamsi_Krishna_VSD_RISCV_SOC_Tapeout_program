@@ -1,4 +1,5 @@
-# Static Behaviour Evaluation – Switching Threshold (Vm)
+# Static Behaviour Evaluation(CMOS Inverter Robustness – (i)Switching Threshold (Vm))
+
 
 This experiment evaluates the **static behavior** of a CMOS inverter using 130nm CMOS technology.  
 The analysis includes:
