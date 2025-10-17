@@ -1,6 +1,23 @@
-# Static Behaviour Evalution - Switching Threshold(Vm)
+# Static Behaviour Evaluation – Switching Threshold (Vm)
 
-Spice simulation is done using 130nm technology model file. This model file is in Day3 folder.
+This experiment evaluates the **static behavior** of a CMOS inverter using 130nm CMOS technology.  
+The analysis includes:
+- **Voltage Transfer Characteristics (VTC)**
+- **Transient Analysis**
+- **Observation of Switching Threshold (Vm)**
+- **Rise and Fall Time behavior** for different sizing ratios.
+
+
+
+## Simulation Setup
+
+- **Technology:** 130nm CMOS  
+- **Supply Voltage (VDD):** 1.8V  
+- **Load Capacitance (Cload):** 50fF  
+- **Input:** DC sweep for VTC, PULSE input for transient  
+- **Model File:** `cmos_130nm.txt` (included in Day3 folder)
+
+---
 
 # Case 1 : Wn = Wp = 0.195um , Ln = Lp = 65nm ,  $\frac{Wn}{Ln}$ = $\frac{Wp}{Lp}$ 
 
@@ -406,27 +423,6 @@ Fall time = 0.188ns
 
 ---
 
-# Static Behaviour Evaluation – Switching Threshold (Vm)
-
-This experiment evaluates the **static behavior** of a CMOS inverter using 130nm CMOS technology.  
-The analysis includes:
-- **Voltage Transfer Characteristics (VTC)**
-- **Transient Analysis**
-- **Observation of Switching Threshold (Vm)**
-- **Rise and Fall Time behavior** for different sizing ratios.
-
----
-
-## ⚙️ Simulation Setup
-
-- **Technology:** 130nm CMOS  
-- **Supply Voltage (VDD):** 1.8V  
-- **Load Capacitance (Cload):** 50fF  
-- **Input:** DC sweep for VTC, PULSE input for transient  
-- **Model File:** `cmos_130nm.txt` (included in Day3 folder)
-
----
-
 ##  Observations
 
 | Case | (Wp/Wn) Ratio | Vm (V) | Rise Time (ns) | Fall Time (ns) |
@@ -445,13 +441,11 @@ The analysis includes:
 
 ---
 
-##  Key Insight
+##  Conclusion
 
 Balancing **rise and fall times** requires matching the **effective drive strengths** of PMOS and NMOS.  
 Since electron mobility (µn) ≈ 2–3× hole mobility (µp), PMOS width is typically chosen **2–3× wider** than NMOS.
-
-
-**Conclusion:**  
+  
 For a 130nm CMOS inverter, choosing **Wp ≈ 2–3 × Wn** gives:
 - Switching threshold ≈ 0.9V (≈ VDD/2)
 - Nearly equal rise and fall times  
