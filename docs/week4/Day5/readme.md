@@ -36,6 +36,8 @@ While energy is significantly reduced, the major drawback of scaling $V_{DD}$ do
 * **Increased Sensitivity to Noise and Process Variation:**
     * As the difference between $V_{DD}$ and the transistor threshold voltage ($V_{th}$) shrinks, the circuit becomes more susceptible to **noise** (reducing the noise margin) and **process variations** (making the performance less predictable across manufactured chips).
 
+---
+
 ## Spice simulation
 ### Netlist 
 ```
