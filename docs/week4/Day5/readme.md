@@ -19,7 +19,7 @@ The most significant benefit of power supply scaling is the reduction in **dynam
 * **Increase in Voltage Gain:**
     * The voltage gain ($A_v$) is the slope of the DC transfer characteristic in the transition region.
     * **Measured Gain:** The simulation results show that for $V_{DD} = 0.5\text{V}$, the gain is **$5.81$**.
-    * **Improvement:** The provided images indicate a substantial improvement in gain, showing a $50\%$ improvement.
+    * **Improvement:** A substantial improvement in gain, showing a $50\%$ improvement from Vdd = 2V.
     * **Reason:** At low $V_{DD}$, the drain-source voltage ($V_{DS}$) is small, pushing the MOSFETs deeper into the **saturation region** (for a brief range) where the transconductance ($g_m$) is high, leading to a larger gain: $A_v \approx -g_{m}(R_{out})$.
 
 ---
