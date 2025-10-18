@@ -98,9 +98,9 @@ The etching process in semiconductor fabrication introduces **physical variation
 
 The **drain current (Id)** in a MOSFET is strongly dependent on its geometry, specifically the **aspect ratio**:
 
-\[
+$$ \[
 I_d \propto \left(\frac{W}{L}\right)
-\]
+\] $$
 
 ### **Key Points**
 - Since **etching imperfections** alter both **W** and **L**, the **(W/L)** ratio varies.  
