@@ -207,6 +207,17 @@ Each inverter consists of a **PMOS** and **NMOS** transistor, both affected by o
 
 This section summarizes how varying PMOS ($W_p$) and NMOS ($W_n$) widths affects inverter behavior, based on SPICE DC transfer simulations.
 
+### 1. Simulation Setup
+
+The simulation studies inverter characteristics under different $\frac{W_p}{W_n}$ ratios.
+
+- **Technology:** 130 nm  
+- **$V_{DD}$:** 1.8 V  
+- **$L_p = L_n$:** 130 nm (fixed)  
+- **Width Sweep:**  
+  - $W_n$ increased in 0.195 μm steps  
+  - $W_p$ decreased in 0.195 μm steps  
+
 ```
 .include cmos_130nm.txt
 
@@ -242,16 +253,6 @@ Vin in 0 1.8V
 
 <img width="1163" height="874" alt="image" src="https://github.com/user-attachments/assets/1297adb3-00a1-40ab-bb7f-df6fe51ab6aa" />
 
-### 1. Simulation Setup
-
-The simulation studies inverter characteristics under different $\frac{W_p}{W_n}$ ratios.
-
-- **Technology:** 130 nm  
-- **$V_{DD}$:** 1.8 V  
-- **$L_p = L_n$:** 130 nm (fixed)  
-- **Width Sweep:**  
-  - $W_n$ increased in 0.195 μm steps  
-  - $W_p$ decreased in 0.195 μm steps  
 
 | Run | $W_n$ (μm) | $W_p$ (μm) | $\frac{W_p}{W_n}$ | Drive Strength | Color |
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -282,13 +283,4 @@ The simulation studies inverter characteristics under different $\frac{W_p}{W_n}
 - **Process Sensitivity:** Variation in $W_p$, $W_n$ shifts $V_m$ → unbalanced noise margins.  
 - **Impact:** Excessive mismatch reduces inverter robustness and can cause unreliable logic levels.
 
-
-###  Supporting Relation
-
-At switching threshold ($V_M$):
-
-$$
-k_p \Big[(V_M - V_{DD} - V_t)V_{dsatp} - \tfrac{V_{dsatp}^2}{2}\Big] 
-+ k_n \Big[(V_M - V_t)V_{dsatn} - \tfrac{V_{dsatn}^2}{2}\Big] = 0
-$$
 
