@@ -123,11 +123,5 @@ I_d \propto \left(\frac{W}{L}\right)
   - Over-etching at boundaries  
 - Result: **Larger dimensional variation** in channel length (**L**) and width (**W**) compared to middle transistors.
 
-| Factor | Cause | Effect | Mitigation |
-|:--|:--|:--|:--|
-| Etching Non-uniformity | Over/under-etching | Variation in L and W | Process tuning |
-| End-of-Line Effect | Asymmetric layout | Dimension mismatch | Dummy transistors |
-| Geometric Variation | Imperfect fabrication | Variation in Id, speed, power | Design for manufacturability |
-
-
+---
 
