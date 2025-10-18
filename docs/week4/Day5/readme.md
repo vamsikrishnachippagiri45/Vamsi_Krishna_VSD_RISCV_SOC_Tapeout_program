@@ -205,6 +205,8 @@ Each inverter consists of a **PMOS** and **NMOS** transistor, both affected by o
 
 # Spice simulations for device variations
 
+This section summarizes how varying PMOS ($W_p$) and NMOS ($W_n$) widths affects inverter behavior, based on SPICE DC transfer simulations.
+
 ```
 .include cmos_130nm.txt
 
@@ -239,4 +241,54 @@ Vin in 0 1.8V
 ```
 
 <img width="1163" height="874" alt="image" src="https://github.com/user-attachments/assets/1297adb3-00a1-40ab-bb7f-df6fe51ab6aa" />
+
+### 1. Simulation Setup
+
+The simulation studies inverter characteristics under different $\frac{W_p}{W_n}$ ratios.
+
+- **Technology:** 130 nm  
+- **$V_{DD}$:** 1.8 V  
+- **$L_p = L_n$:** 130 nm (fixed)  
+- **Width Sweep:**  
+  - $W_n$ increased in 0.195 μm steps  
+  - $W_p$ decreased in 0.195 μm steps  
+
+| Run | $W_n$ (μm) | $W_p$ (μm) | $\frac{W_p}{W_n}$ | Drive Strength | Color |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| dc1.out | 0.195 | 0.975 | 5.0 | Strong PMOS | 🟩 Green |
+| dc2.out | 0.390 | 0.780 | 2.0 | Balanced | 🟨 Yellow |
+| dc3.out | 0.585 | 0.585 | 1.0 | Weaker PMOS | 🟥 Red |
+| dc4.out | 0.780 | 0.390 | 0.5 | Strong NMOS | 🟦 Blue |
+| dc5.out | 0.975 | 0.195 | 0.2 | Very Strong NMOS | 🟪 Magenta |
+
+
+###  2. Key Observations
+
+**1. Switching Threshold ($V_m$) Shift**
+- $V_m$ ≈ input voltage where $V_{out} = V_{in}$  
+- Depends on PMOS/NMOS strength balance  
+  - Large $\frac{W_p}{W_n}$ → $V_m$ shifts **right** (higher $V_{in}$)  
+  - Small $\frac{W_p}{W_n}$ → $V_m$ shifts **left** (lower $V_{in}$)  
+
+**2. Noise Margins ($NM_H$, $NM_L$)**
+- Strong PMOS → ↑ $NM_H$, ↓ $NM_L$  
+- Strong NMOS → ↓ $NM_H$, ↑ $NM_L$  
+- The transfer curve moves horizontally, altering the balance of high/low noise margins.
+
+
+###  3. Design Implications
+
+- **Balanced Design:** Ideal $\frac{W_p}{W_n} \approx 2.0$ gives $V_m \approx V_{DD}/2$ (dc2.out).  
+- **Process Sensitivity:** Variation in $W_p$, $W_n$ shifts $V_m$ → unbalanced noise margins.  
+- **Impact:** Excessive mismatch reduces inverter robustness and can cause unreliable logic levels.
+
+
+###  Supporting Relation
+
+At switching threshold ($V_M$):
+
+$$
+k_p \Big[(V_M - V_{DD} - V_t)V_{dsatp} - \tfrac{V_{dsatp}^2}{2}\Big] 
++ k_n \Big[(V_M - V_t)V_{dsatn} - \tfrac{V_{dsatn}^2}{2}\Big] = 0
+$$
 
