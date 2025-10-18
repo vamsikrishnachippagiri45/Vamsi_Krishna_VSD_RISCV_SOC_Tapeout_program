@@ -32,8 +32,7 @@ While energy is significantly reduced, the major drawback of scaling $V_{DD}$ do
     * The **rise delay** and **fall delay** of the inverter, which together determine the circuit's operating speed, are negatively affected.
     * **Reason:** The charge/discharge current ($I$) available to charge the load capacitance ($C_{load}$) is reduced with lower $V_{DD}$, as $I \propto (V_{DD} - V_{th})^2$ (where $V_{th}$ is the threshold voltage).
     * Since delay ($\tau$) is proportional to $C_{load} V_{DD} / I$, a reduction in $V_{DD}$ and the corresponding reduction in current $I$ (which is a strong function of $V_{DD}$) leads to a significant **increase in propagation delay**.
-    * The transient response plot (image\_a859fa.png) visually confirms the presence of **rise delay** and **fall delay**—the circuit is slower to switch states. This is noted as the **"Prime topic of discussion"** among the disadvantages.
-
+      
 * **Increased Sensitivity to Noise and Process Variation:**
     * As the difference between $V_{DD}$ and the transistor threshold voltage ($V_{th}$) shrinks, the circuit becomes more susceptible to **noise** (reducing the noise margin) and **process variations** (making the performance less predictable across manufactured chips).
 
