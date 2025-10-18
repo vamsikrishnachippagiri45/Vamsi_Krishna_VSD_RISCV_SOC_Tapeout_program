@@ -5,7 +5,7 @@ Based on the provided images and SPICE netlist for the CMOS inverter robustness 
 
 ## CMOS Inverter Robustness: Power Supply Scaling to $0.5\text{V}$
 
-The SPICE simulation explores the effect of scaling down the power supply voltage ($V_{DD}$) on a CMOS inverter, specifically highlighting the advantages and disadvantages when $V_{DD}$ is reduced to $0.5\text{V}$. The DC characteristics plot shows multiple transfer curves corresponding to $V_{DD}$ values from $2\text{V}$ down to $0.5\text{V}$ (labeled as **dc1 out** through **dc5 out**). The curve corresponding to the lowest $V_{DD}$ is the one of interest.
+The SPICE simulation explores the effect of scaling down the power supply voltage ($V_{DD}$) on a CMOS inverter, specifically highlighting the advantages and disadvantages when $V_{DD}$ is reduced to $0.5\text{V}$. The DC characteristics plot shows multiple transfer curves corresponding to $V_{DD}$ values from $2\text{V}$ down to $0.5\text{V}$ (labeled as **dc1 out** through **dc4 out**). The curve corresponding to the lowest $V_{DD}$ is the one of interest.
 
 ### 1. Advantages of Using $0.5\text{V}$ Supply
 
