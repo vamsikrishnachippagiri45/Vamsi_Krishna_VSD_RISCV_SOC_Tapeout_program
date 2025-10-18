@@ -34,3 +34,7 @@ alter Vdd = powerSupply
 
 <img width="746" height="684" alt="image" src="https://github.com/user-attachments/assets/044f7960-1374-46a8-b70d-0fb6c67a96d7" />
 
+for vdd = 2v , gain = 2.9
+for vdd = 1.5v , gain = 3.6
+for vdd = 1v , gain = 5.67
+for vdd = 0.5v , gain = 5.81
