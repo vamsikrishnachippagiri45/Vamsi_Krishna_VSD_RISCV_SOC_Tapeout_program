@@ -205,7 +205,38 @@ Each inverter consists of a **PMOS** and **NMOS** transistor, both affected by o
 
 # Spice simulations for device variations
 
+```
+.include cmos_130nm.txt
 
+M1 out in vdd vdd pmos w=0.195um l=130nm
+M2 out in 0 0 nmos w=0.195um l=130nm
+
+Cload out 0 10fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+.control 
+    let nmoswidth = 0.195u
+    alter M2 w=nmoswidth
+    
+    let pmoswidth = 0.975u
+    alter M1 w=pmoswidth
+
+    let widthvariation = 0
+    dowhile widthvariation < 5
+        dc Vin 0 1.8 0.01
+        let nmoswidth = nmoswidth + 0.195u
+        let pmoswidth = pmoswidth - 0.195u
+        alter @M2[w] = nmoswidth
+        alter @M1[w] = pmoswidth
+        let widthvariation = widthvariation + 1 
+    end
+    
+    plot dc1.out vs in dc2.out vs in dc3.out vs in dc4.out vs in dc5.out vs in xlabel "Input Voltage[V]" ylabel "Output Voltage[V]" title "Inverter DC Characteristics as function of nmos & pmos widths"
+.endc 
+.end
+```
 
 <img width="1163" height="874" alt="image" src="https://github.com/user-attachments/assets/1297adb3-00a1-40ab-bb7f-df6fe51ab6aa" />
 
