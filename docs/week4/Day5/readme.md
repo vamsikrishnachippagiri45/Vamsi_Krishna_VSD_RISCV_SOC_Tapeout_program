@@ -201,15 +201,5 @@ Each inverter consists of a **PMOS** and **NMOS** transistor, both affected by o
 - This causes **propagation delay mismatch** and **timing skew** between stages.  
 - Power and speed vary non-uniformly across the chip.
 
-###  Mitigation Strategies:
-- Advanced process control and uniform oxidation methods.  
-- Design-level tolerance through **guard-banding** and **corner analysis**.
+---
 
-##  Summary
-
-| Parameter | Ideal Behavior | Effect of Increased $t_{ox}$ | Effect of Decreased $t_{ox}$ |
-|------------|----------------|------------------------------|------------------------------|
-| $C_{ox}$ | Constant | ↓ Decreases | ↑ Increases |
-| $I_d$ | Constant | ↓ Decreases | ↑ Increases |
-| $V_t$ | Stable | ↑ Increases | ↓ Decreases |
-| Circuit Delay | Uniform | ↑ Increases | ↓ Decreases |
