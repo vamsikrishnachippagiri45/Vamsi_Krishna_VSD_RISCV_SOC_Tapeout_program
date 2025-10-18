@@ -78,6 +78,8 @@ for vdd = 0.5v , gain = 5.81
 
 ---
 
+# CMOS Inveter Robustness : (iv) Device Variation
+
 # Source of Variation in fabrication : Etching process
 
 The etching process in semiconductor fabrication introduces **physical variations** in transistor dimensions, leading to deviations in electrical behavior. This affects performance metrics such as **delay**, **power**, and **noise margins**.
