@@ -203,3 +203,9 @@ Each inverter consists of a **PMOS** and **NMOS** transistor, both affected by o
 
 ---
 
+# Spice simulations for device variations
+
+
+
+<img width="1163" height="874" alt="image" src="https://github.com/user-attachments/assets/1297adb3-00a1-40ab-bb7f-df6fe51ab6aa" />
+
