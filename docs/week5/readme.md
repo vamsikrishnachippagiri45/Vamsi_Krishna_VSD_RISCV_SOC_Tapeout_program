@@ -70,6 +70,10 @@ sudo ./setup.sh
 >
 > If something fails, open this log file to see the exact error.
 
+
+<img width="1573" height="378" alt="image" src="https://github.com/user-attachments/assets/279e5b88-ed82-4fff-8a55-cb07d7eee909" />
+
+
 ---
 
 ##  STEP 4: Load Environment Variables
