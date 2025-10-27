@@ -179,6 +179,12 @@ After the flow finishes:
 make gui_final
 ```
 
+<img width="1706" height="497" alt="image" src="https://github.com/user-attachments/assets/96f2ffc1-f756-42aa-8b98-d1db211e9739" />
+
+
+<img width="1854" height="890" alt="image" src="https://github.com/user-attachments/assets/4c23abb3-e7c0-492e-bdb8-5a77702379fc" />
+
+
 This opens **OpenROAD GUI** showing:
 
 * Standard cell placement
