@@ -75,8 +75,7 @@ source ./env.sh
 * This command **sets up your PATH and environment variables** temporarily in the current terminal.
 * It adds all built tool binaries (OpenROAD, Yosys, OpenSTA, etc.) to your `$PATH`.
 * This allows you to run tools like `openroad`, `yosys`, and `opensta` directly from the terminal.
-
->  You need to run this command **every time you open a new terminal** (or add it to `.bashrc` for convenience).
+* You need to run this command **every time you open a new terminal** (or add it to `.bashrc` for convenience).
 
 ---
 
