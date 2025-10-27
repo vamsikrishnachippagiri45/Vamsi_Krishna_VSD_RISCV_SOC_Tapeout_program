@@ -126,6 +126,9 @@ cd flow
 make
 ```
 
+<img width="1854" height="890" alt="image" src="https://github.com/user-attachments/assets/16d1ff5a-c307-4469-8d12-cdd9b24fff58" />
+
+
 ###  What Happens Internally
 
 When you type `make`, OpenROAD runs several stages in order:
