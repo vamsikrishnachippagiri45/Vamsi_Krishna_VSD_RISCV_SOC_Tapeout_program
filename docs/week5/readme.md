@@ -15,7 +15,7 @@ cd OpenROAD-flow-scripts
 * `git clone --recursive` → downloads the **OpenROAD-flow-scripts** repo **and its submodules** (OpenROAD, Yosys, etc.).
 * `cd OpenROAD-flow-scripts` → moves into the project directory where all scripts and setup files are located.
 
-> Without `--recursive`, submodules (like Yosys, OpenROAD, etc.) won’t be downloaded, causing build errors later.
+Without `--recursive`, submodules (like Yosys, OpenROAD, etc.) won’t be downloaded, causing build errors later.
 
 ---
 
@@ -34,10 +34,6 @@ sudo ./setup.sh
   * **EDA dependencies**: `boost`, `swig`, `libreadline-dev`, etc.
   * **Python packages** for flow automation.
 * It also ensures that **OpenROAD, Yosys, OpenSTA, KLayout**, and other tools can be built properly.
-
->  This may take 30–60 minutes depending on your internet speed.
-
->  You’ll see a lot of “Installing …” messages — just let it finish completely.
 
 ---
 
