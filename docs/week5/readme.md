@@ -39,6 +39,10 @@ sudo ./setup.sh
   * **Python packages** for flow automation.
 * It also ensures that **OpenROAD, Yosys, OpenSTA, KLayout**, and other tools can be built properly.
 
+
+<img width="1140" height="386" alt="image" src="https://github.com/user-attachments/assets/86532ad3-91ae-42f4-a83e-49f53dd7a38e" />
+
+
 ---
 
 ## STEP 3: Build OpenROAD Locally
