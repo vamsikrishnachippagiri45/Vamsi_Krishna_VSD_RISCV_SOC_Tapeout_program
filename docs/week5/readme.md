@@ -89,8 +89,7 @@ openroad -help
 ###  Explanation:
 
 * These commands test if the binaries were built and added to your `$PATH` correctly.
-* If both commands show help information (not “command not found”),
-  Congratulations — OpenROAD and Yosys are successfully installed!
+* If both commands show help information — OpenROAD and Yosys are successfully installed!
 
 ---
 
