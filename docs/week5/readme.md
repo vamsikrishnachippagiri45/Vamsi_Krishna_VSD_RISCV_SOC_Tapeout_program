@@ -10,6 +10,10 @@ git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scri
 cd OpenROAD-flow-scripts
 ```
 
+<img width="1686" height="365" alt="image" src="https://github.com/user-attachments/assets/b3bad8b1-4692-439e-9c7c-25b7058d8e81" />
+
+
+
 ###  Explanation:
 
 * `git clone --recursive` → downloads the **OpenROAD-flow-scripts** repo **and its submodules** (OpenROAD, Yosys, etc.).
