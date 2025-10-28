@@ -26,14 +26,14 @@ IC packages are mainly classified into two types based on how they connect to th
 
 In short, IC packaging bridges the tiny internal circuitry of a chip with the larger external world, ensuring protection, connectivity, and efficient heat management.
 
-#### 1. The QFN-48 Package
+### 1. The QFN-48 Package
 * **Package Type:** **QFN-48** (Quad Flat No-leads)
     * This is a type of surface-mount electronic component package that houses an integrated circuit (IC).
     * **"No-leads"** means the package has connections (pads) on the bottom, not protruding leads like a traditional DIP (Dual In-line Package).
     * **"48"** indicates the total number of connection points (pads) on the exterior of the package.
 
 
-#### 2. Chip and Pinout
+### 2. Chip and Pinout
 * **Chip:** The central component, an **Integrated Circuit (IC)** or **System-on-a-Chip (SoC)**, which performs the main function.
 * **Pinout Diagram:** The package has 48 connection points, labeled with their function around the perimeter:
     * **GPIOs (General Purpose Input/Output):** Pins like `gpio0` to `gpio15` are flexible for digital I/O.
@@ -49,13 +49,13 @@ In short, IC packaging bridges the tiny internal circuitry of a chip with the la
         * **SPI/I2C Control:** Pins like `scl`, `sda`, `sck`, `csb`, `di`, `do` (for protocols like I2C/SPI).
         * `xclk` (External Clock)
 
-#### 3. Internal Components: Die, Pads, and Core
+### 3. Internal Components: Die, Pads, and Core
 * **Pads:** The outermost metal areas where the wires from the IC connect to the package's external pins. They act as the interface between the internal chip wiring and the external world.
 * **Die:** The innermost, active area of silicon containing the actual transistors and circuits. It is bounded by the pads.
 * **Core:** The main functional block within the die, typically containing the **Processor/SoC** and its primary memory and peripherals. The core is surrounded by the pads.
     * **Connection Path:** Signal wires run from the **Core** to the **Die** edge, where they connect to the **Pads**, which are then wired out to the physical pins of the QFN package.
 
-#### 4. Processor/SoC Architecture and IPs
+### 4. Processor/SoC Architecture and IPs
 * **Processor/SoC:** The central unit of the system, responsible for execution and control.
 * **Macros/Intellectual Properties (IPs):** Pre-designed, reusable functional blocks integrated into the SoC. These are categorized into:
     * **Foundry IPs:** Standard blocks provided by the manufacturing foundry (e.g., `adc`, `dac`, `SRAM`).
