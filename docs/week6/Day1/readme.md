@@ -1,6 +1,4 @@
-
-
-## How to talk with computers
+# Introduction : How to talk with computers 
 
 ---
 
@@ -132,4 +130,36 @@ Once the binary code is generated, it is executed by the hardware according to t
 **Example ISA:** RISC-V, ARM, x86, MIPS.
 
 ---
+
+# Open Source Digital ASIC Design
+
+
+## 1. Open Source Digital ASIC Design
+
+**ASIC** stands for **Application-Specific Integrated Circuit** (a custom chip). Open Source ASIC design refers to using publicly available, non-proprietary tools and data to create these custom chips.
+
+The three main components of Open Source ASIC design are:
+
+1.  **EDA Tools (Electronic Design Automation):**
+    * These are the software tools used to draw, simulate, and verify the chip design.
+    * *Examples:* qFlow, OpenROAD, OpenLANE (open-source design flow tools).
+2.  **RTL Designs (Register Transfer Level):**
+    * This is the functional description of the chip's logic (written in languages like Verilog).
+    * *Sources:* librecores.org, opencores.org, GitHub (where the chip logic is openly shared).
+3.  **PDK Data (Process Design Kit Data):**
+    * This is the critical data that models the actual manufacturing process.
+    * **Key Example:** The **Google/SkyWater FOSS 130nm Production PDK** is a famous open-source PDK, enabling anyone to design chips for that specific $130\text{nm}$ fabrication process.
+
+### 2. What is a PDK? (Process Design Kit)
+
+* **PDK** stands for **Process Design Kit**.
+* It is a **collection of files** that acts as the "rulebook" for designing an Integrated Circuit (IC) for a specific factory (**fabrication process**).
+* **Analogy:** If designing an IC is like building a complex Lego castle, the PDK is the official instruction manual, specifying exactly which bricks (transistors) are available and how close they can be placed without falling apart.
+* **What's inside the PDK?**
+    * **Process Design Rules:** The strict geometric and electrical rules the design must follow.
+        * **DRC (Design Rule Check):** Rules for physical dimensions (e.g., minimum wire width).
+        * **LVS (Layout Versus Schematic):** Rules to ensure the physical layout matches the electrical circuit plan.
+    * **Device Models:** Files describing how transistors and other components behave electrically.
+    * **Digital Standard Cell Libraries:** Pre-designed, ready-to-use logical elements (like AND gates, flip-flops).
+    * **I/O Libraries:** Pre-designed circuits for connecting the chip's internal logic to the outside world (pins).
 
