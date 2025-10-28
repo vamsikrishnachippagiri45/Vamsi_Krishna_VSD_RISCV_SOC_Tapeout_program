@@ -195,9 +195,6 @@ It’s an interactive layout viewer.
 
 ---
 
-Reference : https://theopenroadproject.org/videos/
-
-and 
-
+Reference : https://theopenroadproject.org/videos/    and     
 https://github.com/vsdip/vsd-pd
 
