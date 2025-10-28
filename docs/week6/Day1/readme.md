@@ -134,7 +134,7 @@ Once the binary code is generated, it is executed by the hardware according to t
 # Open Source Digital ASIC Design
 
 
-## 1. Open Source Digital ASIC Design
+## Open Source Digital ASIC Design
 
 **ASIC** stands for **Application-Specific Integrated Circuit** (a custom chip). Open Source ASIC design refers to using publicly available, non-proprietary tools and data to create these custom chips.
 
@@ -150,7 +150,7 @@ The three main components of Open Source ASIC design are:
     * This is the critical data that models the actual manufacturing process.
     * **Key Example:** The **Google/SkyWater FOSS 130nm Production PDK** is a famous open-source PDK, enabling anyone to design chips for that specific $130\text{nm}$ fabrication process.
 
-### 2. What is a PDK? (Process Design Kit)
+### What is a PDK? (Process Design Kit)
 
 * **PDK** stands for **Process Design Kit**.
 * It is a **collection of files** that acts as the "rulebook" for designing an Integrated Circuit (IC) for a specific factory (**fabrication process**).
