@@ -4,7 +4,7 @@
 
 ---
 
-### Introduction to QFN-48 Package
+### Introduction to IC Package
 
 An **Integrated Circuit (IC) package** is the protective casing that encloses the silicon chip (die), providing **mechanical protection**, **electrical connections** to the PCB, and **heat dissipation**.
 
