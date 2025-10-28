@@ -71,7 +71,7 @@ In short, IC packaging bridges the tiny internal circuitry of a chip with the la
 
 ---
 
-### Instruction Set Architecture (ISA)**
+### Instruction Set Architecture (ISA)
 
 #### **1. Introduction**
 
