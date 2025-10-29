@@ -60,6 +60,8 @@ $$\text{Aspect Ratio} = \frac{\text{Height}}{\text{Width}}$$
 Floorplanning determines the location and orientation of the **Pre-placed Cells (Macros)** relative to the **Core** boundaries and to each other.
 Because these large blocks cannot be moved easily by the automated tools, they are placed first. The **automated placement-and-routing tools** then take over, placing the **remaining logical cells** (the thousands of small standard gates) into the empty spaces around these pre-placed cells.
 
+<img width="908" height="626" alt="image" src="https://github.com/user-attachments/assets/d7b64741-3c84-4db8-8ca8-f55ef1c1f5ba" />
+
 
 ---
 
