@@ -1,15 +1,3 @@
-<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/64ebdb3c-235b-4ce6-b8b3-5b0d20d10040" />
-
-<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/7ff35c90-c452-457d-b09e-65e97e3e3ac0" />
-
-<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2f4d3a71-90a7-466e-a8ff-651c2ffd4a8b" />
-
-<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/13ffe00e-6b44-48a4-9fff-d02ce2063c49" />
-
-<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/c3f05c56-78a2-4aa6-8982-64f79023e872" />
-
-
-
 # Lab : Synthesis of picorv32a Core
 
 ### I. Environment Setup and Tool Flow
@@ -27,9 +15,11 @@ The lab successfully sets up and utilizes the **OpenLANE** flow, a powerful open
 
 3.  **Target Design:** The target design for this experiment is **`picorv32a`**, a widely used open-source **RISC-V 32-bit CPU core** designed in **RTL (Register Transfer Level)**.
 
-
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/64ebdb3c-235b-4ce6-b8b3-5b0d20d10040" />
 
 ### II. Synthesis Run and Configuration
+
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/7ff35c90-c452-457d-b09e-65e97e3e3ac0" />
 
 The synthesis phase converts the high-level behavioral RTL code into a gate-level netlist using components from the **Standard Cell Library (SCL)**, which is provided by the **SkyWater 130nm PDK**.
 
@@ -37,7 +27,13 @@ The synthesis phase converts the high-level behavioral RTL code into a gate-leve
 2.  **Verilog Backend:** The synthesis tool (**Yosys**) successfully processed the `picorv32a` Verilog code, mapped the logic to the `sky130_fd_sc_hd` standard cell library, and completed the mapping.
 3.  **Output Analysis:** The output reports directory (`reports/synthesis`) was inspected to access the final cell statistics and timing reports. 
 
+
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2f4d3a71-90a7-466e-a8ff-651c2ffd4a8b" />
+
+
 ### III. Synthesis Results and Flop Ratio Calculation
+
+<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/13ffe00e-6b44-48a4-9fff-d02ce2063c49" />
 
 The synthesis report provides a statistical breakdown of the components used to implement the design. This allows for the calculation of the **Flop Ratio**, which indicates the proportion of sequential logic (memory elements) to the total logic.
 
@@ -47,6 +43,10 @@ From the `picorv32a` synthesis statistics report:
 
 * **Total Number of Cells:** $18,036$ (This includes all logic gates and sequential elements).
 * **Number of D Flip-Flops (DFFs):** $1,613$ (This represents the sequential storage elements).
+
+
+<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/c3f05c56-78a2-4aa6-8982-64f79023e872" />
+
 
 #### B. Calculation
 
