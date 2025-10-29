@@ -20,7 +20,7 @@
     * **striVe 6:** Includes **DFT (Design For Testability)** features.
 * **Key Partners:** The project is supported by major contributors to open-source silicon, including **SkyWater, Google, OpenROAD, and eFabless**.
 
-Referenec : https://github.com/efabless/openlane2/tree/main?tab=readme-ov-file
+Reference : https://github.com/efabless/openlane2/tree/main?tab=readme-ov-file
 
 ---
 
