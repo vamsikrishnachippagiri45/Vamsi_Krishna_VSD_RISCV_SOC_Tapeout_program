@@ -1,4 +1,4 @@
-# Cell design
+# Standard Cell design in ASIC
 
 ---
 
@@ -91,3 +91,44 @@ The Cell Design Flow produces several crucial files and data formats required by
  
 ---
 
+
+## Standard Cell Characterization Flow
+
+**Characterization** is the rigorous process of simulating a cell's electrical behavior across various conditions to create accurate models that the main ASIC design tools (like STA, power analysis, and noise analysis) can use.
+
+### 1. Inputs and Prerequisites
+
+The simulation relies on specific files and commands to accurately model the cell's performance:
+
+| No. | Input Component | Description |
+| :---: | :--- | :--- |
+| **1** | **Transistor Models (SPICE)** | Complex text files defining the electrical behavior of NMOS and PMOS transistors (e.g., $180\text{nm}$ library). This is the foundation of the simulation. |
+| **2** | **Control Statements** | Commands that tell the simulator (e.g., SPICE) what type of analysis to run (e.g., `run`, `.control`, `.endc`). |
+| **3** | **Cell-Under-Test (CUT) Circuit** | The **subcircuit** being characterized (e.g., `my_inv` for an inverter), often connected in a ring or back-to-back configuration. |
+| **4** | **Subcircuit Definition** | The detailed SPICE netlist for the specific cell, defining its transistors and connectivity within the test harness. |
+| **5** | **Voltage Source** | Defines the supply voltage ($\text{Vdd}$) for the cell (e.g., $1.8\text{V}$ DC source). |
+| **6** | **Input Stimulus (Pulse)** | A voltage source that provides the dynamic input signal (edge/pulse) to trigger the cell's switching operation. |
+| **7** | **Output Load ($\mathbf{C_L}$)** | A load capacitor (e.g., $10\text{fF}$) attached to the output pin ($\text{out1}$) to model the capacitive load the cell will drive in the actual circuit. |
+| **8** | **Analysis Parameters** | The specific simulation parameters, such as the duration (`tran 10n 12.4e-9`) and other conditions. |
+
+### 2. The Characterization Process
+
+The process involves the engine (**GUNA**) systematically simulating the cell while varying two key parameters:
+
+* **Input Transition Time (Input Slew):** How quickly the input signal rises or falls.
+* **Output Load ($\mathbf{C_L}$):** The capacitance the cell drives.
+
+The simulation runs hundreds or thousands of times across a grid of these parameters, calculating performance metrics for each combination.
+
+### 3. Outputs and Models
+
+The final result of characterization is a set of comprehensive models used by the EDA tools:
+
+* **Timing (.libs):** Models the propagation **delay** and output **slew** of the cell as a function of input slew and output load (e.g., using **NLDM** or **CCS** tables).
+* **Power (.libs):** Models the static (leakage) and dynamic (switching) **power** consumed by the cell.
+* **Noise (.libs):** Models the cell's susceptibility to noise and its ability to propagate noise.
+* **Function:** Formal description of the logical behavior of the cell.
+
+These output files are collectively known as the **Timing, Noise, and Power .libs** and form the basis for all optimization and sign-off checks in the main ASIC flow.
+
+---
