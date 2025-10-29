@@ -89,5 +89,7 @@ Decoupling Capacitors are added in **parallel** with the circuit's power supply 
 * **During Switching:** When the circuit demands a sudden surge of **peak current ($I_{\text{peak}}$)**, the current is instantaneously drawn from the nearby $\mathbf{C_d}$, rather than from the distant external power supply through the noisy **RL network** ($R_{dd}$, $L_{dd}$). This keeps the local $\text{Vdd}'$ stable.
 * **Replenishing Charge:** After the switching event, the slower **RL network** is used to replenish the charge back into the $C_d$ for the next cycle.
 
+<img width="635" height="491" alt="image" src="https://github.com/user-attachments/assets/f4cf815f-3be5-4c75-8de8-c68897456fad" />
+
 ---
 
