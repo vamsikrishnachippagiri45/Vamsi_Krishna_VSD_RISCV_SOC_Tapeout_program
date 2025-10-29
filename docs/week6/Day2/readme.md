@@ -130,3 +130,4 @@ The Power Planning step is essential for **signal integrity** and **power integr
 ---
 
 
+<img width="606" height="486" alt="image" src="https://github.com/user-attachments/assets/aa6f225c-8b3c-45b7-970c-f22d33b8eaaa" />
