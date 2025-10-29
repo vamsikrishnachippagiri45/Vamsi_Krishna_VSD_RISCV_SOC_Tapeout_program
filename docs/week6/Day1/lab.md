@@ -1,2 +1,1 @@
-file:///home/vsduser/Pictures/Screenshot%20from%202025-10-29%2015-25-13.png
-
+file:///home/vsduser/Pictures/Screenshot%20from%202025-10-29%2015-25-13.png<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/5363e6d2-db29-4fa0-a22b-42ab9400ab77" />
