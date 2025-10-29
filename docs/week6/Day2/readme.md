@@ -93,3 +93,40 @@ Decoupling Capacitors are added in **parallel** with the circuit's power supply 
 
 ---
 
+## 4) Power Planning
+
+Power Planning is the process of designing the on-chip power distribution network to ensure a stable supply voltage ($\text{Vdd}$) and ground ($\text{Vss}$) to all active logic components.
+
+
+### The Problem: Simultaneous Switching Noise (SSN)
+
+When many circuits switch their state simultaneously (e.g., when a large data bus changes its value), they create sudden, large current demands, which causes noise in the power lines.
+
+* **Scenario:** Consider a 16-bit bus changing its value, where some bits switch from $\text{'0'}$ to $\text{'V'}$ (charge) and others switch from $\text{'V'}$ to $\text{'0'}$ (discharge).
+* **Voltage Droop:** All circuits switching from $\text{'0'}$ to $\text{'V'}$ (charging) demand current simultaneously. This large current surge flows through the parasitic inductance and resistance ($\text{Ldd}$, $\text{Rdd}$) of the single $\text{Vdd}$ tap point. This causes the on-chip $\text{Vdd}$ to momentarily **drop** or "droop."
+* **Ground Bounce:** Similarly, all circuits switching from $\text{'V'}$ to $\text{'0'}$ (discharging) dump current simultaneously into the single $\text{Vss}$ tap point. This current surge flows through the parasitic $\text{Lss}$ and $\text{Rss}$, causing the on-chip ground ($\text{Vss}$) to momentarily "bounce" above the ideal $\text{0V}$ reference.
+* **Consequence:** Both droop and bounce reduce the effective voltage supplied to the logic cells, potentially leading to incorrect logic operation and circuit failure.
+
+
+### The Solution: Power Grid and Decaps
+
+To counteract SSN, a uniform and low-impedance power distribution network is implemented.
+
+* **Power Grid:** The ideal solution is a **mesh-like grid** structure across the entire core area.
+    * It consists of overlapping horizontal and vertical lines of **$\text{Vdd}$ (blue)** and **$\text{Vss}$ (green)**, forming a checkerboard pattern.
+    * This grid drastically lowers the effective parasitic resistance and inductance by providing **multiple, highly redundant paths** for current to flow, minimizing localized voltage drops.
+* **Decoupling Capacitors (Decaps):** As discussed previously, $\mathbf{C_d}$ are added at every logic block (driver/load) to act as a **local reservoir** of charge. When a gate switches, it draws current from the closest $\mathbf{C_d}$ rather than the distant external power supply. 
+
+### 3. Power Planning Implementation
+
+The final power plan integrates the power grid with pre-placed cells:
+
+* **Grid Structure:** The $\text{Vdd}$ and $\text{Vss}$ lines are overlaid across the entire core, typically using the thicker, lower-resistance metal layers (M3, M4, etc.) for better current delivery. * **Pre-placed Cells:** Large blocks ($\text{Block a}$, $\text{Block b}$, etc.) are placed first, and surrounding them, **Decoupling Capacitors ($\text{DECAP}1, \text{DECAP}2, \text{DECAP}3$)** are inserted. These capacitors ensure the macro blocks, which often draw the highest peak current, have an immediate and stable power source.
+
+The Power Planning step is essential for **signal integrity** and **power integrity**, guaranteeing reliable circuit operation at the intended speed.
+
+<img width="616" height="489" alt="image" src="https://github.com/user-attachments/assets/62235f78-c3de-4791-b9f2-c847ea428153" />
+
+---
+
+
