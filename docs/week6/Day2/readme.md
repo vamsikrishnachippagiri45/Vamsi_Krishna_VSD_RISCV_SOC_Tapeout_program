@@ -130,4 +130,35 @@ The Power Planning step is essential for **signal integrity** and **power integr
 ---
 
 
+These slides illustrate the final steps of the **Floorplanning** stage, focusing on **I/O Pin/Pad Placement** and preparing the core area for the subsequent **Placement & Routing** steps.
+
+***
+
+## 5) Pin Placement and Cell Blockage
+
+The final steps of Floorplanning ensure the chip's core is properly defined with power delivery, external connections, and reserved areas for large blocks, making it ready for the automated Place and Route (PnR) tools.
+
+###  I/O Pin/Pad Placement
+
+This step defines where the external signals enter and exit the chip's core.
+
+* **Definition:** **I/O Pins/Pads** are the physical interfaces located at the edge of the **Die** that connect the chip to the outside world (like the package pins).
+* **Placement Strategy:** The location of these pads ($\text{Din}1$ to $\text{Din}4$, $\text{Dout}1$ to $\text{Dout}4$, $\text{CLK}1$, $\text{CLK}2$, $\text{ClkOut}$) is determined by system-level requirements and signal integrity needs.
+    * In the image, the pads are strategically placed around the core perimeter, connecting the external world to the internal power grid and logic.
+    * **$\text{Din/Dout}$ Pads:** Handle the data signals defined by the **netlist** (the VHDL/Verilog code that describes the connectivity between the internal Flip-Flops (FFs) and logic gates).
+    * **$\text{CLK}$ Pads:** Handle the clock signals, which are vital for system timing.
+* **Ready State:** Once pins are placed, the power grid ($\text{Vdd}$ and $\text{Vss}$ mesh) is considered complete across the core, extending to the pads.
+
+###  Logical Cell Placement Blockage
+
+This step reserves space in the core area to prevent the automated tools from placing small logic gates in specific regions.
+
+* **Blockage Definition:** Large **pre-placed cells** (Macros) like $\text{Block a}$, $\text{Block b}$, and $\text{Block c}$ cannot have standard logic cells placed on top of them. Additionally, areas surrounding these blocks or areas reserved for specific routing needs must be marked as blocked.
+* **Role of Decaps:** Decoupling capacitors ($\text{DEC P1, DEC P2, DEC P3}$) are inserted adjacent to these Macros to stabilize their power supply. These $\text{DEC}$ cells also take up space and must be accounted for.
+* **Goal:** By defining these areas as **Placement Blockages** (the gray area in the final diagram), the tools know the exact available area (the empty rows) where they must place the remaining thousands of standard cells (the FFs and logic gates from the netlist).
+
+**Final State:** Once the pins are placed, the power grid is laid, and the placement blockages are defined, the **Floor Plan is Ready for the Placement & Routing Step** in the main ASIC flow. 
+
 <img width="606" height="486" alt="image" src="https://github.com/user-attachments/assets/aa6f225c-8b3c-45b7-970c-f22d33b8eaaa" />
+
+---
