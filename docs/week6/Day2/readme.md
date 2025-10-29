@@ -1,1 +1,48 @@
+# Chip Floor-Planning Considerations
+
+---
+
+## 1) IC Area and Geometry (Utilization Factor and Aspect Ratio)
+
+### i. Core vs. Die Section of a Chip
+
+The chip is physically divided into two main areas:
+
+* **Die:** The **entire piece of semiconductor material (silicon)** cut from the wafer.
+    * It contains everything, including the **Core**, **I/O pads**, and any surrounding passive components.
+* **Core:** The central area of the die dedicated to **active logic circuits**.
+    * This is where the **Standard Cells** (like the D Flip-Flops (FF) and logic gates (A1, O1) shown in the diagram) and macros are placed and connected.
+    * The core is typically where the automated **Place and Route (PnR)** process occurs.
+
+The diagram illustrates how a small logic circuit (DFFs connected by combinational logic) is conceptually converted into physical units occupying area within the core.
+
+
+### ii. Utilization Factor
+
+The Utilization Factor is a critical metric in floor planning and placement, indicating how densely the core area is populated with actual logic cells.
+
+$$\text{Utilization Factor} = \frac{\text{Area Occupied by Netlist (Total Cell Area)}}{\text{Total Area of the Core}}$$
+
+* **Netlist Area:** The sum of the physical area of all standard cells (gates, flip-flops, etc.) used in the design.
+* **Core Area:** The total available area within the core boundaries for placing those cells.
+* **Purpose:** The utilization factor is usually set to a value **less than 1** (e.g., 0.65 to 0.85). This remaining empty space (often $\approx 15\% - 35\%$) is necessary for:
+    * **Routing:** Making space for the wires (interconnects).
+    * **Decoupling Capacitors/Filler Cells:** Inserting components for power stability and to fill empty spaces.
+    * **Managing Congestion:** Preventing the design from becoming too crowded, which would make routing impossible or lead to timing failures.
+
+
+### iii. Aspect Ratio
+
+The Aspect Ratio defines the shape of the core area.
+
+$$\text{Aspect Ratio} = \frac{\text{Height}}{\text{Width}}$$
+
+* **Purpose:** Designers choose the aspect ratio during **Floor Planning** to determine the core's shape.
+    * An Aspect Ratio of **1** results in a square core.
+    * An Aspect Ratio **greater than 1** results in a taller, rectangular core.
+    * An Aspect Ratio **less than 1** results in a wider, rectangular core.
+* **Impact:** The chosen aspect ratio can influence routing complexity, clock distribution, and the overall physical design flow.
+
+---
+
 
