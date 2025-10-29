@@ -61,6 +61,9 @@ Floorplanning determines the location and orientation of the **Pre-placed Cells 
 Because these large blocks cannot be moved easily by the automated tools, they are placed first. The **automated placement-and-routing tools** then take over, placing the **remaining logical cells** (the thousands of small standard gates) into the empty spaces around these pre-placed cells.
 
 
+<img width="320" height="240" alt="image" src="https://github.com/user-attachments/assets/7cbef88b-2677-4ee1-bf38-b071753f5c7f" />
+
+
 ---
 
 
