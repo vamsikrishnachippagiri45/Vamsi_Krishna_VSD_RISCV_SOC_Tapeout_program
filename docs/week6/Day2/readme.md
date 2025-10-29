@@ -46,3 +46,19 @@ $$\text{Aspect Ratio} = \frac{\text{Height}}{\text{Width}}$$
 ---
 
 
+## 2) Pre-placed Cells (Macros)
+
+**Pre-placed cells** are large, complex functional blocks within a chip that have user-defined locations. They are positioned early in the design flow, before the main automated placement process begins.
+
+* **Examples of Pre-placed Cells/IPs:**
+    * **Memory** blocks (SRAM, ROM).
+    * **Clock-gating cells** (for power management).
+    * **Comparators** and other complex analog or mixed-signal blocks.
+    * **Mux** (Multiplexer) or other large custom logic blocks.
+* **Key Characteristic:** These blocks are often referred to as **Macros** or Intellectual Properties (**IPs**). Unlike small standard cells (like an inverter or a NAND gate), their size, function, and connection requirements demand that their locations be fixed manually or semi-manually by the designer.
+
+Floorplanning determines the location and orientation of the **Pre-placed Cells (Macros)** relative to the **Core** boundaries and to each other.
+Because these large blocks cannot be moved easily by the automated tools, they are placed first. The **automated placement-and-routing tools** then take over, placing the **remaining logical cells** (the thousands of small standard gates) into the empty spaces around these pre-placed cells.
+
+
+---
