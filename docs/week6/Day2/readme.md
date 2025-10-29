@@ -117,7 +117,7 @@ To counteract SSN, a uniform and low-impedance power distribution network is imp
     * This grid drastically lowers the effective parasitic resistance and inductance by providing **multiple, highly redundant paths** for current to flow, minimizing localized voltage drops.
 * **Decoupling Capacitors (Decaps):** As discussed previously, $\mathbf{C_d}$ are added at every logic block (driver/load) to act as a **local reservoir** of charge. When a gate switches, it draws current from the closest $\mathbf{C_d}$ rather than the distant external power supply. 
 
-### 3. Power Planning Implementation
+### Power Planning Implementation
 
 The final power plan integrates the power grid with pre-placed cells:
 
