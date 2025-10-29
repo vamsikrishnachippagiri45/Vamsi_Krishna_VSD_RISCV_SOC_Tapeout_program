@@ -9,10 +9,6 @@
 A central principle across all stages of the digital ASIC design flow (from Logic Synthesis to Floorplanning, Placement, and Routing) is the use of **Standard Cells** (or **Gates**).
 
 * **Standard Cells** are the fundamental physical building blocks of the digital chip.
-* **Examples** include:
-    * Basic logic gates ($\text{AND, OR, NOT, INVERTER, BUFFER}$).
-    * Sequential elements ($\text{DFF, LATCH}$).
-    * Specialized components ($\text{ICG}$ - Integrated Clock Gating cells).
 
 Every single logical element in the final circuit is a physical instance of a cell from the **Standard Cell Library (SCL)**, which is part of the **PDK**.
 
