@@ -56,3 +56,38 @@ The design of a Standard Cell is constrained by several specific technical requi
     * **Metal Layers & Pin Location:** Specification of which metal layers must be used for power rails and where the input/output pins should be positioned (e.g., M1 for local routing, fixed Vdd/Vss on M2).
     * **Drawn Gate Length:** The specific transistor channel length to be used, which directly impacts speed and power.
 
+These slides complete the overview of the **Cell Design Flow**, detailing the **Design Steps** and the resulting **Outputs** that are fed into the main ASIC flow.
+
+### II. Design Steps
+
+The process of creating a standard cell involves three main phases, moving from theoretical function to a physical, verified layout:
+
+* **Circuit Design:**
+    * This is the initial phase where the desired logic function (e.g., $F_{n} = (\overline{B+D}) + \overline{(A+C)} + \overline{E\cdot F}$) is converted into a **transistor-level schematic** (CMOS logic gates).
+    * Techniques like **Euler's path** and **series/parallel network analysis** are used to arrange PMOS and NMOS transistors efficiently.
+    * The required **Width/Length ($\frac{W}{L}$) ratio** for the PMOS versus NMOS transistors is calculated (e.g., to ensure the switching threshold $V_m$ is set at an optimal point, often $\frac{V_{DD}}{2}$).
+* **Layout Design:**
+    * This is the "Art of Layout," where the transistor schematic is translated into the physical geometric shapes (polygons) that define the chip layers (diffusion, polysilicon, metal).
+    * **Stick diagrams** and adherence to **DRC** (Design Rule Check) constraints from the PDK are critical to create a compact, manufacturable layout.
+    * The goal is to physically arrange the transistors and interconnects to minimize area and parasitic effects while ensuring the cell adheres to the fixed **Cell Height**.
+* **Characterization:**
+    * Once the physical layout is complete and verified, the cell's electrical behavior (timing, power, noise) must be rigorously modeled using simulation tools. This data forms the essential output library for the automated EDA tools.
+
+
+### III. Outputs of the Cell Design Flow
+
+The Cell Design Flow produces several crucial files and data formats required by the main RTL-to-GDSII flow tools:
+
+* **GDSII (Graphic Data System II):**
+    * This is the **physical layout file** containing the geometric mask data for the standard cell. This file is directly used during the **Placement** step.
+* **Extracted SPICE Netlist (.cir):**
+    * Generated from the final GDSII layout, this netlist includes all the **parasitic resistance and capacitance** of the wires and transistors. It is used for highly accurate electrical simulation.
+* **CDL (Circuit Description Language):**
+    * A format often used to represent the schematic and netlist of the cell, primarily for **LVS (Layout Versus Schematic)** checks.
+* **LEF (Library Exchange Format):**
+    * An **abstract physical view** of the cell. It includes the cell's fixed dimensions (**Cell Height**), pin locations, and blockage areas, but *not* the full GDSII geometry. This is the main input used by PnR tools during **Floorplanning and Placement**.
+* **Timing, Noise, and Power .libs (Libraries):**
+    * These are the characterized data files (e.g., **NLDM** or **CCS**) containing the cell's simulated performance metrics (delay, power consumption, noise sensitivity) under various conditions. These are essential for the **Static Timing Analysis (STA)** and power analysis steps in the main flow.
+ 
+---
+
