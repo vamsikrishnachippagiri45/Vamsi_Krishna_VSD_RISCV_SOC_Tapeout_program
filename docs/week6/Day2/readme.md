@@ -62,3 +62,30 @@ Because these large blocks cannot be moved easily by the automated tools, they a
 
 
 ---
+
+
+## 3) Decoupling Capacitors 
+
+Decoupling Capacitors (or **Decaps**, represented as $C_d$) are essential components in IC design used to maintain a stable power supply voltage within the circuit.
+
+### The Problem: Power Supply Noise (Ground Bounce)
+
+In any complex digital circuit, the power supply line ($\text{Vdd}$) and ground line ($\text{Vss}$) are not ideal. They contain parasitic resistance ($R_{dd}$, $R_{ss}$) and parasitic inductance ($L_{dd}$, $L_{ss}$) due to the physical wiring and bonding.
+
+* **Switching Current Demand ($I_{\text{peak}}$):** When a circuit (like a processor core) switches its logic states, it demands a large surge of current called the **peak switching current ($I_{\text{peak}}$)** in a very short time.
+* **Voltage Drop:** Due to the parasitic resistance and inductance in the power lines, this large, fast-changing current causes an instantaneous **voltage drop** across the parasitics.
+    * The voltage at the circuit's internal power node ($\text{Vdd}'$) is momentarily reduced from the external supply ($\text{Vdd}$).
+    * $V_{\text{drop}} \approx I_{\text{peak}} \times (R_{\text{dd}} + R_{\text{ss}}) + L_{\text{eff}} \times \frac{dI}{dt}$
+* **Consequence:** If $\text{Vdd}'$ momentarily drops below the required **noise margin**, a logic '1' signal output by the circuit might be seen as a low (or unknown) signal at the input of the next circuit, leading to **functional failure** and incorrect operation.
+
+
+### The Solution: Decoupling Capacitors
+
+Decoupling Capacitors are added in **parallel** with the circuit's power supply lines ($\text{Vdd}$ and $\text{Vss}$) to mitigate this voltage fluctuation.
+
+* **Function as a Charge Reservoir:** The Decap acts as a **local charge reservoir**.
+* **During Switching:** When the circuit demands a sudden surge of **peak current ($I_{\text{peak}}$)**, the current is instantaneously drawn from the nearby $\mathbf{C_d}$, rather than from the distant external power supply through the noisy **RL network** ($R_{dd}$, $L_{dd}$). This keeps the local $\text{Vdd}'$ stable.
+* **Replenishing Charge:** After the switching event, the slower **RL network** is used to replenish the charge back into the $C_d$ for the next cycle.
+
+---
+
