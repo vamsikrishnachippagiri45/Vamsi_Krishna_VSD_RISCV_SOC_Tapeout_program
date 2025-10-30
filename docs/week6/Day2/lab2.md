@@ -99,7 +99,7 @@ The generated floorplan DEF file was loaded into the **Magic VLSI Layout Tool** 
 
 ```bash
 # Command executed in a separate terminal:
-magic -T /path/to/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 
 The Magic tool confirmed the geometry, showing the outer **Die** boundary, the inner **Core** area, and the structured **placement rows** generated for the standard cells.
