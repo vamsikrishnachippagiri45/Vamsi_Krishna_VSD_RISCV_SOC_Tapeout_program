@@ -109,3 +109,7 @@ The Magic tool confirmed the geometry, showing the outer **Die** boundary, the i
 
 ---
 
+<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/669e74a2-0eab-4f00-b7e7-1b1eba4c2a0a" />
+
+<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/1ea24d22-77f4-4242-a043-d0789c9d5f41" />
+
