@@ -30,3 +30,17 @@ OpenLANE uses a layered approach to configuration, where specific design setting
 
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/0a6f2f64-3929-4d42-90c0-bc3a9897b6c9" />
 
+
+
+
+---
+
+file:///home/vsduser/Pictures/Screenshot%20from%202025-10-30%2021-32-05.png<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/e88f8a60-2bc8-4580-bc85-96b3b461b266" />
+
+
+file:///home/vsduser/Pictures/Screenshot%20from%202025-10-30%2021-32-52.png<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/9519608f-1ed8-46a6-95b7-9c166d409df8" />
+
+file:///home/vsduser/Pictures/Screenshot%20from%202025-10-30%2021-38-46.png<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/545a7026-35d8-44c2-9ce4-08c11f55be97" />
+
+file:///home/vsduser/Pictures/Screenshot%20from%202025-10-30%2021-48-55.png<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2da6a400-231f-465b-94fa-c47a522a2779" />
+
