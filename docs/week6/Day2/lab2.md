@@ -29,3 +29,6 @@ OpenLANE uses a layered approach to configuration, where specific design setting
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/74400b4d-7182-45b5-beaa-3d6963c976e6" />
 
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/0a6f2f64-3929-4d42-90c0-bc3a9897b6c9" />
+
+
+https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/
