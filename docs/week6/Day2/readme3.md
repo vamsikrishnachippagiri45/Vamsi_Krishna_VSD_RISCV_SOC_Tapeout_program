@@ -132,3 +132,49 @@ The final result of characterization is a set of comprehensive models used by th
 These output files are collectively known as the **Timing, Noise, and Power .libs** and form the basis for all optimization and sign-off checks in the main ASIC flow.
 
 ---
+
+
+## Timing Characterization
+
+Timing characterization is the process of precisely measuring a standard cell's speed to create models for Static Timing Analysis (STA). This involves defining specific voltage **thresholds** to measure two key metrics: **Propagation Delay** and **Transition Time (Slew)**.
+
+### 1. Timing Threshold Definitions
+
+All timing measurements are based on specific voltage levels, usually expressed as a percentage of the supply voltage ($\text{Vdd}$):
+
+| Threshold Parameter | Typical Value | Purpose |
+| :--- | :--- | :--- |
+| **in\_rise\_thr / in\_fall\_thr** | $\mathbf{50\%}$ of $\text{Vdd}$ | Used to measure the time at the **input** pin for delay calculation. |
+| **out\_rise\_thr / out\_fall\_thr** | $\mathbf{50\%}$ of $\text{Vdd}$ | Used to measure the time at the **output** pin for delay calculation. |
+| **slew\_low\_rise\_thr / slew\_low\_fall\_thr** | $\mathbf{20\%}$ of $\text{Vdd}$ | The low voltage point used to define the start of a signal edge for **slew** calculation. |
+| **slew\_high\_rise\_thr / slew\_high\_fall\_thr** | $\mathbf{80\%}$ of $\text{Vdd}$ | The high voltage point used to define the end of a signal edge for **slew** calculation. |
+
+### 2. Propagation Delay
+
+**Propagation Delay ($t_p$)** is the time it takes for a signal to travel from the input of the cell to the output.
+
+* **Formula:**
+    $$\text{Delay} = \text{time}(\text{out\_thr}) - \text{time}(\text{in\_thr})$$
+* **Measurement:**
+    1.  Find the time the **input** signal crosses its $50\%$ threshold ($\text{time}(\text{in\_thr})$).
+    2.  Find the time the **output** signal crosses its $50\%$ threshold ($\text{time}(\text{out\_thr})$).
+    3.  The delay is the difference between the two times.
+* **Edge Types:** Delay must be measured for both transitions:
+    * **Rise Delay ($\text{t}_{\text{dr}}$):** Input switches low-to-high (or high-to-low if inverter), output rises (e.g., input fall, output rise).
+    * **Fall Delay ($\text{t}_{\text{df}}$):** Input switches low-to-high, output falls (e.g., input rise, output fall).
+* **Example (Inverter):** For an input falling edge and the output rising edge, the measured delay is $\text{time}(\text{out\_rise\_thr}) - \text{time}(\text{in\_fall\_thr})$.
+
+### 3. Transition Time (Slew)
+
+**Transition Time (Slew)**, often called the **rise time ($t_r$)** or **fall time ($t_f$)**, measures how quickly the signal changes from one logic level to the other.
+
+* **Definition:** Slew is measured between the **$20\%$ and $80\%$** voltage thresholds.
+* **Formula (Rise Time):**
+    $$\text{Rise Slew} = \text{time}(\text{slew\_high\_rise\_thr}) - \text{time}(\text{slew\_low\_rise\_thr})$$
+* **Importance:**
+    * **Input Slew:** Used as a primary input parameter for the timing model (e.g., in NLDM tables). A slow input slew generally leads to a slower propagation delay through the cell.
+    * **Output Slew:** The output slew of one cell becomes the input slew for the next cell, propagating the timing characteristic down the path.
+
+The simulation tool systematically performs these delay and slew measurements over a grid of different **Input Slew** values and various **Output Loads ($C_L$)** to generate the comprehensive timing library files.
+
+---
