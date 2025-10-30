@@ -1,4 +1,4 @@
-# Floorplanning 
+# Floorplanning and Placement
 
 
 ##  OpenLANE Configuration Hierarchy
@@ -109,7 +109,54 @@ The Magic tool confirmed the geometry, showing the outer **Die** boundary, the i
 
 ---
 
+
+This is the submission summary for the **Placement** stage of the `picorv32a` design, detailing the command execution, analysis of the key metrics from the log, and visual verification.
+
+-----
+
+## Placement Execution 
+
+### 1\. Placement Execution
+
+The placement step was executed after Floorplanning and Power Planning to physically arrange the synthesized logic cells onto the core area. The tool used is typically **RePlAce** within the OpenROAD application, which is congestion-aware by default.
+
+```bash
+# Command to run placement (congestion aware by default)
+run_placement
+```
+
 <img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/669e74a2-0eab-4f00-b7e7-1b1eba4c2a0a" />
+
+
+### 2\. Placement Analysis Summary
+
+The placement step successfully placed all instances, as detailed in the log output:
+
+| Metric | Value | Interpretation |
+| :--- | :--- | :--- |
+| **Fixed Instances** | $6,354$ | Represents I/O pins, Decaps, and pre-placed macros that cannot be moved. |
+| **Nets** | $15,449$ | The number of electrical connections between the cells that must be routed. |
+| **Design Area** | $420,473.3 \mu\text{m}^2$ | The total area of the die used for this design. |
+| **Utilization** | $\mathbf{55\%}$ | The ratio of total cell area to total core area. This leaves $45\%$ space for routing and filler cells. |
+| **Rows** | $238$ | The number of horizontal rows available for placing standard cells in the core. |
+| **Row Height** | $2.7 \text{ u}$ | The standard height of the cell rows in the PDK. |
+| **HPWL Delta** | $\mathbf{-1.7\%}$ | The change in **Half-Perimeter Wire Length (HPWL)** after placement optimization. A negative change (from original to legal/optimized HPWL) indicates **improvement** in wire length estimation, which is good for timing and power. |
+
+### 3\. Magic Placement Visualization
+
+The resulting placement DEF file (`picorv32a.placement.def`) was loaded into the **Magic VLSI Layout Tool** for visual inspection of the core layout.
+
+```bash
+# Change directory to path containing generated placement def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/30-10_16-48/results/placement/
+
+# Command to load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+
+The visualization confirms that the standard cells (the dense black and colored shapes) have been arranged onto the horizontal placement rows within the core boundary. The **$55\%$ utilization** results in a fairly dense core, demonstrating the successful physical translation of the logical netlist.
+
 
 <img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/1ea24d22-77f4-4242-a043-d0789c9d5f41" />
 
+---
