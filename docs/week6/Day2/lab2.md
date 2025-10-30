@@ -1,4 +1,4 @@
-## Floorplanning 
+# Floorplanning 
 
 
 ##  OpenLANE Configuration Hierarchy
