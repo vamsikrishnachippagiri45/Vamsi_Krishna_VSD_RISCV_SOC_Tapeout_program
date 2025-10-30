@@ -154,7 +154,9 @@ All timing measurements are based on specific voltage levels, usually expressed 
 **Propagation Delay ($t_p$)** is the time it takes for a signal to travel from the input of the cell to the output.
 
 * **Formula:**
+  
 $$\text{Delay} = \text{time}(\text{out\_thr}) - \text{time}(\text{in\_thr})$$
+
 * **Measurement:**
     1.  Find the time the **input** signal crosses its $50\%$ threshold ($\text{time}(\text{in\_thr})$).
     2.  Find the time the **output** signal crosses its $50\%$ threshold ($\text{time}(\text{out\_thr})$).
@@ -162,7 +164,9 @@ $$\text{Delay} = \text{time}(\text{out\_thr}) - \text{time}(\text{in\_thr})$$
 * **Edge Types:** Delay must be measured for both transitions:
     * **Rise Delay ($\text{t}_{\text{dr}}$):** Input switches low-to-high (or high-to-low if inverter), output rises (e.g., input fall, output rise).
     * **Fall Delay ($\text{t}_{\text{df}}$):** Input switches low-to-high, output falls (e.g., input rise, output fall).
-* **Example (Inverter):** For an input falling edge and the output rising edge, the measured delay is $\text{time}(\text{out\_rise\_thr}) - \text{time}(\text{in\_fall\_thr})$.
+* **Example (Inverter):** For an input falling edge and the output rising edge, the measured delay is
+
+$$\text{time}(\text{out\_rise\_thr}) - \text{time}(\text{in\_fall\_thr})$$.
 
 ### 3. Transition Time (Slew)
 
@@ -170,7 +174,9 @@ $$\text{Delay} = \text{time}(\text{out\_thr}) - \text{time}(\text{in\_thr})$$
 
 * **Definition:** Slew is measured between the **$20\%$ and $80\%$** voltage thresholds.
 * **Formula (Rise Time):**
+  
 $$\text{Rise Slew} = \text{time}(\text{slew\_high\_rise\_thr}) - \text{time}(\text{slew\_low\_rise\_thr})$$
+
 * **Importance:**
     * **Input Slew:** Used as a primary input parameter for the timing model (e.g., in NLDM tables). A slow input slew generally leads to a slower propagation delay through the cell.
     * **Output Slew:** The output slew of one cell becomes the input slew for the next cell, propagating the timing characteristic down the path.
