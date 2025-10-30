@@ -170,7 +170,7 @@ All timing measurements are based on specific voltage levels, usually expressed 
 
 * **Definition:** Slew is measured between the **$20\%$ and $80\%$** voltage thresholds.
 * **Formula (Rise Time):**
-    $$\text{Rise Slew} = \text{time}(\text{slew\high\rise\thr}) - \text{time}(\text{slew\low\rise\thr})$$
+    $$\text{Rise Slew} = \text{time}(\text{slew_high_rise_thr}) - \text{time}(\text{slew_low_rise_thr})$$
 * **Importance:**
     * **Input Slew:** Used as a primary input parameter for the timing model (e.g., in NLDM tables). A slow input slew generally leads to a slower propagation delay through the cell.
     * **Output Slew:** The output slew of one cell becomes the input slew for the next cell, propagating the timing characteristic down the path.
