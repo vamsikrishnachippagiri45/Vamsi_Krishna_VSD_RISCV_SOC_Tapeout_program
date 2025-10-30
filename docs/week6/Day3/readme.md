@@ -20,7 +20,7 @@ This section defines the regions where transistors will be built (**Active Regio
     * **Etching:** The exposed photoresist is removed, and the underlying $\text{Si}3\text{N}4$ layer is etched in these open areas.
     * **Field Oxide Growth (LOCOS):** The wafer is subjected to a high-temperature oxidation process. The $\text{Si}3\text{N}4$ acts as an **oxidation mask**, preventing oxide growth beneath it. Oxide only grows in the exposed areas, forming the thick **Field Oxide** (isolation layer). This technique is called **LOCOS** (**LO**cal **O**xidation of **S**ilicon).
     * **"Bird's Beak" Effect:** LOCOS is characterized by a "bird's beak" shape at the boundary of the field oxide due to lateral oxidation under the $\text{Si}3\text{N}4$ mask, which consumes some active area.
-    * **Stripping:** The $\text{Si}_3\text{N}_4}$ layer is stripped using a chemical like hot phosphoric acid, leaving the isolated active areas framed by the Field Oxide.
+    * **Stripping:** The $\text{Si}3\text{N}4$ layer is stripped using a chemical like hot phosphoric acid, leaving the isolated active areas framed by the Field Oxide.
 
 
 ### 3. N-Well and P-Well Formation
