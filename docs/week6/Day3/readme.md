@@ -70,3 +70,39 @@ The LDD structure is created through a self-aligned process involving a light im
     * A **Plasma Anisotropic Etching** step is performed. Since the etching is anisotropic (etching only vertically), the material is removed from the horizontal surfaces but remains along the vertical sidewalls of the polysilicon gate, forming **sidewall spacers**. 
 The spacers will now be used as the **mask** for the next step: the heavy Source/Drain implant. The spacer shifts the final, heavy Source/Drain junction away from the sensitive gate edge, defining the final LDD structure.
 
+These notes summarize the final stages of the **16-Mask CMOS Fabrication Process**, detailing the formation of the heavily doped Source/Drain regions and the multi-level metal interconnects.
+
+### 6. Source and Drain Formation
+
+This step creates the highly conductive Source ($S$) and Drain ($D$) regions, completing the transistor structure.
+
+* **Initial Condition:** The structure already has the polysilicon gate with the $\text{SiO}_2$/$\text{Si}_3\text{N}_4$ **sidewall spacers** and the lightly doped ($\text{N}^{-}$, $\text{P}^{-}$) LDD regions.
+* **Thin Screen Oxide:** A thin $\text{SiO}_2$ layer is often grown or deposited before the implant to **prevent channeling** (where ions travel too deep) during the high-energy implant step.
+* **Heavy Implant:** A **heavy dose** of N-type dopants (for NMOS $\text{N}^+$) and P-type dopants (for PMOS $\text{P}^+$) is implanted.
+    * The **sidewall spacers** act as a **mask**, defining the final outer edge of the heavily doped $\text{S}/\text{D}$ regions, placing them away from the sensitive channel area.
+* **High Temperature Annealing:** The wafer is placed in a **high-temperature furnace** for a process called **annealing**. This step achieves two goals:
+    * **Electrical Activation:** It repairs the crystal damage caused by the ion implantation.
+    * **Dopant Activation:** It moves the implanted ions into electrically active substitutional sites within the silicon lattice, completing the $\text{N}^+$ and $\text{P}^+$ Source/Drain regions.
+
+### 7. Local Contacts and Interconnects (Local Wiring)
+
+This phase prepares the transistor terminals for connection using the first layer of metal (M1).
+
+1.  **Oxide Etching:** The thin $\text{SiO}_2$ layer covering the $\text{S}/\text{D}$ and gate terminals is etched away using an **HF solution** to expose the silicon and polysilicon surfaces for contact formation.
+2.  **Titanium (Ti) Deposition:** A layer of **Titanium** is deposited over the wafer surface, often using a process called **sputtering** (bombarding a target with Argon ions to deposit the material).
+3.  **Salicide Formation:** The wafer is heated ($\approx 650-700^{\circ}\text{C}$ in $\text{N}_2$ ambient). The deposited titanium reacts with the exposed silicon/polysilicon to form **Titanium Silicide ($\text{TiSi}_2$)**—a highly **low-resistance** compound. The titanium that did not react with silicon (i.e., over the oxide) is etched away (often using **RCA cleaning**).
+4.  **Local Metal Deposition (M1):** The $\text{TiSi}_2$ and a **TiN** (Titanium Nitride) layer are often used as a local interconnect layer for immediate connections between adjacent transistors (local communication) before the main global metal layers are added.
+
+### 8. Higher Level Metal Formation (Global Wiring)
+
+This final phase builds the global interconnect structure, forming the complete wiring network (power, clock, and data).
+
+1.  **Inter-Layer Dielectric (ILD) Deposition:** A thick insulating layer, typically **$\text{SiO}_2$ doped with phosphorous or boron** (known as **Phosphosilicate Glass (PSG)** or **Borophosphosilicate Glass (BPSG)**), is deposited over the entire structure. This dielectric electrically separates the metal layers.
+2.  **Contact/Via Etching:** Using photolithography and masks, **vertical holes** are etched through the oxide to reach the $\text{TiSi}_2$ and polysilicon terminals below.
+3.  **Tungsten (W) Plug Formation:** The holes are filled with a highly conductive metal, usually **Tungsten (W)**, which forms the **contacts** (connecting M1 to the source/drain/gate) and **vias** (connecting metal layers to each other).
+4.  **Metal Interconnect Deposition:** Layers of metal (e.g., Aluminum or Copper) are deposited, patterned, and etched to form the horizontal interconnect lines ($\text{M}1, \text{M}2, \text{M}3$, etc.).
+5.  **Final Structure:** This iterative process (dielectric deposition, etching vias, filling vias, depositing metal, patterning metal) continues for all 16 masks, resulting in the final, complex 3D structure that connects the $S, G, D$ terminals of all transistors into a functional chip.
+
+
+
+---
