@@ -44,9 +44,6 @@ This step creates the most critical part of the transistor: the gate and the ins
 * **Gate Material Deposition:** A layer of **polysilicon** is deposited over the entire wafer.
 * **Mask 6 (Gate Definition):** A new photoresist layer (**Mask 6**) is used to pattern the polysilicon, leaving material only where the **gate** of each transistor is desired.
 
-
-These notes summarize the crucial step of **Lightly Doped Drain (LDD) Formation** in the CMOS fabrication process, explaining its necessity and the basic manufacturing sequence.
-
 ### 5. Lightly Doped Drain (LDD) Formation
 
 The LDD structure is implemented in advanced CMOS processes to mitigate undesirable high-field effects that become severe as transistors are scaled down (Short Channel Effects).
