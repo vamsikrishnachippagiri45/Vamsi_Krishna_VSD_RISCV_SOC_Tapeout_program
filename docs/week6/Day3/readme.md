@@ -1,5 +1,5 @@
 
-# **16-mask CMOS Fabrication process**
+# **16-Mask CMOS Fabrication process**
 ---
 
 ## Steps of 16-Mask CMOS Fabrication
