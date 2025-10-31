@@ -43,3 +43,33 @@ This step creates the most critical part of the transistor: the gate and the ins
 * **Gate Oxide Regrowth:** A new, thin, **high-quality oxide** ($\sim 10\text{nm}$ thick) is **re-grown**. This oxide will serve as the final **gate insulator**, and its precise thickness is crucial for controlling the transistor's threshold voltage ($\text{Vth}$) and performance.
 * **Gate Material Deposition:** A layer of **polysilicon** is deposited over the entire wafer.
 * **Mask 6 (Gate Definition):** A new photoresist layer (**Mask 6**) is used to pattern the polysilicon, leaving material only where the **gate** of each transistor is desired.
+
+
+These notes summarize the crucial step of **Lightly Doped Drain (LDD) Formation** in the CMOS fabrication process, explaining its necessity and the basic manufacturing sequence.
+
+### 5. Lightly Doped Drain (LDD) Formation
+
+The LDD structure is implemented in advanced CMOS processes to mitigate undesirable high-field effects that become severe as transistors are scaled down (Short Channel Effects).
+
+#### 1. Reasons for LDD
+
+LDD structures are necessary to combat two primary issues in small transistors:
+
+* **Hot Electron Effect (HCE):** In short-channel devices, the **electric field ($E = V/d$)** near the drain is extremely high. This high field accelerates electrons (or holes) to very high energies (**hot carriers**). These high-energy carriers can collide with silicon bonds and become trapped in the **Gate Oxide ($\text{SiO}_2$)**, breaking the $3.2\text{eV}$ barrier between the silicon and $\text{SiO}_2$ conduction bands. Trapped charges shift the transistor's **Threshold Voltage ($\text{Vth}$)**, leading to degradation and eventual failure.
+* **Short Channel Effect:** As the channel length decreases, the depletion regions of the source and drain start to interact, leading to issues like **punch-through** and loss of gate control.
+
+The LDD structure lowers the electric field peak near the drain, reducing the energy of the carriers and minimizing HCE.
+
+#### 2. LDD Implantation and Spacer Formation
+
+The LDD structure is created through a self-aligned process involving a light implant followed by the creation of a **sidewall spacer**.
+
+1.  **Light Implant:**
+    * A **light dose** of N-type dopants (for NMOS, typically **Phosphorous** or **Arsenic**) and P-type dopants (for PMOS, typically **Boron**) is implanted into the exposed Source/Drain regions.
+    * This implant is performed **unmasked** over the whole wafer, but the existing polysilicon gate acts as a **mask**, defining the inner edge of the LDD region.
+    * This creates the $\mathbf{N}^{-}$ (lightly doped N) and $\mathbf{P}^{-}$ (lightly doped P) regions directly adjacent to the channel under the gate edge. 
+2.  **Sidewall Spacer Formation:**
+    * A layer of material (usually **silicon dioxide** or **nitride**) is deposited over the entire wafer.
+    * A **Plasma Anisotropic Etching** step is performed. Since the etching is anisotropic (etching only vertically), the material is removed from the horizontal surfaces but remains along the vertical sidewalls of the polysilicon gate, forming **sidewall spacers**. 
+The spacers will now be used as the **mask** for the next step: the heavy Source/Drain implant. The spacer shifts the final, heavy Source/Drain junction away from the sensitive gate edge, defining the final LDD structure.
+
