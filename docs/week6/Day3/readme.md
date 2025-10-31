@@ -76,7 +76,7 @@ These notes summarize the final stages of the **16-Mask CMOS Fabrication Process
 
 This step creates the highly conductive Source ($S$) and Drain ($D$) regions, completing the transistor structure.
 
-* **Initial Condition:** The structure already has the polysilicon gate with the $\text{SiO}_2$/$\text{Si}_3\text{N}_4$ **sidewall spacers** and the lightly doped ($\text{N}^{-}$, $\text{P}^{-}$) LDD regions.
+* **Initial Condition:** The structure already has the polysilicon gate with the $\text{SiO}_2$ $\text{Si}_3\text{N}_4$ **sidewall spacers** and the lightly doped ($\text{N}^{-}$, $\text{P}^{-}$) LDD regions.
 * **Thin Screen Oxide:** A thin $\text{SiO}_2$ layer is often grown or deposited before the implant to **prevent channeling** (where ions travel too deep) during the high-energy implant step.
 * **Heavy Implant:** A **heavy dose** of N-type dopants (for NMOS $\text{N}^+$) and P-type dopants (for PMOS $\text{P}^+$) is implanted.
     * The **sidewall spacers** act as a **mask**, defining the final outer edge of the heavily doped $\text{S}/\text{D}$ regions, placing them away from the sensitive channel area.
