@@ -59,3 +59,7 @@ The Magic VLSI layout editor was invoked to open and display the standard cell l
       * **Contacts** ($\text{X}$ marks) for connecting metal layers to the transistors.
 
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/5cd84c90-c6a4-4491-9748-f87e9bf9ab88" />
+
+
+
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/e4bf7d01-87af-48cb-8bce-edc13502382d" />
