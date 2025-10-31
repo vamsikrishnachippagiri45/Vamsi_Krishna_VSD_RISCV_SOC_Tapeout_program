@@ -54,7 +54,7 @@ The Magic VLSI layout editor was invoked to open and display the standard cell l
     ```
 2.  **Visualization:**
     The **physical layout** of the inverter cell (`sky130_inv`) was displayed. The layout shows various colored polygons representing the different fabrication layers, such as:
-      * **$\text{V}_{\text{PWR}}$ (Power) and $\text{V}_{\text{GND}}$ (Ground)** supply rails (blue/purple hatched areas).
+      * **$\text{V}{\text{PWR}}$ (Power) and $\text{V}{\text{GND}}$ (Ground)** supply rails (blue/purple hatched areas).
       * **Gate (Polysilicon)** and **Diffusion (Active Area)** to form the transistors.
       * **Contacts** ($\text{X}$ marks) for connecting metal layers to the transistors.
 
