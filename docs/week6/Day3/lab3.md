@@ -29,7 +29,7 @@ The following commands were executed in the terminal to set up the environment:
 
     ```bash
     # (Navigated to pdks/sky130A/libs.tech/magic first)
-    cp sky130A.tech /path/to/vsdstddcelldesign
+   cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
     ```
 
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/253234b8-f907-46c4-81cc-9c0e8dca8d0f" />
