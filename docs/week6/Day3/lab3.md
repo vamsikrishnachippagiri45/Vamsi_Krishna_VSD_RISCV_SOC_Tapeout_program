@@ -21,16 +21,19 @@ The following commands were executed in the terminal to set up the environment:
     git clone https://github.com/nicksonm-jose/vsdstddcelldesign.git
     ```
     
+```
+https://github.com/nickson-jose/vsdstdcelldesign
+```
+    
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/8e375f48-9d42-4358-b593-0de51aa52ec4" />
 
 
 3.  **Copy Technology File:**
     The **PDK technology file** (`sky130A.tech`) is essential for Magic to understand the design rules and layer definitions for the specific process (SkyWater 130nm). This file was copied from the PDK directory to the new design directory.
 
-    ```bash
-    # (Navigated to pdks/sky130A/libs.tech/magic first)
+```bash
    cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
-    ```
+```
 
 <img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/253234b8-f907-46c4-81cc-9c0e8dca8d0f" />
 
